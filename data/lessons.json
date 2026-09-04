@@ -1,5 +1,5 @@
 {
-  "version": "2.0",
+  "version": "2.5",
   "updated_at": "2026-09-04",
   "updated_by": "Phat",
   "tracks_meta": {
@@ -50,54 +50,234 @@
       "track": "grade_6",
       "level_code": "level_1",
       "level": "Cơ bản",
-      "title": "Bài 1: Tách sự thật khỏi ý kiến tại trường",
+      "title": "Bài 01: Tách sự thật khỏi ý kiến tại trường học",
       "mode": "First Principles",
       "objective": "Phân biệt rạch ròi giữa điều quan sát/đo đạc được (sự thật) và cảm xúc cá nhân (ý kiến).",
-      "situation": "Tại trường Wellspring, trong giờ thảo luận nhóm, một bạn nói: 'Môn Khoa học dự án này chán ngắt và cô giáo chấm rất khó tính, tụi mình làm qua loa thôi.'",
+      "situation": "Tại trường Wellspring, trong giờ giải lao, một bạn bảo: 'Bài tập STEM tuần này quá khó và vô lý, thầy cô chẳng bao giờ cho điểm cao đâu.'",
       "guide_steps": [
-        "Chỉ ra những từ mang tính cảm xúc/định kiến trong câu nói trên.",
-        "Viết ra 2 sự thật khách quan về bài dự án mà ai cũng phải công nhận (tiêu chí chấm, hạn nộp).",
-        "Đặt 1 câu hỏi để nhóm tập trung vào sự thật thay vì bàn lùi."
+        "Chỉ ra những từ ngữ bộc lộ cảm xúc/định kiến chủ quan trong câu nói.",
+        "Viết ra 2 sự thật khách quan về bài tập (rubric chấm điểm, thời hạn nộp, yêu cầu sản phẩm).",
+        "Đặt 1 câu hỏi để kéo sự chú ý của nhóm về các tiêu chí có thể đo lường được."
       ],
-      "exercise_prompt": "Viết: (1) Phần nào là ý kiến/cảm xúc? (2) Phần nào là sự thật khách quan? (3) Câu hỏi của bạn để kéo nhóm về trọng tâm.",
-      "hint": "Sự thật luôn gắn với số liệu, tiêu chí văn bản. Ý kiến thường chứa tính từ đánh giá: 'chán ngắt', 'khó tính'.",
+      "exercise_prompt": "Hãy viết: (1) Phần nào là ý kiến/cảm xúc? (2) Phần nào là sự thật khách quan? (3) Một câu hỏi bạn sẽ nói với bạn mình.",
+      "hint": "Sự thật có thể kiểm chứng bằng văn bản hoặc đo lường. Ý kiến thường chứa từ: 'quá khó', 'chẳng bao giờ'.",
       "related_principle": "Phân biệt Fact vs Opinion"
+    },
+    {
+      "id": "g6_c1_02",
+      "track": "grade_6",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 02: Bóc tách công thức tính toán từ bản chất (Không học vẹt)",
+      "mode": "First Principles",
+      "objective": "Hiểu bản chất tại sao công thức tồn tại thay vì chỉ ghi nhớ máy móc.",
+      "situation": "Bạn đang học công thức tính diện tích hình thang trong môn Toán: ((Đáy lớn + Đáy bé) × Chiều cao) : 2. Bạn hay quên chia 2 khi làm bài kiểm tra.",
+      "guide_steps": [
+        "Vẽ hai hình thang bằng nhau rồi ghép ngược đầu lại với nhau thành hình gì?",
+        "Tính diện tích của hình bình hành vừa ghép được.",
+        "Giải thích lý do tại sao công thức diện tích một hình thang bắt buộc phải chia đôi."
+      ],
+      "exercise_prompt": "Giải thích bằng lời và hình dung hình học: Tại sao công thức diện tích hình thang lại có bước chia 2?",
+      "hint": "Khi ghép 2 hình thang bằng nhau, ta được một hình bình hành có đáy là (Đáy lớn + Đáy bé) và chiều cao tương đương.",
+      "related_principle": "First Principles trong Hình học"
+    },
+    {
+      "id": "g6_c1_03",
+      "track": "grade_6",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 03: Hiểu đúng về khái niệm 'Thông minh bẩm sinh' (Growth Mindset)",
+      "mode": "First Principles",
+      "objective": "Loại bỏ ngụy biện tư duy cố định, hiểu rằng não bộ phát triển thông qua việc giải bài toán khó.",
+      "situation": "Bạn thấy một bạn trong lớp làm bài Khoa học rất nhanh. Một bạn khác bảo: 'Bạn ấy sinh ra đã thông minh sẵn rồi, mình học mấy cũng không bằng được.'",
+      "guide_steps": [
+        "Xác định giả định sai lầm trong câu nói trên.",
+        "Bóc tách sự thật khoa học não bộ: Não bộ hình thành các liên kết thần kinh mới khi đối mặt với thử thách.",
+        "Viết lại câu nói theo hướng tư duy phát triển (Growth Mindset)."
+      ],
+      "exercise_prompt": "Viết: (1) Tại sao nói 'thông minh là cố định' là phản khoa học? (2) Câu nói mới bạn sẽ tự nhủ khi gặp bài toán khó.",
+      "hint": "Cảm giác bối rối, khó khăn khi làm bài chính là lúc các nơ-ron thần kinh đang kết nối mạnh mẽ nhất.",
+      "related_principle": "Growth Mindset vs Fixed Mindset"
+    },
+    {
+      "id": "g6_c1_04",
+      "track": "grade_6",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 04: Base Rate thực tế của các mẹo 'Học giỏi siêu tốc' trên mạng",
+      "mode": "Bayesian",
+      "objective": "Dùng tỷ lệ xác suất thực tế để không bị đánh lừa bởi những video giật tít trên mạng xã hội.",
+      "situation": "Một video ngắn trên mạng khẳng định: 'Chỉ cần uống nước ép này và nghe nhạc sóng não 10 phút trước khi ngủ là nhớ hết 100 từ vựng tiếng Anh không cần học.'",
+      "guide_steps": [
+        "Ước lượng tỷ lệ cơ sở (Base rate): Trong 10.000 người thử cách này, có bao nhiêu người thực sự giỏi tiếng Anh bền vững?",
+        "Xác định cơ chế ghi nhớ thực tế của não bộ (lặp lại ngắt quãng - Spaced Repetition).",
+        "Đưa ra quyết định thông thái trước các mẹo giật gân."
+      ],
+      "exercise_prompt": "Viết phân tích: (1) Tỷ lệ thành công thực tế của mẹo này là bao nhiêu? (2) Phương pháp khoa học thật sự để nhớ từ vựng là gì?",
+      "hint": "Nếu một lời hứa hẹn nghe quá dễ dàng để trở thành sự thật, xác suất rất cao nó là ngụy khoa học.",
+      "related_principle": "Tư duy Xác suất & Base Rate"
     },
     {
       "id": "g6_c2_01",
       "track": "grade_6",
       "level_code": "level_2",
       "level": "Thực hành",
-      "title": "Bài 2: Tư duy đảo ngược (Inversion) trong bài kiểm tra",
+      "title": "Bài 05: Tư duy đảo ngược (Inversion) chuẩn bị kỳ thi học kỳ",
       "mode": "Inversion",
-      "objective": "Tìm các nguyên nhân chắc chắn khiến bài kiểm tra bị điểm kém để chủ động triệt tiêu.",
-      "situation": "Tuần sau lớp 6 có bài kiểm tra giữa kỳ môn Tiếng Anh và Toán. Bạn thường bị phân tâm bởi iPad và YouTube Shorts mỗi tối.",
+      "objective": "Lập danh sách những điều chắc chắn làm kỳ thi thất bại để chủ động loại trừ.",
+      "situation": "Hai tuần nữa là kỳ thi cuối học kỳ tại Wellspring. Bạn rất muốn đạt điểm cao nhưng thường bị cuốn vào việc chơi game hoặc để sát ngày mới học.",
       "guide_steps": [
-        "Liệt kê 4 hành vi chắc chắn sẽ làm bạn làm bài thi điểm kém và mất tập trung.",
-        "Thiết lập quy tắc ngược lại cho từng hành vi trong 7 ngày tới.",
-        "Chọn 1 hành động rào chắn môi trường (ví dụ cất iPad ra phòng khách trước 8h tối)."
+        "Liệt kê 4 hành vi chắc chắn sẽ khiến bạn làm bài thi điểm kém và hoảng loạn.",
+        "Thiết lập quy tắc 'Không làm' (Not-to-do list) tương ứng cho 14 ngày tới.",
+        "Tạo ra 1 rào cản môi trường vật lý (ví dụ: cất iPad vào phòng bố mẹ trước 8 giờ tối)."
       ],
-      "exercise_prompt": "Nêu 3 cách chắc chắn làm bài thi kém + Hành động đảo ngược tương ứng bạn cam kết làm tối nay.",
-      "hint": "Người thông minh không chỉ tìm cách thành công, mà luôn biết cách tránh xa những nguyên nhân chắc chắn dẫn đến thất bại.",
+      "exercise_prompt": "Viết 3 nguyên nhân chắc chắn dẫn đến thi trượt + 3 quy tắc đảo ngược để triệt tiêu chúng.",
+      "hint": "Người thành công không phải người tìm cách hoàn hảo, mà là người biết kiên định tránh xa những việc làm dại dột.",
       "related_principle": "Inversion (Tư duy đảo ngược)"
+    },
+    {
+      "id": "g6_c2_02",
+      "track": "grade_6",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 06: Hệ quả bậc 2 của việc thức khuya lướt điện thoại",
+      "mode": "Second-order thinking",
+      "objective": "Nhìn thấu chuỗi hệ quả lan truyền theo thời gian thay vì chỉ nhìn vào niềm vui nhất thời.",
+      "situation": "Bạn cầm điện thoại xem YouTube Shorts lúc 10h tối. Video rất cuốn và bạn tự nhủ: 'Chỉ xem thêm 10 phút nữa thôi'.",
+      "guide_steps": [
+        "Hệ quả bậc 1 (Ngay lúc đó): Thỏa mãn, vui vẻ, giải trí.",
+        "Hệ quả bậc 2 (Sáng hôm sau): Dậy muộn, mệt mỏi, vào lớp gà gật, không hiểu bài giảng của thầy cô.",
+        "Hệ quả bậc 3 (Cuối tuần / Cuối tháng): Bài tập tồn đọng, mất tự tin, hình thành thói quen trì hoãn mãn tính."
+      ],
+      "exercise_prompt": "Viết sơ đồ 3 tầng hệ quả của việc lướt điện thoại quá 10h30 đêm và hành động cắt đứt vòng lặp tối nay.",
+      "hint": "Cái bẫy của thói quen xấu là: Phần thưởng đến ngay ở Bậc 1, nhưng hậu quả tai hại lại giấu mình ở Bậc 2 và Bậc 3.",
+      "related_principle": "Second-Order Thinking (Hệ quả bậc hai)"
+    },
+    {
+      "id": "g6_c2_03",
+      "track": "grade_6",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 07: Thử nghiệm nhanh 3 phương pháp ghi chép bài học",
+      "mode": "Empirical",
+      "objective": "Áp dụng phương pháp thực nghiệm khoa học (Lean/Empirical) để tìm ra cách học phù hợp nhất với bản thân.",
+      "situation": "Bạn thấy tốc độ ghi chép trên lớp của mình hơi chậm và khi ôn lại bài thường thấy rối mắt.",
+      "guide_steps": [
+        "Thiết lập giả thuyết: Thử 3 cách ghi chép trong 3 ngày (Ngày 1: Cornell notes, Ngày 2: Sơ đồ tư duy Mindmap, Ngày 3: Gạch đầu dòng có đánh số).",
+        "Đo lường kết quả: Sau mỗi ngày, tự kiểm tra xem mình nhớ được bao nhiêu % nội dung bài mà không cần nhìn vở.",
+        "Rút ra kết luận thực nghiệm phương pháp nào mang lại hiệu quả cao nhất cho bạn."
+      ],
+      "exercise_prompt": "Mô tả kế hoạch thử nghiệm 3 phương pháp ghi chép và tiêu chí đo lường sự hiệu quả của bạn.",
+      "hint": "Đừng hỏi 'Cách nào tốt nhất?', hãy hỏi 'Cách nào mang lại dữ liệu ghi nhớ tốt nhất cho tôi sau khi đã kiểm chứng?'.",
+      "related_principle": "Tư duy Thực nghiệm Nhanh (Empirical Thinking)"
+    },
+    {
+      "id": "g6_c2_04",
+      "track": "grade_6",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 08: Áp lực bạn bè trong giờ học (Lý thuyết trò chơi)",
+      "mode": "Game theory",
+      "objective": "Hiểu động lực của bạn bè và thiết lập ranh giới giao tiếp khéo léo nhưng vững chắc.",
+      "situation": "Trong giờ học môn Khoa học, bạn thân ngồi cạnh liên tục rủ bạn nói chuyện và trêu đùa. Bạn sợ từ chối thì bạn giận, nhưng tiếp tục nói thì bị cô giáo nhắc nhở.",
+      "guide_steps": [
+        "Phân tích động lực các bên: Bạn thân muốn giải trí/chú ý; Bạn muốn tập trung nghe giảng; Cô giáo muốn duy trì trật tự.",
+        "Hệ quả nếu bạn đồng lõa: Cả hai cùng bị phạt, mất kiến thức.",
+        "Thiết kế phản ứng Win-Win: Đưa ra tín hiệu giao tiếp rõ ràng và hẹn giờ ra chơi sẽ trò chuyện hết mình."
+      ],
+      "exercise_prompt": "Viết câu nói chính xác bạn sẽ nói với bạn thân ngay lúc đó để vừa giữ được tình bạn vừa giữ được sự tập trung.",
+      "hint": "Người có tư duy vững vàng biết cách nói 'Không' với sự việc mà không làm tổn thương con người.",
+      "related_principle": "Lý thuyết Trò chơi & Ranh giới Cá nhân"
     },
     {
       "id": "g6_c3_01",
       "track": "grade_6",
       "level_code": "level_3",
       "level": "Nâng cao",
-      "title": "Bài 3: Sử dụng AI thông minh thay vì chép bài thụ động",
-      "mode": "First Principles + AI Thinking",
-      "objective": "Hiểu bản chất công cụ AI là 'bộ trợ não khuếch đại' chứ không phải nơi làm hộ bài tập.",
-      "situation": "Thầy giáo giao bài tìm hiểu về năng lượng tái tạo. Bạn bè mách bạn chỉ cần copy nguyên văn lời giải từ ChatGPT/Gemini nộp là xong.",
+      "title": "Bài 09: Sử dụng AI làm Gia sư phản biện thay vì chép bài thụ động",
+      "mode": "First Principles + AI Literacy",
+      "objective": "Làm chủ công nghệ AI theo nguyên tắc đòn bẩy tư duy, biến AI thành trợ lý học tập đỉnh cao.",
+      "situation": "Thầy giáo giao bài tìm hiểu về hiện tượng biến đổi khí hậu. Một số bạn chỉ copy nguyên câu trả lời của AI vào bài nộp.",
       "guide_steps": [
-        "Phân tích hệ quả bậc 2: Nếu bạn chép AI 100%, kỹ năng tư duy và vốn hiểu biết thật sự của bạn sau 1 năm sẽ ra sao?",
-        "Xác định nguyên lý sử dụng AI: Coi AI là gia sư phản biện (hỏi AI giải thích khái niệm khó, gợi ý góc nhìn mới).",
-        "Tự soạn 1 prompt hỏi AI thông minh để giúp bạn hiểu sâu bài học thay vì xin đáp án nộp."
+        "Phân tích hệ quả bậc 3: Nếu bạn để AI làm hộ từ lớp 6, năng lực tư duy độc lập và khả năng lập luận của bạn khi lên cấp 3 sẽ ra sao?",
+        "Xác định nguyên tắc dùng AI đúng đắn: Dùng AI làm người phản biện (Socratic Tutor) để kiểm tra lỗ hổng kiến thức của chính mình.",
+        "Viết câu lệnh (Prompt) yêu cầu AI đặt câu hỏi chất vấn bạn về bài học."
       ],
-      "exercise_prompt": "Viết: (1) Rủi ro lớn nhất khi lạm dụng AI chép bài? (2) Câu lệnh (Prompt) bạn sẽ gõ vào AI để yêu cầu nó đóng vai gia sư giảng giải nguyên lý.",
-      "hint": "Prompt tốt: 'Đóng vai chuyên gia năng lượng, giải thích cho học sinh lớp 6 tại sao pin mặt trời hoạt động và đặt cho tôi 2 câu đố kiểm tra.'",
-      "related_principle": "Đòn bẩy Công nghệ & Năng lực Tư duy Độc lập"
+      "exercise_prompt": "Viết: (1) Rủi ro lớn nhất của việc lạm dụng AI? (2) Câu lệnh Prompt bạn sẽ dùng để biến AI thành người thầy phản biện cho bài học.",
+      "hint": "Prompt xuất sắc: 'Hãy đóng vai một nhà khoa học khí hậu khó tính, đặt cho tôi 3 câu hỏi hóc búa về hiệu ứng nhà kính và chỉ ra điểm yếu trong câu trả lời của tôi.'",
+      "related_principle": "First Principles trong Ứng dụng AI"
+    },
+    {
+      "id": "g6_c3_02",
+      "track": "grade_6",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 10: Sức mạnh của lãi kép thời gian — 20 phút mỗi ngày",
+      "mode": "Multi-timescale",
+      "objective": "Hiểu và tin tưởng vào sức mạnh của hàm số mũ tích lũy hàng ngày (Compound Interest).",
+      "situation": "Bạn thấy môn Tiếng Anh của mình chưa tốt. Bạn phân vân giữa: (A) Học dồn 5 tiếng vào ngày Chủ nhật hoặc (B) Đều đặn đọc sách tiếng Anh 20 phút mỗi ngày.",
+      "guide_steps": [
+        "Tính toán quy luật toán học: $(1.01)^{365} = 37.8$ (tiến bộ 1% mỗi ngày sau 1 năm tăng gần 38 lần); $(0.99)^{365} = 0.03$.",
+        "Hiểu cơ chế hấp thu ngôn ngữ của não bộ: Não bộ cần giấc ngủ mỗi đêm để củng cố vùng nhớ từ vựng mới.",
+        "Thiết kế thói quen 20 phút gắn với một mỏ neo sinh hoạt hàng ngày (sau khi đánh răng buổi tối)."
+      ],
+      "exercise_prompt": "Giải thích vì sao 20 phút mỗi ngày vượt trội hơn 5 tiếng cuối tuần. Thiết kế thói quen 20 phút cho một kỹ năng bạn muốn rèn luyện.",
+      "hint": "Sự nhất quán (Consistency) luôn đánh bại cường độ nhất thời (Intensity) trong các bài toán dài hạn.",
+      "related_principle": "Quy luật Lãi Kép & Đa quy mô Thời gian"
+    },
+    {
+      "id": "g6_c3_03",
+      "track": "grade_6",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 11: Tư duy Tùy chọn (Optionality) khi chọn Câu lạc bộ tại trường",
+      "mode": "Optionality",
+      "objective": "Lựa chọn các hoạt động ngoại khóa mang lại nhiều kỹ năng nền tảng mở ra nhiều cơ hội tương lai.",
+      "situation": "Trường Wellspring mở đăng ký các câu lạc bộ (CLB). Có rất nhiều lựa chọn: CLB Tranh biện, CLB Lập trình Robotics, CLB Bóng rổ, CLB Nấu ăn...",
+      "guide_steps": [
+        "Phân tích tính chuyển giao (Transferable Skills): Kỹ năng nào học được ở CLB này có thể dùng được trong nhiều lĩnh vực khác trong 5 năm tới?",
+        "Áp dụng cấu trúc Barbell: Chọn 1 CLB rèn luyện thể chất/tinh thần (vững chắc) + 1 CLB thử thách kỹ năng mới lạ có tiềm năng bùng nổ.",
+        "Đánh giá rủi ro thấp, lợi ích mở rộng không giới hạn."
+      ],
+      "exercise_prompt": "Lựa chọn 2 CLB theo chiến lược Barbell và giải thích kỹ năng nào sẽ mở ra nhiều cánh cửa cơ hội nhất cho bạn.",
+      "hint": "Kỹ năng nói trước đám đông (Debate) và kỹ năng tư duy máy tính (Robotics/Code) là hai kỹ năng có độ mở tùy chọn (Optionality) cao nhất.",
+      "related_principle": "Optionality & Chiến lược Quả tạ Barbell"
+    },
+    {
+      "id": "g6_c3_04",
+      "track": "grade_6",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 12: Nhận diện tin giả & Ảo giác thông tin trên Internet",
+      "mode": "First Principles + Second-order",
+      "objective": "Hình thành phản xạ hoài nghi khoa học trước khi bấm chia sẻ hoặc tin vào một mẩu tin trên mạng.",
+      "situation": "Một bài đăng trên Facebook được nhiều người chia sẻ khẳng định: 'Học sinh uống nước ngọt có ga trước giờ thi sẽ giúp não thông minh gấp đôi'.",
+      "guide_steps": [
+        "Truy vết nguồn gốc thông tin (Provenance): Ai là tác giả? Có công trình nghiên cứu hay tạp chí khoa học uy tín nào bảo chứng không?",
+        "Phân tích động lực tài chính (Incentives): Ai là người được hưởng lợi kinh tế nếu nhiều người tin vào thông tin này?",
+        "Hệ quả bậc 2: Tác hại của đường và chất kích thích đối với sự tập trung của não bộ sau 30 phút (Sugar Crash)."
+      ],
+      "exercise_prompt": "Xây dựng Checklist 3 bước bạn sẽ thực hiện mỗi khi bắt gặp một thông tin giật gân trên mạng trước khi tin tưởng.",
+      "hint": "Quy tắc vàng: Yêu cầu phi thường đòi hỏi bằng chứng phi thường (Carl Sagan).",
+      "related_principle": "Truy vết Nguồn gốc & Kiểm chứng Bằng chứng"
+    },
+    {
+      "id": "g6_c2_05",
+      "track": "grade_6",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 13: Thử thách 'Prompt Gia sư' — Dùng AI học kèm thay vì chép bài",
+      "mode": "First Principles + AI Literacy",
+      "objective": "Biết cách biến AI thành gia sư kiên nhẫn hỏi đáp gợi ý thay vì là cỗ máy cho sẵn đáp án để chép.",
+      "situation": "Bạn đang giải một bài toán đố khó trong sách nâng cao. Bạn có ChatGPT/Gemini nhưng không muốn chỉ copy kết quả nộp cô giáo.",
+      "guide_steps": [
+        "Thiết lập vai trò (Role): 'Hãy đóng vai một gia sư môn Toán theo phương pháp gợi mở Socrates'.",
+        "Quy định luật chơi: 'Tuyệt đối không giải bài hộ tôi. Hãy đặt từng câu hỏi dẫn dắt để tôi tự tìm ra cách giải'.",
+        "Thực hành tương tác: Đọc từng câu hỏi gợi ý của AI, suy nghĩ và trả lời cho đến khi tự mình giải trọn vẹn bài toán."
+      ],
+      "exercise_prompt": "Viết đoạn Prompt bạn sẽ gửi cho AI để nhờ AI làm gia sư đồng hành giải một bài tập khó mà không làm lộ đáp án.",
+      "hint": "Người làm chủ công nghệ dùng AI để tăng sức mạnh cơ bắp trí tuệ của mình, người nô lệ cho công nghệ dùng AI để thay thế bộ não của mình.",
+      "related_principle": "First Principles trong Hợp tác Người - AI"
     }
   ],
   "grade_9": [
@@ -106,54 +286,235 @@
       "track": "grade_9",
       "level_code": "level_1",
       "level": "Cơ bản",
-      "title": "Bài 1: Ước lượng xác suất Base Rate khi chọn phương pháp học",
+      "title": "Bài 01: Ước lượng xác suất Base Rate khi chọn mục tiêu thi vào 10",
       "mode": "Bayesian",
-      "objective": "Không bị cuốn theo các câu chuyện thành công cá biệt (survivorship bias), biết nhìn vào tỷ lệ xác suất thực tế.",
-      "situation": "Trên mạng xã hội có video 'Học tủ 5 ngày được 9.0 IELTS / 9 điểm Toán vào 10' đạt triệu view. Một số bạn lớp 9 bắt đầu bỏ học đều đặn để chờ học mẹo.",
+      "objective": "Không bị cuốn theo các câu chuyện thành công cá biệt, biết nhìn vào tỷ lệ xác suất thực tế để đặt mục tiêu.",
+      "situation": "Năm lớp 9, bạn đang chọn nguyện vọng thi vào lớp 10. Một số bạn khuyên bạn nên đăng ký trường chuyên top 1 dù điểm thi thử của bạn hiện đang chênh lệch 4-5 điểm.",
       "guide_steps": [
-        "Ước lượng base rate: Trong 1.000 học sinh thử học mẹo 5 ngày, có bao nhiêu bạn thực sự đạt kết quả bền vững?",
-        "Nhận diện điều kiện nền (prior): Những người làm video có thể đã có sẵn nền tảng kiến thức từ trước?",
-        "Xác định chiến lược học tập dựa trên xác suất cao nhất."
+        "Ước lượng base rate: Tỷ lệ chọi của trường mục tiêu và phổ điểm các năm trước là bao nhiêu?",
+        "Đánh giá dữ liệu hiện tại (Prior): Năng lực thực tế của bạn qua các bài kiểm tra định kỳ.",
+        "Thiết lập kịch bản dự phòng thực tế theo tư duy xác suất."
       ],
-      "exercise_prompt": "Viết phân tích: (1) Base rate thực tế là bao nhiêu? (2) Thiên kiến nhận thức nào đang xuất hiện? (3) Phương án cập nhật niềm tin đúng đắn.",
-      "hint": "Thiên kiến sống sót (Survivorship Bias) khiến người ta chỉ nhìn thấy người may mắn hiếm hoi mà quên 99.9% người thất bại.",
+      "exercise_prompt": "Viết phân tích xác suất: (1) Tỷ lệ chọi và điểm chuẩn các năm qua? (2) Kế hoạch nâng điểm có khả thi toán học trong thời gian còn lại?",
+      "hint": "Hy vọng không phải là một chiến lược. Chiến lược thực sự phải dựa trên dữ liệu xác suất và hành động cụ thể.",
       "related_principle": "Tư duy Xác suất & Base Rate"
+    },
+    {
+      "id": "g9_c1_02",
+      "track": "grade_9",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 02: Tách biệt tiếng ồn dư luận và năng lực cốt lõi",
+      "mode": "First Principles",
+      "objective": "Nhận diện áp lực đồng trang lứa và kỳ vọng xã hội để tập trung vào điểm mạnh thực chất.",
+      "situation": "Cả lớp đang đổ xô đi học thêm một thầy giáo nổi tiếng về mẹo giải nhanh, trong khi bạn thấy mình đang hổng kiến thức lý thuyết nền tảng.",
+      "guide_steps": [
+        "Bóc tách bản chất: Học mẹo có giải quyết được các bài toán biến thể trong đề thi đổi mới không?",
+        "Xác định nguyên lý hạt nhân của việc học giỏi: Nắm chắc định nghĩa, định lý và tự mình chứng minh được chúng.",
+        "Dũng cảm đi con đường riêng phù hợp với lỗ hổng kiến thức của chính mình."
+      ],
+      "exercise_prompt": "Viết bài phân tích: Sự khác nhau giữa 'học mẹo để đối phó' và 'học theo First Principles để nắm gốc rễ'.",
+      "hint": "Mẹo giải nhanh chỉ giúp bạn giải bài toán hôm qua; tư duy nguyên bản giúp bạn giải được bài toán chưa từng thấy trong tương lai.",
+      "related_principle": "Bản chất Năng lực vs Tiếng ồn Xung quanh"
+    },
+    {
+      "id": "g9_c1_03",
+      "track": "grade_9",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 03: Ràng buộc thực tế & Quy luật đánh đổi (Trade-offs)",
+      "mode": "Trade-off + Constraints",
+      "objective": "Chấp nhận quy luật giới hạn tài nguyên (thời gian, năng lượng) và dám từ bỏ những thứ ít quan trọng.",
+      "situation": "Năm lớp 9 tại Wellspring, bạn muốn vừa đạt học lực xuất sắc, vừa luyện thi chứng chỉ ngoại ngữ, vừa làm chủ tịch CLB, vừa chơi thể thao 2 tiếng mỗi ngày. Bạn bắt đầu bị kiệt sức.",
+      "guide_steps": [
+        "Liệt kê các ràng buộc cứng không thể thương lượng: 24 giờ mỗi ngày, giấc ngủ 7 tiếng, thời gian di chuyển.",
+        "Nhận diện quy luật đánh đổi: Muốn xuất sắc ở điểm A bắt buộc phải chấp nhận giảm bớt thời gian cho điểm B.",
+        "Quyết định cắt bỏ có chủ đích (Ruthless Prioritization)."
+      ],
+      "exercise_prompt": "Lập danh sách: 3 mục tiêu quan trọng nhất bắt buộc giữ lại + 2 hoạt động bạn cam kết tạm dừng trong 6 tháng tới.",
+      "hint": "Người làm việc xuất sắc không phải là người cố gắng làm tất cả, mà là người có bản lĩnh nói 'Không' với những thứ thứ yếu.",
+      "related_principle": "Đánh Đổi & Ràng Buộc Nguồn Lực"
     },
     {
       "id": "g9_c2_01",
       "track": "grade_9",
       "level_code": "level_2",
       "level": "Thực hành",
-      "title": "Bài 2: Ràng buộc thực tế & Đòn bẩy 80/20 năm thi vào 10",
-      "mode": "Trade-off + Leverage",
-      "objective": "Nhận diện đúng giới hạn tài nguyên (thời gian, năng lượng) và tìm đòn bẩy 20% tạo 80% kết quả.",
-      "situation": "Năm lớp 9 tại Wellspring, bạn muốn thi chứng chỉ quốc tế, tham gia ban tổ chức dạ hội trường, học chuyên Toán, và tập thể thao. Lịch học đang quá tải nghiêm trọng.",
+      "title": "Bài 04: Tìm kiếm điểm đòn bẩy 80/20 trong ôn tập thi vào 10",
+      "mode": "Pareto 80/20 + Leverage",
+      "objective": "Tìm ra 20% dạng kiến thức và kỹ năng cốt lõi tạo ra 80% kết quả trong bài thi.",
+      "situation": "Bạn đang ôn thi môn Toán và thấy có hàng trăm dạng bài tập nâng cao khác nhau. Bạn không biết nên phân bổ thời gian thế nào cho hiệu quả.",
       "guide_steps": [
-        "Liệt kê các ràng buộc cứng không thể thương lượng (sức khỏe, giấc ngủ 7 tiếng, kỳ thi chính thức).",
-        "Đánh giá điểm đòn bẩy: Môn học/hoạt động nào khi làm thật tốt sẽ tự động mở ra nhiều cơ hội nhất?",
-        "Thực hiện cắt bỏ có chủ đích (Inversion: Không làm những thứ ít giá trị)."
+        "Phân tích cấu trúc đề thi 5 năm gần nhất: 80% điểm số nằm ở những chuyên đề nào (rút gọn biểu thức, phương trình bậc hai, hình học cơ bản)?",
+        "Xác định điểm đòn bẩy: Đảm bảo không bao giờ mất 0.25 điểm ở các câu dễ trước khi dành hàng tuần giải câu điểm 10.",
+        "Lập kế hoạch ôn tập tập trung tối đa vào vùng đòn bẩy cao nhất."
       ],
-      "exercise_prompt": "Lập ma trận: Mục tiêu muốn làm | Ràng buộc thật | Quyết định Cắt bỏ / Giữ lại / Tối ưu đòn bẩy.",
-      "hint": "Người làm việc hiệu quả là người dám từ chối những cơ hội tốt để tập trung vào cơ hội xuất sắc nhất.",
-      "related_principle": "Pareto 80/20 & Ràng buộc cốt lõi"
+      "exercise_prompt": "Phân tích cấu trúc đề thi một môn học bạn đang ôn và chỉ ra đâu là 20% phần kiến thức mang lại 80% điểm số an toàn.",
+      "hint": "Thủ khoa không phải là người giải được câu khó nhất, mà là người không bao giờ phạm sai lầm ngớ ngẩn ở các câu cơ bản.",
+      "related_principle": "Nguyên lý Pareto 80/20"
+    },
+    {
+      "id": "g9_c2_02",
+      "track": "grade_9",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 05: Tư duy đảo ngược trong phòng thi: Làm sao để mất điểm oan?",
+      "mode": "Inversion",
+      "objective": "Nhận diện toàn bộ các lỗi sơ đẳng khiến bài thi bị trừ điểm để lập bảng kiểm tra (Checklist) phòng ngừa.",
+      "situation": "Trong các kỳ thi thử, bạn thường làm được bài nhưng khi nhận điểm thì bị trừ 1-1.5 điểm vì những lỗi lặt vặt (quên điều kiện, nhầm dấu, viết ẩu).",
+      "guide_steps": [
+        "Liệt kê tất cả các lỗi 'ngớ ngẩn' bạn và các bạn trong lớp hay mắc phải khi làm bài thi.",
+        "Tạo bảng Checklist kiểm tra 5 phút cuối giờ (kiểm tra điều kiện xác định, kiểm tra kết luận, rà soát đơn vị tính).",
+        "Luyện tập thói quen kiểm tra checklist ngay trong các bài tập hàng ngày."
+      ],
+      "exercise_prompt": "Viết bản Checklist gồm 5 điều bạn bắt buộc phải rà soát trong 5 phút cuối của mỗi bài thi môn Toán/Anh.",
+      "hint": "Bảo vệ điểm số đã kiếm được quan trọng không kém gì việc giải thêm câu mới.",
+      "related_principle": "Inversion & Checklist Kỷ Luật"
+    },
+    {
+      "id": "g9_c2_03",
+      "track": "grade_9",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 06: Tư duy Bậc hai trong việc lựa chọn môn học chuyên sâu",
+      "mode": "Second-order thinking",
+      "objective": "Dự phóng hệ quả 3-5 năm của việc chọn khối môn học, tránh bẫy quyết định theo phong trào nhất thời.",
+      "situation": "Nhiều bạn lớp 9 đang chọn thi chuyên theo môn mà bạn thân mình chọn, hoặc chọn vì thấy năm nay điểm chuẩn thấp.",
+      "guide_steps": [
+        "Hậu quả bậc 1: Cảm giác vui vẻ vì được học cùng bạn thân.",
+        "Hậu quả bậc 2 (Lớp 11-12): Khối lượng bài vở chuyên sâu quá nặng so với sở thích và thế mạnh thật sự của bạn.",
+        "Hậu quả bậc 3 (Đại học & Nghề nghiệp): Mất phương hướng khi bước vào giảng đường vì ngành học không khớp với bản sắc cá nhân."
+      ],
+      "exercise_prompt": "Phân tích quyết định chọn khối môn học vào lớp 10 của bạn qua lăng kính 3 tầng hệ quả (1 tháng - 1 năm - 4 năm tới).",
+      "hint": "Một quyết định sai lầm ở bậc 1 có thể phải trả giá bằng nhiều năm loay hoay sửa chữa ở bậc 2 và bậc 3.",
+      "related_principle": "Second-Order Thinking"
+    },
+    {
+      "id": "g9_c2_04",
+      "track": "grade_9",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 07: Thử nghiệm giải đề bấm giờ và phân tích lỗi sau thi (Post-mortem)",
+      "mode": "Empirical",
+      "objective": "Áp dụng phương pháp phân tích nguyên nhân gốc rễ (Root Cause Analysis) sau mỗi bài thi thử.",
+      "situation": "Bạn vừa làm xong một đề thi thử và bị điểm dưới kỳ vọng. Phản ứng thông thường là chán nản và cất bài thi vào ngăn bàn.",
+      "guide_steps": [
+        "Quy trình Post-mortem: Bóc tách từng câu bị mất điểm thành 3 nhóm: (A) Hổng kiến thức, (B) Nhầm lẫn do đọc ẩu, (C) Hết thời gian.",
+        "Đo lường tỷ lệ mất điểm của từng nhóm để tìm ra vấn đề cốt tử.",
+        "Thiết kế bài tập khắc phục trực tiếp cho nhóm nguyên nhân lớn nhất."
+      ],
+      "exercise_prompt": "Lập bảng phân loại lỗi sai cho bài kiểm tra gần nhất của bạn và viết kế hoạch khắc phục 3 ngày tới.",
+      "hint": "Bài thi điểm kém là một mỏ vàng dữ liệu nếu bạn dám ngồi lại mổ xẻ từng vết thương học thuật của mình.",
+      "related_principle": "Phân tích Thất bại Post-mortem & Thực nghiệm"
     },
     {
       "id": "g9_c3_01",
       "track": "grade_9",
       "level_code": "level_3",
       "level": "Nâng cao",
-      "title": "Bài 3: Tư duy bậc hai và tương lai nghề nghiệp trong kỷ nguyên AI",
-      "mode": "Second-order + Multi-timescale",
-      "objective": "Dự đoán hệ quả lan truyền khi AI tự động hóa các công việc lặp lại, định vị kỹ năng không thể thay thế.",
-      "situation": "Bạn đang chuẩn bị chọn tổ hợp môn vào lớp 10 (khoa học tự nhiên, xã hội hay công nghệ). Nhiều người nói AI sẽ làm thay lập trình viên và dịch thuật.",
+      "title": "Bài 08: Đòn bẩy AI trong nghiên cứu dự án khoa học & xã hội",
+      "mode": "Leverage + AI Literacy",
+      "objective": "Học cách dùng AI để mở rộng tri thức, tổng hợp tài liệu tiếng Anh đa ngành cho các dự án lớp 9.",
+      "situation": "Bạn làm bài tập lớn về tác động của năng lượng tái tạo đối với môi trường Việt Nam. Tài liệu tiếng Việt còn hạn chế, trong khi tài liệu quốc tế rất đồ sộ.",
       "guide_steps": [
-        "Hậu quả bậc 1 của AI: Tạo văn bản, viết code cơ bản nhanh chóng.",
-        "Hậu quả bậc 2: Giá trị của việc ghi nhớ kiến thức giảm, giá trị của năng lực đặt câu hỏi, kiểm chứng và tư duy hệ thống tăng vọt.",
-        "Hậu quả bậc 3: Người biết kết hợp chuyên môn sâu + làm chủ AI Agent sẽ có năng suất gấp 10 lần người bình thường."
+        "Sử dụng AI làm công cụ tổng hợp & lược dịch: Yêu cầu AI tóm tắt các báo cáo khoa học của các tổ chức uy tín (IEA, World Bank).",
+        "Kỹ năng kiểm chứng chéo (Cross-verification): Không tin 100% tóm tắt của AI mà yêu cầu AI dẫn nguồn số liệu cụ thể.",
+        "Kết hợp góc nhìn địa phương: Đưa số liệu quốc tế vào bối cảnh thực tế tại Việt Nam để tạo ra bài luận độc bản."
       ],
-      "exercise_prompt": "Viết dự phóng 3 bậc cho một lĩnh vực bạn yêu thích và đề xuất 2 kỹ năng cốt lõi bạn sẽ tôi luyện trong 3 năm cấp 3.",
-      "hint": "Đừng cạnh tranh với AI ở việc nhớ nhiều, hãy dẫn dắt AI bằng tư duy First Principles và sự thấu cảm con người.",
-      "related_principle": "Second-Order Consequences & Đa quy mô thời gian"
+      "exercise_prompt": "Viết quy trình 3 bước bạn sử dụng AI để nghiên cứu một chủ đề phức tạp mà vẫn bảo đảm tính trung thực và chiều sâu học thuật.",
+      "hint": "AI giúp bạn tăng tốc độ đọc từ 1 cuốn sách lên 100 bài báo, nhưng khả năng tổng hợp ý tứ sâu sắc vẫn là đặc quyền của con người.",
+      "related_principle": "Đòn bẩy Công nghệ & Tư duy Hệ thống"
+    },
+    {
+      "id": "g9_c3_02",
+      "track": "grade_9",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 09: Chiến lược Quả tạ (Barbell) xây dựng năng lực chuyển cấp",
+      "mode": "Optionality",
+      "objective": "Tạo dựng cấu trúc học tập bất đối xứng: Vừa bảo đảm an toàn kỳ thi trước mắt, vừa tạo bàn đạp bứt phá cho tương lai.",
+      "situation": "Nhiều học sinh lớp 9 chỉ học gạo các môn thi vào 10 và bỏ bê hoàn toàn các kỹ năng mềm, đọc sách, công nghệ và thể chất.",
+      "guide_steps": [
+        "Đầu 1 (80% an toàn): Hoàn thành xuất sắc và chắc chắn các môn thi chính thức để bảo đảm tấm vé vào cấp 3.",
+        "Đầu 2 (20% bất đối xứng): Duy trì 30 phút mỗi ngày đọc sách tư duy, học lập trình cơ bản hoặc rèn thể lực thể thao đỉnh cao.",
+        "Tránh điểm giữa tầm thường: Không bỏ thi cử để mộng mơ, nhưng cũng không biến mình thành cỗ máy luyện thi khô khan."
+      ],
+      "exercise_prompt": "Thiết kế kế hoạch học tập theo mô hình Barbell cho năm học lớp 9 của bạn.",
+      "hint": "Chiến lược quả tạ giúp bạn không bao giờ bị loại khỏi cuộc chơi ngắn hạn, trong khi vẫn gieo mầm cho những đột phá dài hạn.",
+      "related_principle": "Chiến lược Quả tạ Barbell"
+    },
+    {
+      "id": "g9_c3_03",
+      "track": "grade_9",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 10: Tầm nhìn 10 năm: Kỹ năng nào không bị AI thay thế?",
+      "mode": "Multi-timescale",
+      "objective": "Dự phóng bức tranh nghề nghiệp khi bạn tốt nghiệp đại học (năm 2032-2035) để chuẩn bị năng lực lõi.",
+      "situation": "Nhiều người lớn lo lắng AI sẽ làm biến mất hàng loạt công việc văn phòng, dịch thuật, kế toán và lập trình cơ bản.",
+      "guide_steps": [
+        "Xác định những gì AI làm rất giỏi: Ghi nhớ, tổng hợp dữ liệu có sẵn, tính toán nhanh, tạo văn bản theo mẫu.",
+        "Xác định những gì AI không thể thay thế: Tư duy First Principles bẻ gãy quy tắc cũ, sự thấu cảm con người, đạo đức ra quyết định, năng lực lãnh đạo và kết nối niềm tin.",
+        "Định hướng rèn luyện những kỹ năng người nhất (The most human skills)."
+      ],
+      "exercise_prompt": "Viết bài luận ngắn (150 từ): 3 phẩm chất bạn tin rằng sẽ giúp bạn trở thành người dẫn dắt trong kỷ nguyên AI 10 năm tới.",
+      "hint": "Đừng cố trở thành một cỗ máy tính toán giỏi thứ hai thế giới, hãy trở thành một con người có tư duy độc lập và thấu cảm sâu sắc nhất.",
+      "related_principle": "Đa quy mô Thời gian & Năng lực Bất biến"
+    },
+    {
+      "id": "g9_c1_04",
+      "track": "grade_9",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 11: Giải mã Tâm lý học thần kinh về Áp lực phòng thi",
+      "mode": "First Principles + Neuroscience",
+      "objective": "Bóc tách cơ chế hạch hạnh nhân (Amygdala Hijack) gây nghẽn não khi lo âu và làm chủ kỹ thuật thở dập tắt hoảng loạn.",
+      "situation": "Trước mỗi kỳ thi học kỳ hoặc thi thử vào 10, bạn thường cảm thấy tim đập thình thịch, tay run và đầu óc trống rỗng dù đã ôn tập rất kỹ.",
+      "guide_steps": [
+        "Hiểu cơ chế sinh học: Hạch hạnh nhân nhầm lẫn áp lực điểm số với mối đe dọa sinh tử, kích hoạt phản xạ 'Chiến hay Biến' và cắt lưu lượng máu lên thùy trán (nơi tư duy logic).",
+        "Kỹ thuật dập tắt kích thích giao cảm: Thực hiện 3 chu kỳ 'Thở xả sinh lý' (Physiological Sigh — hít 2 nhịp nhanh bằng mũi, thở ra dài chậm bằng miệng).",
+        "Tái định khung cảm xúc (Re-framing): Tự nhủ 'Tim mình đập nhanh không phải vì sợ hãi, mà là cơ thể đang bơm thêm oxy để não mình tập trung tối đa'."
+      ],
+      "exercise_prompt": "Viết: (1) Tại sao việc hiểu rõ cơ chế não bộ giúp bạn không sợ cảm giác hồi hộp? (2) Kế hoạch hành động 60 giây bạn sẽ làm khi nhận đề thi.",
+      "hint": "Cảm giác hồi hộp và phấn khích có cùng phản ứng sinh lý; sự khác biệt duy nhất là cách não bộ bạn gán nhãn cho nó.",
+      "related_principle": "Khoa học Thần kinh & Làm chủ Tâm lý"
+    },
+    {
+      "id": "g9_c2_05",
+      "track": "grade_9",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 12: Kỹ thuật Feynman — Giảng lại bài toán để phát hiện điểm mù",
+      "mode": "First Principles + Empirical",
+      "objective": "Kiểm tra độ hiểu sâu thực chất của bản thân bằng cách giải thích lại kiến thức cho một em nhỏ lớp 6 hiểu được.",
+      "situation": "Bạn vừa đọc xong chuyên đề 'Định lý Vi-ét' hoặc 'Hiện tượng cảm ứng điện từ' và cảm thấy mình đã hiểu, nhưng khi làm bài tập nâng cao vẫn bị mắc kẹt.",
+      "guide_steps": [
+        "Bước 1: Chọn khái niệm cốt lõi cần kiểm tra.",
+        "Bước 2: Giảng giải khái niệm đó bằng ngôn ngữ bình dân nhất, không dùng bất kỳ thuật ngữ chuyên ngành phức tạp nào (như đang kể cho em lớp 6).",
+        "Bước 3: Xác định chính xác chỗ bạn bị ngắc ngứ hoặc phải dùng từ ngữ mơ hồ để lấp liếm — đó chính là lỗ hổng kiến thức thực sự của bạn.",
+        "Bước 4: Mở lại tài liệu gốc và đào sâu đúng lỗ hổng đó theo First Principles."
+      ],
+      "exercise_prompt": "Hãy dùng kỹ thuật Feynman giải thích một khái niệm Toán hoặc Lý bạn vừa học cho một học sinh lớp 6 nghe.",
+      "hint": "Nếu bạn không thể giải thích một điều gì đó một cách đơn giản, điều đó có nghĩa là bạn vẫn chưa thực sự hiểu sâu sắc về nó (Richard Feynman).",
+      "related_principle": "Kỹ thuật Feynman & Kiểm thử Sự hiểu biết"
+    },
+    {
+      "id": "g9_c3_04",
+      "track": "grade_9",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 13: Đa quy mô Thời gian: Kỳ thi vào 10 vs Năng lực học suốt đời",
+      "mode": "Multi-timescale",
+      "objective": "Giữ vững tâm thế điềm tĩnh, không để điểm số một kỳ thi định nghĩa giá trị cả cuộc đời trong khi vẫn tập trung tối đa cho mục tiêu trước mắt.",
+      "situation": "Bạn bè và phụ huynh đang tạo áp lực rất lớn rằng kỳ thi vào lớp 10 là 'ngã rẽ sinh tử', trượt là tương lai chấm hết.",
+      "guide_steps": [
+        "Khung vi mô (6 tháng tới): Chiến đấu tập trung 100% năng lượng, áp dụng kỷ luật Pareto 80/20 để tối ưu hóa điểm thi.",
+        "Khung vĩ mô (10-20 năm tới): Quan sát thực tế: Năng lực tự học, bản lĩnh vượt khó và tư duy phản biện mới là nhân tố quyết định 95% sự thành bại dài hạn.",
+        "Hóa giải áp lực tiêu cực: Chuyển hóa nỗi sợ hãi tê liệt thành ngọn lửa rèn luyện tính kỷ luật và sự kiên định."
+      ],
+      "exercise_prompt": "Viết bài phân tích ngắn: Tại sao sự nỗ lực hết mình cho kỳ thi vào 10 là bài tập rèn luyện bản lĩnh quý giá, bất kể kết quả điểm số cuối cùng có ra sao?",
+      "hint": "Kỳ thi chỉ là một bài tập thực chiến để thử thách độ bền ý chí của bạn; người có tư duy dài hạn không bao giờ gục ngã trước một kết quả ngắn hạn.",
+      "related_principle": "Đa quy mô Thời gian & Bản lĩnh Dài hạn"
     }
   ],
   "grade_10": [
@@ -162,54 +523,235 @@
       "track": "grade_10",
       "level_code": "level_1",
       "level": "Cơ bản",
-      "title": "Bài 1: Định hình bản sắc học thuật bằng First Principles",
+      "title": "Bài 01: Định hình bản sắc học thuật độc bản bằng First Principles",
       "mode": "First Principles",
-      "objective": "Bóc tách xem bản thân thực sự giỏi và đam mê điều gì, loại bỏ kỳ vọng và áp lực so sánh từ xung quanh.",
-      "situation": "Bước vào lớp 10 trường Wellspring, mọi người xung quanh đều tích cực xây dựng hồ sơ du học hoặc săn học bổng với các hoạt động rập khuôn nhau.",
+      "objective": "Bóc tách xem bản thân thực sự có lợi thế gì, loại bỏ các hoạt động phong trào rập khuôn hồ sơ.",
+      "situation": "Bước vào lớp 10 tại trường Wellspring, xung quanh bạn ai cũng vội vã tham gia thật nhiều hoạt động tình nguyện ngắn hạn để làm đẹp hồ sơ du học.",
       "guide_steps": [
-        "Bóc tách: Hồ sơ ấn tượng thực chất dựa trên điều gì (sự độc bản, khả năng giải quyết vấn đề hay số lượng bằng khen)?",
-        "Loại bỏ các hoạt động làm theo phong trào (reasoning by analogy).",
-        "Xác định 1 lĩnh vực bạn có thể đào sâu tạo giá trị thực sự."
+        "Bóc tách bản chất: Các ban tuyển sinh đại học hàng đầu thế giới thực sự tìm kiếm điều gì (sự độc bản, khả năng giải quyết vấn đề hay số lượng giấy chứng nhận)?",
+        "Nhận diện bẫy tương tự (Reasoning by Analogy): Bắt chước người khác làm hoạt động na ná nhau dẫn đến một hồ sơ nhạt nhòa.",
+        "Xác định 1 lĩnh vực giao thoa giữa sở thích cá nhân và một vấn đề thực tế xã hội bạn có thể giải quyết."
       ],
-      "exercise_prompt": "Phân tích: (1) Điều gì là chân lý cốt lõi của một năng lực học thuật xuất sắc? (2) Dự án độc bản bạn muốn xây dựng trong lớp 10.",
-      "hint": "Cạnh tranh theo số lượng chứng chỉ là bẫy tương tự. Tạo ra một sản phẩm thực tế (phần mềm, bài nghiên cứu, mô hình cộng đồng) là First Principles.",
-      "related_principle": "Tư duy Nguyên bản vs Bắt chước tương tự"
+      "exercise_prompt": "Phân tích: (1) Đâu là giá trị cốt lõi của một bộ hồ sơ học thuật xuất sắc? (2) Dự án độc bản bạn muốn khởi tạo trong năm lớp 10.",
+      "hint": "Đừng cố trở thành phiên bản hạng nhì của người khác, hãy dùng First Principles để tìm ra lợi thế độc nhất (Unfair Advantage) của chính mình.",
+      "related_principle": "Tư duy Nguyên bản & Định vị Bản sắc"
+    },
+    {
+      "id": "g10_c1_02",
+      "track": "grade_10",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 02: Tránh bẫy Chi phí Chìm (Sunk Cost Fallacy) khi chọn môn học",
+      "mode": "Bayesian + Mental Models",
+      "objective": "Dũng cảm từ bỏ một lựa chọn không còn phù hợp dù đã đầu tư nhiều công sức trong quá khứ.",
+      "situation": "Bạn đã học piano suốt 4 năm cấp 2 nhưng lên lớp 10 bạn nhận ra đam mê thực sự của mình là Lập trình Khoa học Dữ liệu. Bạn cảm thấy tiếc 4 năm qua nên ngần ngại không dám chuyển hướng.",
+      "guide_steps": [
+        "Bóc tách định nghĩa Chi phí Chìm: Thời gian và tiền bạc đã bỏ ra trong quá khứ là không thể lấy lại được (Unrecoverable).",
+        "Đánh giá quyết định dựa trên tương lai: 3 năm cấp 3 tiếp theo, thời gian đầu tư vào đâu sẽ mang lại giá trị và hạnh phúc lớn nhất?",
+        "Tận dụng kỹ năng chuyển giao: Sự kỷ luật và tính kiên trì học được từ âm nhạc có thể bổ trợ tuyệt vời cho tư duy lập trình."
+      ],
+      "exercise_prompt": "Xác định một 'chi phí chìm' bạn đang cố bám víu và phân tích xem quyết định tối ưu cho tương lai là gì.",
+      "hint": "Đừng để những sai lầm trong quá khứ tiếp tục cướp đi cơ hội của tương lai.",
+      "related_principle": "Thiên kiến Chi phí Chìm (Sunk Cost Fallacy)"
+    },
+    {
+      "id": "g10_c1_03",
+      "track": "grade_10",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 03: Phản biện sâu (Deep Critical Thinking) trước các báo cáo khoa học",
+      "mode": "First Principles",
+      "objective": "Biết cách soi xét phương pháp luận và dữ liệu thống kê, không bị đánh lừa bởi đồ thị biểu diễn sai lệch.",
+      "situation": "Trong giờ tranh biện (Debate), đối thủ đưa ra một biểu đồ thống kê cho thấy 'Sử dụng mạng xã hội làm tăng 50% chỉ số hạnh phúc' dựa trên một cuộc khảo sát 20 người.",
+      "guide_steps": [
+        "Kiểm tra cỡ mẫu (Sample Size): 20 người có đủ tính đại diện thống kê không?",
+        "Phân biệt Tương quan (Correlation) và Nhân quả (Causation): Hai sự việc diễn ra cùng lúc không có nghĩa là sự việc này sinh ra sự việc kia.",
+        "Đặt câu hỏi chất vấn phương pháp luận khảo sát."
+      ],
+      "exercise_prompt": "Viết 3 câu hỏi sắc bén để bóc trần một luận điểm thống kê thiếu căn cứ trong một buổi tranh luận học thuật.",
+      "hint": "Con số không biết nói dối, nhưng những kẻ lừa đảo lại rất biết cách dùng con số.",
+      "related_principle": "Tương quan vs Nhân quả & Cỡ mẫu Thống kê"
     },
     {
       "id": "g10_c2_01",
       "track": "grade_10",
       "level_code": "level_2",
       "level": "Thực hành",
-      "title": "Bài 2: Tư duy Trò chơi (Game Theory) trong làm việc nhóm & dự án",
+      "title": "Bài 04: Giải quyết bài toán kẻ ăn bám (Free-rider) trong dự án nhóm",
       "mode": "Game theory",
-      "objective": "Nhận diện động lực (incentives) của từng thành viên để thiết kế cơ chế hợp tác đôi bên cùng thắng (Win-Win).",
-      "situation": "Bạn làm trưởng nhóm một dự án liên môn lớn tại trường. Một số bạn ỷ lại không làm, trong khi một số bạn khác làm việc quá tải và nảy sinh bất mãn.",
+      "objective": "Ứng dụng Lý thuyết Trò chơi và thiết kế cơ chế động lực (Mechanism Design) để thúc đẩy làm việc nhóm hiệu quả.",
+      "situation": "Bạn làm nhóm trưởng dự án liên môn Lịch sử - Kinh tế. Một thành viên thường xuyên trễ hạn và không đóng góp, nhưng vẫn mong muốn được chia điểm chung của nhóm.",
       "guide_steps": [
-        "Phân tích cơ chế phạt/thưởng hiện tại (nếu chấm điểm chung cả nhóm thì động lực lười biếng sẽ xuất hiện - Free Rider Problem).",
-        "Tái cấu trúc luật chơi: Phân rã đầu việc minh bạch với quyền hạn và trách nhiệm rõ ràng.",
-        "Thiết lập cam kết đáng tin cậy (Credible Commitment) và quy trình báo cáo tiến độ mở."
+        "Phân tích cấu trúc động lực lỗi: Nếu hệ thống chấm điểm cào bằng cả nhóm, thành viên lười biếng sẽ có động lực ỷ lại vào người khác.",
+        "Thiết kế lại cơ chế (Incentive Design): Phân rã dự án thành các module độc lập gắn tên người phụ trách; có biên bản nghiệm thu tiến độ hàng tuần.",
+        "Thiết lập cam kết đáng tin cậy: Thỏa thuận rõ ràng ngay từ ngày đầu: Phần việc của ai không đạt sẽ phải tự báo cáo trước thầy cô."
       ],
-      "exercise_prompt": "Thiết kế cơ chế giải quyết bài toán lười biếng trong nhóm dựa trên phân tích động lực và lý thuyết trò chơi.",
-      "hint": "Khi kết quả không như ý, đừng vội trách con người, hãy nhìn lại cơ chế phân bổ quyền lợi và trách nhiệm của hệ thống.",
-      "related_principle": "Lý thuyết Trò chơi & Động lực hành vi (Incentives)"
+      "exercise_prompt": "Thiết kế bản Quy ước Nhóm (Team Charter) gồm 3 điều khoản dựa trên lý thuyết trò chơi để triệt tiêu hoàn toàn sự ỷ lại.",
+      "hint": "Đừng kêu gọi sự tự giác mơ hồ, hãy tạo ra một hệ thống mà tại đó làm việc chăm chỉ là lựa chọn có lợi nhất cho mỗi người.",
+      "related_principle": "Lý thuyết Trò chơi & Thiết kế Cơ chế Động lực"
+    },
+    {
+      "id": "g10_c2_02",
+      "track": "grade_10",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 05: Tư duy Thực nghiệm Nhanh (Lean MVP) tổ chức sự kiện học đường",
+      "mode": "Empirical",
+      "objective": "Áp dụng tư duy khởi nghiệp tinh gọn (Lean Startup) vào các hoạt động và dự án câu lạc bộ tại trường.",
+      "situation": "CLB của bạn muốn tổ chức một ngày hội khoa học lớn tốn 50 triệu đồng kinh phí. Ban giám hiệu ngần ngại chưa phê duyệt vì sợ không có học sinh tham gia.",
+      "guide_steps": [
+        "Tạo sản phẩm khả thi tối thiểu (MVP): Tổ chức một buổi thử nghiệm mini (Workshop 1 gian hàng trong giờ ra chơi) với kinh phí 500.000đ.",
+        "Đo lường dữ liệu thực tế: Đếm số lượng học sinh ghé thăm, chụp ảnh và thu thập 50 phiếu đăng ký quan tâm.",
+        "Trình bày dữ liệu đã được chứng minh thực nghiệm để thuyết phục Ban giám hiệu cấp ngân sách chính thức."
+      ],
+      "exercise_prompt": "Thiết kế một thử nghiệm MVP chi phí thấp để kiểm chứng một ý tưởng dự án học sinh của bạn trước khi xin tài trợ lớn.",
+      "hint": "Một ounce dữ liệu thực nghiệm luôn có giá trị hơn một tấn ý kiến chủ quan trên giấy.",
+      "related_principle": "Sản phẩm Khả thi Tối thiểu (MVP) & Thực nghiệm"
+    },
+    {
+      "id": "g10_c2_03",
+      "track": "grade_10",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 06: Quản trị Rủi ro cá nhân & Vùng an toàn (Margin of Safety)",
+      "mode": "Inversion + Second-order",
+      "objective": "Thiết lập quỹ thời gian và nguồn lực dự phòng để không bao giờ bị rơi vào tình trạng khủng hoảng deadline.",
+      "situation": "Tuần tới bạn có 3 bài thi lớn, 1 bài thuyết trình tiếng Anh và 1 buổi tập biểu diễn dạ hội. Mọi thứ đang chồng chéo và bạn không có một giờ rảnh nào.",
+      "guide_steps": [
+        "Áp dụng nguyên lý Biên an toàn (Margin of Safety): Trong kỹ thuật, cây cầu chịu tải 10 tấn luôn được thiết kế để chịu được 30 tấn.",
+        "Ước lượng thời gian theo hệ số 1.5x: Một bài tập bạn nghĩ mất 2 tiếng, hãy dự trù 3 tiếng trong lịch biểu.",
+        "Cắt giảm bớt các cam kết không khẩn cấp để tạo ra khoảng đệm thời gian phục hồi năng lượng."
+      ],
+      "exercise_prompt": "Phân tích lịch trình tuần này của bạn và chỉ ra nơi bạn cần bổ sung 'Biên an toàn' thời gian để phòng ngừa sự cố bất ngờ.",
+      "hint": "Căng thẳng không đến từ việc có nhiều việc phải làm, mà đến từ việc không có khoảng đệm dự phòng khi có biến số xảy ra.",
+      "related_principle": "Biên An Toàn (Margin of Safety)"
     },
     {
       "id": "g10_c3_01",
       "track": "grade_10",
       "level_code": "level_3",
       "level": "Nâng cao",
-      "title": "Bài 3: Chiến lược Quả tạ (Barbell) xây dựng tương lai nghề nghiệp",
-      "mode": "Optionality / Antifragility",
-      "objective": "Xây dựng sự nghiệp theo mô hình antifragile: một đầu cực kỳ an toàn vững chắc, một đầu thử nghiệm mạo hiểm với tiềm năng bùng nổ.",
-      "situation": "Bạn đứng trước ngã rẽ: Đi theo con đường truyền thống an toàn hay theo đuổi đam mê khởi nghiệp công nghệ / AI nhiều rủi ro?",
+      "title": "Bài 07: Chiến lược Quả tạ (Barbell) định vị nghề nghiệp trong kỷ nguyên AI",
+      "mode": "Optionality",
+      "objective": "Xây dựng portfolio kỹ năng theo mô hình bất đối xứng lồi (Convex Asymmetry) của Nassim Taleb.",
+      "situation": "Bạn chuẩn bị chọn định hướng nghề nghiệp dài hạn. Các công việc truyền thống đang đứng trước nguy cơ bị tự động hóa nhanh chóng.",
       "guide_steps": [
-        "Áp dụng Barbell của Nassim Taleb: 80% nền tảng cực kỳ vững chắc (kỹ năng cốt lõi: Toán, ngoại ngữ, tư duy logic, bằng cấp chuẩn mực).",
-        "20% nguồn lực dành cho các thể nghiệm bất đối xứng (học lập trình AI, tự tạo sản phẩm web/app, viết blog chuyên sâu).",
-        "Rủi ro tối đa nếu thử nghiệm thất bại là gì? Phần thưởng nếu thành công lớn đến mức nào?"
+        "Đầu 1 (80% cực kỳ chắc chắn): Nền tảng học thuật cốt lõi (Toán học, Ngoại ngữ thành thạo, Tư duy phản biện, Bằng cấp chuẩn chỉ).",
+        "Đầu 2 (20% thể nghiệm có tiềm năng vô hạn): Tự học xây dựng ứng dụng AI, viết blog chuyên ngành, xây dựng thương hiệu cá nhân hoặc sáng tạo nội dung trí tuệ.",
+        "Triệt tiêu rủi ro diệt vong: Tránh xa các công việc lặp đi lặp lại không có tính độc bản."
       ],
-      "exercise_prompt": "Thiết kế kế hoạch Barbell cá nhân cho 2 năm tới: (1) 80% phần chắc chắn là gì? (2) 20% thể nghiệm bất đối xứng có tiềm năng vô hạn là gì?",
-      "hint": "Đừng chọn giữa an toàn hoặc mạo hiểm. Hãy chọn cả hai ở hai đầu cực đoan, tránh rơi vào khoảng giữa tầm thường.",
+      "exercise_prompt": "Vẽ bản đồ chiến lược Barbell cho bản thân trong 3 năm cấp 3: Đâu là 80% an toàn và đâu là 20% thể nghiệm bùng nổ?",
+      "hint": "Đừng đứng ở giữa vùng an toàn giả tạo. Hãy đứng vững chãi ở đầu an toàn tuyệt đối và thỏa sức vươn tay ở đầu mạo hiểm có tiềm năng vô hạn.",
       "related_principle": "Optionality & Chiến lược Quả tạ Barbell"
+    },
+    {
+      "id": "g10_c3_02",
+      "track": "grade_10",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 08: Kiến tạo Mạng lưới Mô hình Đa ngành (Latticework) giải quyết vấn đề lớn",
+      "mode": "Mental Models",
+      "objective": "Kết hợp cùng lúc các nguyên lý từ Vật lý, Sinh học, Tâm lý học và Kinh tế học vào một đề án xã hội.",
+      "situation": "Bạn tham gia cuộc thi sáng kiến cộng đồng về 'Giải pháp giảm rác thải nhựa tại các trường học song ngữ ở Hà Nội'.",
+      "guide_steps": [
+        "Soi qua lăng kính Vật lý (Entropy): Sự bừa bãi và tiêu thụ tiện lợi là xu hướng tự nhiên nếu không có năng lượng duy trì trật tự.",
+        "Soi qua lăng kính Tâm lý học (Default Bias): Con người luôn chọn phương án mặc định dễ nhất (nếu thùng rác phân loại ở xa, họ sẽ vứt bừa).",
+        "Soi qua lăng kính Kinh tế học (Incentives): Thiết kế cơ chế tích điểm đổi quà khi học sinh mang bình nước cá nhân.",
+        "Tổng hợp giải pháp hệ thống đa chiều vượt trên việc kêu gọi ý thức suông."
+      ],
+      "exercise_prompt": "Tổng hợp một đề án giải quyết rác thải nhựa trường học bằng cách kết hợp ít nhất 3 mô hình tư duy đa ngành.",
+      "hint": "Giải pháp đơn ngành chỉ chữa triệu chứng; giải pháp đa ngành mới chạm tới tận gốc rễ của hệ thống.",
+      "related_principle": "Latticework of Mental Models"
+    },
+    {
+      "id": "g10_c3_03",
+      "track": "grade_10",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 09: Xây dựng Đội quân Một người bằng Đòn bẩy Công nghệ AI",
+      "mode": "Leverage + AI Literacy",
+      "objective": "Áp dụng triết lý đòn bẩy công nghệ của Naval Ravikant để tạo ra sản phẩm thực tế phục vụ cộng đồng.",
+      "situation": "Bạn có ý tưởng tạo một trang web chia sẻ kinh nghiệm học tập và tài liệu ôn thi chất lượng cao cho các bạn học sinh trong trường.",
+      "guide_steps": [
+        "Nhận thức đòn bẩy Code & AI: Không cần xin phép ai, bạn có thể dùng các công cụ lập trình AI để dựng website trong 2 ngày.",
+        "Chi phí cận biên bằng 0 (Zero Marginal Cost of Replication): Một bài viết hay, một ứng dụng tốt có thể phục vụ 10 bạn hoặc 10.000 bạn mà không tốn thêm công sức.",
+        "Kết hợp chuyên môn sâu của bạn với sức mạnh khuếch đại của AI để tạo ra giá trị thực sự."
+      ],
+      "exercise_prompt": "Mô tả một công cụ / sản phẩm số bạn có thể xây dựng bằng AI trong vòng 1 tuần giúp ích cho cộng đồng học sinh Wellspring.",
+      "hint": "Trong thế kỷ 21, một học sinh cấp 3 có tư duy First Principles và làm chủ AI có năng suất tương đương một phòng ban công nghệ ngày xưa.",
+      "related_principle": "Đòn bẩy Không Cần Xin Phép (Naval Ravikant)"
+    },
+    {
+      "id": "g10_c3_04",
+      "track": "grade_10",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 10: Dũng cảm bị hiểu lầm trong ngắn hạn vì Tầm nhìn dài hạn",
+      "mode": "Multi-timescale",
+      "objective": "Xây dựng sự độc lập tư tưởng, kiên định theo đuổi nguyên lý cốt lõi bất chấp sự hoài nghi của đám đông.",
+      "situation": "Bạn quyết định dành 1 năm lớp 10 để tự học sâu về trí tuệ nhân tạo và toán ứng dụng thay vì đi luyện thi các giải đấu phong trào ngắn hạn. Một số người xung quanh cho rằng bạn đang lãng phí thời gian.",
+      "guide_steps": [
+        "Nhìn từ khung thời gian 10 năm: Năng lực tự học và tư duy toán - công nghệ sẽ là tài sản vô giá khi bạn 25 tuổi.",
+        "Chấp nhận quy luật của Jeff Bezos: 'Nếu bạn muốn sáng tạo điều gì có giá trị thật sự, bạn phải sẵn sàng chịu bị hiểu lầm trong một thời gian dài'.",
+        "Tập trung vào dữ liệu tiến bộ nội tại thay vì tìm kiếm sự tán thưởng hời hợt từ bên ngoài."
+      ],
+      "exercise_prompt": "Viết bức thư gửi cho chính mình 10 năm sau giải thích vì sao lựa chọn kiên trì theo đuổi kỹ năng gốc rễ hôm nay là hoàn toàn xứng đáng.",
+      "hint": "Sự tán thưởng của đám đông thường đến chậm hơn sự thật 5-10 năm. Hãy trung thành với các quy luật tự nhiên, không phải xu hướng đám đông.",
+      "related_principle": "Đa quy mô Thời gian & Sự Độc lập Tư tưởng"
+    },
+    {
+      "id": "g10_c1_04",
+      "track": "grade_10",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 11: Vòng tròn Năng lực (Circle of Competence) khi chọn định hướng",
+      "mode": "Mental Models",
+      "objective": "Biết rõ đâu là ranh giới thế mạnh thực sự của mình và dũng cảm nói không với những lĩnh vực bản thân không có lợi thế tự nhiên.",
+      "situation": "Lên lớp 10, nhiều cơ hội mở ra: Tham gia thi tranh biện tiếng Anh, học lập trình AI, tham gia giải Toán tài chính, thi vẽ kiến trúc. Bạn muốn thử tất cả nhưng bắt đầu bị quá tải và kết quả mờ nhạt.",
+      "guide_steps": [
+        "Vẽ sơ đồ Vòng tròn Năng lực: Liệt kê những môn học hoặc kỹ năng bạn làm với nỗ lực bình thường nhưng luôn đạt kết quả vượt trội so với bạn bè.",
+        "Xác định ranh giới (Edge): Điều quan trọng không phải là vòng tròn của bạn lớn bao nhiêu, mà là bạn biết chính xác chu vi của nó nằm ở đâu (Warren Buffett).",
+        "Tập trung đầu tư chuyên sâu: Dồn 80% thời gian rèn giũa bên trong vòng tròn để trở thành top 5% xuất sắc nhất."
+      ],
+      "exercise_prompt": "Vẽ và mô tả Vòng tròn Năng lực cá nhân của bạn trong năm lớp 10: 2 kỹ năng cốt lõi bên trong vòng tròn và 2 lĩnh vực bạn chấp nhận đứng ngoài.",
+      "hint": "Biết những gì mình không biết còn quan trọng hơn là tỏ ra biết tất cả mọi thứ.",
+      "related_principle": "Vòng tròn Năng lực (Circle of Competence)"
+    },
+    {
+      "id": "g10_c2_04",
+      "track": "grade_10",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 12: Vòng lặp Phản hồi (Feedback Loops) trong quản trị năng lượng",
+      "mode": "First Principles + Systems Thinking",
+      "objective": "Xây dựng hệ thống tự điều chỉnh thói quen dựa trên vòng lặp phản hồi âm (Negative Feedback Loop) và dương (Positive Feedback Loop).",
+      "situation": "Sau mỗi đợt kiểm tra lớn, bạn thường bị 'kiệt quệ năng lượng' (Burnout), sau đó lười biếng 2 tuần rồi lại cuống cuồng thức đêm cày cuốc cho đợt tiếp theo.",
+      "guide_steps": [
+        "Nhận diện vòng lặp tai hại: Thức đêm → Mệt mỏi ngày hôm sau → Năng suất giảm → Trì hoãn → Lại thức đêm (Vòng lặp khuếch đại tiêu cực).",
+        "Thiết kế cơ chế tự cân bằng: Thiết lập quy tắc giới hạn cứng (đi ngủ trước 23h bất kể bài vở) để duy trì nền tảng thể lực ổn định.",
+        "Thiết lập chỉ số báo động sớm (Early Warning Signal): Mỗi khi phát hiện bỏ lỡ 2 buổi tập thể dục hoặc ăn uống thất thường 2 ngày liên tiếp, lập tức kích hoạt chế độ phục hồi."
+      ],
+      "exercise_prompt": "Vẽ sơ đồ vòng lặp năng lượng của bạn trong tháng vừa qua và thiết kế 1 quy tắc phản hồi giúp ngăn chặn tình trạng kiệt sức.",
+      "hint": "Người làm việc chuyên nghiệp không quản lý thời gian, họ quản lý năng lượng và nhịp sinh học của hệ thống cơ thể.",
+      "related_principle": "Tư duy Hệ thống & Vòng lặp Phản hồi"
+    },
+    {
+      "id": "g10_c3_05",
+      "track": "grade_10",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 13: Tư duy Chống gãy vụn (Antifragility) — Biến thất bại thành bàn đạp",
+      "mode": "Optionality / Antifragility",
+      "objective": "Không chỉ 'chống chịu' trước sóng gió (Resilient), mà thực sự 'hưởng lợi và tiến hóa mạnh mẽ hơn' sau mỗi cú sốc hay thất bại.",
+      "situation": "Bạn dẫn dắt một nhóm tham gia cuộc thi sáng tạo khoa học kỹ thuật cấp thành phố nhưng đề án bị trượt ngay từ vòng loại đầu tiên. Toàn đội chán nản muốn giải tán.",
+      "guide_steps": [
+        "Phân biệt 3 trạng thái: Dễ vỡ (Fragile — vỡ nát khi va đập), Bền bỉ (Robust — giữ nguyên trạng), Chống gãy vụn (Antifragile — hấp thụ va đập để trở nên mạnh mẽ hơn).",
+        "Trích xuất thông tin từ cú sốc: Thất bại là nguồn dữ liệu chân thực nhất cho biết giải pháp cũ có lỗ hổng gì mà trong phòng thí nghiệm bạn không nhìn thấy.",
+        "Tái cấu trúc và nâng cấp: Lấy toàn bộ biên bản nhận xét gắt gao của ban giám khảo làm danh mục cải tiến và hoàn thiện phiên bản 2.0 vượt trội."
+      ],
+      "exercise_prompt": "Phân tích một thất bại hoặc điểm số kém gần đây nhất của bạn theo lăng kính Antifragility: Bạn đã chiết xuất được bài học gì để bản thân tiến hóa lên cấp độ mới?",
+      "hint": "Gió dập tắt ngọn nến nhưng lại thổi bùng ngọn lửa lớn. Hãy biến mình thành ngọn lửa khao khát những cơn gió thử thách (Nassim Taleb).",
+      "related_principle": "Antifragility (Chống gãy vụn)"
     }
   ],
   "trading": [
@@ -218,7 +760,7 @@
       "track": "trading",
       "level_code": "level_1",
       "level": "Cơ bản",
-      "title": "Bài 1: Tư duy xác suất & Kỳ vọng toán học (Expected Value)",
+      "title": "Bài 01: Tư duy xác suất & Kỳ vọng toán học (Expected Value)",
       "mode": "Bayesian + Probabilistic",
       "objective": "Loại bỏ tư duy đúng/sai trong từng lệnh; nhìn nhận trading là chuỗi quyết định có kỳ vọng dương (EV > 0).",
       "situation": "Bạn giao dịch Vàng (XAU/USD) theo hệ thống có tỷ lệ thắng 45% nhưng Risk:Reward là 1:2. Sau 3 lệnh thua liên tiếp, bạn hoảng loạn hủy bỏ kỷ luật và đánh lệnh lớn để gỡ gạc.",
@@ -232,11 +774,29 @@
       "related_principle": "Tư duy Xác suất & Expected Value"
     },
     {
+      "id": "tr_c1_02",
+      "track": "trading",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 02: Tư duy Đảo ngược: Làm sao để chắc chắn cháy tài khoản?",
+      "mode": "Inversion",
+      "objective": "Liệt kê các hành vi tự sát tài chính phổ biến nhất của trader để lập quy tắc cấm chỉ tuyệt đối.",
+      "situation": "Thống kê cho thấy hơn 90% trader cá nhân thua lỗ trên thị trường Forex và Crypto đòn bẩy trong năm đầu tiên.",
+      "guide_steps": [
+        "Liệt kê 4 cách nhanh nhất để tài khoản về 0: Nhồi lệnh khi đang lỗ (Martingale), không đặt Stoploss, dùng đòn bẩy tối đa 100x, vào lệnh trả thù sau khi thua.",
+        "Thiết kế bản cam kết kỷ luật 'Quy tắc Thép' loại bỏ 100% các hành vi trên.",
+        "Quy định mức lỗ tối đa trong ngày (Daily Loss Limit): Chạm 3% là tắt máy nghỉ ngơi."
+      ],
+      "exercise_prompt": "Viết 4 quy tắc 'Tuyệt đối Không làm' của bạn trước khi bước vào bất kỳ phiên giao dịch nào.",
+      "hint": "Chỉ cần bạn sống sót và không bao giờ tự hủy hoại mình, cơ hội kiếm lợi nhuận sẽ luôn xuất hiện trên thị trường.",
+      "related_principle": "Inversion & Bản cam kết Kỷ luật"
+    },
+    {
       "id": "tr_c2_01",
       "track": "trading",
       "level_code": "level_2",
       "level": "Thực hành",
-      "title": "Bài 2: Quản trị rủi ro bất đối xứng (Asymmetric Risk) trong FX & BTC",
+      "title": "Bài 03: Quản trị rủi ro bất đối xứng (Asymmetric Risk) trong FX & BTC",
       "mode": "Optionality / Antifragility",
       "objective": "Bảo vệ vốn tuyệt đối khi thị trường bất lợi và tối đa hóa lợi nhuận khi thị trường vào sóng lớn.",
       "situation": "Bitcoin đang tích lũy biên độ hẹp trước thềm tin tức vĩ mô quan trọng. Nhiều trader dùng đòn bẩy cao 50x để cá cược hướng đi.",
@@ -254,7 +814,7 @@
       "track": "trading",
       "level_code": "level_3",
       "level": "Nâng cao",
-      "title": "Bài 3: Cập nhật Bayesian & Thanh khoản Smart Money trong thực chiến",
+      "title": "Bài 04: Cập nhật Bayesian & Thanh khoản Smart Money trong thực chiến",
       "mode": "Bayesian + Game theory",
       "objective": "Đọc vị dòng tiền tạo lập (Liquidity Hunt) và liên tục hiệu chỉnh xác suất kịch bản khi nến mới xuất hiện.",
       "situation": "Giá Vàng phá vỡ đỉnh cũ nhưng rút chân tạo nến pin bar đảo chiều kèm khối lượng cực lớn tại phiên New York.",
@@ -274,7 +834,7 @@
       "track": "ckvn",
       "level_code": "level_1",
       "level": "Cơ bản",
-      "title": "Bài 1: Bóc tách bản chất chu kỳ kinh tế và định giá thực chất",
+      "title": "Bài 01: Bóc tách bản chất chu kỳ kinh tế và định giá thực chất",
       "mode": "First Principles",
       "objective": "Loại bỏ tiếng ồn từ hội nhóm diễn đàn, nhìn thẳng vào cung tiền, lãi suất và lợi nhuận cốt lõi của doanh nghiệp.",
       "situation": "VN-Index điều chỉnh mạnh, các hội nhóm Zalo hô hào thị trường sụp đổ về thời kỳ đồ đá. Một cổ phiếu đầu ngành bạn theo dõi giảm 30% trong khi tăng trưởng lợi nhuận vẫn đạt 25%/năm.",
@@ -292,7 +852,7 @@
       "track": "ckvn",
       "level_code": "level_2",
       "level": "Thực hành",
-      "title": "Bài 2: VSA & Nhận diện hành vi Dòng tiền Lớn (Smart Money)",
+      "title": "Bài 02: VSA & Nhận diện hành vi Dòng tiền Lớn (Smart Money)",
       "mode": "Second-order + Empirical",
       "objective": "Phân tích mối quan hệ giữa Khối lượng (Volume) và Biên độ giá (Spread) để phát hiện dấu chân tạo lập.",
       "situation": "Cổ phiếu ngành thép xuất hiện phiên giảm sàn với thanh khoản kỷ lục gấp 4 lần bình quân 20 phiên, sau đó các phiên sau giá ngừng giảm dù tin xấu vẫn tràn ngập báo chí.",
@@ -310,7 +870,7 @@
       "track": "ckvn",
       "level_code": "level_3",
       "level": "Nâng cao",
-      "title": "Bài 3: Tư duy Đa quy mô thời gian trong chu kỳ thị trường chứng khoán",
+      "title": "Bài 03: Tư duy Đa quy mô thời gian trong chu kỳ thị trường chứng khoán",
       "mode": "Multi-timescale",
       "objective": "Kết hợp hài hòa giữa nhịp sóng ngắn hạn (tuần/tháng) và chu kỳ kinh tế vĩ mô lớn (3-5 năm).",
       "situation": "Bạn nắm giữ danh mục cổ phiếu ngân hàng và bán lẻ có triển vọng 3 năm rất sáng, nhưng trong 2 tuần gần đây áp lực tỷ giá khiến khối ngoại bán ròng liên tục.",
@@ -330,7 +890,7 @@
       "track": "neuroscience",
       "level_code": "level_1",
       "level": "Cơ bản",
-      "title": "Bài 1: Giải mã vòng lặp Dopamine & Nghiện kích thích ngắn hạn",
+      "title": "Bài 01: Giải mã vòng lặp Dopamine & Nghiện kích thích ngắn hạn",
       "mode": "First Principles",
       "objective": "Hiểu bản chất dopamine không phải là hoóc-môn hạnh phúc mà là hoóc-môn của sự thèm muốn và tìm kiếm phần thưởng.",
       "situation": "Bạn liên tục mở điện thoại xem thông báo Facebook, TikTok hoặc đồ thị giá coin mỗi 5 phút dù biết việc đó làm lãng phí hàng giờ mỗi ngày.",
@@ -348,7 +908,7 @@
       "track": "neuroscience",
       "level_code": "level_2",
       "level": "Thực hành",
-      "title": "Bài 2: Làm chủ Hệ thống 1 (Nhanh) và Hệ thống 2 (Chậm)",
+      "title": "Bài 02: Làm chủ Hệ thống 1 (Nhanh) và Hệ thống 2 (Chậm)",
       "mode": "Mental Models",
       "objective": "Nhận biết khi nào não bộ đang bị chiếm quyền bởi cảm xúc tiềm thức và chủ động kích hoạt tư duy phản biện.",
       "situation": "Bạn nhận được một lời chào mời đầu tư 'cơ hội duy nhất trong đời chỉ còn 30 phút để nạp tiền'. Tim bạn đập nhanh và cảm thấy thôi thúc phải hành động ngay.",
@@ -366,7 +926,7 @@
       "track": "neuroscience",
       "level_code": "level_3",
       "level": "Nâng cao",
-      "title": "Bài 3: Tính mềm dẻo não bộ (Neuroplasticity) & Tái cấu trúc tư duy",
+      "title": "Bài 03: Tính mềm dẻo não bộ (Neuroplasticity) & Tái cấu trúc tư duy",
       "mode": "Empirical + Iterative",
       "objective": "Hiểu cơ chế não bộ có thể tự tái dây chuyền kết nối thần kinh (Rewiring) thông qua thực hành có chủ đích.",
       "situation": "Bạn từng tin rằng mình 'vốn không có năng khiếu học ngoại ngữ / không giỏi môn kỹ thuật' và coi đó là định mệnh không thể thay đổi.",
@@ -386,7 +946,7 @@
       "track": "buddhism",
       "level_code": "level_1",
       "level": "Cơ bản",
-      "title": "Bài 1: Nguyên lý Vô thường (Anicca) & Chấp nhận biến động khách quan",
+      "title": "Bài 01: Nguyên lý Vô thường (Anicca) & Chấp nhận biến động khách quan",
       "mode": "First Principles",
       "objective": "Nhận ra mọi trạng thái (thành công, thất bại, thị trường uptrend hay downtrend) đều mang tính chuyển dịch liên tục.",
       "situation": "Sau một chuỗi thắng lớn trong công việc hoặc đầu tư, bạn cảm thấy hưng phấn tột độ và bắt đầu tin rằng mình không bao giờ có thể sai lầm.",
@@ -404,7 +964,7 @@
       "track": "buddhism",
       "level_code": "level_2",
       "level": "Thực hành",
-      "title": "Bài 2: Nhân - Duyên - Quả (Duyên khởi) trong quản trị quyết định",
+      "title": "Bài 02: Nhân - Duyên - Quả (Duyên khởi) trong quản trị quyết định",
       "mode": "Second-order + System Thinking",
       "objective": "Hiểu rằng kết quả (Quả) không chỉ do một nguyên nhân (Nhân) quyết định, mà phụ thuộc vào tập hợp các điều kiện hội tụ (Duyên).",
       "situation": "Bạn khởi nghiệp hoặc đầu tư một thương vụ chuẩn bị rất kỹ (Nhân tốt) nhưng gặp đúng giai đoạn dịch bệnh hoặc khủng hoảng kinh tế (Duyên xấu) dẫn đến thua lỗ.",
@@ -422,7 +982,7 @@
       "track": "buddhism",
       "level_code": "level_3",
       "level": "Nâng cao",
-      "title": "Bài 3: Chánh niệm (Mindfulness) & Thanh lọc Tham - Sân - Si",
+      "title": "Bài 03: Chánh niệm (Mindfulness) & Thanh lọc Tham - Sân - Si",
       "mode": "Inversion + Cognitive Detachment",
       "objective": "Quan sát tâm trí không phán xét, tách rời cảm xúc cá nhân ra khỏi dữ liệu thực tế khi ra quyết định lớn.",
       "situation": "Bạn đang tức giận vì một đối tác thất hứa, đồng thời thị trường đang biến động dữ dội. Bạn cảm thấy thôi thúc muốn gửi tin nhắn gay gắt và xả tài khoản.",
@@ -442,7 +1002,7 @@
       "track": "ai_tech",
       "level_code": "level_1",
       "level": "Cơ bản",
-      "title": "Bài 1: Bóc tách bản chất mô hình ngôn ngữ lớn (LLMs)",
+      "title": "Bài 01: Bóc tách bản chất mô hình ngôn ngữ lớn (LLMs)",
       "mode": "First Principles",
       "objective": "Hiểu cốt lõi kỹ thuật của AI: Là cỗ máy thống kê dự đoán từ tiếp theo (Next-token prediction), không phải thực thể có ý thức.",
       "situation": "Nhiều người thần thánh hóa AI như một vị thần thông thái biết hết mọi sự thật, hoặc sợ hãi AI sẽ tự hủy diệt loài người vào ngày mai.",
@@ -460,7 +1020,7 @@
       "track": "ai_tech",
       "level_code": "level_2",
       "level": "Thực hành",
-      "title": "Bài 2: Kiến trúc Hệ thống Tự hành Agentic Workflows",
+      "title": "Bài 02: Kiến trúc Hệ thống Tự hành Agentic Workflows",
       "mode": "Second-order + Leverage",
       "objective": "Chuyển từ việc dùng AI như chatbot hỏi-đáp sang xây dựng chuỗi Agent đa nhiệm tự động hóa công việc phức tạp.",
       "situation": "Bạn muốn theo dõi tin tức tài chính, phân tích báo cáo và tạo tóm tắt mỗi sáng. Làm thủ công từng câu lệnh mất 45 phút mỗi ngày.",
@@ -478,7 +1038,7 @@
       "track": "ai_tech",
       "level_code": "level_3",
       "level": "Nâng cao",
-      "title": "Bài 3: Tư duy Đòn bẩy Không Cần Xin Phép (Leverage Without Permission)",
+      "title": "Bài 03: Tư duy Đòn bẩy Không Cần Xin Phép (Leverage Without Permission)",
       "mode": "Optionality + Leverage",
       "objective": "Áp dụng triết lý của Naval Ravikant: Dùng Code, Media và AI để tạo ra giá trị khổng lồ với chi phí cận biên bằng 0.",
       "situation": "Trước đây để xây dựng một sản phẩm phục vụ 10.000 người, bạn cần thuê 10 nhân viên, thuê văn phòng và xin vốn đầu tư.",

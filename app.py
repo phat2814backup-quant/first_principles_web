@@ -567,45 +567,35 @@ with tabs[3]:
     # Lấy danh sách bài học thuộc track và level đã chọn
     lessons = get_lessons_by_track(sel_track_id, sel_level_code)
 
-    # ---------- AI Generator Expander ----------
-    with st.expander("✨ AI Mentor: Tự động tạo thêm bài tập mới (Tạo 30-50+ bài không giới hạn)", expanded=False):
-        st.markdown(f"**Sinh bài tập mới bằng AI cho:** `{track_options[sel_track_id]}` · Mức `{sel_level_name}`")
-        custom_topic = st.text_input(
-            "Gợi ý chủ đề / tình huống bạn muốn rèn luyện thêm (tùy chọn):",
-            placeholder="vd: Bài tập nhóm STEM lớp 10, quản lý lệnh Vàng phiên Mỹ, giữ tĩnh lặng khi đối tác thất hứa...",
-            key=f"topic_input_{sel_track_id}_{sel_level_code}",
-        )
-        if st.button("🚀 Bấm để AI tạo bài tập mới ngay", key=f"btn_gen_{sel_track_id}_{sel_level_code}", type="primary"):
-            if not active_keys:
-                st.warning("Cần API Key để sinh bài tập.")
-            else:
-                with st.spinner("AI Mentor đang thiết kế bài tập tình huống thực chiến độc bản..."):
-                    new_lesson = generate_dynamic_lesson(
-                        api_keys=active_keys,
-                        model_name=model_choice,
-                        track_title=track_options[sel_track_id],
-                        level_code=sel_level_code,
-                        level_name=sel_level_name,
-                        custom_topic=custom_topic.strip(),
-                    )
-                if new_lesson and not new_lesson.get("error"):
-                    add_custom_lesson(sel_track_id, new_lesson, updated_by=username)
-                    st.success(f"🎉 Đã tạo thành công bài tập: **{new_lesson.get('title')}**!")
-                    st.rerun()
-                else:
-                    st.error(new_lesson.get("error", "Lỗi khi sinh bài tập."))
+    hist = load_user_history(username)
+    user_training = hist.get("training", {})
+    done_count = sum(1 for l in lessons if l["id"] in user_training)
+    total_count = len(lessons)
+
+    # Thanh trạng thái tiến độ cấp độ
+    c_p1, c_p2 = st.columns([3, 1])
+    with c_p1:
+        st.progress(done_count / max(total_count, 1))
+    with c_p2:
+        st.caption(f"Tiến độ cấp độ: **{done_count}/{total_count}** bài")
+
+    st.info("💡 **Lời khuyên sư phạm:** Học viên nên hoàn thành toàn bộ các **bài tập nền tảng có sẵn** bên dưới trước để nắm vững phương pháp cốt lõi và tiết kiệm API. Sau khi đã nắm vững, hãy mở mục *'AI Mentor: Luyện tập Mở rộng'* phía dưới để tự yêu cầu ra thêm đề theo tình huống thực tế!")
 
     if not lessons:
-        st.info("Chưa có bài tập nào trong cấp độ này. Hãy mở khung 'AI Mentor' ở trên và bấm tạo bài tập mới!")
+        st.warning("Chưa có bài tập nào trong cấp độ này. Hãy mở mục AI Mentor bên dưới để tạo bài tập đầu tiên!")
     else:
-        lesson_titles = [f"{l['id']} — {l['title']} ({l.get('mode', '')})" for l in lessons]
+        def format_lesson_title(l: dict) -> str:
+            done_icon = "✅" if l["id"] in user_training else "📖"
+            is_ai = " [✨ AI]" if l.get("created_by") == "AI" or "_ai_" in l.get("id", "") else ""
+            return f"{done_icon} {l.get('title', l['id'])} — ({l.get('mode', '')}){is_ai}"
+
         choice = st.selectbox(
-            f"Chọn bài tập ({len(lessons)} bài khả dụng trong cấp độ này)",
-            lesson_titles,
+            f"📚 Lộ trình bài tập ({len(lessons)} bài khả dụng)",
+            options=lessons,
+            format_func=format_lesson_title,
             key=f"sel_lesson_{sel_track_id}_{sel_level_code}",
         )
-        idx = lesson_titles.index(choice)
-        lesson = lessons[idx]
+        lesson = choice
 
         st.subheader(lesson["title"])
         st.caption(f"Chế độ: **{lesson.get('mode')}** · Mức: **{lesson.get('level')}** · ID: `{lesson.get('id')}`")
@@ -627,8 +617,7 @@ with tabs[3]:
         st.write(lesson.get("exercise_prompt", ""))
 
         # Load previous answer if any
-        hist = load_user_history(username)
-        prev = hist.get("training", {}).get(lesson["id"], {})
+        prev = user_training.get(lesson["id"], {})
         prev_answer = prev.get("answer", "")
         prev_feedback = prev.get("feedback", "")
 
@@ -656,8 +645,39 @@ with tabs[3]:
             st.markdown("#### Feedback từ AI Mentor")
             st.success(prev_feedback)
 
-        # Progress overview
-        st.divider()
+    # ---------- AI Generator Expander (Mở rộng sau khi học cơ bản) ----------
+    st.divider()
+    with st.expander("🚀 AI Mentor: Luyện tập Mở rộng & Tự yêu cầu ra đề mới (Tùy biến không giới hạn)", expanded=False):
+        st.markdown(f"**Sinh đề bài tình huống mới tinh cho:** `{track_options[sel_track_id]}` · Mức `{sel_level_name}`")
+        if done_count == 0:
+            st.caption("🌱 *Gợi ý:* Bạn chưa hoàn thành bài nền tảng nào ở cấp độ này. Nên làm thử bài 01, 02 ở trên trước nhé!")
+        else:
+            st.caption(f"🌟 Tuyệt vời! Bạn đã hoàn thành {done_count} bài nền tảng. Hãy nhập tình huống bạn muốn thử thách thêm:")
+
+        custom_topic = st.text_input(
+            "Chủ đề hoặc tình huống bạn muốn AI ra đề thử thách (tùy chọn):",
+            placeholder="vd: Bài tập nhóm STEM lớp 10, quản lý lệnh Vàng phiên Mỹ, kiềm chế cơn giận khi bị chỉ trích...",
+            key=f"topic_input_{sel_track_id}_{sel_level_code}",
+        )
+        if st.button("✨ Yêu cầu AI sinh bài tập mở rộng ngay", key=f"btn_gen_{sel_track_id}_{sel_level_code}", type="primary"):
+            if not active_keys:
+                st.warning("Cần API Key để sinh bài tập.")
+            else:
+                with st.spinner("AI Mentor đang thiết kế bài tập tình huống thực chiến độc bản..."):
+                    new_lesson = generate_dynamic_lesson(
+                        api_keys=active_keys,
+                        model_name=model_choice,
+                        track_title=track_options[sel_track_id],
+                        level_code=sel_level_code,
+                        level_name=sel_level_name,
+                        custom_topic=custom_topic.strip(),
+                    )
+                if new_lesson and not new_lesson.get("error"):
+                    add_custom_lesson(sel_track_id, new_lesson, updated_by="AI")
+                    st.success(f"🎉 Đã tạo thành công bài tập mở rộng: **{new_lesson.get('title')}**!")
+                    st.rerun()
+                else:
+                    st.error(new_lesson.get("error", "Lỗi khi sinh bài tập."))
         st.markdown(f"#### Tiến độ rèn luyện cấp độ này ({sel_level_name})")
         done = 0
         for l in lessons:
