@@ -210,3 +210,93 @@ Câu trả lời của học sinh:
                 continue
 
     return f"Lỗi khi tạo feedback (đã thử {len(keys)} key): {last_err}"
+
+
+DYNAMIC_LESSON_PROMPT = """Bạn là Chuyên gia Thiết kế Chương trình Đào tạo Tư duy Đỉnh cao (Elite Thinking Mentor).
+
+Nhiệm vụ: Dựa trên phân hệ đối tượng và Cấp độ yêu cầu, hãy tạo ra 01 bài tập tình huống rèn luyện tư duy thực chiến mới tinh, độc đáo, lôi cuốn và mang tính giáo dục sâu sắc.
+
+BẮT BUỘC trả lời bằng JSON hợp lệ, không bọc code block markdown ngoài JSON.
+
+Cấu trúc JSON yêu cầu:
+{
+  "title": "Tiêu đề bài học ngắn gọn, hấp dẫn",
+  "mode": "Chế độ tư duy (chọn 1 trong 9: First Principles, Bayesian, Inversion, Second-order thinking, Optionality, Mental Models, Empirical, Game theory, Multi-timescale)",
+  "objective": "Mục tiêu bài học (1-2 câu)",
+  "situation": "Tình huống thực tế cụ thể, chi tiết, gần gũi với đối tượng",
+  "guide_steps": [
+    "Bước 1: Hướng dẫn phân tích...",
+    "Bước 2: Hướng dẫn áp dụng nguyên lý...",
+    "Bước 3: Hướng dẫn hành động hoặc quyết định..."
+  ],
+  "exercise_prompt": "Câu hỏi thử thách dành cho người học",
+  "hint": "Gợi ý định hướng giải bài",
+  "related_principle": "Tên nguyên lý tư duy cốt lõi liên quan"
+}
+
+Quy tắc:
+1. Đối với học sinh Wellspring (Lớp 6, 9, 10): Tình huống gắn liền với trường học song ngữ, dự án STEM, thuyết trình, câu lạc bộ, bạn bè, quản lý thời gian, rèn thói quen và làm chủ công nghệ/AI tương lai.
+2. Đối với người lớn (Trading Vàng/FX/Crypto, Đầu tư CKVN, Khoa học não bộ, Triết lý Phật giáo, Công nghệ AI): Tình huống thực chiến sắc bén, quản trị rủi ro, tâm lý học, chu kỳ, hoặc đòn bẩy tự động hóa.
+3. Cấp độ:
+   - Cơ bản (Level 1): Nhận diện khái niệm cốt lõi, bóc tách sự thật vs ý kiến, tránh sai lầm cơ bản.
+   - Thực hành (Level 2): Xử lý tình huống đánh đổi (trade-offs), quản lý biến số, tính toán xác suất hoặc giải quyết xung đột.
+   - Nâng cao (Level 3): Tích hợp đa mô hình (Latticework), bất đối xứng (Optionality), đa quy mô thời gian và sáng tạo đòn bẩy.
+"""
+
+
+def generate_dynamic_lesson(
+    api_keys: Union[str, List[str], tuple],
+    model_name: str,
+    track_title: str,
+    level_code: str,
+    level_name: str,
+    custom_topic: str = "",
+    user_context: str = "",
+) -> Optional[Dict[str, Any]]:
+    """Tự động sinh bài tập tư duy mới bằng AI dựa trên đối tượng, cấp độ và lịch sử người dùng."""
+    keys = _normalize_keys(api_keys)
+    if not keys:
+        return {"error": "Chưa có API key để sinh bài tập AI."}
+
+    user_request_prompt = f"""Hãy tạo 01 bài tập tư duy mới cho:
+- Phân hệ / Khối lớp: {track_title}
+- Cấp độ rèn luyện: {level_name} ({level_code})
+- Chủ đề ưu tiên (nếu có): {custom_topic if custom_topic else 'Tự động chọn chủ đề xuất sắc nhất'}
+- Ngữ cảnh học viên / Điểm cần rèn thêm: {user_context if user_context else 'Học viên muốn rèn luyện tư duy thực chiến'}
+"""
+    candidates = [model_name or "gemini-2.5-flash", "gemini-flash-latest", "gemini-2.0-flash"]
+    last_err = None
+
+    for idx, current_key in enumerate(keys, 1):
+        mask = _mask_key(current_key)
+        try:
+            genai.configure(api_key=current_key)
+        except Exception as e:
+            last_err = f"Lỗi cấu hình Key #{idx} ({mask}): {e}"
+            continue
+
+        for candidate in candidates:
+            try:
+                model = genai.GenerativeModel(
+                    model_name=candidate,
+                    system_instruction=DYNAMIC_LESSON_PROMPT,
+                    generation_config={"response_mime_type": "application/json"},
+                )
+                resp = model.generate_content(user_request_prompt)
+                if resp and resp.text:
+                    cleaned = clean_json_response(resp.text)
+                    data = json.loads(cleaned)
+                    if isinstance(data, dict):
+                        data["level_code"] = level_code
+                        data["level"] = level_name
+                        data["_generated_by"] = f"Gemini ({candidate}) [Key {mask}]"
+                        return data
+            except Exception as e:
+                err_msg = str(e)
+                last_err = f"Key #{idx} ({mask}) lỗi [{candidate}]: {err_msg}"
+                if _is_quota_or_auth_error(err_msg):
+                    break
+                continue
+
+    return {"error": f"Không thể tự động sinh bài tập (đã thử {len(keys)} key). Lỗi: {last_err}"}
+

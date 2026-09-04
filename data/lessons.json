@@ -1,169 +1,495 @@
 {
-  "version": "1.0",
+  "version": "2.0",
   "updated_at": "2026-09-04",
   "updated_by": "Phat",
+  "tracks_meta": {
+    "grade_6": {
+      "name": "Lớp 6 (Wellspring)",
+      "category": "k12",
+      "desc": "Khởi đầu cấp 2: Tách biệt sự thật, thói quen học tập, tư duy khoa học và làm quen với AI"
+    },
+    "grade_9": {
+      "name": "Lớp 9 (Wellspring)",
+      "category": "k12",
+      "desc": "Chuyển cấp & Định hướng: Tư duy phản biện, base rate xác suất, đòn bẩy 80/20 và chọn hướng đi"
+    },
+    "grade_10": {
+      "name": "Lớp 10 (Wellspring)",
+      "category": "k12",
+      "desc": "Cấp 3 Chiến lược: Quản trị dự án, tư duy trò chơi, optionality nghề nghiệp và đòn bẩy AI"
+    },
+    "trading": {
+      "name": "Trading Vàng, FX, Crypto/BTC",
+      "category": "adult",
+      "desc": "Tư duy xác suất, quản trị rủi ro bất đối xứng, kiểm soát tâm lý FOMO và kỳ vọng toán học"
+    },
+    "ckvn": {
+      "name": "Đầu tư Chứng khoán Việt Nam",
+      "category": "adult",
+      "desc": "First Principles trong chu kỳ kinh tế, VSA dòng tiền Smart Money và định giá thực chất"
+    },
+    "neuroscience": {
+      "name": "Khoa học Não bộ & Nhận thức",
+      "category": "adult",
+      "desc": "Cơ chế Dopamine, Hệ thống 1 & 2 (Kahneman), Neuroplasticity và khắc phục thiên kiến nhận thức"
+    },
+    "buddhism": {
+      "name": "Phật giáo & Tâm thức Ra quyết định",
+      "category": "adult",
+      "desc": "Vô thường, Nhân - Duyên - Quả, Chánh niệm tĩnh lặng tâm trí để ra quyết định khách quan"
+    },
+    "ai_tech": {
+      "name": "Công nghệ AI & Tương lai",
+      "category": "adult",
+      "desc": "First Principles về AI, Agentic Workflows, tư duy đòn bẩy công nghệ và năng lực cạnh tranh mới"
+    }
+  },
   "grade_6": [
     {
-      "id": "g6_01",
-      "title": "Bài 1: Tách sự thật khỏi ý kiến",
-      "level": "Dễ",
+      "id": "g6_c1_01",
+      "track": "grade_6",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 1: Tách sự thật khỏi ý kiến tại trường",
       "mode": "First Principles",
-      "objective": "Phân biệt được điều gì là sự thật khách quan và điều gì chỉ là ý kiến cá nhân.",
-      "situation": "Bạn nghe bạn trong lớp nói: 'Môn Toán rất vô dụng, sau này không ai dùng đến đâu.' Bạn cảm thấy hơi lung lay vì đang học kém Toán.",
+      "objective": "Phân biệt rạch ròi giữa điều quan sát/đo đạc được (sự thật) và cảm xúc cá nhân (ý kiến).",
+      "situation": "Tại trường Wellspring, trong giờ thảo luận nhóm, một bạn nói: 'Môn Khoa học dự án này chán ngắt và cô giáo chấm rất khó tính, tụi mình làm qua loa thôi.'",
       "guide_steps": [
-        "Viết ra 2-3 câu bạn cho là 'sự thật' trong câu nói của bạn.",
-        "Viết ra 2-3 câu bạn cho là 'ý kiến' hoặc cảm xúc.",
-        "Hỏi: Nếu bỏ hết cảm xúc và ý kiến, còn lại điều gì có thể kiểm chứng được?"
+        "Chỉ ra những từ mang tính cảm xúc/định kiến trong câu nói trên.",
+        "Viết ra 2 sự thật khách quan về bài dự án mà ai cũng phải công nhận (tiêu chí chấm, hạn nộp).",
+        "Đặt 1 câu hỏi để nhóm tập trung vào sự thật thay vì bàn lùi."
       ],
-      "exercise_prompt": "Hãy viết: (1) Phần nào là sự thật? (2) Phần nào là ý kiến? (3) Một câu hỏi bạn có thể hỏi để kiểm chứng.",
-      "hint": "Sự thật thường có thể đo được hoặc quan sát được. Ý kiến thường kèm từ như 'rất', 'chẳng ai', 'vô dụng'.",
-      "related_principle": "Nguyên lý Phân biệt Fact vs Opinion"
+      "exercise_prompt": "Viết: (1) Phần nào là ý kiến/cảm xúc? (2) Phần nào là sự thật khách quan? (3) Câu hỏi của bạn để kéo nhóm về trọng tâm.",
+      "hint": "Sự thật luôn gắn với số liệu, tiêu chí văn bản. Ý kiến thường chứa tính từ đánh giá: 'chán ngắt', 'khó tính'.",
+      "related_principle": "Phân biệt Fact vs Opinion"
     },
     {
-      "id": "g6_02",
-      "title": "Bài 2: Nghĩ ngược (Inversion)",
-      "level": "Dễ",
+      "id": "g6_c2_01",
+      "track": "grade_6",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 2: Tư duy đảo ngược (Inversion) trong bài kiểm tra",
       "mode": "Inversion",
-      "objective": "Thay vì hỏi 'Làm sao để thành công?', hỏi 'Làm sao để chắc chắn thất bại?' rồi tránh những điều đó.",
-      "situation": "Bạn muốn điểm Toán cao hơn trong học kỳ này nhưng không biết bắt đầu từ đâu. Bạn thường học đến sát ngày kiểm tra.",
+      "objective": "Tìm các nguyên nhân chắc chắn khiến bài kiểm tra bị điểm kém để chủ động triệt tiêu.",
+      "situation": "Tuần sau lớp 6 có bài kiểm tra giữa kỳ môn Tiếng Anh và Toán. Bạn thường bị phân tâm bởi iPad và YouTube Shorts mỗi tối.",
       "guide_steps": [
-        "Liệt kê 5 cách chắc chắn làm cho điểm Toán kém hơn.",
-        "Với mỗi cách, viết hành động ngược lại (tránh nó).",
-        "Chọn 1-2 hành động nhỏ bạn có thể làm tuần này."
+        "Liệt kê 4 hành vi chắc chắn sẽ làm bạn làm bài thi điểm kém và mất tập trung.",
+        "Thiết lập quy tắc ngược lại cho từng hành vi trong 7 ngày tới.",
+        "Chọn 1 hành động rào chắn môi trường (ví dụ cất iPad ra phòng khách trước 8h tối)."
       ],
-      "exercise_prompt": "Viết 3 cách chắc chắn làm điểm Toán kém + hành động ngược lại tương ứng.",
-      "hint": "Ví dụ cách thất bại: không làm bài tập, xem điện thoại khi học, bỏ qua bài khó. Hành động ngược: làm bài ngay trong ngày, để điện thoại sang phòng khác...",
+      "exercise_prompt": "Nêu 3 cách chắc chắn làm bài thi kém + Hành động đảo ngược tương ứng bạn cam kết làm tối nay.",
+      "hint": "Người thông minh không chỉ tìm cách thành công, mà luôn biết cách tránh xa những nguyên nhân chắc chắn dẫn đến thất bại.",
       "related_principle": "Inversion (Tư duy đảo ngược)"
     },
     {
-      "id": "g6_03",
-      "title": "Bài 3: Hậu quả bậc 2",
-      "level": "Dễ",
-      "mode": "Second-order thinking",
-      "objective": "Nhìn xa hơn một bước: hành động hôm nay sẽ dẫn đến điều gì sau 1 tuần / 1 tháng.",
-      "situation": "Bạn được rủ chơi game đến 11 giờ đêm vào ngày mai có kiểm tra 15 phút Toán. Bạn rất muốn chơi vì cả tuần chưa chơi.",
+      "id": "g6_c3_01",
+      "track": "grade_6",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 3: Sử dụng AI thông minh thay vì chép bài thụ động",
+      "mode": "First Principles + AI Thinking",
+      "objective": "Hiểu bản chất công cụ AI là 'bộ trợ não khuếch đại' chứ không phải nơi làm hộ bài tập.",
+      "situation": "Thầy giáo giao bài tìm hiểu về năng lượng tái tạo. Bạn bè mách bạn chỉ cần copy nguyên văn lời giải từ ChatGPT/Gemini nộp là xong.",
       "guide_steps": [
-        "Viết hậu quả ngay lập tức nếu bạn chơi đến 11h.",
-        "Viết hậu quả sau 1 ngày (điểm kiểm tra, cảm giác).",
-        "Viết hậu quả sau 1 tuần nếu bạn lặp lại thói quen này."
+        "Phân tích hệ quả bậc 2: Nếu bạn chép AI 100%, kỹ năng tư duy và vốn hiểu biết thật sự của bạn sau 1 năm sẽ ra sao?",
+        "Xác định nguyên lý sử dụng AI: Coi AI là gia sư phản biện (hỏi AI giải thích khái niệm khó, gợi ý góc nhìn mới).",
+        "Tự soạn 1 prompt hỏi AI thông minh để giúp bạn hiểu sâu bài học thay vì xin đáp án nộp."
       ],
-      "exercise_prompt": "Với tình huống trên, viết 3 tầng hậu quả: ngay lập tức – 1 ngày – 1 tuần.",
-      "hint": "Hậu quả bậc 1 dễ thấy. Hậu quả bậc 2 mới quan trọng (mệt → làm bài kém → tự tin giảm → càng ngại học).",
-      "related_principle": "Second-order consequences"
-    },
-    {
-      "id": "g6_04",
-      "title": "Bài 4: Thời gian ngắn – trung – dài",
-      "level": "Trung bình",
-      "mode": "Multi-timescale",
-      "objective": "Phân biệt quyết định tốt cho hôm nay nhưng xấu cho 1 năm sau, và ngược lại.",
-      "situation": "Bạn đang phân vân giữa: (A) Dành cả cuối tuần chơi và xem phim, hoặc (B) Dành 2 giờ mỗi ngày ôn lại bài cũ + làm 1 dự án nhỏ cho môn Khoa học.",
-      "guide_steps": [
-        "Với lựa chọn A: lợi ích 1 ngày / 1 tháng / 1 năm.",
-        "Với lựa chọn B: lợi ích 1 ngày / 1 tháng / 1 năm.",
-        "Chọn lựa chọn nào cân bằng hơn và giải thích ngắn."
-      ],
-      "exercise_prompt": "Điền bảng so sánh A vs B theo 3 mốc thời gian, rồi đưa ra quyết định của bạn.",
-      "hint": "Nhiều quyết định 'vui ngay' sẽ làm mất cơ hội tích lũy. Multi-timescale giúp bạn không bị lừa bởi cảm giác ngắn hạn.",
-      "related_principle": "Multi-timescale thinking"
-    },
-    {
-      "id": "g6_05",
-      "title": "Bài 5: Chi phí cơ hội đơn giản",
-      "level": "Trung bình",
-      "mode": "Opportunity Cost",
-      "objective": "Hiểu rằng chọn một thứ đồng nghĩa với việc bỏ đi thứ khác.",
-      "situation": "Sau giờ học bạn có 90 phút trống. Bạn có thể: (1) Xem TikTok/YouTube, (2) Đọc sách hoặc làm bài tập trước, (3) Chơi thể thao với bạn.",
-      "guide_steps": [
-        "Với mỗi lựa chọn, viết bạn được gì.",
-        "Với mỗi lựa chọn, viết bạn phải bỏ gì.",
-        "Chọn 1 lựa chọn và giải thích vì sao nó đáng giá hơn hai lựa chọn còn lại hôm nay."
-      ],
-      "exercise_prompt": "Viết rõ: Chọn X → được gì + bỏ gì. Sau đó chọn 1 và giải thích.",
-      "hint": "Không có lựa chọn nào 'miễn phí'. Thời gian là nguồn lực khan hiếm nhất của bạn.",
-      "related_principle": "Chi phí Cơ hội (Opportunity Cost)"
-    },
-    {
-      "id": "g6_06",
-      "title": "Bài 6: Tìm đòn bẩy nhỏ",
-      "level": "Trung bình",
-      "mode": "Leverage",
-      "objective": "Tìm hành động nhỏ nhưng tạo ảnh hưởng lớn thay vì làm nhiều việc ít tác dụng.",
-      "situation": "Bạn muốn cải thiện điểm Văn và Toán nhưng chỉ có khoảng 45 phút mỗi ngày để học thêm. Bạn đang làm lung tung nhiều thứ.",
-      "guide_steps": [
-        "Liệt kê 5 việc bạn đang làm để học thêm.",
-        "Đánh dấu việc nào nếu làm tốt sẽ kéo theo nhiều việc khác tốt hơn.",
-        "Chọn 1 đòn bẩy và cam kết làm nó 7 ngày."
-      ],
-      "exercise_prompt": "Viết 1 đòn bẩy bạn chọn + lý do tại sao nó ảnh hưởng lớn + kế hoạch 7 ngày.",
-      "hint": "Ví dụ đòn bẩy: ngủ đủ giấc, làm bài tập ngay trong ngày, hỏi thầy/cô 1 câu mỗi buổi học. Những việc này tạo hiệu ứng dây chuyền.",
-      "related_principle": "Leverage (Đòn bẩy)"
+      "exercise_prompt": "Viết: (1) Rủi ro lớn nhất khi lạm dụng AI chép bài? (2) Câu lệnh (Prompt) bạn sẽ gõ vào AI để yêu cầu nó đóng vai gia sư giảng giải nguyên lý.",
+      "hint": "Prompt tốt: 'Đóng vai chuyên gia năng lượng, giải thích cho học sinh lớp 6 tại sao pin mặt trời hoạt động và đặt cho tôi 2 câu đố kiểm tra.'",
+      "related_principle": "Đòn bẩy Công nghệ & Năng lực Tư duy Độc lập"
     }
   ],
   "grade_9": [
     {
-      "id": "g9_01",
-      "title": "Bài 1: Operationalize mục tiêu mơ hồ",
-      "level": "Trung bình",
-      "mode": "First Principles + Operationalize",
-      "objective": "Biến mục tiêu mơ hồ ('giỏi hơn', 'học tốt', 'vào được trường top') thành chỉ số đo được.",
-      "situation": "Bạn nói với bố mẹ: 'Con muốn học giỏi hơn năm nay.' Bố mẹ hỏi lại: 'Giỏi hơn nghĩa là gì cụ thể?' Bạn không trả lời được rõ.",
-      "guide_steps": [
-        "Viết mục tiêu mơ hồ hiện tại.",
-        "Chuyển thành 2-3 chỉ số có thể đo (điểm, thời gian, sản phẩm).",
-        "Đặt mốc thời gian và điều kiện thành công rõ ràng."
-      ],
-      "exercise_prompt": "Viết lại mục tiêu của bạn theo dạng: Đến [thời điểm], tôi sẽ đạt [chỉ số đo được] bằng cách [hành động chính].",
-      "hint": "Mục tiêu không đo được thì gần như không quản lý được. Elite luôn operationalize trước khi hành động.",
-      "related_principle": "Operationalize ambiguous goals"
-    },
-    {
-      "id": "g9_02",
-      "title": "Bài 2: Base rate thô (Bayesian nhẹ)",
-      "level": "Trung bình",
+      "id": "g9_c1_01",
+      "track": "grade_9",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 1: Ước lượng xác suất Base Rate khi chọn phương pháp học",
       "mode": "Bayesian",
-      "objective": "Trước khi tin một lời khuyên hoặc tin đồn, hỏi 'Tỷ lệ thành công thông thường là bao nhiêu?'",
-      "situation": "Một bạn khoe: 'Chỉ cần học theo phương pháp X trên TikTok là điểm tăng vọt trong 2 tuần.' Nhiều bạn trong lớp đang thử.",
+      "objective": "Không bị cuốn theo các câu chuyện thành công cá biệt (survivorship bias), biết nhìn vào tỷ lệ xác suất thực tế.",
+      "situation": "Trên mạng xã hội có video 'Học tủ 5 ngày được 9.0 IELTS / 9 điểm Toán vào 10' đạt triệu view. Một số bạn lớp 9 bắt đầu bỏ học đều đặn để chờ học mẹo.",
       "guide_steps": [
-        "Ước lượng thô: Trong 100 bạn thử phương pháp tương tự, khoảng bao nhiêu người thật sự cải thiện rõ?",
-        "Liệt kê điều kiện nào làm phương pháp đó có thể đúng với bạn.",
-        "Quyết định: thử nhỏ có kiểm soát hay bỏ qua."
+        "Ước lượng base rate: Trong 1.000 học sinh thử học mẹo 5 ngày, có bao nhiêu bạn thực sự đạt kết quả bền vững?",
+        "Nhận diện điều kiện nền (prior): Những người làm video có thể đã có sẵn nền tảng kiến thức từ trước?",
+        "Xác định chiến lược học tập dựa trên xác suất cao nhất."
       ],
-      "exercise_prompt": "Viết: Base rate ước lượng + điều kiện cần có + quyết định của bạn (thử / không thử / thử phiên bản nhỏ).",
-      "hint": "Base rate giúp bạn không bị cuốn theo câu chuyện thành công cá nhân (survivor bias).",
-      "related_principle": "Định lý Bayes / Base rate"
+      "exercise_prompt": "Viết phân tích: (1) Base rate thực tế là bao nhiêu? (2) Thiên kiến nhận thức nào đang xuất hiện? (3) Phương án cập nhật niềm tin đúng đắn.",
+      "hint": "Thiên kiến sống sót (Survivorship Bias) khiến người ta chỉ nhìn thấy người may mắn hiếm hoi mà quên 99.9% người thất bại.",
+      "related_principle": "Tư duy Xác suất & Base Rate"
     },
     {
-      "id": "g9_03",
-      "title": "Bài 3: Trade-off & ràng buộc thật",
-      "level": "Khó hơn",
-      "mode": "Trade-off + Constraints",
-      "objective": "Nhận ra mọi lựa chọn đều có đánh đổi, và phải tôn trọng ràng buộc thật (thời gian, năng lượng, kỳ thi).",
-      "situation": "Bạn muốn: tham gia 2 CLB, giữ điểm Toán-Lý-Hóa trên 8.5, học thêm tiếng Anh IELTS, và vẫn ngủ đủ 7 tiếng. Lịch hiện tại đang chồng chéo.",
+      "id": "g9_c2_01",
+      "track": "grade_9",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 2: Ràng buộc thực tế & Đòn bẩy 80/20 năm thi vào 10",
+      "mode": "Trade-off + Leverage",
+      "objective": "Nhận diện đúng giới hạn tài nguyên (thời gian, năng lượng) và tìm đòn bẩy 20% tạo 80% kết quả.",
+      "situation": "Năm lớp 9 tại Wellspring, bạn muốn thi chứng chỉ quốc tế, tham gia ban tổ chức dạ hội trường, học chuyên Toán, và tập thể thao. Lịch học đang quá tải nghiêm trọng.",
       "guide_steps": [
-        "Liệt kê tất cả mục tiêu đang muốn.",
-        "Viết rõ ràng các ràng buộc không thể phá (ngủ, thời gian di chuyển, deadline trường).",
-        "Chọn bỏ hoặc giảm 1-2 mục tiêu để hệ thống còn lại khả thi."
+        "Liệt kê các ràng buộc cứng không thể thương lượng (sức khỏe, giấc ngủ 7 tiếng, kỳ thi chính thức).",
+        "Đánh giá điểm đòn bẩy: Môn học/hoạt động nào khi làm thật tốt sẽ tự động mở ra nhiều cơ hội nhất?",
+        "Thực hiện cắt bỏ có chủ đích (Inversion: Không làm những thứ ít giá trị)."
       ],
-      "exercise_prompt": "Viết bảng: Mục tiêu | Ràng buộc liên quan | Quyết định (giữ / giảm / bỏ) + lý do.",
-      "hint": "Người giỏi không phải là người làm được tất cả, mà là người dám cắt bỏ để tập trung vào thứ quan trọng nhất.",
-      "related_principle": "Trade-off & Resource constraints"
+      "exercise_prompt": "Lập ma trận: Mục tiêu muốn làm | Ràng buộc thật | Quyết định Cắt bỏ / Giữ lại / Tối ưu đòn bẩy.",
+      "hint": "Người làm việc hiệu quả là người dám từ chối những cơ hội tốt để tập trung vào cơ hội xuất sắc nhất.",
+      "related_principle": "Pareto 80/20 & Ràng buộc cốt lõi"
     },
     {
-      "id": "g9_04",
-      "title": "Bài 4: Leverage cao trong học tập & định hướng",
-      "level": "Khó hơn",
-      "mode": "Leverage + Multi-timescale",
-      "objective": "Tìm 20% hành động tạo ra 80% kết quả dài hạn (đặc biệt khi chuẩn bị chọn hướng học).",
-      "situation": "Bạn đang ở lớp 9, bắt đầu nghĩ đến tổ hợp môn / hướng học tiếp theo. Bạn phân vân giữa làm nhiều hoạt động bề mặt và đào sâu vài thứ.",
+      "id": "g9_c3_01",
+      "track": "grade_9",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 3: Tư duy bậc hai và tương lai nghề nghiệp trong kỷ nguyên AI",
+      "mode": "Second-order + Multi-timescale",
+      "objective": "Dự đoán hệ quả lan truyền khi AI tự động hóa các công việc lặp lại, định vị kỹ năng không thể thay thế.",
+      "situation": "Bạn đang chuẩn bị chọn tổ hợp môn vào lớp 10 (khoa học tự nhiên, xã hội hay công nghệ). Nhiều người nói AI sẽ làm thay lập trình viên và dịch thuật.",
       "guide_steps": [
-        "Liệt kê các hoạt động bạn đang làm liên quan học tập & phát triển.",
-        "Đánh giá mức độ 'đòn bẩy dài hạn' (1-5) của từng hoạt động.",
-        "Chọn 1-2 đòn bẩy cao nhất và thiết kế lịch 4 tuần tập trung."
+        "Hậu quả bậc 1 của AI: Tạo văn bản, viết code cơ bản nhanh chóng.",
+        "Hậu quả bậc 2: Giá trị của việc ghi nhớ kiến thức giảm, giá trị của năng lực đặt câu hỏi, kiểm chứng và tư duy hệ thống tăng vọt.",
+        "Hậu quả bậc 3: Người biết kết hợp chuyên môn sâu + làm chủ AI Agent sẽ có năng suất gấp 10 lần người bình thường."
       ],
-      "exercise_prompt": "Viết 1-2 đòn bẩy bạn chọn cho 4 tuần tới + lý do nó ảnh hưởng đến 1-3 năm tới + kế hoạch cụ thể.",
-      "hint": "Với học sinh lớp 9, đòn bẩy cao thường là: tư duy rõ ràng, khả năng tự học, một kỹ năng sâu (Toán/viết/lập trình/ngoại ngữ), và mối quan hệ với mentor/thầy cô tốt.",
-      "related_principle": "Pareto 80/20 + Leverage"
+      "exercise_prompt": "Viết dự phóng 3 bậc cho một lĩnh vực bạn yêu thích và đề xuất 2 kỹ năng cốt lõi bạn sẽ tôi luyện trong 3 năm cấp 3.",
+      "hint": "Đừng cạnh tranh với AI ở việc nhớ nhiều, hãy dẫn dắt AI bằng tư duy First Principles và sự thấu cảm con người.",
+      "related_principle": "Second-Order Consequences & Đa quy mô thời gian"
+    }
+  ],
+  "grade_10": [
+    {
+      "id": "g10_c1_01",
+      "track": "grade_10",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 1: Định hình bản sắc học thuật bằng First Principles",
+      "mode": "First Principles",
+      "objective": "Bóc tách xem bản thân thực sự giỏi và đam mê điều gì, loại bỏ kỳ vọng và áp lực so sánh từ xung quanh.",
+      "situation": "Bước vào lớp 10 trường Wellspring, mọi người xung quanh đều tích cực xây dựng hồ sơ du học hoặc săn học bổng với các hoạt động rập khuôn nhau.",
+      "guide_steps": [
+        "Bóc tách: Hồ sơ ấn tượng thực chất dựa trên điều gì (sự độc bản, khả năng giải quyết vấn đề hay số lượng bằng khen)?",
+        "Loại bỏ các hoạt động làm theo phong trào (reasoning by analogy).",
+        "Xác định 1 lĩnh vực bạn có thể đào sâu tạo giá trị thực sự."
+      ],
+      "exercise_prompt": "Phân tích: (1) Điều gì là chân lý cốt lõi của một năng lực học thuật xuất sắc? (2) Dự án độc bản bạn muốn xây dựng trong lớp 10.",
+      "hint": "Cạnh tranh theo số lượng chứng chỉ là bẫy tương tự. Tạo ra một sản phẩm thực tế (phần mềm, bài nghiên cứu, mô hình cộng đồng) là First Principles.",
+      "related_principle": "Tư duy Nguyên bản vs Bắt chước tương tự"
+    },
+    {
+      "id": "g10_c2_01",
+      "track": "grade_10",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 2: Tư duy Trò chơi (Game Theory) trong làm việc nhóm & dự án",
+      "mode": "Game theory",
+      "objective": "Nhận diện động lực (incentives) của từng thành viên để thiết kế cơ chế hợp tác đôi bên cùng thắng (Win-Win).",
+      "situation": "Bạn làm trưởng nhóm một dự án liên môn lớn tại trường. Một số bạn ỷ lại không làm, trong khi một số bạn khác làm việc quá tải và nảy sinh bất mãn.",
+      "guide_steps": [
+        "Phân tích cơ chế phạt/thưởng hiện tại (nếu chấm điểm chung cả nhóm thì động lực lười biếng sẽ xuất hiện - Free Rider Problem).",
+        "Tái cấu trúc luật chơi: Phân rã đầu việc minh bạch với quyền hạn và trách nhiệm rõ ràng.",
+        "Thiết lập cam kết đáng tin cậy (Credible Commitment) và quy trình báo cáo tiến độ mở."
+      ],
+      "exercise_prompt": "Thiết kế cơ chế giải quyết bài toán lười biếng trong nhóm dựa trên phân tích động lực và lý thuyết trò chơi.",
+      "hint": "Khi kết quả không như ý, đừng vội trách con người, hãy nhìn lại cơ chế phân bổ quyền lợi và trách nhiệm của hệ thống.",
+      "related_principle": "Lý thuyết Trò chơi & Động lực hành vi (Incentives)"
+    },
+    {
+      "id": "g10_c3_01",
+      "track": "grade_10",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 3: Chiến lược Quả tạ (Barbell) xây dựng tương lai nghề nghiệp",
+      "mode": "Optionality / Antifragility",
+      "objective": "Xây dựng sự nghiệp theo mô hình antifragile: một đầu cực kỳ an toàn vững chắc, một đầu thử nghiệm mạo hiểm với tiềm năng bùng nổ.",
+      "situation": "Bạn đứng trước ngã rẽ: Đi theo con đường truyền thống an toàn hay theo đuổi đam mê khởi nghiệp công nghệ / AI nhiều rủi ro?",
+      "guide_steps": [
+        "Áp dụng Barbell của Nassim Taleb: 80% nền tảng cực kỳ vững chắc (kỹ năng cốt lõi: Toán, ngoại ngữ, tư duy logic, bằng cấp chuẩn mực).",
+        "20% nguồn lực dành cho các thể nghiệm bất đối xứng (học lập trình AI, tự tạo sản phẩm web/app, viết blog chuyên sâu).",
+        "Rủi ro tối đa nếu thử nghiệm thất bại là gì? Phần thưởng nếu thành công lớn đến mức nào?"
+      ],
+      "exercise_prompt": "Thiết kế kế hoạch Barbell cá nhân cho 2 năm tới: (1) 80% phần chắc chắn là gì? (2) 20% thể nghiệm bất đối xứng có tiềm năng vô hạn là gì?",
+      "hint": "Đừng chọn giữa an toàn hoặc mạo hiểm. Hãy chọn cả hai ở hai đầu cực đoan, tránh rơi vào khoảng giữa tầm thường.",
+      "related_principle": "Optionality & Chiến lược Quả tạ Barbell"
+    }
+  ],
+  "trading": [
+    {
+      "id": "tr_c1_01",
+      "track": "trading",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 1: Tư duy xác suất & Kỳ vọng toán học (Expected Value)",
+      "mode": "Bayesian + Probabilistic",
+      "objective": "Loại bỏ tư duy đúng/sai trong từng lệnh; nhìn nhận trading là chuỗi quyết định có kỳ vọng dương (EV > 0).",
+      "situation": "Bạn giao dịch Vàng (XAU/USD) theo hệ thống có tỷ lệ thắng 45% nhưng Risk:Reward là 1:2. Sau 3 lệnh thua liên tiếp, bạn hoảng loạn hủy bỏ kỷ luật và đánh lệnh lớn để gỡ gạc.",
+      "guide_steps": [
+        "Tính Expected Value của hệ thống: EV = (Win Rate × Reward) - (Loss Rate × Risk).",
+        "Nhận thức quy luật số lớn (LLN): Chuỗi 3-5 lệnh thua liên tiếp là hoàn toàn bình thường trong phân phối ngẫu nhiên.",
+        "Thiết lập quy tắc quản trị vốn: Tối đa rủi ro 1-2% tài khoản cho mỗi lệnh."
+      ],
+      "exercise_prompt": "Tính EV với Winrate 45%, R:R = 1:2. Viết quy tắc tâm lý giúp bạn giữ vững kỷ luật khi gặp chuỗi thua 4 lệnh liên tiếp.",
+      "hint": "Một lệnh thắng không chứng minh bạn giỏi, một lệnh thua không chứng minh bạn dốt. Điểm tựa duy nhất là quy luật xác suất dài hạn.",
+      "related_principle": "Tư duy Xác suất & Expected Value"
+    },
+    {
+      "id": "tr_c2_01",
+      "track": "trading",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 2: Quản trị rủi ro bất đối xứng (Asymmetric Risk) trong FX & BTC",
+      "mode": "Optionality / Antifragility",
+      "objective": "Bảo vệ vốn tuyệt đối khi thị trường bất lợi và tối đa hóa lợi nhuận khi thị trường vào sóng lớn.",
+      "situation": "Bitcoin đang tích lũy biên độ hẹp trước thềm tin tức vĩ mô quan trọng. Nhiều trader dùng đòn bẩy cao 50x để cá cược hướng đi.",
+      "guide_steps": [
+        "Phân tích rủi ro đuôi béo (Fat-tail Risk) trong Crypto: Bất kỳ cú râu nến quét thanh khoản nào cũng có thể thanh lý tài khoản nếu dùng đòn bẩy lớn.",
+        "Cấu trúc lệnh bất đối xứng: Cắt lỗ chặt chẽ tại điểm vô hiệu hóa cấu trúc (Invalidation point), thả nổi lợi nhuận theo xu hướng lớn.",
+        "Áp dụng tư duy đảo ngược: Hỏi 'Điều gì sẽ khiến tài khoản này về 0?' và chặn đứng nó trước."
+      ],
+      "exercise_prompt": "Viết chiến lược giao dịch cho một vị thế BTC/Vàng bảo đảm: Rủi ro tối đa cố định nhưng tiềm năng lợi nhuận mở rộng gấp 3-5 lần.",
+      "hint": "Cắt lỗ là chi phí kinh doanh bắt buộc để mua quyền tham gia vào các cơ hội có lợi nhuận đột biến.",
+      "related_principle": "Bất đối xứng Rủi ro - Lợi nhuận (Asymmetric Payoff)"
+    },
+    {
+      "id": "tr_c3_01",
+      "track": "trading",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 3: Cập nhật Bayesian & Thanh khoản Smart Money trong thực chiến",
+      "mode": "Bayesian + Game theory",
+      "objective": "Đọc vị dòng tiền tạo lập (Liquidity Hunt) và liên tục hiệu chỉnh xác suất kịch bản khi nến mới xuất hiện.",
+      "situation": "Giá Vàng phá vỡ đỉnh cũ nhưng rút chân tạo nến pin bar đảo chiều kèm khối lượng cực lớn tại phiên New York.",
+      "guide_steps": [
+        "Xác định xác suất ban đầu (Prior): Xu hướng tăng vẫn có ưu thế.",
+        "Dữ liệu mới (New Evidence): Rút chân mạnh + thanh khoản lớn tại vùng cản = tín hiệu săn thanh khoản (Liquidity Sweep / Fakeout).",
+        "Hiệu chỉnh niềm tin (Posterior): Xác suất đảo chiều ngắn hạn tăng vọt → Đổi kịch bản giao dịch thay vì cố chấp bảo vệ quan điểm cũ."
+      ],
+      "exercise_prompt": "Mô tả quy trình hiệu chỉnh kịch bản Bayesian khi thị trường xuất hiện tín hiệu bất thường đi ngược lại kế hoạch ban đầu của bạn.",
+      "hint": "Trader thất bại cưới lấy ý kiến của mình; Trader thành công chỉ trung thành với dữ liệu khách quan trên biểu đồ.",
+      "related_principle": "Cập nhật Bayesian & Game Theory trong Thanh khoản"
+    }
+  ],
+  "ckvn": [
+    {
+      "id": "ck_c1_01",
+      "track": "ckvn",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 1: Bóc tách bản chất chu kỳ kinh tế và định giá thực chất",
+      "mode": "First Principles",
+      "objective": "Loại bỏ tiếng ồn từ hội nhóm diễn đàn, nhìn thẳng vào cung tiền, lãi suất và lợi nhuận cốt lõi của doanh nghiệp.",
+      "situation": "VN-Index điều chỉnh mạnh, các hội nhóm Zalo hô hào thị trường sụp đổ về thời kỳ đồ đá. Một cổ phiếu đầu ngành bạn theo dõi giảm 30% trong khi tăng trưởng lợi nhuận vẫn đạt 25%/năm.",
+      "guide_steps": [
+        "Bóc tách nguyên nhân giảm: Do chính sách thắt chặt tiền tệ ngắn hạn hay nội tại doanh nghiệp bị phá hủy?",
+        "Tách sự thật (doanh thu, biên lãi gộp, lượng tiền mặt) khỏi ý kiến (tâm lý bi quan trên mạng).",
+        "Định giá theo First Principles: Một doanh nghiệp tạo ra dòng tiền đều đặn đáng giá bao nhiêu khi so với lãi suất tiết kiệm?"
+      ],
+      "exercise_prompt": "Viết bảng so sánh: Những gì thị trường đang đồn thổi (Ý kiến) vs Dữ liệu tài chính đo lường được (Sự thật).",
+      "hint": "Thị trường trong ngắn hạn là một cỗ máy bỏ phiếu bằng cảm xúc, nhưng trong dài hạn là một chiếc cân trọng lượng giá trị.",
+      "related_principle": "First Principles trong Định giá Doanh nghiệp"
+    },
+    {
+      "id": "ck_c2_01",
+      "track": "ckvn",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 2: VSA & Nhận diện hành vi Dòng tiền Lớn (Smart Money)",
+      "mode": "Second-order + Empirical",
+      "objective": "Phân tích mối quan hệ giữa Khối lượng (Volume) và Biên độ giá (Spread) để phát hiện dấu chân tạo lập.",
+      "situation": "Cổ phiếu ngành thép xuất hiện phiên giảm sàn với thanh khoản kỷ lục gấp 4 lần bình quân 20 phiên, sau đó các phiên sau giá ngừng giảm dù tin xấu vẫn tràn ngập báo chí.",
+      "guide_steps": [
+        "Phân tích hệ quả bậc 1: Nhỏ lẻ hoảng loạn bán tháo vì tin xấu.",
+        "Phân tích hệ quả bậc 2: Ai là người đã bỏ hàng nghìn tỷ ra hấp thụ toàn bộ lượng bán sàn đó? (Hành vi hấp thụ / Climax Selling).",
+        "Kiểm chứng thực nghiệm: Quan sát hành vi kiểm định cung (Test Cung) trong 3-5 phiên tiếp theo."
+      ],
+      "exercise_prompt": "Giải thích nghịch lý: Tại sao thanh khoản đột biến tại vùng đáy sâu kèm tin xấu lại thường là dấu hiệu tích lũy của dòng tiền thông minh?",
+      "hint": "Khối lượng chính là dấu chân của gã khổng lồ, giá có thể bị thao túng nhưng khối lượng tiền thật thì không thể nói dối.",
+      "related_principle": "VSA & Dấu chân Thanh khoản Smart Money"
+    },
+    {
+      "id": "ck_c3_01",
+      "track": "ckvn",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 3: Tư duy Đa quy mô thời gian trong chu kỳ thị trường chứng khoán",
+      "mode": "Multi-timescale",
+      "objective": "Kết hợp hài hòa giữa nhịp sóng ngắn hạn (tuần/tháng) và chu kỳ kinh tế vĩ mô lớn (3-5 năm).",
+      "situation": "Bạn nắm giữ danh mục cổ phiếu ngân hàng và bán lẻ có triển vọng 3 năm rất sáng, nhưng trong 2 tuần gần đây áp lực tỷ giá khiến khối ngoại bán ròng liên tục.",
+      "guide_steps": [
+        "Khung ngắn hạn (1-4 tuần): Quản trị rủi ro margin, không để bị force sell bởi những biến động rung lắc bất ngờ.",
+        "Khung trung hạn (1-2 năm): Đánh giá chính sách tài khóa và tiền tệ của Ngân hàng Nhà nước.",
+        "Khung dài hạn (5-10 năm): Tỷ lệ thâm nhập dịch vụ tài chính và tiêu dùng nội địa của dân số 100 triệu người."
+      ],
+      "exercise_prompt": "Thiết kế kế hoạch hành động phân tách rõ: Việc cần làm cho tài khoản hôm nay vs Chiến lược tích sản cho chu kỳ 3 năm tới.",
+      "hint": "Đừng dùng tư duy của nhà đầu tư 10 năm để biện minh cho việc không quản trị rủi ro đòn bẩy trong 10 ngày.",
+      "related_principle": "Tư duy Đa quy mô thời gian trong Đầu tư"
+    }
+  ],
+  "neuroscience": [
+    {
+      "id": "ns_c1_01",
+      "track": "neuroscience",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 1: Giải mã vòng lặp Dopamine & Nghiện kích thích ngắn hạn",
+      "mode": "First Principles",
+      "objective": "Hiểu bản chất dopamine không phải là hoóc-môn hạnh phúc mà là hoóc-môn của sự thèm muốn và tìm kiếm phần thưởng.",
+      "situation": "Bạn liên tục mở điện thoại xem thông báo Facebook, TikTok hoặc đồ thị giá coin mỗi 5 phút dù biết việc đó làm lãng phí hàng giờ mỗi ngày.",
+      "guide_steps": [
+        "Bóc tách cơ chế sinh học: Não bộ tiết dopamine trước khi bạn lướt màn hình, dự đoán một phần thưởng ngẫu nhiên (Variable Reward).",
+        "Xác định kích hoạt (Trigger): Sự buồn chán hoặc căng thẳng kích thích hành vi thói quen.",
+        "Thiết kế lại môi trường: Tăng ma sát (để điện thoại phòng khác, chuyển màn hình sang thang xám Grayscale)."
+      ],
+      "exercise_prompt": "Mô tả vòng lặp thói quen gây nghiện hiện tại của bạn và đề xuất 2 rào cản ma sát vật lý để phá vỡ nó.",
+      "hint": "Ý chí (Willpower) là tài nguyên hữu hạn, thiết kế môi trường (Environment design) mới là giải pháp bền vững.",
+      "related_principle": "Cơ chế Dopamine & Khoa học Thói quen"
+    },
+    {
+      "id": "ns_c2_01",
+      "track": "neuroscience",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 2: Làm chủ Hệ thống 1 (Nhanh) và Hệ thống 2 (Chậm)",
+      "mode": "Mental Models",
+      "objective": "Nhận biết khi nào não bộ đang bị chiếm quyền bởi cảm xúc tiềm thức và chủ động kích hoạt tư duy phản biện.",
+      "situation": "Bạn nhận được một lời chào mời đầu tư 'cơ hội duy nhất trong đời chỉ còn 30 phút để nạp tiền'. Tim bạn đập nhanh và cảm thấy thôi thúc phải hành động ngay.",
+      "guide_steps": [
+        "Nhận diện tín hiệu sinh lý: Hệ thống 1 (Hạch hạnh nhân - Amygdala) đang tạo phản ứng sợ bỏ lỡ (FOMO) khẩn cấp.",
+        "Áp dụng nguyên tắc 'Trì hoãn 24 giờ': Ép não bộ hạ nhiệt để chuyển quyền kiểm soát sang Vỏ não trước trán (Prefrontal Cortex).",
+        "Dùng bảng kiểm chứng (Checklist) để kích hoạt Hệ thống 2 phân tích định lượng."
+      ],
+      "exercise_prompt": "Xây dựng quy trình 3 bước 'Cắt cơn bốc đồng' mỗi khi bạn đối mặt với quyết định tài chính hoặc tình cảm khẩn cấp.",
+      "hint": "Hệ thống 1 đưa ra phản xạ sinh tồn tuyệt vời thời tiền sử nhưng lại là kẻ thù số một của các quyết định tài chính hiện đại.",
+      "related_principle": "Dual-Process Theory (Hệ thống 1 & 2 - Daniel Kahneman)"
+    },
+    {
+      "id": "ns_c3_01",
+      "track": "neuroscience",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 3: Tính mềm dẻo não bộ (Neuroplasticity) & Tái cấu trúc tư duy",
+      "mode": "Empirical + Iterative",
+      "objective": "Hiểu cơ chế não bộ có thể tự tái dây chuyền kết nối thần kinh (Rewiring) thông qua thực hành có chủ đích.",
+      "situation": "Bạn từng tin rằng mình 'vốn không có năng khiếu học ngoại ngữ / không giỏi môn kỹ thuật' và coi đó là định mệnh không thể thay đổi.",
+      "guide_steps": [
+        "First Principles về nơ-ron: Các nơ-ron cùng kích hoạt sẽ liên kết lại với nhau (Neurons that fire together, wire together).",
+        "Xóa bỏ Tư duy Cố định (Fixed Mindset) chuyển sang Tư duy Phát triển (Growth Mindset).",
+        "Áp dụng phương pháp Luyện tập có Chủ đích (Deliberate Practice): Đẩy bản thân vượt ngưỡng thoải mái 15% mỗi ngày."
+      ],
+      "exercise_prompt": "Chọn 1 kỹ năng bạn từng sợ hãi và thiết kế bài tập vi mô 20 phút mỗi ngày trong 30 ngày để tái kết nối thần kinh.",
+      "hint": "Cảm giác bỡ ngỡ, khó chịu khi học thứ mới chính là bằng chứng vật lý cho thấy các synapse thần kinh đang được thiết lập.",
+      "related_principle": "Neuroplasticity & Luyện tập có chủ đích"
+    }
+  ],
+  "buddhism": [
+    {
+      "id": "bd_c1_01",
+      "track": "buddhism",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 1: Nguyên lý Vô thường (Anicca) & Chấp nhận biến động khách quan",
+      "mode": "First Principles",
+      "objective": "Nhận ra mọi trạng thái (thành công, thất bại, thị trường uptrend hay downtrend) đều mang tính chuyển dịch liên tục.",
+      "situation": "Sau một chuỗi thắng lớn trong công việc hoặc đầu tư, bạn cảm thấy hưng phấn tột độ và bắt đầu tin rằng mình không bao giờ có thể sai lầm.",
+      "guide_steps": [
+        "Quán chiếu Vô thường: Mọi hiện tượng có sinh ắt có diệt, không có điều gì giữ nguyên trạng thái mãi mãi.",
+        "Nhận diện nguồn gốc của khổ đau (Dukkha): Bắt nguồn từ sự bám chấp (Attachment) vào một trạng thái tạm thời.",
+        "Thiết lập tâm thế bình thản (Equanimity): Tận hưởng thành quả nhưng luôn sẵn sàng đón nhận sự dịch chuyển của hoàn cảnh."
+      ],
+      "exercise_prompt": "Viết bài quán chiếu ngắn: Nhìn lại một thất bại trong quá khứ và chỉ ra cách quy luật Vô thường đã mở ra một cơ hội mới thế nào.",
+      "hint": "Khi nhận thức sâu sắc về Vô thường, bạn sẽ không hoảng sợ khi thị trường sụp đổ và cũng không kiêu ngạo khi đứng trên đỉnh cao.",
+      "related_principle": "Nguyên lý Vô thường (Impermanence)"
+    },
+    {
+      "id": "bd_c2_01",
+      "track": "buddhism",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 2: Nhân - Duyên - Quả (Duyên khởi) trong quản trị quyết định",
+      "mode": "Second-order + System Thinking",
+      "objective": "Hiểu rằng kết quả (Quả) không chỉ do một nguyên nhân (Nhân) quyết định, mà phụ thuộc vào tập hợp các điều kiện hội tụ (Duyên).",
+      "situation": "Bạn khởi nghiệp hoặc đầu tư một thương vụ chuẩn bị rất kỹ (Nhân tốt) nhưng gặp đúng giai đoạn dịch bệnh hoặc khủng hoảng kinh tế (Duyên xấu) dẫn đến thua lỗ.",
+      "guide_steps": [
+        "Phân biệt Nhân chủ quan (nỗ lực, đạo đức, năng lực của bạn) và Duyên khách quan (thời thế, vĩ mô, đối tác).",
+        "Tránh tự dằn vặt độc hại: Chấp nhận rằng con người chỉ kiểm soát được phần Nhân và việc kiến tạo Duyên lành, không thể ép Quả trổ theo ý muốn cá nhân.",
+        "Kiên nhẫn gieo Nhân đúng đắn và chờ đợi Duyên thuận lợi hội tụ."
+      ],
+      "exercise_prompt": "Phân tích một dự án / quyết định của bạn theo mô hình: Nhân chính là gì? Các Duyên hỗ trợ là gì? Quả kỳ vọng có thực tế không?",
+      "hint": "Người trí tuệ chú trọng vào Nhân (quá trình làm đúng), kẻ nông nổi chỉ chăm chăm đòi hỏi Quả (kết quả tức thì).",
+      "related_principle": "Luật Nhân Quả & Thuyết Duyên Khởi"
+    },
+    {
+      "id": "bd_c3_01",
+      "track": "buddhism",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 3: Chánh niệm (Mindfulness) & Thanh lọc Tham - Sân - Si",
+      "mode": "Inversion + Cognitive Detachment",
+      "objective": "Quan sát tâm trí không phán xét, tách rời cảm xúc cá nhân ra khỏi dữ liệu thực tế khi ra quyết định lớn.",
+      "situation": "Bạn đang tức giận vì một đối tác thất hứa, đồng thời thị trường đang biến động dữ dội. Bạn cảm thấy thôi thúc muốn gửi tin nhắn gay gắt và xả tài khoản.",
+      "guide_steps": [
+        "Thực hành Dừng lại (The Pause): Hít thở sâu 3 hơi, chỉ đơn thuần ghi nhận 'Cơn giận (Sân) đang khởi lên trong tôi'.",
+        "Phân biệt Người quan sát (The Observer) và Cảm xúc (The Emotion): Cảm xúc là đám mây trôi qua, bầu trời tâm trí vẫn bao la tĩnh lặng.",
+        "Chỉ đưa ra quyết định khi tâm trí đã trở về trạng thái trong trẻo, không bị chi phối bởi Tham (lòng tham vô độ) hay Sân (thịnh nộ)."
+      ],
+      "exercise_prompt": "Viết quy trình thực hành Chánh niệm 5 phút trước khi bạn bấm nút đặt một lệnh giao dịch hoặc đưa ra một quyết định nhân sự quan trọng.",
+      "hint": "Tâm trí giống như mặt hồ nước: Khi hồ yên ả, bạn mới nhìn thấy đáy; khi hồ dậy sóng vì tham sân si, mọi quyết định đều sai lệch.",
+      "related_principle": "Chánh Niệm & Tĩnh Lặng Tâm Thức"
+    }
+  ],
+  "ai_tech": [
+    {
+      "id": "ai_c1_01",
+      "track": "ai_tech",
+      "level_code": "level_1",
+      "level": "Cơ bản",
+      "title": "Bài 1: Bóc tách bản chất mô hình ngôn ngữ lớn (LLMs)",
+      "mode": "First Principles",
+      "objective": "Hiểu cốt lõi kỹ thuật của AI: Là cỗ máy thống kê dự đoán từ tiếp theo (Next-token prediction), không phải thực thể có ý thức.",
+      "situation": "Nhiều người thần thánh hóa AI như một vị thần thông thái biết hết mọi sự thật, hoặc sợ hãi AI sẽ tự hủy diệt loài người vào ngày mai.",
+      "guide_steps": [
+        "Bóc tách bản chất toán học: AI được huấn luyện trên hàng tỷ văn bản để tính xác suất từ ngữ phù hợp nhất theo ngữ cảnh (Context Window).",
+        "Hiểu nguyên nhân ảo giác (Hallucination): Khi thiếu dữ liệu hoặc ngữ cảnh mơ hồ, AI sẽ bịa ra thông tin nghe có vẻ hợp lý.",
+        "Quy tắc vàng cộng tác: Con người giữ vai trò định hướng mục tiêu, kiểm chứng sự thật và chịu trách nhiệm đạo đức."
+      ],
+      "exercise_prompt": "Giải thích cho một người chưa biết gì về AI: (1) Tại sao AI lại có thể bịa đặt thông tin? (2) Làm sao để kiểm chứng câu trả lời của AI?",
+      "hint": "Đừng hỏi AI 'Sự thật là gì?', hãy cấp cho AI nguồn tài liệu tin cậy và yêu cầu nó phân tích, đối chiếu.",
+      "related_principle": "Bản chất Công nghệ LLMs & Chống Ảo Giác"
+    },
+    {
+      "id": "ai_c2_01",
+      "track": "ai_tech",
+      "level_code": "level_2",
+      "level": "Thực hành",
+      "title": "Bài 2: Kiến trúc Hệ thống Tự hành Agentic Workflows",
+      "mode": "Second-order + Leverage",
+      "objective": "Chuyển từ việc dùng AI như chatbot hỏi-đáp sang xây dựng chuỗi Agent đa nhiệm tự động hóa công việc phức tạp.",
+      "situation": "Bạn muốn theo dõi tin tức tài chính, phân tích báo cáo và tạo tóm tắt mỗi sáng. Làm thủ công từng câu lệnh mất 45 phút mỗi ngày.",
+      "guide_steps": [
+        "Thiết kế kiến trúc Agent: Phân rã nhiệm vụ lớn thành các bước: Tìm kiếm dữ liệu → Trích xuất thông tin → Kiểm chứng → Tổng hợp báo cáo.",
+        "Cơ chế tự sửa sai (Reflection loop): Yêu cầu Agent tự phản biện và chấm điểm kết quả trước khi bàn giao.",
+        "Tạo đòn bẩy tự động hóa: Hệ thống tự chạy ngầm và gửi thông báo khi phát hiện bất thường."
+      ],
+      "exercise_prompt": "Thiết kế sơ đồ luồng (Workflow) gồm 3 sub-agent phối hợp với nhau để tự động hóa một công việc học tập hoặc kinh doanh của bạn.",
+      "hint": "Sức mạnh của Agentic AI không nằm ở một mô hình thần thánh, mà nằm ở quy trình phản hồi và công cụ chuyên biệt (Tools).",
+      "related_principle": "Agentic Architecture & Đòn bẩy Tự động hóa"
+    },
+    {
+      "id": "ai_c3_01",
+      "track": "ai_tech",
+      "level_code": "level_3",
+      "level": "Nâng cao",
+      "title": "Bài 3: Tư duy Đòn bẩy Không Cần Xin Phép (Leverage Without Permission)",
+      "mode": "Optionality + Leverage",
+      "objective": "Áp dụng triết lý của Naval Ravikant: Dùng Code, Media và AI để tạo ra giá trị khổng lồ với chi phí cận biên bằng 0.",
+      "situation": "Trước đây để xây dựng một sản phẩm phục vụ 10.000 người, bạn cần thuê 10 nhân viên, thuê văn phòng và xin vốn đầu tư.",
+      "guide_steps": [
+        "Phân tích các dạng đòn bẩy: Đòn bẩy con người (cần quyền lực), đòn bẩy tiền bạc (cần vốn), đòn bẩy Code & AI (không cần xin phép ai).",
+        "Tạo lập tài sản trí tuệ số: Một prompt thông minh, một con bot tự động, hoặc một website tri thức có thể nhân bản vô hạn mà không tốn thêm chi phí.",
+        "Xây dựng lợi thế cạnh tranh độc bản: Kết hợp chuyên môn sâu của cá nhân bạn với sức mạnh khuếch đại của AI."
+      ],
+      "exercise_prompt": "Đề xuất 1 ý tưởng sản phẩm / công cụ số bạn có thể tự xây dựng bằng AI trong 1 tuần giúp giải quyết vấn đề cho 100 người.",
+      "hint": "Trong thế kỷ 21, người sở hữu tư duy First Principles kết hợp với công cụ AI chính là một đội quân 1 người (One-person army).",
+      "related_principle": "Đòn bẩy Không Cần Xin Phép (Naval Ravikant)"
     }
   ]
 }
