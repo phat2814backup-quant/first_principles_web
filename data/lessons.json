@@ -1,0 +1,169 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-09-04",
+  "updated_by": "Phat",
+  "grade_6": [
+    {
+      "id": "g6_01",
+      "title": "Bài 1: Tách sự thật khỏi ý kiến",
+      "level": "Dễ",
+      "mode": "First Principles",
+      "objective": "Phân biệt được điều gì là sự thật khách quan và điều gì chỉ là ý kiến cá nhân.",
+      "situation": "Bạn nghe bạn trong lớp nói: 'Môn Toán rất vô dụng, sau này không ai dùng đến đâu.' Bạn cảm thấy hơi lung lay vì đang học kém Toán.",
+      "guide_steps": [
+        "Viết ra 2-3 câu bạn cho là 'sự thật' trong câu nói của bạn.",
+        "Viết ra 2-3 câu bạn cho là 'ý kiến' hoặc cảm xúc.",
+        "Hỏi: Nếu bỏ hết cảm xúc và ý kiến, còn lại điều gì có thể kiểm chứng được?"
+      ],
+      "exercise_prompt": "Hãy viết: (1) Phần nào là sự thật? (2) Phần nào là ý kiến? (3) Một câu hỏi bạn có thể hỏi để kiểm chứng.",
+      "hint": "Sự thật thường có thể đo được hoặc quan sát được. Ý kiến thường kèm từ như 'rất', 'chẳng ai', 'vô dụng'.",
+      "related_principle": "Nguyên lý Phân biệt Fact vs Opinion"
+    },
+    {
+      "id": "g6_02",
+      "title": "Bài 2: Nghĩ ngược (Inversion)",
+      "level": "Dễ",
+      "mode": "Inversion",
+      "objective": "Thay vì hỏi 'Làm sao để thành công?', hỏi 'Làm sao để chắc chắn thất bại?' rồi tránh những điều đó.",
+      "situation": "Bạn muốn điểm Toán cao hơn trong học kỳ này nhưng không biết bắt đầu từ đâu. Bạn thường học đến sát ngày kiểm tra.",
+      "guide_steps": [
+        "Liệt kê 5 cách chắc chắn làm cho điểm Toán kém hơn.",
+        "Với mỗi cách, viết hành động ngược lại (tránh nó).",
+        "Chọn 1-2 hành động nhỏ bạn có thể làm tuần này."
+      ],
+      "exercise_prompt": "Viết 3 cách chắc chắn làm điểm Toán kém + hành động ngược lại tương ứng.",
+      "hint": "Ví dụ cách thất bại: không làm bài tập, xem điện thoại khi học, bỏ qua bài khó. Hành động ngược: làm bài ngay trong ngày, để điện thoại sang phòng khác...",
+      "related_principle": "Inversion (Tư duy đảo ngược)"
+    },
+    {
+      "id": "g6_03",
+      "title": "Bài 3: Hậu quả bậc 2",
+      "level": "Dễ",
+      "mode": "Second-order thinking",
+      "objective": "Nhìn xa hơn một bước: hành động hôm nay sẽ dẫn đến điều gì sau 1 tuần / 1 tháng.",
+      "situation": "Bạn được rủ chơi game đến 11 giờ đêm vào ngày mai có kiểm tra 15 phút Toán. Bạn rất muốn chơi vì cả tuần chưa chơi.",
+      "guide_steps": [
+        "Viết hậu quả ngay lập tức nếu bạn chơi đến 11h.",
+        "Viết hậu quả sau 1 ngày (điểm kiểm tra, cảm giác).",
+        "Viết hậu quả sau 1 tuần nếu bạn lặp lại thói quen này."
+      ],
+      "exercise_prompt": "Với tình huống trên, viết 3 tầng hậu quả: ngay lập tức – 1 ngày – 1 tuần.",
+      "hint": "Hậu quả bậc 1 dễ thấy. Hậu quả bậc 2 mới quan trọng (mệt → làm bài kém → tự tin giảm → càng ngại học).",
+      "related_principle": "Second-order consequences"
+    },
+    {
+      "id": "g6_04",
+      "title": "Bài 4: Thời gian ngắn – trung – dài",
+      "level": "Trung bình",
+      "mode": "Multi-timescale",
+      "objective": "Phân biệt quyết định tốt cho hôm nay nhưng xấu cho 1 năm sau, và ngược lại.",
+      "situation": "Bạn đang phân vân giữa: (A) Dành cả cuối tuần chơi và xem phim, hoặc (B) Dành 2 giờ mỗi ngày ôn lại bài cũ + làm 1 dự án nhỏ cho môn Khoa học.",
+      "guide_steps": [
+        "Với lựa chọn A: lợi ích 1 ngày / 1 tháng / 1 năm.",
+        "Với lựa chọn B: lợi ích 1 ngày / 1 tháng / 1 năm.",
+        "Chọn lựa chọn nào cân bằng hơn và giải thích ngắn."
+      ],
+      "exercise_prompt": "Điền bảng so sánh A vs B theo 3 mốc thời gian, rồi đưa ra quyết định của bạn.",
+      "hint": "Nhiều quyết định 'vui ngay' sẽ làm mất cơ hội tích lũy. Multi-timescale giúp bạn không bị lừa bởi cảm giác ngắn hạn.",
+      "related_principle": "Multi-timescale thinking"
+    },
+    {
+      "id": "g6_05",
+      "title": "Bài 5: Chi phí cơ hội đơn giản",
+      "level": "Trung bình",
+      "mode": "Opportunity Cost",
+      "objective": "Hiểu rằng chọn một thứ đồng nghĩa với việc bỏ đi thứ khác.",
+      "situation": "Sau giờ học bạn có 90 phút trống. Bạn có thể: (1) Xem TikTok/YouTube, (2) Đọc sách hoặc làm bài tập trước, (3) Chơi thể thao với bạn.",
+      "guide_steps": [
+        "Với mỗi lựa chọn, viết bạn được gì.",
+        "Với mỗi lựa chọn, viết bạn phải bỏ gì.",
+        "Chọn 1 lựa chọn và giải thích vì sao nó đáng giá hơn hai lựa chọn còn lại hôm nay."
+      ],
+      "exercise_prompt": "Viết rõ: Chọn X → được gì + bỏ gì. Sau đó chọn 1 và giải thích.",
+      "hint": "Không có lựa chọn nào 'miễn phí'. Thời gian là nguồn lực khan hiếm nhất của bạn.",
+      "related_principle": "Chi phí Cơ hội (Opportunity Cost)"
+    },
+    {
+      "id": "g6_06",
+      "title": "Bài 6: Tìm đòn bẩy nhỏ",
+      "level": "Trung bình",
+      "mode": "Leverage",
+      "objective": "Tìm hành động nhỏ nhưng tạo ảnh hưởng lớn thay vì làm nhiều việc ít tác dụng.",
+      "situation": "Bạn muốn cải thiện điểm Văn và Toán nhưng chỉ có khoảng 45 phút mỗi ngày để học thêm. Bạn đang làm lung tung nhiều thứ.",
+      "guide_steps": [
+        "Liệt kê 5 việc bạn đang làm để học thêm.",
+        "Đánh dấu việc nào nếu làm tốt sẽ kéo theo nhiều việc khác tốt hơn.",
+        "Chọn 1 đòn bẩy và cam kết làm nó 7 ngày."
+      ],
+      "exercise_prompt": "Viết 1 đòn bẩy bạn chọn + lý do tại sao nó ảnh hưởng lớn + kế hoạch 7 ngày.",
+      "hint": "Ví dụ đòn bẩy: ngủ đủ giấc, làm bài tập ngay trong ngày, hỏi thầy/cô 1 câu mỗi buổi học. Những việc này tạo hiệu ứng dây chuyền.",
+      "related_principle": "Leverage (Đòn bẩy)"
+    }
+  ],
+  "grade_9": [
+    {
+      "id": "g9_01",
+      "title": "Bài 1: Operationalize mục tiêu mơ hồ",
+      "level": "Trung bình",
+      "mode": "First Principles + Operationalize",
+      "objective": "Biến mục tiêu mơ hồ ('giỏi hơn', 'học tốt', 'vào được trường top') thành chỉ số đo được.",
+      "situation": "Bạn nói với bố mẹ: 'Con muốn học giỏi hơn năm nay.' Bố mẹ hỏi lại: 'Giỏi hơn nghĩa là gì cụ thể?' Bạn không trả lời được rõ.",
+      "guide_steps": [
+        "Viết mục tiêu mơ hồ hiện tại.",
+        "Chuyển thành 2-3 chỉ số có thể đo (điểm, thời gian, sản phẩm).",
+        "Đặt mốc thời gian và điều kiện thành công rõ ràng."
+      ],
+      "exercise_prompt": "Viết lại mục tiêu của bạn theo dạng: Đến [thời điểm], tôi sẽ đạt [chỉ số đo được] bằng cách [hành động chính].",
+      "hint": "Mục tiêu không đo được thì gần như không quản lý được. Elite luôn operationalize trước khi hành động.",
+      "related_principle": "Operationalize ambiguous goals"
+    },
+    {
+      "id": "g9_02",
+      "title": "Bài 2: Base rate thô (Bayesian nhẹ)",
+      "level": "Trung bình",
+      "mode": "Bayesian",
+      "objective": "Trước khi tin một lời khuyên hoặc tin đồn, hỏi 'Tỷ lệ thành công thông thường là bao nhiêu?'",
+      "situation": "Một bạn khoe: 'Chỉ cần học theo phương pháp X trên TikTok là điểm tăng vọt trong 2 tuần.' Nhiều bạn trong lớp đang thử.",
+      "guide_steps": [
+        "Ước lượng thô: Trong 100 bạn thử phương pháp tương tự, khoảng bao nhiêu người thật sự cải thiện rõ?",
+        "Liệt kê điều kiện nào làm phương pháp đó có thể đúng với bạn.",
+        "Quyết định: thử nhỏ có kiểm soát hay bỏ qua."
+      ],
+      "exercise_prompt": "Viết: Base rate ước lượng + điều kiện cần có + quyết định của bạn (thử / không thử / thử phiên bản nhỏ).",
+      "hint": "Base rate giúp bạn không bị cuốn theo câu chuyện thành công cá nhân (survivor bias).",
+      "related_principle": "Định lý Bayes / Base rate"
+    },
+    {
+      "id": "g9_03",
+      "title": "Bài 3: Trade-off & ràng buộc thật",
+      "level": "Khó hơn",
+      "mode": "Trade-off + Constraints",
+      "objective": "Nhận ra mọi lựa chọn đều có đánh đổi, và phải tôn trọng ràng buộc thật (thời gian, năng lượng, kỳ thi).",
+      "situation": "Bạn muốn: tham gia 2 CLB, giữ điểm Toán-Lý-Hóa trên 8.5, học thêm tiếng Anh IELTS, và vẫn ngủ đủ 7 tiếng. Lịch hiện tại đang chồng chéo.",
+      "guide_steps": [
+        "Liệt kê tất cả mục tiêu đang muốn.",
+        "Viết rõ ràng các ràng buộc không thể phá (ngủ, thời gian di chuyển, deadline trường).",
+        "Chọn bỏ hoặc giảm 1-2 mục tiêu để hệ thống còn lại khả thi."
+      ],
+      "exercise_prompt": "Viết bảng: Mục tiêu | Ràng buộc liên quan | Quyết định (giữ / giảm / bỏ) + lý do.",
+      "hint": "Người giỏi không phải là người làm được tất cả, mà là người dám cắt bỏ để tập trung vào thứ quan trọng nhất.",
+      "related_principle": "Trade-off & Resource constraints"
+    },
+    {
+      "id": "g9_04",
+      "title": "Bài 4: Leverage cao trong học tập & định hướng",
+      "level": "Khó hơn",
+      "mode": "Leverage + Multi-timescale",
+      "objective": "Tìm 20% hành động tạo ra 80% kết quả dài hạn (đặc biệt khi chuẩn bị chọn hướng học).",
+      "situation": "Bạn đang ở lớp 9, bắt đầu nghĩ đến tổ hợp môn / hướng học tiếp theo. Bạn phân vân giữa làm nhiều hoạt động bề mặt và đào sâu vài thứ.",
+      "guide_steps": [
+        "Liệt kê các hoạt động bạn đang làm liên quan học tập & phát triển.",
+        "Đánh giá mức độ 'đòn bẩy dài hạn' (1-5) của từng hoạt động.",
+        "Chọn 1-2 đòn bẩy cao nhất và thiết kế lịch 4 tuần tập trung."
+      ],
+      "exercise_prompt": "Viết 1-2 đòn bẩy bạn chọn cho 4 tuần tới + lý do nó ảnh hưởng đến 1-3 năm tới + kế hoạch cụ thể.",
+      "hint": "Với học sinh lớp 9, đòn bẩy cao thường là: tư duy rõ ràng, khả năng tự học, một kỹ năng sâu (Toán/viết/lập trình/ngoại ngữ), và mối quan hệ với mentor/thầy cô tốt.",
+      "related_principle": "Pareto 80/20 + Leverage"
+    }
+  ]
+}

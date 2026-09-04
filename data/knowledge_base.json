@@ -1,0 +1,1420 @@
+{
+  "metadata": {
+    "exported_at": "2026-09-04 03:45:52",
+    "total_principles": 100,
+    "total_analyses": 4,
+    "purpose": "First-Principles Knowledge Base Export for Autonomous Agent Audit & Expansion",
+    "schema_version": "2.0",
+    "last_audit": "Scientific accuracy audit + added 5 core physics principles (Conservation of Momentum, Zeroth Law, Angular Momentum, Equivalence Principle, Relativistic Energy-Momentum). Formulas reviewed: Arrhenius, Shannon, Landauer, Heisenberg, Stefan-Boltzmann, Bernoulli, Amdahl, Logistic, Bayes, LLN, KKT all correct. Note on ΔU=Q-W: chemistry convention. | Added 8 deep first-principles (Noether, Maxwell, Pauli, FTC, SR postulates, Zero-point, Church-Turing, Hamilton). Total now 100."
+  },
+  "principles": [
+    {
+      "principle_name": "Nguyên lý Chuyển dịch Cân bằng Le Chatelier",
+      "domain": "Hóa học & Khoa học Vật liệu",
+      "description": "Khi một hệ thống đang ở trạng thái cân bằng chịu một tác động bên ngoài làm thay đổi nhiệt độ, áp suất hoặc nồng độ, hệ thống sẽ tự dịch chuyển theo hướng chống lại tác động đó.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Khi một hệ thống đang ở trạng thái cân bằng chịu một tác động bên ngoài làm thay đổi nhiệt độ, áp suất hoặc nồng độ, hệ thống sẽ tự dịch chuyển theo hướng chống lại tác động đó.",
+      "intuitive_summary": "Khi bạn cố gắng ép một hệ thống cân bằng thay đổi quá nhanh, nó sẽ tự động sinh ra các lực kháng cự để kéo mọi thứ trở lại trạng thái cũ.",
+      "boundary_conditions": "Hệ hóa học hoặc vật lý ở trạng thái cân bằng động thuận nghịch.",
+      "falsification_test": "Tăng nồng độ chất phản ứng trong hệ cân bằng kín nhưng hệ lại phản ứng làm tăng thêm nồng độ chất đó.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Nguyên lý Chất Xúc tác (Catalysis)",
+      "domain": "Hóa học & Khoa học Vật liệu",
+      "description": "Chất xúc tác làm tăng tốc độ phản ứng hóa học bằng cách tạo ra lộ trình phản ứng mới có năng lượng hoạt hóa E_a thấp hơn mà không bị tiêu hao sau phản ứng.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Chất xúc tác làm tăng tốc độ phản ứng hóa học bằng cách tạo ra lộ trình phản ứng mới có năng lượng hoạt hóa E_a thấp hơn mà không bị tiêu hao sau phản ứng.",
+      "intuitive_summary": "Người thông minh không dùng bạo lực để vượt chướng ngại vật; họ tìm ra chất xúc tác (công nghệ, quy trình, mạng lưới) để hạ thấp độ khó của bài toán xuống.",
+      "boundary_conditions": "Hệ có chất tham gia phản ứng và chất xúc tác tương thích.",
+      "falsification_test": "Một chất xúc tác làm thay đổi vị trí cân bằng nhiệt động học cuối cùng của phản ứng.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Năng lượng Hoạt hóa & Rào cản Trạng thái Chuyển tiếp (Activation Energy)",
+      "domain": "Hóa học & Khoa học Vật liệu",
+      "description": "k = A * e^(-E_a / RT) (Phương trình Arrhenius). Mọi phản ứng muốn xảy ra đều cần vượt qua một rào cản năng lượng hoạt hóa tối thiểu E_a.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "k = A * e^(-E_a / RT) (Phương trình Arrhenius). Mọi phản ứng muốn xảy ra đều cần vượt qua một rào cản năng lượng hoạt hóa tối thiểu E_a.",
+      "intuitive_summary": "Để thay đổi hiện trạng hay bắt đầu một thói quen mới, bạn luôn cần một cú hích năng lượng ban đầu rất lớn trước khi quy trình có thể tự vận hành.",
+      "boundary_conditions": "Hệ nhiệt động học hóa học ở nhiệt độ T.",
+      "falsification_test": "Một phản ứng phân tử xảy ra tức thời ở 0 độ Kelvin mà không có năng lượng xuyên hầm lượng tử.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Đường cong Biến dạng - Ứng suất & Giới hạn Bền (Stress-Strain Curve)",
+      "domain": "Hóa học & Khoa học Vật liệu",
+      "description": "Vật liệu chịu lực biến dạng đàn hồi tuyến tính (Định luật Hooke: σ = E*ε) cho tới Giới hạn Chảy (Yield Point); vượt qua ngưỡng này vật liệu sẽ biến dạng vĩnh viễn và gãy vỡ tại Điểm Đứt gãy (Ultimate Fracture).",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Vật liệu chịu lực biến dạng đàn hồi tuyến tính (Định luật Hooke: σ = E*ε) cho tới Giới hạn Chảy (Yield Point); vượt qua ngưỡng này vật liệu sẽ biến dạng vĩnh viễn và gãy vỡ tại Điểm Đứt gãy (Ultimate Fracture).",
+      "intuitive_summary": "Mọi vật thể, con người và tổ chức đều có thể chịu được áp lực trong giới hạn đàn hồi; nhưng nếu áp lực vượt quá ngưỡng chịu đựng, tổn thương sẽ vĩnh viễn không thể hồi phục.",
+      "boundary_conditions": "Vật liệu rắn chịu tải trọng cơ học.",
+      "falsification_test": "Một vật liệu cơ học chịu ứng suất kéo vô hạn mà không bao giờ đạt tới điểm gãy vỡ phân tử.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Định luật Bảo toàn Khối lượng của Lavoisier",
+      "domain": "Hóa học & Khoa học Vật liệu",
+      "description": "Trong một phản ứng hóa học thông thường, tổng khối lượng của các chất phản ứng luôn bằng tổng khối lượng của các sản phẩm tạo thành.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Trong một phản ứng hóa học thông thường, tổng khối lượng của các chất phản ứng luôn bằng tổng khối lượng của các sản phẩm tạo thành.",
+      "intuitive_summary": "Vật chất không biến mất mà chỉ biến đổi cấu trúc liên kết hóa học. Mọi rác thải bạn thải ra môi trường đều vẫn tồn tại ở đâu đó dưới dạng khác.",
+      "boundary_conditions": "Các phản ứng hóa học thông thường không liên quan đến phản ứng hạt nhân hạt nhân.",
+      "falsification_test": "Một phản ứng hóa học kín làm suy hao khối lượng nguyên tử đo được.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Chi phí Cơ hội",
+      "domain": "Kinh tế học",
+      "description": "Là giá trị của cơ hội tốt nhất bị bỏ lỡ khi đưa ra một lựa chọn. Việc đầu tư vào đất nền đồng nghĩa với việc từ bỏ các khoản đầu tư khác có thể mang lại lợi nhuận.",
+      "added_at": "2026-09-04 10:05:27",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Chi phí cơ hội",
+      "domain": "Kinh tế học",
+      "description": "Chi phí cơ hội của một lựa chọn là giá trị của lựa chọn tốt nhất tiếp theo bị bỏ qua khi đưa ra quyết định đó. Đầu tư vào bất động sản có nghĩa là từ bỏ cơ hội đầu tư vào các tài sản khác hoặc sử dụng tiền theo cách khác.",
+      "added_at": "2026-09-04 10:05:54",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Chi phí cơ hội (Opportunity Cost)",
+      "domain": "Kinh tế học",
+      "description": "Là giá trị của lựa chọn tốt nhất bị bỏ qua khi đưa ra một quyết định. Mọi hành động đều có chi phí cơ hội.",
+      "added_at": "2026-09-04 10:10:51",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Hiệu suất cận biên giảm dần (Diminishing Marginal Returns)",
+      "domain": "Kinh tế học",
+      "description": "Khi tăng thêm một đơn vị yếu tố đầu vào (ví dụ: thời gian học), lợi ích hoặc sản lượng tăng thêm từ đơn vị đó sẽ ngày càng giảm, trong khi các yếu tố khác được giữ nguyên.",
+      "added_at": "2026-09-04 10:10:51",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Lý thuyết Động lực (Incentives)",
+      "domain": "Kinh tế học",
+      "description": "Con người luôn phản ứng có dự đoán được trước các động lực lợi ích và rủi ro. Thay đổi động lực sẽ thay đổi hành vi.",
+      "added_at": "2026-09-04 10:03:21",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Quy luật Cung Cầu",
+      "domain": "Kinh tế học",
+      "description": "Giá cả của một tài sản được xác định bởi sự tương tác giữa lượng cung có sẵn và lượng cầu trên thị trường. Sự mất cân bằng có thể gây ra biến động giá.",
+      "added_at": "2026-09-04 10:05:27",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Quy luật Cung và Cầu",
+      "domain": "Kinh tế học",
+      "description": "Giá cả thị trường tự do được xác định bởi điểm cân bằng giữa lượng người bán sẵn sàng cung ứng và lượng người mua có khả năng thanh toán.",
+      "added_at": "2026-09-04 10:03:21",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Rủi ro và Lợi nhuận",
+      "domain": "Kinh tế học",
+      "description": "Trong đầu tư, lợi nhuận kỳ vọng cao hơn thường đi kèm với mức độ rủi ro cao hơn. Vay nợ để đầu tư (đòn bẩy tài chính) khuếch đại cả lợi nhuận tiềm năng và thua lỗ tiềm năng, làm tăng rủi ro tài chính tổng thể.",
+      "added_at": "2026-09-04 10:05:54",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Tính Khan hiếm Nguồn lực",
+      "domain": "Kinh tế học",
+      "description": "Nhu cầu của con người là vô hạn nhưng nguồn lực (thời gian, vốn, năng lượng) là hữu hạn. Không có gì hoàn toàn miễn phí.",
+      "added_at": "2026-09-04 10:03:21",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Tư duy ở Điểm Biên (Marginal Thinking)",
+      "domain": "Kinh tế học",
+      "description": "Quyết định kinh tế hợp lý chỉ so sánh lợi ích biên (Marginal Benefit) với chi phí biên (Marginal Cost).",
+      "added_at": "2026-09-04 10:03:21",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Đòn bẩy Tài chính (Financial Leverage)",
+      "domain": "Kinh tế học",
+      "description": "Sử dụng vốn vay để tài trợ cho một khoản đầu tư, nhằm khuếch đại tỷ suất lợi nhuận (và rủi ro) trên vốn chủ sở hữu, với giả định tỷ suất sinh lời của tài sản vượt trội so với chi phí vay.",
+      "added_at": "2026-09-04 10:05:27",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Ưu tiên Thời gian & Lãi suất (Time Preference)",
+      "domain": "Kinh tế học",
+      "description": "Hàng hóa/tiền tệ ở hiện tại luôn có giá trị cao hơn trong tương lai; lãi suất là giá của thời gian.",
+      "added_at": "2026-09-04 10:03:21",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Bất cân xứng Thông tin & Lựa chọn Nghịch (Information Asymmetry & Adverse Selection)",
+      "domain": "Kinh tế học & Tài chính",
+      "description": "Khi người bán biết rõ chất lượng sản phẩm hơn người mua (thị trường xe cũ Akerlof), người mua sẽ chỉ trả giá trung bình, dẫn đến người bán hàng tốt rút lui, để lại toàn hàng kém chất lượng.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Khi người bán biết rõ chất lượng sản phẩm hơn người mua (thị trường xe cũ Akerlof), người mua sẽ chỉ trả giá trung bình, dẫn đến người bán hàng tốt rút lui, để lại toàn hàng kém chất lượng.",
+      "intuitive_summary": "Ở đâu thông tin bị giấu giếm và mập mờ, ở đó kẻ xấu sẽ đẩy lùi người tốt và thị trường sẽ dần suy thoái thành bãi rác nếu không có cơ chế minh bạch bảo đảm.",
+      "boundary_conditions": "Chi phí xác minh thông tin quá đắt đỏ so với giá trị giao dịch.",
+      "falsification_test": "Thị trường bất cân xứng thông tin sâu sắc tự phát đào thải hàng lỗi mà không cần bất kỳ tín hiệu bảo đảm nào.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Chi phí Cơ hội (Opportunity Cost)",
+      "domain": "Kinh tế học & Tài chính",
+      "description": "OC = Thu nhập từ lựa chọn tốt nhất tiếp theo bị từ bỏ (FO) - Thu nhập từ lựa chọn đã chọn (CO).",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "OC = Thu nhập từ lựa chọn tốt nhất tiếp theo bị từ bỏ (FO) - Thu nhập từ lựa chọn đã chọn (CO).",
+      "intuitive_summary": "Chi phí thực sự của một quyết định không chỉ là số tiền bạn bỏ ra, mà là giá trị lớn nhất của những cơ hội khác bạn đã phải hy sinh để làm việc đó.",
+      "boundary_conditions": "Nguồn lực (thời gian, vốn, sự chú ý) có tính chất hữu hạn và có nhiều mục đích sử dụng thay thế.",
+      "falsification_test": "Một quyết định sử dụng nguồn lực hữu hạn mà không phải đánh đổi bất kỳ phương án sử dụng nào khác.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Lý thuyết Động lực & Vấn đề Người đại diện (Incentives & Principal-Agent)",
+      "domain": "Kinh tế học & Tài chính",
+      "description": "Con người tối đa hóa hàm hữu dụng cá nhân dựa trên cấu trúc khen thưởng/trừng phạt. Khi người đại diện (Agent) hành động thay cho người ủy thác (Principal) nhưng không chịu toàn bộ rủi ro, họ sẽ ưu tiên lợi ích cá nhân.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Con người tối đa hóa hàm hữu dụng cá nhân dựa trên cấu trúc khen thưởng/trừng phạt. Khi người đại diện (Agent) hành động thay cho người ủy thác (Principal) nhưng không chịu toàn bộ rủi ro, họ sẽ ưu tiên lợi ích cá nhân.",
+      "intuitive_summary": "Đừng nghe những gì người ta nói, hãy nhìn vào cách họ được trả tiền. Nếu lợi ích của người làm thuê không gắn liền với sự sống còn của chủ sở hữu, gian lận và tắc trách tất yếu xảy ra.",
+      "boundary_conditions": "Tác nhân con người duy lý có tư lợi; thông tin bất đối xứng.",
+      "falsification_test": "Một hệ thống kinh tế quy mô lớn mà con người làm việc tận tụy vì lợi ích người khác bất chấp động lực cá nhân bị trừng phạt.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Nguyên lý Arbitrage & Luật Một Giá (Law of One Price)",
+      "domain": "Kinh tế học & Tài chính",
+      "description": "Nếu cùng một tài sản được giao dịch ở hai thị trường với hai mức giá khác nhau (lớn hơn chi phí giao dịch), các nhà kinh doanh chênh lệch giá (arbitrageurs) sẽ mua ở nơi rẻ và bán ở nơi đắt cho đến khi chênh lệch biến mất.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Nếu cùng một tài sản được giao dịch ở hai thị trường với hai mức giá khác nhau (lớn hơn chi phí giao dịch), các nhà kinh doanh chênh lệch giá (arbitrageurs) sẽ mua ở nơi rẻ và bán ở nơi đắt cho đến khi chênh lệch biến mất.",
+      "intuitive_summary": "Tiền miễn phí trên bàn tiệc không bao giờ tồn tại lâu; mọi cơ hội kiếm lời không rủi ro đều nhanh chóng bị triệt tiêu bởi đám đông cạnh tranh.",
+      "boundary_conditions": "Thị trường có thanh khoản, chi phí vốn và chi phí giao dịch nhỏ hơn biên độ chênh lệch giá.",
+      "falsification_test": "Sự chênh lệch giá phi lý của cùng một tài sản tồn tại bền vững trong điều kiện vốn luân chuyển tự do hoàn toàn.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Ngụy biện Chi phí Chìm (Sunk Cost Fallacy)",
+      "domain": "Kinh tế học & Tài chính",
+      "description": "Chi phí chìm là chi phí đã phát sinh trong quá khứ và không thể thu hồi được. Giá trị của chi phí chìm trong hàm mục tiêu tương lai phải bằng 0.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Chi phí chìm là chi phí đã phát sinh trong quá khứ và không thể thu hồi được. Giá trị của chi phí chìm trong hàm mục tiêu tương lai phải bằng 0.",
+      "intuitive_summary": "Tiền đã mất là đã mất; đừng vì tiếc 1 tỷ đã lỗ mà rót thêm 1 tỷ nữa vào một dự án vô vọng. Hãy chỉ nhìn vào triển vọng từ thời điểm hiện tại trở đi.",
+      "boundary_conditions": "Các quyết định độc lập với chi phí danh tiếng hoặc nghĩa vụ pháp lý còn tồn đọng.",
+      "falsification_test": "Chứng minh việc tính chi phí đã mất vào hàm quyết định tương lai mang lại giá trị kỳ vọng cao hơn cho người ra quyết định.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Quy luật Cung và Cầu (Law of Supply and Demand)",
+      "domain": "Kinh tế học & Tài chính",
+      "description": "P* là điểm cân bằng thị trường tại đó Q_supply(P*) = Q_demand(P*). Nếu giá cao hơn P* tạo ra thặng dư, nếu thấp hơn tạo ra khan hiếm.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "P* là điểm cân bằng thị trường tại đó Q_supply(P*) = Q_demand(P*). Nếu giá cao hơn P* tạo ra thặng dư, nếu thấp hơn tạo ra khan hiếm.",
+      "intuitive_summary": "Giá cả không do lòng tốt hay ý chí chủ quan quyết định; nó được thiết lập bởi sự tương tác tự nhiên giữa lượng người muốn bán và lượng người có tiền muốn mua.",
+      "boundary_conditions": "Thị trường tự do, thông tin tương đối minh bạch, hàng hóa có thể thay thế.",
+      "falsification_test": "Một thị trường tự do cạnh tranh không bị kiểm soát giá nhưng giá cả không dịch chuyển theo sự mất cân bằng cung cầu.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Quy luật Lợi thế So sánh (Comparative Advantage - David Ricardo)",
+      "domain": "Kinh tế học & Tài chính",
+      "description": "Một bên có lợi thế so sánh trong việc sản xuất một loại hàng hóa nếu chi phí cơ hội để sản xuất hàng hóa đó thấp hơn bên khác. Thương mại hóa tự do luôn làm tăng tổng phúc lợi của cả hai bên.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Một bên có lợi thế so sánh trong việc sản xuất một loại hàng hóa nếu chi phí cơ hội để sản xuất hàng hóa đó thấp hơn bên khác. Thương mại hóa tự do luôn làm tăng tổng phúc lợi của cả hai bên.",
+      "intuitive_summary": "Ngay cả khi bạn giỏi hơn người khác ở mọi việc, bạn vẫn nên thuê người khác làm những việc bạn ít vượt trội nhất để tập trung 100% vào việc bạn vượt trội nhất.",
+      "boundary_conditions": "Chi phí vận chuyển/giao dịch không triệt tiêu chênh lệch chi phí cơ hội.",
+      "falsification_test": "Hai chủ thể tự cung tự cấp hoàn toàn có tổng sản lượng cao hơn khi họ chuyên môn hóa và trao đổi tự do.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Quyết định ở Điểm Biên (Marginal Utility & Marginal Cost)",
+      "domain": "Kinh tế học & Tài chính",
+      "description": "Lợi ích tối ưu đạt được tại điểm MB = MC (Lợi ích biên = Chi phí biên). Tiếp tục hành động nếu MB > MC; dừng lại khi MB < MC.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Lợi ích tối ưu đạt được tại điểm MB = MC (Lợi ích biên = Chi phí biên). Tiếp tục hành động nếu MB > MC; dừng lại khi MB < MC.",
+      "intuitive_summary": "Các quyết định khôn ngoan không dựa trên tổng chi phí hay tổng lợi ích trong quá khứ, mà dựa trên: bước tiếp theo này mang lại thêm bao nhiêu và tốn thêm bao nhiêu?",
+      "boundary_conditions": "Hàm chi phí và lợi ích khả vi và liên tục ở lân cận điểm xét.",
+      "falsification_test": "Một hành vi tối đa hóa lợi nhuận duy trì ở vùng chi phí biên vượt xa lợi ích biên kéo dài.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Hiệu ứng Mạng lưới (Network Effects)",
+      "domain": "Kinh tế học & Tài chính",
+      "description": "Giá trị của một mạng lưới tỉ lệ thuận với bình phương số lượng người tham gia (Định luật Metcalfe: V ~ n²).",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 2,
+      "formal_definition": "Giá trị của một mạng lưới tỉ lệ thuận với bình phương số lượng người tham gia (Định luật Metcalfe: V ~ n²).",
+      "intuitive_summary": "Mỗi người dùng mới tham gia vào hệ thống không chỉ mang lại giá trị cho bản thân họ mà còn làm tăng giá trị cho toàn bộ những người dùng đang có sẵn trong hệ thống.",
+      "boundary_conditions": "Mạng lưới kết nối đa chiều, không bị tắc nghẽn quá tải hạ tầng.",
+      "falsification_test": "Một nền tảng mạng xã hội tăng trưởng gấp 10 lần quy mô người dùng nhưng tổng tiện ích của mạng lưới lại suy giảm.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Độ Co giãn của Cầu theo Giá (Price Elasticity of Demand)",
+      "domain": "Kinh tế học & Tài chính",
+      "description": "E_d = (%ΔQ_demand) / (%ΔP). Đo lường mức độ phản ứng của lượng cầu khi giá bán thay đổi 1%.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 2,
+      "formal_definition": "E_d = (%ΔQ_demand) / (%ΔP). Đo lường mức độ phản ứng của lượng cầu khi giá bán thay đổi 1%.",
+      "intuitive_summary": "Nếu bạn tăng giá mà khách hàng bỏ đi hết (hàng hóa thay thế nhiều), bạn không có quyền lực định giá; nếu bạn tăng giá mà họ vẫn cắn răng mua (hàng thiết yếu/độc quyền), bạn nắm giữ hào kinh tế vững chắc.",
+      "boundary_conditions": "Khảo sát trong một khoảng thời gian xác định với các yếu tố khác giữ nguyên.",
+      "falsification_test": "Tăng giá hàng hóa thông thường vô thời hạn nhưng lượng tiêu thụ không hề có xu hướng giảm.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Hậu quả Bậc Hai và Bậc Ba (Second & Third-Order Consequences)",
+      "domain": "Lý thuyết Hệ thống & Điều khiển học",
+      "description": "Mọi can thiệp vào một hệ thống phức hợp đều gây ra chuỗi tác động gợn sóng ngoài ý muốn, trong đó kết quả bậc hai thường ngược lại hoàn toàn so với mục tiêu bậc một.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Mọi can thiệp vào một hệ thống phức hợp đều gây ra chuỗi tác động gợn sóng ngoài ý muốn, trong đó kết quả bậc hai thường ngược lại hoàn toàn so với mục tiêu bậc một.",
+      "intuitive_summary": "Nông cạn là chỉ nhìn: 'Nếu làm việc này thì kết quả ngay trước mắt là gì?'; Sâu sắc là phải hỏi tiếp: 'Và sau đó thì điều gì sẽ xảy ra tiếp theo?'.",
+      "boundary_conditions": "Hệ thống có các thành phần liên kết phi tuyến tính.",
+      "falsification_test": "Một can thiệp quy mô lớn vào hệ sinh thái kinh tế xã hội mà chỉ sinh ra đúng một kết quả duy nhất như ý định ban đầu.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Vòng lặp Phản hồi Dương (Positive Feedback Loop & Tự Tăng Cường)",
+      "domain": "Lý thuyết Hệ thống & Điều khiển học",
+      "description": "Đầu ra của hệ thống tác động ngược lại làm khuếch đại chính nó, dẫn đến sự tăng trưởng hàm mũ hoặc sự sụp đổ nhanh chóng (hiệu ứng hòn tuyết lăn).",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Đầu ra của hệ thống tác động ngược lại làm khuếch đại chính nó, dẫn đến sự tăng trưởng hàm mũ hoặc sự sụp đổ nhanh chóng (hiệu ứng hòn tuyết lăn).",
+      "intuitive_summary": "Tiền đẻ ra tiền, hoảng loạn sinh thêm hoảng loạn. Nếu không có phản hồi âm kìm hãm, vòng lặp phản hồi dương sẽ đưa hệ thống chạm ngưỡng phá hủy.",
+      "boundary_conditions": "Hệ thống có độ nhạy khuếch đại tín hiệu trước khi chạm rào cản vật lý.",
+      "falsification_test": "Vòng lặp phản hồi dương chạy vĩnh viễn mà không bao giờ va vào giới hạn nguồn lực của môi trường.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Vòng lặp Phản hồi Âm (Negative Feedback Loop & Homeostasis)",
+      "domain": "Lý thuyết Hệ thống & Điều khiển học",
+      "description": "Cơ chế tự điều chỉnh trong đó đầu ra của hệ thống tác động ngược lại để làm giảm độ lệch so với điểm đặt mục tiêu (set-point), duy trì sự ổn định.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Cơ chế tự điều chỉnh trong đó đầu ra của hệ thống tác động ngược lại để làm giảm độ lệch so với điểm đặt mục tiêu (set-point), duy trì sự ổn định.",
+      "intuitive_summary": "Chiếc rơ-le nhiệt tự ngắt khi phòng quá nóng; cơ thể toát mồ hôi khi nhiệt độ tăng. Đây là cơ chế cốt lõi để giữ cho mọi tổ chức và cơ thể sống không bị tự hủy diệt.",
+      "boundary_conditions": "Hệ thống có cảm biến đo lường sai số và cơ cấu chấp hành có đủ năng lượng điều chỉnh.",
+      "falsification_test": "Một hệ thống duy trì được trạng thái cân bằng nội môi bền vững trong môi trường biến động mà không có bất kỳ vòng lặp phản hồi âm nào.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Điểm Đảo Pha / Ngưỡng Tới Hạn (Tipping Points & Phase Transitions)",
+      "domain": "Lý thuyết Hệ thống & Điều khiển học",
+      "description": "Trạng thái mà sự thay đổi dần dần của một thông số điều khiển (nhiệt độ, mật độ, đòn bẩy) khi chạm tới giá trị tới hạn sẽ làm toàn bộ cấu trúc hệ thống biến đổi đột ngột sang trạng thái hoàn toàn mới.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Trạng thái mà sự thay đổi dần dần của một thông số điều khiển (nhiệt độ, mật độ, đòn bẩy) khi chạm tới giá trị tới hạn sẽ làm toàn bộ cấu trúc hệ thống biến đổi đột ngột sang trạng thái hoàn toàn mới.",
+      "intuitive_summary": "Nước từ 0 đến 99 độ C vẫn là nước lỏng; chỉ cần thêm đúng 1 độ nữa, nó lập tức hóa thành hơi nước. Sự sụp đổ hay bứt phá của hệ thống thường diễn ra đột ngột chứ không từ từ.",
+      "boundary_conditions": "Hệ thống phức hợp có tương tác liên kết tập thể giữa các phần tử.",
+      "falsification_test": "Hệ thống phức hợp chịu áp lực tích lũy vô hạn mà không bao giờ thay đổi trạng thái cấu trúc.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Độ Trễ Pha và Hiệu ứng Roi Da (Phase Lag & Bullwhip Effect)",
+      "domain": "Lý thuyết Hệ thống & Điều khiển học",
+      "description": "Sự chậm trễ về thời gian giữa thời điểm nhận biết tín hiệu, thời điểm ra quyết định và thời điểm kết quả xuất hiện sẽ gây ra dao động cộng hưởng cực lớn trong toàn hệ thống.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Sự chậm trễ về thời gian giữa thời điểm nhận biết tín hiệu, thời điểm ra quyết định và thời điểm kết quả xuất hiện sẽ gây ra dao động cộng hưởng cực lớn trong toàn hệ thống.",
+      "intuitive_summary": "Nước trong vòi sen mất 5 giây mới ấm, bạn sốt ruột vặn hết cỡ sang nóng, kết quả là bị bỏng nước sôi. Đừng phản ứng thái quá khi hệ thống có độ trễ pha tự nhiên.",
+      "boundary_conditions": "Chuỗi truyền tin hoặc sản xuất có độ trễ thông tin và thời gian vận chuyển.",
+      "falsification_test": "Một chuỗi cung ứng dài có độ trễ thông tin lớn nhưng nhu cầu đầu vào luôn phẳng tuyệt đối không có dao động tồn kho.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Entropy Thông tin của Shannon (Shannon Information Entropy)",
+      "domain": "Lý thuyết Thông tin & KH Máy tính",
+      "description": "H(X) = - ∑ P(x_i) * log₂ P(x_i). Entropy đo lường mức độ bất định trung bình hoặc lượng thông tin tiềm tàng chứa trong một nguồn phát ngẫu nhiên.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "H(X) = - ∑ P(x_i) * log₂ P(x_i). Entropy đo lường mức độ bất định trung bình hoặc lượng thông tin tiềm tàng chứa trong một nguồn phát ngẫu nhiên.",
+      "intuitive_summary": "Thông tin chỉ thực sự có giá trị khi nó làm giảm bớt sự mơ hồ và bất định của bạn. Một tin tức mà ai cũng đã biết chắc chắn 100% thì mang lượng thông tin bằng 0.",
+      "boundary_conditions": "Nguồn phát tin xác suất rời rạc hoặc liên tục.",
+      "falsification_test": "Một thông điệp chứa các biến cố hoàn toàn chắc chắn (P=1) nhưng vẫn chứa đựng lượng thông tin mới Shannon > 0.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Tính Không Thể Đảo Ngược & Giới hạn Landauer (Landauer's Principle)",
+      "domain": "Lý thuyết Thông tin & KH Máy tính",
+      "description": "E_min = k_B * T * ln(2). Việc xóa bỏ một bit thông tin trong hệ thống tính toán bắt buộc phải tiêu tán một lượng nhiệt năng tối thiểu ra môi trường.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "E_min = k_B * T * ln(2). Việc xóa bỏ một bit thông tin trong hệ thống tính toán bắt buộc phải tiêu tán một lượng nhiệt năng tối thiểu ra môi trường.",
+      "intuitive_summary": "Thông tin là vật lý; xử lý dữ liệu và dọn dẹp bộ nhớ không bao giờ là miễn phí mà luôn phải trả giá bằng năng lượng nhiệt thực tế.",
+      "boundary_conditions": "Hệ thống nhiệt động học ở nhiệt độ T > 0 Kelvin.",
+      "falsification_test": "Xóa thông tin logic bất thuận nghịch mà không làm tăng entropy nhiệt động học của môi trường xung quanh.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Tỷ lệ Tín hiệu trên Nhiễu (Signal-to-Noise Ratio - SNR)",
+      "domain": "Lý thuyết Thông tin & KH Máy tính",
+      "description": "SNR = P_signal / P_noise. Đo lường cường độ của thông tin hữu ích thực sự so với năng lượng của các thông tin rác, nhiễu loạn môi trường đi kèm.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "SNR = P_signal / P_noise. Đo lường cường độ của thông tin hữu ích thực sự so với năng lượng của các thông tin rác, nhiễu loạn môi trường đi kèm.",
+      "intuitive_summary": "Càng nạp nhiều tin tức giật gân, bạn càng ngập trong rác và mất đi khả năng nhìn thấy xu hướng cốt lõi. Hãy tối đa hóa tỷ lệ tín hiệu và lọc bỏ triệt để tiếng ồn.",
+      "boundary_conditions": "Kênh truyền thông tin hoặc quá trình ra quyết định dựa trên dữ liệu.",
+      "falsification_test": "Khai thác được tín hiệu hoàn hảo từ một kênh có công suất nhiễu tiến tới vô cùng mà không cần giải mã bộ lọc.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Đánh đổi Thời gian - Không gian (Space-Time Trade-off)",
+      "domain": "Lý thuyết Thông tin & KH Máy tính",
+      "description": "Trong khoa học tính toán, một thuật toán có thể giải quyết vấn đề nhanh hơn bằng cách sử dụng nhiều bộ nhớ hơn (caching/lookup tables), hoặc tiết kiệm bộ nhớ bằng cách tính toán lại lâu hơn.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Trong khoa học tính toán, một thuật toán có thể giải quyết vấn đề nhanh hơn bằng cách sử dụng nhiều bộ nhớ hơn (caching/lookup tables), hoặc tiết kiệm bộ nhớ bằng cách tính toán lại lâu hơn.",
+      "intuitive_summary": "Muốn đi nhanh thì phải chuẩn bị trước kho lưu trữ; muốn gọn nhẹ hành trang thì phải tốn thời gian tính toán, xử lý tại chỗ khi gặp việc.",
+      "boundary_conditions": "Mô hình máy tính Turing hoặc hệ thống xử lý thông tin hữu hạn.",
+      "falsification_test": "Một thuật toán giảm độ phức tạp thời gian xuống 0 mà không tiêu tốn bất kỳ tài nguyên bộ nhớ lưu trữ nào.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Định luật Amdahl về Giới hạn Tính toán Song song",
+      "domain": "Lý thuyết Thông tin & KH Máy tính",
+      "description": "Speedup = 1 / [(1 - P) + P/N]. Tốc độ tăng tối đa của một hệ thống khi bổ sung tài nguyên song song bị giới hạn nghiêm ngặt bởi phần công việc bắt buộc phải chạy tuần tự (1 - P).",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 2,
+      "formal_definition": "Speedup = 1 / [(1 - P) + P/N]. Tốc độ tăng tối đa của một hệ thống khi bổ sung tài nguyên song song bị giới hạn nghiêm ngặt bởi phần công việc bắt buộc phải chạy tuần tự (1 - P).",
+      "intuitive_summary": "Chín người phụ nữ không thể cùng nhau sinh ra một đứa trẻ trong vòng 1 tháng. Dù bạn có bơm thêm bao nhiêu tiền và nhân lực, phần việc tuần tự cốt lõi vẫn mất chừng đó thời gian.",
+      "boundary_conditions": "Khối lượng công việc cố định có phần tuần tự không thể chia nhỏ.",
+      "falsification_test": "Tăng tốc độ xử lý vô hạn cho một quy trình có 20% công việc bắt buộc phải làm nối tiếp nhau.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Cân bằng Nash (Nash Equilibrium)",
+      "domain": "Lý thuyết Trò chơi & Chiến lược",
+      "description": "Tập hợp các chiến lược của các người chơi sao cho không một người chơi nào có động lực đơn phương thay đổi chiến lược của mình nếu các đối thủ khác giữ nguyên chiến lược.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Tập hợp các chiến lược của các người chơi sao cho không một người chơi nào có động lực đơn phương thay đổi chiến lược của mình nếu các đối thủ khác giữ nguyên chiến lược.",
+      "intuitive_summary": "Một trạng thái bế tắc ổn định nơi mọi người đều đang làm điều tốt nhất có thể cho bản thân dựa trên hành động của người khác; muốn thay đổi cục diện bắt buộc phải đổi luật chơi.",
+      "boundary_conditions": "Trò chơi có số lượng người chơi và chiến lược hữu hạn, thông tin về luật chơi được biết rõ.",
+      "falsification_test": "Một trò chơi hữu hạn không tồn tại bất kỳ điểm cân bằng Nash nào (kể cả chiến lược hỗn hợp).",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Nguyên lý Phản ứng Chiến lược với Thông tin Bất toàn và Bất định (Principle of Strategic Response to Imperfect Information and Uncertainty)",
+      "domain": "Lý thuyết Trò chơi & Chiến lược",
+      "description": "Trong bất kỳ hệ thống tương tác nào, khi các tác nhân phải đối mặt với thông tin không hoàn hảo (về các biến số liên quan, hành động của người khác) hoặc sự bất định về các trạng thái tương lai, họ sẽ điều chỉnh hành vi của mình một cách chiến lược (ví dụ: thông qua tín hiệu, sàng lọc, phòng ngừa rủi ro) để tối đa hóa hàm lợi ích kỳ vọng của họ dựa trên tập hợp thông tin hiện có. Điều này có thể dẫn đến sự hình thành các thị trường cho thông tin, hợp đồng bảo hiểm, hoặc các cơ chế điều chỉnh thông tin khác.",
+      "added_at": "2026-09-04 10:27:45",
+      "tier": 1,
+      "formal_definition": "Trong bất kỳ hệ thống tương tác nào, khi các tác nhân phải đối mặt với thông tin không hoàn hảo (về các biến số liên quan, hành động của người khác) hoặc sự bất định về các trạng thái tương lai, họ sẽ điều chỉnh hành vi của mình một cách chiến lược (ví dụ: thông qua tín hiệu, sàng lọc, phòng ngừa rủi ro) để tối đa hóa hàm lợi ích kỳ vọng của họ dựa trên tập hợp thông tin hiện có. Điều này có thể dẫn đến sự hình thành các thị trường cho thông tin, hợp đồng bảo hiểm, hoặc các cơ chế điều chỉnh thông tin khác.",
+      "intuitive_summary": "Khi không ai có tất cả thông tin hoặc không thể biết chắc chắn tương lai, mọi người sẽ cố gắng đưa ra các quyết định thông minh nhất có thể để tự bảo vệ mình hoặc tận dụng tình hình. Ví dụ, mua bảo hiểm hoặc sử dụng các công cụ phái sinh là một cách để phòng ngừa rủi ro, nhằm đối phó với sự không chắc chắn về giá tài sản hoặc các sự kiện trong tương lai.",
+      "boundary_conditions": "Áp dụng cho các tình huống có nhiều hơn một tác nhân tương tác, khi ít nhất một tác nhân phải đối mặt với thông tin không hoàn hảo hoặc bất định, và tất cả các tác nhân đều được coi là hợp lý và tìm cách tối đa hóa lợi ích của mình. Các cơ chế phản ứng chiến lược này sẽ thể hiện rõ ràng khi lợi ích từ việc điều chỉnh hành vi vượt quá chi phí phát sinh.",
+      "falsification_test": "Nếu trong các môi trường có thông tin bất toàn hoặc bất định rõ ràng (như thị trường bảo hiểm có thông tin bất đối xứng về rủi ro của người được bảo hiểm, hoặc thị trường tài chính có biến động giá không thể dự đoán hoàn toàn), các tác nhân hợp lý liên tục bỏ qua việc thực hiện các chiến lược ứng phó (ví dụ: công ty bảo hiểm không sàng lọc khách hàng, hoặc nhà đầu tư không phòng ngừa rủi ro biến động giá) mà không phải chịu hậu quả bất lợi kéo dài.",
+      "added_by": "Agent_Gemini_Flash"
+    },
+    {
+      "principle_name": "Thế Lưỡng Nan của Người Tù (Prisoner's Dilemma)",
+      "domain": "Lý thuyết Trò chơi & Chiến lược",
+      "description": "Trò chơi mà hành động duy lý của từng cá thể nhằm bảo vệ bản thân (phản bội/tố giác) dẫn đến kết cục tồi tệ cho tất cả mọi người so với việc cùng nhau hợp tác.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Trò chơi mà hành động duy lý của từng cá thể nhằm bảo vệ bản thân (phản bội/tố giác) dẫn đến kết cục tồi tệ cho tất cả mọi người so với việc cùng nhau hợp tác.",
+      "intuitive_summary": "Nếu không có lòng tin hoặc cơ chế thực thi ràng buộc, sự ích kỷ cá nhân ngắn hạn sẽ hủy diệt lợi ích tối cao của cả tập thể.",
+      "boundary_conditions": "Trò chơi chơi một lần (one-shot), không có khả năng trao đổi cam kết đáng tin cậy.",
+      "falsification_test": "Hai người chơi hoàn toàn duy lý không quen biết trong trò chơi một lần tự phát chọn hợp tác rủi ro mà không có cơ chế phạt.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Trò chơi Tổng Bằng Không vs Tổng Dương (Zero-Sum vs Positive-Sum)",
+      "domain": "Lý thuyết Trò chơi & Chiến lược",
+      "description": "Zero-sum: ∑ Payoffs = 0 (Lợi nhuận của người này là thua lỗ tuyệt đối của người khác); Positive-sum: ∑ Payoffs > 0 (Tổng chiếc bánh tăng lên nhờ sự sáng tạo và hợp tác).",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Zero-sum: ∑ Payoffs = 0 (Lợi nhuận của người này là thua lỗ tuyệt đối của người khác); Positive-sum: ∑ Payoffs > 0 (Tổng chiếc bánh tăng lên nhờ sự sáng tạo và hợp tác).",
+      "intuitive_summary": "Đánh bạc và đầu cơ lướt sóng là cướp tiền từ túi người khác; kinh doanh thực sự và khoa học công nghệ là tạo ra thêm của cải để cả xã hội cùng thịnh vượng.",
+      "boundary_conditions": "Xác định rõ ranh giới hệ thống phân bổ giá trị.",
+      "falsification_test": "Một giao dịch thương mại tự nguyện bình đẳng giữa hai bên tạo ra tổng giá trị ròng âm cho cả hai mà họ vẫn tự nguyện lặp lại.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Chiến lược Ăn Miếng Trả Miếng trong Trò chơi Lặp lại (Tit-for-Tat)",
+      "domain": "Lý thuyết Trò chơi & Chiến lược",
+      "description": "Trong trò chơi lặp lại vô hạn hoặc không biết điểm dừng: Bắt đầu bằng sự Hợp tác, sau đó sao chép chính xác hành vi của đối thủ ở ván trước (Tha thứ ngay khi đối thủ hợp tác lại, Trừng phạt ngay khi đối thủ phản bội).",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 2,
+      "formal_definition": "Trong trò chơi lặp lại vô hạn hoặc không biết điểm dừng: Bắt đầu bằng sự Hợp tác, sau đó sao chép chính xác hành vi của đối thủ ở ván trước (Tha thứ ngay khi đối thủ hợp tác lại, Trừng phạt ngay khi đối thủ phản bội).",
+      "intuitive_summary": "Công thức tối ưu cho mối quan hệ bền vững: Lương thiện ngay từ đầu, răn đe sòng phẳng khi bị phản bội, và sẵn sàng tha thứ để xây dựng lại hợp tác.",
+      "boundary_conditions": "Trò chơi có bóng ma tương lai (Shadow of the future) đủ lớn; các bên có khả năng nhớ lịch sử.",
+      "falsification_test": "Chiến lược luôn tha thứ hoặc luôn phản bội chiến thắng bền vững trước Tit-for-Tat trong giải đấu lặp lại dài hạn.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Thiết bị Cam kết Đáng tin cậy (Commitment Devices & Đốt Cầu Sau Lưng)",
+      "domain": "Lý thuyết Trò chơi & Chiến lược",
+      "description": "Hành động tự nguyện tước bỏ các lựa chọn tự do của chính mình trong tương lai nhằm phát đi một tín hiệu không thể đảo ngược, buộc đối thủ phải tin và nhượng bộ.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 2,
+      "formal_definition": "Hành động tự nguyện tước bỏ các lựa chọn tự do của chính mình trong tương lai nhằm phát đi một tín hiệu không thể đảo ngược, buộc đối thủ phải tin và nhượng bộ.",
+      "intuitive_summary": "Tự chặt đứt đường lui của chính mình là cách mạnh nhất để chứng minh với thế giới rằng bạn sẽ không bao giờ đầu hàng.",
+      "boundary_conditions": "Hành động cắt bỏ lựa chọn phải được đối thủ quan sát thấy và không thể phục hồi bí mật.",
+      "falsification_test": "Một lời đe dọa suông không có chi phí cam kết khiến đối thủ có lý trí nhượng bộ hoàn toàn.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Chọn lọc Tự nhiên của Darwin (Natural Selection)",
+      "domain": "Sinh học Tiến hóa & Sinh thái",
+      "description": "Các cá thể mang biến dị di truyền giúp tăng khả năng sinh tồn và sinh sản trong môi trường cụ thể sẽ để lại nhiều hậu duệ hơn, làm tăng tần số của các alen đó qua các thế hệ.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Các cá thể mang biến dị di truyền giúp tăng khả năng sinh tồn và sinh sản trong môi trường cụ thể sẽ để lại nhiều hậu duệ hơn, làm tăng tần số của các alen đó qua các thế hệ.",
+      "intuitive_summary": "Không phải kẻ mạnh nhất hay thông minh nhất sẽ sống sót, mà là kẻ có khả năng thích nghi tốt nhất với những biến đổi không ngừng của hoàn cảnh.",
+      "boundary_conditions": "Có sự biến dị di truyền, cạnh tranh nguồn lực sinh tồn, và sự khác biệt về năng lực sinh sản.",
+      "falsification_test": "Phát hiện một đặc điểm giải phẫu phức tạp tiến hóa chỉ vì lợi ích của một loài khác mà không mang lại bất kỳ lợi ích sinh sản nào cho loài sở hữu.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Dung tích Mang của Môi trường (Carrying Capacity - K)",
+      "domain": "Sinh học Tiến hóa & Sinh thái",
+      "description": "dN/dt = r*N*(1 - N/K). Quy mô quần thể N tăng trưởng theo đường cong Logistic và bị chặn trên bởi sức chứa tối đa K của hệ sinh thái nguồn lực.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "dN/dt = r*N*(1 - N/K). Quy mô quần thể N tăng trưởng theo đường cong Logistic và bị chặn trên bởi sức chứa tối đa K của hệ sinh thái nguồn lực.",
+      "intuitive_summary": "Mọi đợt bùng nổ dân số hay mở rộng doanh nghiệp đều sẽ va phải bức tường giới hạn vật lý của thị trường và nguồn thức ăn. Vượt quá sức chứa sẽ dẫn tới sụp đổ hàng loạt.",
+      "boundary_conditions": "Nguồn lực môi trường hữu hạn trong không gian khép kín.",
+      "falsification_test": "Một quần thể duy trì mức tăng trưởng hàm mũ vô hạn mà không bao giờ suy giảm tỷ lệ sống sót.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Hiệu ứng Nữ hoàng Đỏ (The Red Queen Effect)",
+      "domain": "Sinh học Tiến hóa & Sinh thái",
+      "description": "Để duy trì trạng thái cân bằng sinh thái hoặc thị phần so với các đối thủ cạnh tranh đang cùng tiến hóa, một sinh thể bắt buộc phải liên tục đổi mới và cải tiến.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Để duy trì trạng thái cân bằng sinh thái hoặc thị phần so với các đối thủ cạnh tranh đang cùng tiến hóa, một sinh thể bắt buộc phải liên tục đổi mới và cải tiến.",
+      "intuitive_summary": "Bạn phải chạy hết sức có thể chỉ để đứng yên một chỗ. Trong một môi trường đầy rẫy đối thủ đang tiến hóa từng ngày, việc giậm chân tại chỗ đồng nghĩa với cái chết.",
+      "boundary_conditions": "Hệ thống sinh thái hoặc thị trường có áp lực chọn lọc đồng tiến hóa cạnh tranh cao.",
+      "falsification_test": "Một loài sinh học ngừng hoàn toàn tiến hóa nhưng vẫn giữ nguyên vị thế thống trị trước các loài ký sinh và săn mồi đang thích nghi.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Sự Đánh đổi Năng lượng Sinh học (Energy Allocation Trade-offs)",
+      "domain": "Sinh học Tiến hóa & Sinh thái",
+      "description": "Năng lượng thu nạp của một cơ thể là hữu hạn và phải phân bổ giữa 3 quá trình cạnh tranh triệt tiêu lẫn nhau: Sinh trưởng, Duy trì/Tự sửa chữa, và Sinh sản.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Năng lượng thu nạp của một cơ thể là hữu hạn và phải phân bổ giữa 3 quá trình cạnh tranh triệt tiêu lẫn nhau: Sinh trưởng, Duy trì/Tự sửa chữa, và Sinh sản.",
+      "intuitive_summary": "Bạn không thể có tất cả; năng lượng dồn cho tốc độ tăng trưởng thần tốc sẽ phải cắt bớt từ hệ thống miễn dịch và độ bền lâu dài của tổ chức.",
+      "boundary_conditions": "Sinh vật hoặc tổ chức tiêu thụ năng lượng trao đổi chất hữu hạn.",
+      "falsification_test": "Một sinh vật tối đa hóa đồng thời cả tốc độ phát triển cơ thể, tuổi thọ vô hạn và khả năng sinh sản vô tận mà không cần tăng tiêu thụ năng lượng.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Nguyên lý Cộng sinh & Hợp tác Tương hỗ (Symbiosis & Mutualism)",
+      "domain": "Sinh học Tiến hóa & Sinh thái",
+      "description": "Mối quan hệ tương tác giữa hai loài mang lại lợi ích ròng dương cho năng lực sinh tồn và sinh sản của cả hai (positive-sum interaction).",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 2,
+      "formal_definition": "Mối quan hệ tương tác giữa hai loài mang lại lợi ích ròng dương cho năng lực sinh tồn và sinh sản của cả hai (positive-sum interaction).",
+      "intuitive_summary": "Hợp tác chuyên môn hóa giúp các bên đạt được kết quả mà không một cá thể đơn lẻ nào có thể tự làm được; sự sống phức tạp ra đời từ sự cộng sinh của các tế bào đơn giản.",
+      "boundary_conditions": "Chi phí duy trì quan hệ đối tác nhỏ hơn lợi ích hợp tác mang lại.",
+      "falsification_test": "Một mối quan hệ cộng sinh bền vững kéo dài hàng triệu năm nhưng một bên luôn chịu thiệt hại ròng liên tục.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Nguyên lý Tối ưu hóa có Ràng buộc",
+      "domain": "Toán học",
+      "description": "Mọi bài toán thực tế đều là cực trị hóa hàm mục tiêu dưới một tập hợp các bất đẳng thức ràng buộc nguồn lực.",
+      "added_at": "2026-09-04 10:03:21",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Quy luật Logic Phi mâu thuẫn",
+      "domain": "Toán học",
+      "description": "Một mệnh đề không thể vừa đúng vừa sai trong cùng một thời điểm và cùng một hệ quy chiếu (A ≠ không A).",
+      "added_at": "2026-09-04 10:03:21",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Quy luật Pareto (80/20)",
+      "domain": "Toán học",
+      "description": "Trong nhiều hệ thống phức hợp, khoảng 80% hệ quả bắt nguồn từ 20% nguyên nhân cốt lõi.",
+      "added_at": "2026-09-04 10:03:21",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Sức mạnh của Tăng trưởng kép",
+      "domain": "Toán học",
+      "description": "Lãi kép và hàm mũ: giá trị tăng trưởng tỉ lệ thuận với quy mô tích lũy hiện tại qua thời gian dài.",
+      "added_at": "2026-09-04 10:03:21",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Tối ưu hóa (Optimization)",
+      "domain": "Toán học",
+      "description": "Quá trình tìm kiếm giải pháp tốt nhất (cực trị) cho một vấn đề, dựa trên một tập hợp các ràng buộc và mục tiêu đã định, nhằm đạt được hiệu quả hoặc lợi ích tối đa.",
+      "added_at": "2026-09-04 10:10:51",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Định lý Bayes (Xác suất có điều kiện)",
+      "domain": "Toán học",
+      "description": "Cập nhật xác suất của một giả thuyết khi có thêm dữ liệu/bằng chứng mới: P(A|B) = P(B|A)*P(A)/P(B).",
+      "added_at": "2026-09-04 10:03:21",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Luật Số Lớn (Law of Large Numbers)",
+      "domain": "Toán học & Logic học",
+      "description": "lim (n→∞) P(|(1/n)∑X_i - μ| < ε) = 1. Giá trị trung bình mẫu của một chuỗi biến ngẫu nhiên độc lập cùng phân phối sẽ hội tụ về kỳ vọng toán học khi số phép thử đủ lớn.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "lim (n→∞) P(|(1/n)∑X_i - μ| < ε) = 1. Giá trị trung bình mẫu của một chuỗi biến ngẫu nhiên độc lập cùng phân phối sẽ hội tụ về kỳ vọng toán học khi số phép thử đủ lớn.",
+      "intuitive_summary": "Trong ngắn hạn, may rủi có thể chi phối kết quả; nhưng trong dài hạn khi lặp lại đủ nhiều, chỉ có xác suất thực tế và năng lực cốt lõi mới quyết định số phận.",
+      "boundary_conditions": "Biến ngẫu nhiên độc lập, có kỳ vọng hữu hạn.",
+      "falsification_test": "Số lượng thử nghiệm vô hạn nhưng trung bình mẫu phân kỳ khỏi kỳ vọng hữu hạn đã biết.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Nguyên lý Tối ưu hóa có Ràng buộc (Karush-Kuhn-Tucker / Lagrange)",
+      "domain": "Toán học & Logic học",
+      "description": "∇f(x*) = ∑ λ_i ∇g_i(x*). Điểm tối ưu của hàm mục tiêu luôn nằm ở nơi gradient của hàm mục tiêu cân bằng với tổ hợp tuyến tính các gradient của các ràng buộc.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "∇f(x*) = ∑ λ_i ∇g_i(x*). Điểm tối ưu của hàm mục tiêu luôn nằm ở nơi gradient của hàm mục tiêu cân bằng với tổ hợp tuyến tính các gradient của các ràng buộc.",
+      "intuitive_summary": "Mọi bài toán thực tế đều là tối đa hóa lợi ích dưới những giới hạn nguồn lực cụ thể. Không thể có tối ưu hóa nếu không xác định rõ các ràng buộc biên.",
+      "boundary_conditions": "Hàm mục tiêu và các hàm ràng buộc khả vi liên tục.",
+      "falsification_test": "Tìm được điểm tối ưu toàn cục ngoài biên mà không thỏa mãn các điều kiện đạo hàm ràng buộc.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Phân phối Chuẩn vs Phân phối Đuôi Dày (Power-Laws & Fat Tails)",
+      "domain": "Toán học & Logic học",
+      "description": "P(X > x) ~ x^(-α). Trong khi phân phối chuẩn Gauss có xác suất biến cố cực trị tiệm cận 0 cực nhanh, phân phối đuôi dày chứa các biến cố cực trị (Thiên nga đen) có tác động khổng lồ.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "P(X > x) ~ x^(-α). Trong khi phân phối chuẩn Gauss có xác suất biến cố cực trị tiệm cận 0 cực nhanh, phân phối đuôi dày chứa các biến cố cực trị (Thiên nga đen) có tác động khổng lồ.",
+      "intuitive_summary": "Trong các hệ thống xã hội và tài chính, các sự kiện hiếm gặp nhưng thảm khốc xảy ra thường xuyên hơn nhiều so với các mô hình thống kê thông thường dự báo.",
+      "boundary_conditions": "Các hệ thống phức hợp có tương tác mạng lưới hoặc hiệu ứng người thắng lấy tất.",
+      "falsification_test": "Chứng minh sự phân bố của cải hoặc thị trường tài chính tuân theo đường cong chuẩn Gauss không có ngoại lệ cực đoan.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Quy luật Logic Phi Mâu Thuẫn (Law of Non-Contradiction)",
+      "domain": "Toán học & Logic học",
+      "description": "¬(P ∧ ¬P). Một mệnh đề P không thể vừa đúng vừa sai trong cùng một thời điểm, cùng một quan hệ và cùng một hệ quy chiếu.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "¬(P ∧ ¬P). Một mệnh đề P không thể vừa đúng vừa sai trong cùng một thời điểm, cùng một quan hệ và cùng một hệ quy chiếu.",
+      "intuitive_summary": "Hai tuyên bố trái ngược nhau không thể cùng đúng một lúc. Nếu một lập luận chứa mâu thuẫn nội tại thì toàn bộ hệ thống đó sụp đổ.",
+      "boundary_conditions": "Hệ logic hình thức cổ điển chuẩn.",
+      "falsification_test": "Xây dựng một hệ suy diễn nhất quán chấp nhận đồng thời P và không P là chân lý trong cùng bối cảnh.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Sức mạnh Tăng trưởng Lãi kép & Hàm Mũ",
+      "domain": "Toán học & Logic học",
+      "description": "A(t) = A₀ * (1 + r)^t. Khi tốc độ tăng trưởng tỉ lệ thuận với quy mô tích lũy hiện tại, giá trị sẽ bùng nổ phi tuyến tính theo thời gian.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "A(t) = A₀ * (1 + r)^t. Khi tốc độ tăng trưởng tỉ lệ thuận với quy mô tích lũy hiện tại, giá trị sẽ bùng nổ phi tuyến tính theo thời gian.",
+      "intuitive_summary": "Một cải tiến nhỏ 1% mỗi ngày khi tích lũy liên tục qua nhiều năm sẽ tạo ra kết quả khổng lồ; ngược lại, xói mòn nhỏ kéo dài sẽ dẫn tới phá sản.",
+      "boundary_conditions": "Hệ số r > 0 và thời gian t đủ dài.",
+      "falsification_test": "Một quá trình tăng trưởng nhân bội vô hạn trong một môi trường có ràng buộc nguồn lực hữu hạn mà không bị chặn.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Định lý Bayes về Xác suất Có Điều Kiện",
+      "domain": "Toán học & Logic học",
+      "description": "P(A|B) = [P(B|A) * P(A)] / P(B). Xác suất hậu nghiệm của giả thuyết A sau khi quan sát dữ liệu B bằng tỉ lệ giữa khả năng sinh ra B nhân xác suất tiên nghiệm chia cho xác suất của B.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "P(A|B) = [P(B|A) * P(A)] / P(B). Xác suất hậu nghiệm của giả thuyết A sau khi quan sát dữ liệu B bằng tỉ lệ giữa khả năng sinh ra B nhân xác suất tiên nghiệm chia cho xác suất của B.",
+      "intuitive_summary": "Luôn cập nhật niềm tin của bạn khi có bằng chứng mới; đừng bao giờ bám chặt lấy định kiến ban đầu khi dữ liệu thực tế đã đổi chiều.",
+      "boundary_conditions": "Biến cố B có xác suất P(B) > 0.",
+      "falsification_test": "Một quy tắc cập nhật xác suất tối ưu hơn Bayes khi có đầy đủ dữ liệu thống kê độc lập.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Định lý Bất toàn của Gödel (Gödel's Incompleteness Theorems)",
+      "domain": "Toán học & Logic học",
+      "description": "Mọi hệ tiên đề hình thức đệ quy đủ mạnh để biểu diễn số học Peano đều hoặc không nhất quán, hoặc không đầy đủ (tồn tại các mệnh đề đúng nhưng không thể chứng minh bên trong hệ).",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Mọi hệ tiên đề hình thức đệ quy đủ mạnh để biểu diễn số học Peano đều hoặc không nhất quán, hoặc không đầy đủ (tồn tại các mệnh đề đúng nhưng không thể chứng minh bên trong hệ).",
+      "intuitive_summary": "Không có hệ thống quy tắc kín nào có thể tự chứng minh sự hoàn hảo của chính nó từ bên trong; luôn tồn tại giới hạn của việc kiểm soát toàn diện.",
+      "boundary_conditions": "Hệ tiên đề hình thức nhất quán và đủ biểu diễn số học.",
+      "falsification_test": "Tìm thấy một hệ tiên đề hình thức vừa chứa số học vừa tự chứng minh được tính nhất quán và tính đầy đủ nội tại.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Nghịch lý Simpson trong Thống kê",
+      "domain": "Toán học & Logic học",
+      "description": "Một xu hướng xuất hiện trong các nhóm dữ liệu nhỏ có thể hoàn toàn đảo ngược khi các nhóm này được gộp lại với nhau do biến nhiễu ẩn (confounding variable).",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 2,
+      "formal_definition": "Một xu hướng xuất hiện trong các nhóm dữ liệu nhỏ có thể hoàn toàn đảo ngược khi các nhóm này được gộp lại với nhau do biến nhiễu ẩn (confounding variable).",
+      "intuitive_summary": "Đừng vội tin vào số liệu thống kê gộp bề mặt; nếu không phân tầng đúng nhóm đối tượng, bạn sẽ rút ra kết luận trái ngược 180 độ so với thực tế.",
+      "boundary_conditions": "Dữ liệu có sự phân bổ không đồng đều giữa các nhóm phụ và biến can thiệp.",
+      "falsification_test": "Toán học chứng minh sự phụ thuộc có điều kiện không thể bị đảo ngược bởi biến ẩn.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Quy luật Hồi quy về Số Trung bình (Regression to the Mean)",
+      "domain": "Toán học & Logic học",
+      "description": "Nếu một biến ngẫu nhiên đạt giá trị cực trị ở lần đo đầu tiên, thì lần đo tiếp theo có xác suất cao sẽ gần với giá trị trung bình hơn.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 2,
+      "formal_definition": "Nếu một biến ngẫu nhiên đạt giá trị cực trị ở lần đo đầu tiên, thì lần đo tiếp theo có xác suất cao sẽ gần với giá trị trung bình hơn.",
+      "intuitive_summary": "Sau một chuỗi may mắn tột cùng hoặc xui xẻo tột độ, kết quả tiếp theo thường sẽ quay trở về mức bình thường. Đừng nhầm lẫn vận may ngắn hạn với kỹ năng bền vững.",
+      "boundary_conditions": "Biến đo lường chứa thành phần ngẫu nhiên hoặc nhiễu không tương quan hoàn hảo.",
+      "falsification_test": "Một biến ngẫu nhiên duy trì trạng thái cực trị liên tục không ngừng mà không có cơ chế động lực nội tại mới.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Quy tắc Pareto (Nguyên lý 80/20)",
+      "domain": "Toán học & Logic học",
+      "description": "Hệ quả của phân phối Pareto: Khoảng 80% kết quả đầu ra được tạo ra bởi 20% các nguyên nhân đầu vào quan trọng nhất.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 2,
+      "formal_definition": "Hệ quả của phân phối Pareto: Khoảng 80% kết quả đầu ra được tạo ra bởi 20% các nguyên nhân đầu vào quan trọng nhất.",
+      "intuitive_summary": "Nguồn lực và kết quả không bao giờ phân bổ đồng đều; hãy tập trung năng lượng vào thiểu số biến số sống còn thay vì dàn trải đều.",
+      "boundary_conditions": "Hệ thống bất đối xứng phi tuyến tính.",
+      "falsification_test": "Một hệ thống mở phức hợp mà tất cả các biến số đầu vào đều đóng góp tỷ trọng chính xác ngang nhau vào kết quả.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Lý thuyết Thông tin (Information Theory)",
+      "domain": "Toán học/Vật lý học",
+      "description": "Nghiên cứu về định lượng, lưu trữ và truyền tải thông tin. Trong học tập, nó liên quan đến hiệu suất mã hóa, truyền dẫn, giải mã và lưu trữ dữ liệu kiến thức trong bộ não, và tác động của nhiễu.",
+      "added_at": "2026-09-04 10:22:28",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Thiên kiến Xác nhận (Confirmation Bias)",
+      "domain": "Tâm lý học Nhận thức & Quyết định",
+      "description": "Xu hướng tâm lý tìm kiếm, diễn giải và ghi nhớ các thông tin phù hợp với niềm tin sẵn có của bản thân, đồng thời phớt lờ hoặc bác bỏ các bằng chứng mâu thuẫn.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Xu hướng tâm lý tìm kiếm, diễn giải và ghi nhớ các thông tin phù hợp với niềm tin sẵn có của bản thân, đồng thời phớt lờ hoặc bác bỏ các bằng chứng mâu thuẫn.",
+      "intuitive_summary": "Con người không nhìn thế giới như nó vốn là; con người chỉ nhìn thấy những gì họ muốn thấy. Muốn tìm ra sự thật, bạn phải chủ động đi tìm bằng chứng chứng minh mình đã sai.",
+      "boundary_conditions": "Hành vi nhận thức tự nhiên của con người khi chưa qua rèn luyện tư duy khoa học phản biện.",
+      "falsification_test": "Một cộng đồng người tự phát tìm kiếm các thông tin bác bỏ niềm tin tôn giáo hay chính trị của chính họ mà không cần áp lực bên ngoài.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Tâm lý Ghét Tổn Thất Bất Đối Xứng (Loss Aversion)",
+      "domain": "Tâm lý học Nhận thức & Quyết định",
+      "description": "Nỗi đau tâm lý khi mất đi một số tiền X thường mạnh gấp đôi (khoảng 1.5 - 2.5 lần) so với niềm vui khi kiếm được cùng số tiền X đó (Lý thuyết Triển vọng Prospect Theory).",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Nỗi đau tâm lý khi mất đi một số tiền X thường mạnh gấp đôi (khoảng 1.5 - 2.5 lần) so với niềm vui khi kiếm được cùng số tiền X đó (Lý thuyết Triển vọng Prospect Theory).",
+      "intuitive_summary": "Nỗi sợ mất mát làm tê liệt lý trí; đó là lý do nhà đầu tư gồng lỗ vô tận nhưng lại vội vàng chốt non một khoản lãi cỏn con.",
+      "boundary_conditions": "Hàm giá trị tham chiếu phụ thuộc điểm neo tâm lý hiện tại của chủ thể.",
+      "falsification_test": "Một quần thể người phản ứng với việc mất 100 triệu bằng đúng mức độ cảm xúc thỏa mãn khi nhặt được 100 triệu.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Tư duy Hệ thống 1 và Hệ thống 2 (Kahneman & Tversky)",
+      "domain": "Tâm lý học Nhận thức & Quyết định",
+      "description": "Não bộ hoạt động qua 2 cơ chế: Hệ thống 1 (nhanh, tự động, vô thức, tốn ít năng lượng, dễ mắc sai lầm định kiến) và Hệ thống 2 (chậm, đòi hỏi nỗ lực tính toán logic, tiêu hao nhiều glucose).",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Não bộ hoạt động qua 2 cơ chế: Hệ thống 1 (nhanh, tự động, vô thức, tốn ít năng lượng, dễ mắc sai lầm định kiến) và Hệ thống 2 (chậm, đòi hỏi nỗ lực tính toán logic, tiêu hao nhiều glucose).",
+      "intuitive_summary": "Hầu hết các quyết định sai lầm trong cuộc đời bắt nguồn từ việc chúng ta lười biếng để cho cảm tính bản năng (Hệ thống 1) tự quyết những bài toán phức tạp đáng lẽ phải dùng lý trí phân tích (Hệ thống 2).",
+      "boundary_conditions": "Não bộ sinh học con người với giới hạn chuyển hóa năng lượng.",
+      "falsification_test": "Con người duy trì việc tính toán số học phức tạp liên tục mà không hề cảm thấy mệt mỏi hay tiêu hao năng lượng não bộ.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Bản năng Bầy đàn & Bằng chứng Xã hội (Social Proof)",
+      "domain": "Tâm lý học Nhận thức & Quyết định",
+      "description": "Xu hướng bắt chước hành vi của số đông trong điều kiện bất định, bắt nguồn từ cơ chế thích nghi sinh học tiến hóa (tách khỏi bầy đồng nghĩa với bị thú dữ ăn thịt).",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 2,
+      "formal_definition": "Xu hướng bắt chước hành vi của số đông trong điều kiện bất định, bắt nguồn từ cơ chế thích nghi sinh học tiến hóa (tách khỏi bầy đồng nghĩa với bị thú dữ ăn thịt).",
+      "intuitive_summary": "Khi thấy mọi người xung quanh cùng làm một việc, não bạn tự động giả định việc đó đúng. Đây là nguồn gốc sinh ra mọi cơn sốt đất, bong bóng chứng khoán và hoảng loạn bán tháo.",
+      "boundary_conditions": "Tình huống có tính bất định cao hoặc thông tin cá nhân hạn chế.",
+      "falsification_test": "Một đám đông trong trạng thái nguy hiểm bất định tự động hành động phân tán hoàn toàn độc lập mà không nhìn người bên cạnh.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Hiệu ứng Mỏ Neo (Anchoring Effect)",
+      "domain": "Tâm lý học Nhận thức & Quyết định",
+      "description": "Khuynh hướng tâm lý phụ thuộc quá mức vào mảnh thông tin đầu tiên nhận được (mỏ neo) khi đưa ra các ước lượng và phán đoán tiếp theo.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 2,
+      "formal_definition": "Khuynh hướng tâm lý phụ thuộc quá mức vào mảnh thông tin đầu tiên nhận được (mỏ neo) khi đưa ra các ước lượng và phán đoán tiếp theo.",
+      "intuitive_summary": "Con số đầu tiên bạn nhìn thấy (giá gốc gạch đi, định giá lần đầu) sẽ giam giữ tâm trí bạn, khiến bạn nghĩ rằng món hàng đang rẻ dù giá trị thực tế của nó không đáng như vậy.",
+      "boundary_conditions": "Chủ thể không có kiến thức đo lường chính xác độc lập về giá trị nội tại.",
+      "falsification_test": "Người tham gia thí nghiệm đưa ra mức định giá tài sản không bị ảnh hưởng bởi con số ngẫu nhiên vừa được nhắc tới trước đó.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Giới hạn Vận tốc Ánh sáng",
+      "domain": "Vật lý học",
+      "description": "Vận tốc ánh sáng trong chân không (c) là giới hạn tốc độ truyền thông tin và vật chất tuyệt đối trong vũ trụ.",
+      "added_at": "2026-09-04 10:03:21",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Định luật 2 Nhiệt động lực học (Entropy)",
+      "domain": "Vật lý học",
+      "description": "Entropy của hệ cô lập luôn tăng theo thời gian; mọi trật tự tự nhiên đều có xu hướng thoái hóa sang hỗn loạn nếu không có năng lượng bù đắp.",
+      "added_at": "2026-09-04 10:03:21",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Định luật Bảo toàn Năng lượng",
+      "domain": "Vật lý học",
+      "description": "Năng lượng không tự sinh ra cũng không tự mất đi, chỉ chuyển hóa từ dạng này sang dạng khác.",
+      "added_at": "2026-09-04 10:03:21",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Định luật Newton về Chuyển động",
+      "domain": "Vật lý học",
+      "description": "Vật giữ nguyên trạng thái nếu không có ngoại lực (quán tính), F = m.a, và mọi lực tác động đều có phản lực tương đương.",
+      "added_at": "2026-09-04 10:03:21",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Giới hạn Tốc độ Ánh sáng trong Chân không",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "c = 299,792,458 m/s. Vận tốc của ánh sáng trong chân không là hằng số vũ trụ tuyệt đối và là giới hạn trên của vận tốc truyền thông tin và vật chất.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "c = 299,792,458 m/s. Vận tốc của ánh sáng trong chân không là hằng số vũ trụ tuyệt đối và là giới hạn trên của vận tốc truyền thông tin và vật chất.",
+      "intuitive_summary": "Có một ranh giới tuyệt đối về tốc độ lan truyền tín hiệu và quan hệ nhân quả trong vũ trụ; không có tương tác tức thời vi phạm quan hệ nhân quả.",
+      "boundary_conditions": "Áp dụng cho mọi quan sát viên trong không-thời gian phẳng hoặc cong theo Thuyết Tương đối.",
+      "falsification_test": "Truyền được một gói thông tin có ý nghĩa nhân quả nhanh hơn tốc độ ánh sáng trong chân không.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Nguyên lý Bảo toàn Điện tích & Định luật Gauss",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "∮ E · dA = Q_enclosed / ε₀. Tổng thông lượng điện trường qua một mặt kín tỉ lệ thuận với tổng đại số điện tích chứa bên trong mặt kín đó.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "∮ E · dA = Q_enclosed / ε₀. Tổng thông lượng điện trường qua một mặt kín tỉ lệ thuận với tổng đại số điện tích chứa bên trong mặt kín đó.",
+      "intuitive_summary": "Điện tích không tự nhiên biến mất; dòng chảy lực tương tác điện luôn bắt nguồn từ các hạt nguồn xác định.",
+      "boundary_conditions": "Điện từ học cổ điển và điện động lực học lượng tử.",
+      "falsification_test": "Một điện tích tự phát biến mất mà không có sự triệt tiêu của điện tích trái dấu.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Nguyên lý Bất định Heisenberg",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "Δx * Δp ≥ ℏ / 2. Tích độ bất định về vị trí (x) và động lượng (p) của một hạt luôn lớn hơn hoặc bằng một hằng số Planck rút gọn chia đôi.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "Δx * Δp ≥ ℏ / 2. Tích độ bất định về vị trí (x) và động lượng (p) của một hạt luôn lớn hơn hoặc bằng một hằng số Planck rút gọn chia đôi.",
+      "intuitive_summary": "Bạn không thể đo lường một hệ thống mà không làm xáo trộn nó; độ chính xác ở khía cạnh này luôn phải đánh đổi bằng sự bất định ở khía cạnh khác.",
+      "boundary_conditions": "Thế giới vi mô cơ học lượng tử.",
+      "falsification_test": "Đo đồng thời vị trí và động lượng của hạt hạ nguyên tử với sai số tích nhỏ hơn ℏ/2.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Nguyên lý Cực tiểu Tác dụng (Principle of Least Action)",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "δS = δ ∫ L dt = 0. Quỹ đạo thực tế của một hệ vật lý giữa hai thời điểm luôn là quỹ đạo làm cho tác dụng tích phân Lagrangian đạt điểm dừng (cực tiểu).",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "δS = δ ∫ L dt = 0. Quỹ đạo thực tế của một hệ vật lý giữa hai thời điểm luôn là quỹ đạo làm cho tác dụng tích phân Lagrangian đạt điểm dừng (cực tiểu).",
+      "intuitive_summary": "Tự nhiên luôn đi theo con đường tối ưu nhất về năng lượng và thời gian; không có sự lãng phí tài nguyên dư thừa trong quỹ đạo vận động thực tế.",
+      "boundary_conditions": "Toàn bộ cơ học cổ điển, cơ học lượng tử và lý thuyết trường chuẩn.",
+      "falsification_test": "Hệ cơ học tự do đi theo một lộ trình làm tác dụng S không đạt cực trị.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Tương đương Khối lượng - Năng lượng (Einstein)",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "E = m * c². Khối lượng tĩnh chứa đựng một năng lượng tiềm tàng khổng lồ tỉ lệ với bình phương tốc độ ánh sáng.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "E = m * c². Khối lượng tĩnh chứa đựng một năng lượng tiềm tàng khổng lồ tỉ lệ với bình phương tốc độ ánh sáng.",
+      "intuitive_summary": "Vật chất và năng lượng chỉ là hai mặt biểu hiện khác nhau của cùng một thực thể vật lý; một lượng vật chất nhỏ có thể giải phóng năng lượng vô cùng lớn.",
+      "boundary_conditions": "Hệ quy chiếu nghỉ của vật thể.",
+      "falsification_test": "Hiện tượng hủy hạt - phản hạt sinh ra năng lượng lệch khỏi công thức E=mc².",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Định luật 2 Newton (Động lực học chất điểm)",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "F = m * a (hoặc F = dp/dt). Gia tốc của một vật tỉ lệ thuận với tổng ngoại lực tác dụng và tỉ lệ nghịch với khối lượng quán tính của vật.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "F = m * a (hoặc F = dp/dt). Gia tốc của một vật tỉ lệ thuận với tổng ngoại lực tác dụng và tỉ lệ nghịch với khối lượng quán tính của vật.",
+      "intuitive_summary": "Muốn thay đổi tốc độ hay hướng đi của một vật càng nặng, ta phải tốn một lực càng lớn. Không có gia tốc nếu không có ngoại lực tác động.",
+      "boundary_conditions": "Hệ quy chiếu quán tính; cơ học phi tương đối tính.",
+      "falsification_test": "Một vật thay đổi vận tốc trong hệ quy chiếu quán tính mà không có bất kỳ lực tác động nào.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Định luật 2 Nhiệt động lực học (Mũi tên Thời gian & Entropy)",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "ΔS_vũ_trụ ≥ 0. Entropy (mức độ hỗn loạn/vô trật tự) của một hệ cô lập luôn không giảm theo thời gian; nhiệt chỉ tự truyền từ vật nóng sang vật lạnh.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "ΔS_vũ_trụ ≥ 0. Entropy (mức độ hỗn loạn/vô trật tự) của một hệ cô lập luôn không giảm theo thời gian; nhiệt chỉ tự truyền từ vật nóng sang vật lạnh.",
+      "intuitive_summary": "Mọi trật tự, công trình, tổ chức tự nhiên đều có xu hướng thoái hóa, suy tàn nếu không liên tục bơm năng lượng bên ngoài vào duy trì.",
+      "boundary_conditions": "Hệ nhiệt động kín; không áp dụng cục bộ cho hệ mở đang tiếp nhận dòng năng lượng liên tục (như sinh vật sống tiếp nhận ánh sáng).",
+      "falsification_test": "Phát hiện một hệ cô lập tự phát giảm entropy mà không để lại bất kỳ sự gia tăng entropy nào ở môi trường xung quanh.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Định luật 3 Newton (Hành động và Phản hành động)",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "F_AB = - F_BA. Khi vật A tác dụng một lực lên vật B, vật B đồng thời tác dụng trở lại vật A một lực có cùng độ lớn nhưng ngược chiều.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "F_AB = - F_BA. Khi vật A tác dụng một lực lên vật B, vật B đồng thời tác dụng trở lại vật A một lực có cùng độ lớn nhưng ngược chiều.",
+      "intuitive_summary": "Mọi hành động tác động ra môi trường bên ngoài đều tạo ra một phản lực tương đương ngược chiều tác động trở lại chính bạn.",
+      "boundary_conditions": "Tương tác cơ học trực tiếp hoặc qua trường lực tương đối tính có tính đến động lượng của trường.",
+      "falsification_test": "Tìm thấy một lực đơn lẻ tồn tại độc lập trong tự nhiên mà không có phản lực đi kèm.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Định luật Bảo toàn Năng lượng (Định luật 1 Nhiệt động lực học)",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "ΔU = Q - W. Năng lượng toàn phần của một hệ cô lập luôn bất biến; năng lượng chỉ chuyển đổi giữa các trạng thái nội năng, nhiệt năng và công cơ học.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "ΔU = Q - W. Năng lượng toàn phần của một hệ cô lập luôn bất biến; năng lượng chỉ chuyển đổi giữa các trạng thái nội năng, nhiệt năng và công cơ học.",
+      "intuitive_summary": "Không có gì tự sinh ra từ hư vô; mọi thành quả và hoạt động đều phải trả bằng một lượng năng lượng tương đương.",
+      "boundary_conditions": "Hệ cô lập, áp dụng trên mọi quy mô từ vi mô hạt nhân đến vĩ mô vũ trụ.",
+      "falsification_test": "Tạo ra một hệ thống sản sinh năng lượng ròng mà không tiêu hao bất kỳ nguồn năng lượng hay khối lượng nào (Động cơ vĩnh cửu loại 1).",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Định luật Bức xạ Năng lượng Planck & Stefan-Boltzmann",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "j* = σ * T⁴. Tổng năng lượng bức xạ phát ra từ vật đen tuyệt đối trên một đơn vị diện tích tỉ lệ thuận với lũy thừa bậc bốn của nhiệt độ tuyệt đối (Kelvin).",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "j* = σ * T⁴. Tổng năng lượng bức xạ phát ra từ vật đen tuyệt đối trên một đơn vị diện tích tỉ lệ thuận với lũy thừa bậc bốn của nhiệt độ tuyệt đối (Kelvin).",
+      "intuitive_summary": "Nhiệt độ chỉ cần tăng một chút thì mức độ tiêu hao và bức xạ nhiệt ra môi trường sẽ tăng vọt theo hàm số bậc bốn cực mạnh.",
+      "boundary_conditions": "Vật đen nhiệt động học ở trạng thái cân bằng nhiệt.",
+      "falsification_test": "Vật đen cân bằng nhiệt độ T phát bức xạ toàn phần không tuân theo hàm T⁴.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Định luật Vạn vật Hấp dẫn của Newton",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "F = G * (m1 * m2) / r². Lực hấp dẫn tỉ lệ thuận với tích khối lượng và tỉ lệ nghịch với bình phương khoảng cách giữa hai vật thể.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 1,
+      "formal_definition": "F = G * (m1 * m2) / r². Lực hấp dẫn tỉ lệ thuận với tích khối lượng và tỉ lệ nghịch với bình phương khoảng cách giữa hai vật thể.",
+      "intuitive_summary": "Thực thể có khối lượng càng lớn thì lực hút càng mạnh; khoảng cách xa làm lực tương tác suy giảm cực nhanh.",
+      "boundary_conditions": "Trường hấp dẫn yếu và vận tốc thấp hơn nhiều so với tốc độ ánh sáng (trong giới hạn cơ học cổ điển).",
+      "falsification_test": "Tìm thấy hai khối lượng đứng yên trong chân không đẩy nhau hoặc lực tương tác không giảm theo hàm nghịch đảo bình phương khoảng cách.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Định luật Bernoulli & Bảo toàn Năng lượng Chất lưu",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "p + (1/2)ρv² + ρgh = const. Đối với chất lưu không nén được và không ma sát, khi vận tốc dòng chảy tăng lên thì áp suất tĩnh giảm xuống.",
+      "added_at": "2026-09-04 10:27:13",
+      "tier": 2,
+      "formal_definition": "p + (1/2)ρv² + ρgh = const. Đối với chất lưu không nén được và không ma sát, khi vận tốc dòng chảy tăng lên thì áp suất tĩnh giảm xuống.",
+      "intuitive_summary": "Dòng chảy qua chỗ thắt hẹp sẽ tăng tốc độ nhưng giảm áp lực; sự lưu thông nhanh tạo ra lực nâng hoặc lực hút.",
+      "boundary_conditions": "Chất lưu lý tưởng (không nén được, không nhớt, dòng chảy dừng).",
+      "falsification_test": "Trong dòng chất lưu lý tưởng, vận tốc tăng đồng thời áp suất tĩnh cũng tăng.",
+      "added_by": "Curated_Base_9Pillars"
+    },
+    {
+      "principle_name": "Lý thuyết Tải nhận thức (Cognitive Load Theory)",
+      "domain": "Vật lý học (Xử lý thông tin sinh học)",
+      "description": "Mô tả giới hạn của bộ nhớ làm việc trong quá trình học tập. Học tập hiệu quả tối đa hóa tải nhận thức hữu ích (germane load) và giảm thiểu tải nhận thức không cần thiết (extraneous load) để tối ưu hóa việc hình thành lược đồ kiến thức.",
+      "added_at": "2026-09-04 10:22:28",
+      "tier": 1,
+      "formal_definition": null,
+      "intuitive_summary": null,
+      "boundary_conditions": null,
+      "falsification_test": null,
+      "added_by": null
+    },
+    {
+      "principle_name": "Định luật Bảo toàn Động lượng",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "Trong hệ cô lập (không có ngoại lực), tổng vector động lượng của hệ luôn được bảo toàn: ∑p = const.",
+      "added_at": "2026-09-04 03:41:51",
+      "tier": 1,
+      "formal_definition": "∑ p_i = const khi ∑ F_ext = 0. Động lượng p = m*v (phi tương đối tính) hoặc p = γmv (tương đối tính).",
+      "intuitive_summary": "Không có lực bên ngoài thì hệ không thể tự thay đổi tổng động lượng của chính nó. Mọi chuyển động đều có phản động lượng tương ứng.",
+      "boundary_conditions": "Hệ cô lập hoặc tổng ngoại lực bằng không. Áp dụng từ cơ học cổ điển đến tương đối tính.",
+      "falsification_test": "Một hệ cô lập tự phát thay đổi tổng động lượng vector mà không có bất kỳ tương tác nào với bên ngoài.",
+      "added_by": "Scientific_Audit_Grok"
+    },
+    {
+      "principle_name": "Định luật 0 Nhiệt động lực học (Zeroth Law)",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "Nếu hệ A cân bằng nhiệt với hệ B, và hệ B cân bằng nhiệt với hệ C, thì hệ A cũng cân bằng nhiệt với hệ C. Đây là cơ sở để định nghĩa nhiệt độ như một đại lượng đo được.",
+      "added_at": "2026-09-04 03:41:51",
+      "tier": 1,
+      "formal_definition": "Nếu A ~ B và B ~ C thì A ~ C (trong đó ~ là quan hệ cân bằng nhiệt). Nhiệt độ là đại lượng trạng thái thỏa mãn tính chất bắc cầu này.",
+      "intuitive_summary": "Nhiệt độ là thuộc tính khách quan có thể đo và so sánh. Hai vật tiếp xúc lâu đủ sẽ có cùng nhiệt độ.",
+      "boundary_conditions": "Hệ nhiệt động ở trạng thái cân bằng nhiệt.",
+      "falsification_test": "Hai hệ cùng cân bằng nhiệt với hệ thứ ba nhưng không cân bằng nhiệt với nhau khi tiếp xúc trực tiếp.",
+      "added_by": "Scientific_Audit_Grok"
+    },
+    {
+      "principle_name": "Định luật Bảo toàn Mô-men Động lượng",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "Trong hệ cô lập (không có momen lực ngoài), tổng vector mô-men động lượng được bảo toàn: ∑L = const.",
+      "added_at": "2026-09-04 03:41:51",
+      "tier": 1,
+      "formal_definition": "∑ L_i = const khi ∑ τ_ext = 0. L = r × p đối với chất điểm.",
+      "intuitive_summary": "Khi không có momen lực ngoài, hệ không thể tự thay đổi tốc độ quay tổng thể của mình (ví dụ: vận động viên trượt băng thu chân lại để quay nhanh hơn).",
+      "boundary_conditions": "Hệ cô lập hoặc tổng momen lực ngoài bằng không.",
+      "falsification_test": "Một hệ cô lập tự phát thay đổi tổng mô-men động lượng mà không có tương tác ngoài.",
+      "added_by": "Scientific_Audit_Grok"
+    },
+    {
+      "principle_name": "Nguyên lý Tương đương (Equivalence Principle)",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "Hiệu ứng của trường hấp dẫn không thể phân biệt cục bộ với hiệu ứng của gia tốc. Đây là nền tảng của Thuyết Tương đối Tổng quát.",
+      "added_at": "2026-09-04 03:41:51",
+      "tier": 1,
+      "formal_definition": "Trong một hệ quy chiếu rơi tự do cục bộ, các định luật vật lý giống như trong hệ quán tính không có hấp dẫn (nguyên lý tương đương Einstein).",
+      "intuitive_summary": "Người đứng trong thang máy tăng tốc không phân biệt được đó là do trọng lực hay do gia tốc của thang máy.",
+      "boundary_conditions": "Vùng không-thời gian đủ nhỏ để bỏ qua gradient thủy triều hấp dẫn.",
+      "falsification_test": "Trong một hệ rơi tự do cục bộ, các thí nghiệm vật lý cho kết quả khác biệt có hệ thống so với hệ quán tính không hấp dẫn.",
+      "added_by": "Scientific_Audit_Grok"
+    },
+    {
+      "principle_name": "Định luật Bảo toàn Năng lượng - Động lượng 4-vector (Tương đối tính)",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "Trong thuyết tương đối, năng lượng và động lượng tạo thành một 4-vector được bảo toàn. E² = (pc)² + (mc²)².",
+      "added_at": "2026-09-04 03:41:51",
+      "tier": 1,
+      "formal_definition": "E² = (pc)² + (m₀c²)². Tổng 4-động lượng của hệ cô lập được bảo toàn.",
+      "intuitive_summary": "Khối lượng, năng lượng và động lượng gắn liền với nhau. Không thể bảo toàn năng lượng mà bỏ qua động lượng trong chế độ tương đối tính.",
+      "boundary_conditions": "Thuyết tương đối hẹp; hệ cô lập.",
+      "falsification_test": "Quá trình hạt nhân hoặc va chạm tương đối tính vi phạm quan hệ E² - (pc)² = (m₀c²)².",
+      "added_by": "Scientific_Audit_Grok"
+    },
+    {
+      "principle_name": "Định lý Noether (Noether's Theorem)",
+      "domain": "Vật lý học & Toán học",
+      "description": "Mỗi đối xứng khả vi liên tục của tác dụng (action) của một hệ vật lý tương ứng với một định luật bảo toàn. Đối xứng tịnh tiến thời gian → bảo toàn năng lượng; đối xứng tịnh tiến không gian → bảo toàn động lượng; đối xứng quay → bảo toàn mô-men động lượng.",
+      "added_at": "2026-09-04 03:45:52",
+      "tier": 1,
+      "formal_definition": "Nếu tác dụng S bất biến dưới nhóm biến đổi liên tục một tham số, thì tồn tại một dòng bảo toàn (conserved current) tương ứng. Đây là cầu nối sâu sắc giữa hình học đối xứng và các định luật bảo toàn.",
+      "intuitive_summary": "Mọi định luật bảo toàn trong vật lý đều xuất phát từ một dạng đối xứng nào đó của tự nhiên. Không có đối xứng thì không có cái gì được bảo toàn.",
+      "boundary_conditions": "Hệ mô tả bằng nguyên lý tác dụng cực tiểu, đối xứng liên tục khả vi.",
+      "falsification_test": "Tìm thấy một định luật bảo toàn không tương ứng với bất kỳ đối xứng nào của Lagrangian/action, hoặc ngược lại.",
+      "added_by": "Scientific_Audit_Grok"
+    },
+    {
+      "principle_name": "Phương trình Maxwell (Dạng tích phân tóm tắt)",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "Bốn phương trình mô tả toàn bộ điện từ học cổ điển: định luật Gauss điện, định luật Gauss từ (không có đơn cực từ), định luật Faraday cảm ứng, và định luật Ampere-Maxwell.",
+      "added_at": "2026-09-04 03:45:52",
+      "tier": 1,
+      "formal_definition": "∮ E⋅dA = Q/ε₀ ; ∮ B⋅dA = 0 ; ∮ E⋅dl = -dΦ_B/dt ; ∮ B⋅dl = μ₀I + μ₀ε₀ dΦ_E/dt. Ánh sáng là sóng điện từ tự duy trì.",
+      "intuitive_summary": "Điện trường và từ trường không độc lập; chúng tạo ra nhau và lan truyền trong không gian dưới dạng sóng với tốc độ ánh sáng.",
+      "boundary_conditions": "Điện từ học cổ điển trong chân không hoặc môi trường tuyến tính.",
+      "falsification_test": "Phát hiện đơn cực từ ổn định hoặc sóng điện từ truyền với tốc độ khác c trong chân không.",
+      "added_by": "Scientific_Audit_Grok"
+    },
+    {
+      "principle_name": "Nguyên lý Loại trừ Pauli",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "Hai fermion đồng nhất (spin bán nguyên) không thể chiếm cùng một trạng thái lượng tử. Đây là nguyên nhân cấu trúc vỏ điện tử, tính ổn định của vật chất và thống kê Fermi-Dirac.",
+      "added_at": "2026-09-04 03:45:52",
+      "tier": 1,
+      "formal_definition": "Hàm sóng tổng của hệ fermion phải phản đối xứng dưới phép hoán vị bất kỳ hai hạt. Hệ quả: không hai electron nào có cùng bộ bốn số lượng tử.",
+      "intuitive_summary": "Vật chất không sụp đổ vì các electron không thể chồng chéo hoàn toàn lên nhau ở cùng trạng thái năng lượng.",
+      "boundary_conditions": "Hạt fermion (electron, proton, neutron, quark...). Không áp dụng cho boson.",
+      "falsification_test": "Hai electron trong cùng nguyên tử chiếm cùng một bộ số lượng tử hoàn toàn mà hệ vẫn ổn định.",
+      "added_by": "Scientific_Audit_Grok"
+    },
+    {
+      "principle_name": "Định lý Cơ bản của Giải tích (Fundamental Theorem of Calculus)",
+      "domain": "Toán học & Logic học",
+      "description": "Đạo hàm và tích phân là hai phép toán nghịch đảo của nhau. Nếu F'(x) = f(x) thì ∫_a^b f(x) dx = F(b) - F(a).",
+      "added_at": "2026-09-04 03:45:52",
+      "tier": 1,
+      "formal_definition": "Nếu f liên tục trên [a,b] và F(x) = ∫_a^x f(t) dt thì F'(x) = f(x). Ngược lại, ∫_a^b F'(x) dx = F(b) - F(a).",
+      "intuitive_summary": "Tốc độ thay đổi tức thời và sự tích lũy tổng thể là hai mặt của cùng một thực tại toán học.",
+      "boundary_conditions": "Hàm liên tục hoặc khả tích trên khoảng đóng hữu hạn.",
+      "falsification_test": "Tìm hàm liên tục mà đạo hàm của tích phân không bằng chính hàm đó.",
+      "added_by": "Scientific_Audit_Grok"
+    },
+    {
+      "principle_name": "Tiên đề của Thuyết Tương đối Hẹp",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "1. Các định luật vật lý giống nhau trong mọi hệ quy chiếu quán tính. 2. Tốc độ ánh sáng trong chân không là hằng số bất biến, không phụ thuộc vào chuyển động của nguồn hay người quan sát.",
+      "added_at": "2026-09-04 03:45:52",
+      "tier": 1,
+      "formal_definition": "Nguyên lý tương đối + bất biến của c → biến đổi Lorentz, giãn thời gian, co độ dài, tương đương khối lượng-năng lượng.",
+      "intuitive_summary": "Không có hệ quy chiếu tuyệt đối ưu tiên. Ánh sáng luôn đi với tốc độ c đối với mọi người quan sát quán tính.",
+      "boundary_conditions": "Hệ quy chiếu quán tính; bỏ qua trường hấp dẫn mạnh.",
+      "falsification_test": "Đo được tốc độ ánh sáng phụ thuộc vào chuyển động của nguồn theo cách thức cổ điển (như gió ête).",
+      "added_by": "Scientific_Audit_Grok"
+    },
+    {
+      "principle_name": "Nguyên lý Dao động tử Điều hòa & Trạng thái Cơ bản Lượng tử",
+      "domain": "Vật lý học & Nhiệt động lực học",
+      "description": "Mọi hệ liên kết ổn định đều có năng lượng điểm không (zero-point energy) khác không do nguyên lý bất định. Dao động tử điều hòa lượng tử có E_n = ħω(n + 1/2).",
+      "added_at": "2026-09-04 03:45:52",
+      "tier": 1,
+      "formal_definition": "E_n = ħω (n + 1/2), n = 0,1,2,... Ngay cả ở trạng thái cơ bản (n=0) hệ vẫn còn năng lượng ħω/2.",
+      "intuitive_summary": "Không có gì đứng yên tuyệt đối ở cấp độ lượng tử. Ngay cả chân không cũng có thăng giáng năng lượng.",
+      "boundary_conditions": "Cơ học lượng tử không tương đối tính cho hệ liên kết.",
+      "falsification_test": "Đo được hệ dao động tử điều hòa có năng lượng trạng thái cơ bản bằng đúng không.",
+      "added_by": "Scientific_Audit_Grok"
+    },
+    {
+      "principle_name": "Định lý Church-Turing",
+      "domain": "Toán học & Lý thuyết Thông tin",
+      "description": "Mọi hàm tính toán được bằng thuật toán đều có thể được tính bởi một máy Turing. Đây là nền tảng của khoa học máy tính lý thuyết.",
+      "added_at": "2026-09-04 03:45:52",
+      "tier": 1,
+      "formal_definition": "Lớp các hàm đệ quy một phần trùng với lớp các hàm tính được bởi máy Turing. Không có mô hình tính toán hiệu quả nào mạnh hơn máy Turing (trong phạm vi luận đề).",
+      "intuitive_summary": "Mọi quy trình tính toán hiệu quả đều có thể được mô phỏng bằng một máy đơn giản đọc/ghi trên băng vô hạn theo quy tắc xác định.",
+      "boundary_conditions": "Mô hình tính toán cổ điển hiệu quả (không dùng tài nguyên vô hạn thực sự hoặc oracle).",
+      "falsification_test": "Xây dựng được một mô hình tính toán vật lý hiệu quả giải được bài toán không đệ quy (ví dụ bài toán dừng) trong thời gian hữu hạn.",
+      "added_by": "Scientific_Audit_Grok"
+    },
+    {
+      "principle_name": "Nguyên lý Dao động tối thiểu / Nguyên lý Hamilton",
+      "domain": "Vật lý học & Toán học",
+      "description": "Quỹ đạo thực của hệ là quỹ đạo làm cho tích phân tác dụng (action) đạt giá trị dừng (thường là cực tiểu). Đây là hình thức tổng quát nhất của cơ học.",
+      "added_at": "2026-09-04 03:45:52",
+      "tier": 1,
+      "formal_definition": "δ∫ L(q, q̇, t) dt = 0. Phương trình Euler-Lagrange suy ra từ đây tương đương với định luật Newton.",
+      "intuitive_summary": "Tự nhiên 'chọn' con đường tối ưu theo nghĩa tác dụng. Đây là ngôn ngữ đẹp và mạnh nhất để mô tả chuyển động.",
+      "boundary_conditions": "Hệ có thể mô tả bằng tọa độ suy rộng và Lagrangian.",
+      "falsification_test": "Hệ cơ học đi theo quỹ đạo làm tác dụng không đạt điểm dừng.",
+      "added_by": "Scientific_Audit_Grok"
+    }
+  ],
+  "analyses": [
+    {
+      "id": 4,
+      "problem_text": "học sinh lớp 9 với thời đại công nghệ hiện tại nên sử dụng chiến lược học tập nào tối ưu nhất, các phương pháp học thuộc, nhồi nhét .... nên bỏ qua hết, giải pháp toàn diện là gì",
+      "is_valid": true,
+      "analysis_json": {
+        "is_valid": true,
+        "reason_if_invalid": "",
+        "core_principles_found": [
+          {
+            "name": "Lý thuyết Thông tin (Information Theory)",
+            "domain": "Toán học/Vật lý học",
+            "description": "Nghiên cứu về định lượng, lưu trữ và truyền tải thông tin. Trong học tập, nó liên quan đến hiệu suất mã hóa, truyền dẫn, giải mã và lưu trữ dữ liệu kiến thức trong bộ não, và tác động của nhiễu."
+          },
+          {
+            "name": "Lý thuyết Tải nhận thức (Cognitive Load Theory)",
+            "domain": "Vật lý học (Xử lý thông tin sinh học)",
+            "description": "Mô tả giới hạn của bộ nhớ làm việc trong quá trình học tập. Học tập hiệu quả tối đa hóa tải nhận thức hữu ích (germane load) và giảm thiểu tải nhận thức không cần thiết (extraneous load) để tối ưu hóa việc hình thành lược đồ kiến thức."
+          },
+          {
+            "name": "Chi phí cơ hội (Opportunity Cost)",
+            "domain": "Kinh tế học",
+            "description": "Giá trị của lựa chọn tốt nhất tiếp theo bị bỏ qua khi đưa ra một quyết định. Trong học tập, đó là lợi ích tiềm năng từ một phương pháp học tập hoặc hoạt động khác không được thực hiện do lựa chọn phương pháp hiện tại."
+          }
+        ],
+        "deconstruction": {
+          "constants": [
+            "Giới hạn sinh học về dung lượng bộ nhớ làm việc của não bộ (khoảng 7+/-2 đơn vị thông tin đồng thời).",
+            "Nguyên tắc vật lý của việc hình thành trí nhớ dài hạn yêu cầu củng cố synaptic thông qua lặp lại giãn cách, gợi nhớ chủ động và liên kết thông tin mới với kiến thức hiện có.",
+            "Giới hạn thời gian vật lý trong một ngày (24 giờ) và nhu cầu sinh học cơ bản (ngủ, ăn uống).",
+            "Tính không thể thay thế của sự chú ý tập trung liên tục để xử lý thông tin sâu sắc."
+          ],
+          "variables": [
+            "Khối lượng và độ phức tạp của thông tin/kiến thức cần được tiếp thu và xử lý.",
+            "Các kênh và công cụ công nghệ cụ thể được sử dụng để tiếp cận, xử lý và quản lý thông tin (ví dụ: nền tảng học tập trực tuyến, phần mềm ghi chú, công cụ lặp lại giãn cách).",
+            "Mức độ phân tâm và nhiễu từ môi trường kỹ thuật số và vật lý.",
+            "Phân bổ thời gian và cường độ tập trung cho từng hoạt động học tập cụ thể.",
+            "Chất lượng và tính sẵn có của phản hồi để điều chỉnh chiến lược học tập.",
+            "Khả năng tự điều chỉnh và quản lý bản thân của học sinh trong việc sử dụng công nghệ."
+          ],
+          "logical_synthesis": "Chiến lược học tập tối ưu trong thời đại công nghệ đòi hỏi việc phân bổ tài nguyên nhận thức và thời gian một cách hiệu quả để tối đa hóa tỷ lệ thông tin hữu ích được mã hóa và lưu trữ trong bộ nhớ dài hạn, đồng thời tối thiểu hóa chi phí cơ hội của thời gian và nỗ lực. Dựa trên Lý thuyết Thông tin và Tải nhận thức, công nghệ cung cấp khả năng truy cập thông tin khổng lồ và công cụ xử lý, nhưng cũng tăng nguy cơ quá tải thông tin và nhiễu loạn, làm tăng tải nhận thức ngoại sinh. Do đó, cần chủ động lựa chọn các kênh và công cụ giúp quản lý tải nhận thức, tập trung vào các phương pháp kích hoạt gợi nhớ chủ động (active recall) và lặp lại giãn cách (spaced repetition) để hình thành trí nhớ dài hạn vững chắc (phù hợp với nguyên tắc hình thành trí nhớ). Các phương pháp thụ động hoặc nhồi nhét là không hiệu quả vì tạo ra tải nhận thức ngoại sinh cao, lợi tức thấp trên mỗi đơn vị thời gian và không thúc đẩy xử lý thông tin sâu. Công nghệ cần được xem như một đòn bẩy để tăng hiệu suất xử lý thông tin và giảm chi phí cơ hội của việc truy cập và thực hành, nhưng cần được quản lý để tránh trở thành nguồn gây phân tâm."
+        },
+        "human_decision_needed": [
+          "Xác định cụ thể khối lượng và độ phức tạp của kiến thức cần học cho từng môn học hoặc mục tiêu cụ thể.",
+          "Lượng hóa ngân sách thời gian hàng ngày/hàng tuần mà học sinh có thể dành cho việc học tập tập trung.",
+          "Đánh giá các công cụ công nghệ và nền tảng học tập nào là phù hợp nhất, có thể tiếp cận được và có tỷ lệ chi phí/lợi ích tối ưu cho học sinh.",
+          "Xác định các nguồn gây phân tâm chính và thiết lập các quy tắc rõ ràng để giảm thiểu chúng trong quá trình học tập (ví dụ: tắt thông báo, sử dụng công cụ chặn trang web).",
+          "Thiết lập một cơ chế thu thập phản hồi thường xuyên về hiệu suất học tập và khả năng điều chỉnh chiến lược theo dữ liệu."
+        ]
+      },
+      "created_at": "2026-09-04 10:22:28"
+    },
+    {
+      "id": 3,
+      "problem_text": "công nghệ AI sẽ phát triển mạnh, nên phải học tất cả các prompt để bắt kịp công nghệ",
+      "is_valid": true,
+      "analysis_json": {
+        "is_valid": true,
+        "reason_if_invalid": "",
+        "core_principles_found": [
+          {
+            "name": "Chi phí cơ hội (Opportunity Cost)",
+            "domain": "Kinh tế học",
+            "description": "Là giá trị của lựa chọn tốt nhất bị bỏ qua khi đưa ra một quyết định. Mọi hành động đều có chi phí cơ hội."
+          },
+          {
+            "name": "Hiệu suất cận biên giảm dần (Diminishing Marginal Returns)",
+            "domain": "Kinh tế học",
+            "description": "Khi tăng thêm một đơn vị yếu tố đầu vào (ví dụ: thời gian học), lợi ích hoặc sản lượng tăng thêm từ đơn vị đó sẽ ngày càng giảm, trong khi các yếu tố khác được giữ nguyên."
+          },
+          {
+            "name": "Tối ưu hóa (Optimization)",
+            "domain": "Toán học",
+            "description": "Quá trình tìm kiếm giải pháp tốt nhất (cực trị) cho một vấn đề, dựa trên một tập hợp các ràng buộc và mục tiêu đã định, nhằm đạt được hiệu quả hoặc lợi ích tối đa."
+          }
+        ],
+        "deconstruction": {
+          "constants": [
+            "Thời gian hữu hạn của con người",
+            "Tốc độ phát triển công nghệ AI (rất nhanh và liên tục)",
+            "Khối lượng các prompt hiện có và tiềm năng tăng lên (rất lớn và không ngừng)",
+            "Nguồn lực học tập (tâm sức, tiền bạc) là hữu hạn"
+          ],
+          "variables": [
+            "Độ sâu và rộng của kiến thức prompt cần học",
+            "Mức độ chuyên biệt của ứng dụng AI mong muốn",
+            "Thời gian đầu tư vào học prompt",
+            "Lợi ích/giá trị thu được từ việc học một prompt cụ thể hoặc một nhóm prompt",
+            "Chi phí cơ hội của việc học prompts so với các kỹ năng khác (ví dụ: kiến thức về lĩnh vực ứng dụng, kỹ năng lập trình, kỹ năng phân tích)",
+            "Tốc độ lỗi thời của các prompts cụ thể và các kỹ thuật prompt nhất định"
+          ],
+          "logical_synthesis": "Với thời gian và nguồn lực hữu hạn, việc cố gắng học 'tất cả các prompt' là một chiến lược không tối ưu. Nó đối mặt với chi phí cơ hội cực cao do bỏ qua các lĩnh vực kiến thức khác có giá trị lớn hơn, đồng thời chịu ảnh hưởng nặng nề bởi hiệu suất cận biên giảm dần nhanh chóng, vì các prompts cụ thể thường có tuổi thọ ngắn và giá trị biên giảm mạnh sau khi nắm vững các nguyên tắc cơ bản. Tốc độ phát triển của AI và sự lỗi thời của các prompts chi tiết cũng làm giảm đáng kể lợi tức đầu tư. Tối ưu hóa việc học đòi hỏi tập trung vào các nguyên tắc cốt lõi của prompt engineering và các kỹ thuật có tính ứng dụng rộng rãi và lâu dài, thay vì cố gắng bao quát mọi prompts chi tiết."
+        },
+        "human_decision_needed": [
+          "Xác định mục tiêu cụ thể khi ứng dụng AI (ví dụ: tối ưu hóa quy trình kinh doanh, phát triển sản phẩm, nghiên cứu), để từ đó khoanh vùng kiến thức prompt cần thiết.",
+          "Đánh giá ngưỡng 'bắt kịp công nghệ' của bản thân là gì (ví dụ: nắm vững nguyên tắc, có thể áp dụng 80% trường hợp, hay trở thành chuyên gia hàng đầu), và mức độ chấp nhận rủi ro bị lạc hậu so với chi phí đầu tư.",
+          "Lượng hóa giá trị cận biên của việc học thêm một kỹ thuật prompt so với chi phí (thời gian, công sức) để xác định điểm dừng tối ưu theo nguyên tắc hiệu suất cận biên giảm dần.",
+          "Xác định các kỹ năng bổ trợ (ví dụ: kiến thức chuyên môn ngành, kỹ năng lập trình, tư duy giải quyết vấn đề) cần thiết và lượng hóa chi phí cơ hội của việc tập trung vào prompt so với các kỹ năng đó."
+        ]
+      },
+      "created_at": "2026-09-04 10:10:52"
+    },
+    {
+      "id": 2,
+      "problem_text": "Thị trường bất động sản đang sốt, bạn bè tôi ai cũng đi mua đất nền kiếm lời, tôi có nên vay ngân hàng 2 tỷ mua một mảnh không?",
+      "is_valid": true,
+      "analysis_json": {
+        "is_valid": true,
+        "reason_if_invalid": "",
+        "core_principles_found": [
+          {
+            "name": "Quy luật Cung Cầu",
+            "domain": "Kinh tế học",
+            "description": "Giá cả của một tài sản được xác định bởi sự tương tác giữa tổng lượng hàng hóa hoặc dịch vụ sẵn có (cung) và mong muốn của người tiêu dùng đối với hàng hóa hoặc dịch vụ đó (cầu). Sự tăng trưởng giá đột biến có thể do cầu vượt cung hoặc do yếu tố đầu cơ, không bền vững."
+          },
+          {
+            "name": "Chi phí cơ hội",
+            "domain": "Kinh tế học",
+            "description": "Chi phí cơ hội của một lựa chọn là giá trị của lựa chọn tốt nhất tiếp theo bị bỏ qua khi đưa ra quyết định đó. Đầu tư vào bất động sản có nghĩa là từ bỏ cơ hội đầu tư vào các tài sản khác hoặc sử dụng tiền theo cách khác."
+          },
+          {
+            "name": "Rủi ro và Lợi nhuận",
+            "domain": "Kinh tế học",
+            "description": "Trong đầu tư, lợi nhuận kỳ vọng cao hơn thường đi kèm với mức độ rủi ro cao hơn. Vay nợ để đầu tư (đòn bẩy tài chính) khuếch đại cả lợi nhuận tiềm năng và thua lỗ tiềm năng, làm tăng rủi ro tài chính tổng thể."
+          }
+        ],
+        "deconstruction": {
+          "constants": [
+            "Số tiền vay dự kiến: 2 tỷ VND.",
+            "Mục tiêu đầu tư: Kiếm lời từ chênh lệch giá đất nền.",
+            "Chi phí giao dịch (phí trước bạ, môi giới, thuế TNCN khi bán) là các tỷ lệ cố định theo luật định."
+          ],
+          "variables": [
+            "Lãi suất vay ngân hàng (có thể thay đổi theo thời gian sau kỳ ưu đãi).",
+            "Tốc độ và tính bền vững của tăng trưởng giá đất nền trong tương lai (phụ thuộc quy hoạch, hạ tầng, chính sách, kinh tế vĩ mô).",
+            "Thời gian nắm giữ tài sản (ảnh hưởng đến tổng chi phí lãi vay và cơ hội bán).",
+            "Khả năng tạo thu nhập và dòng tiền của người vay để trả nợ gốc và lãi.",
+            "Biến động kinh tế vĩ mô (lạm phát, chính sách tiền tệ).",
+            "Khả năng thanh khoản của mảnh đất nền (khó bán khi thị trường đi xuống)."
+          ],
+          "logical_synthesis": "Quyết định vay 2 tỷ VND để mua đất nền phải dựa trên phân tích kinh tế về lợi nhuận kỳ vọng ròng (giá bán trừ giá mua, lãi vay, chi phí cơ hội, và chi phí giao dịch) so với rủi ro mất vốn. 'Thị trường sốt' có thể là biểu hiện của cầu tăng quá mức do đầu cơ, tạo ra rủi ro bong bóng giá. Việc bạn bè mua không phải là căn cứ kinh tế cho giá trị nội tại của tài sản. Việc sử dụng đòn bẩy tài chính (vay ngân hàng) khuếch đại rủi ro đối với dòng tiền và khả năng trả nợ, đặc biệt khi lợi nhuận từ tài sản không đạt hoặc lãi suất tăng."
+        },
+        "human_decision_needed": [
+          "Tỷ lệ lãi suất vay ngân hàng cụ thể và các điều khoản vay (thời gian ưu đãi, lãi suất thả nổi sau đó).",
+          "Khoản tiền đặt cọc tự có và khả năng tài chính cá nhân để trả nợ gốc và lãi hàng tháng (cụ thể hóa dòng tiền).",
+          "Thời gian dự kiến nắm giữ tài sản và điểm hòa vốn cần thiết để có lợi nhuận.",
+          "Mức độ chấp nhận rủi ro cá nhân đối với biến động giá bất động sản và khả năng mất vốn.",
+          "Đánh giá độc lập về tiềm năng tăng giá bền vững của mảnh đất cụ thể (không dựa trên cảm tính hay tâm lý bầy đàn), bao gồm thông tin về quy hoạch, hạ tầng, vị trí.",
+          "Phân tích các cơ hội đầu tư thay thế (chi phí cơ hội) và lợi nhuận kỳ vọng của chúng so với đầu tư vào đất nền."
+        ]
+      },
+      "created_at": "2026-09-04 10:05:54"
+    },
+    {
+      "id": 1,
+      "problem_text": "Thị trường bất động sản đang sốt, bạn bè tôi ai cũng đi mua đất nền kiếm lời, tôi có nên vay ngân hàng 2 tỷ mua một mảnh không?",
+      "is_valid": true,
+      "analysis_json": {
+        "is_valid": true,
+        "reason_if_invalid": "",
+        "core_principles_found": [
+          {
+            "name": "Quy luật Cung Cầu",
+            "domain": "Kinh tế học",
+            "description": "Giá cả của một tài sản được xác định bởi sự tương tác giữa lượng cung có sẵn và lượng cầu trên thị trường. Sự mất cân bằng có thể gây ra biến động giá."
+          },
+          {
+            "name": "Chi phí Cơ hội",
+            "domain": "Kinh tế học",
+            "description": "Là giá trị của cơ hội tốt nhất bị bỏ lỡ khi đưa ra một lựa chọn. Việc đầu tư vào đất nền đồng nghĩa với việc từ bỏ các khoản đầu tư khác có thể mang lại lợi nhuận."
+          },
+          {
+            "name": "Đòn bẩy Tài chính (Financial Leverage)",
+            "domain": "Kinh tế học",
+            "description": "Sử dụng vốn vay để tài trợ cho một khoản đầu tư, nhằm khuếch đại tỷ suất lợi nhuận (và rủi ro) trên vốn chủ sở hữu, với giả định tỷ suất sinh lời của tài sản vượt trội so với chi phí vay."
+          }
+        ],
+        "deconstruction": {
+          "constants": [
+            "Số tiền vay dự kiến: 2 tỷ VND",
+            "Chi phí giao dịch cố định (thuế, phí sang tên...)",
+            "Các quy định pháp lý hiện hành về quyền sở hữu và giao dịch đất đai",
+            "Giới hạn sinh học/tâm lý về khả năng chịu đựng rủi ro của cá nhân"
+          ],
+          "variables": [
+            "Lãi suất vay ngân hàng (có thể biến động sau thời gian ưu đãi)",
+            "Giá trị thị trường của mảnh đất nền (biến động theo cung cầu)",
+            "Chi phí duy trì mảnh đất (nếu có: thuế đất hàng năm, bảo dưỡng)",
+            "Khả năng thanh toán nợ gốc và lãi hàng tháng (phụ thuộc thu nhập và chi phí sinh hoạt)",
+            "Thời gian nắm giữ tài sản dự kiến",
+            "Thanh khoản của mảnh đất (khả năng bán ra thị trường nhanh chóng)",
+            "Các yếu tố vĩ mô ảnh hưởng đến thị trường bất động sản (chính sách tiền tệ, lạm phát, tăng trưởng kinh tế)",
+            "Tỷ suất lợi nhuận từ các kênh đầu tư thay thế (đại diện cho chi phí cơ hội)"
+          ],
+          "logical_synthesis": "Quyết định vay 2 tỷ mua đất nền là một bài toán tối ưu hóa lợi nhuận và rủi ro. Sử dụng đòn bẩy tài chính khuếch đại cả lợi nhuận tiềm năng và thua lỗ tiềm tàng. Lợi nhuận chỉ đạt được khi tỷ lệ tăng giá đất nền (trừ chi phí giao dịch và duy trì) lớn hơn chi phí lãi vay và chi phí cơ hội của khoản vốn tự có. Rủi ro bao gồm biến động giá không thuận lợi, mất thanh khoản, và tăng chi phí lãi vay, ảnh hưởng trực tiếp đến khả năng thanh toán nợ. Thị trường 'sốt' biểu thị cầu vượt cung, nhưng cũng tiềm ẩn rủi ro điều chỉnh giá khi cung tăng hoặc cầu giảm."
+        },
+        "human_decision_needed": [
+          "Xác định chính xác mức lãi suất vay ngân hàng, thời hạn vay và các điều khoản phạt (trả nợ trước hạn, tăng lãi suất sau ưu đãi).",
+          "Đánh giá chi tiết dòng tiền cá nhân hàng tháng để xác định khả năng thanh toán nợ gốc và lãi trong mọi kịch bản thị trường (thu nhập ổn định, thu nhập giảm).",
+          "Xác định mức độ chấp nhận rủi ro cá nhân đối với biến động giá bất động sản và khả năng mất thanh khoản, đặc biệt khi sử dụng đòn bẩy cao.",
+          "Lượng hóa chi phí cơ hội của khoản 2 tỷ đồng và vốn tự có (nếu có) bằng cách nghiên cứu tỷ suất sinh lời của các kênh đầu tư thay thế.",
+          "Phân tích cụ thể về mảnh đất nền định mua (vị trí, quy hoạch, tính pháp lý, tiềm năng tăng trưởng thực tế dựa trên dữ liệu, không phải tin đồn hoặc hành vi đám đông).",
+          "Xác định thời gian nắm giữ tài sản dự kiến và mức lợi nhuận kỳ vọng tối thiểu để bù đắp chi phí và rủi ro."
+        ]
+      },
+      "created_at": "2026-09-04 10:05:27"
+    }
+  ]
+}

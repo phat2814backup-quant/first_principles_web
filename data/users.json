@@ -1,0 +1,34 @@
+{
+  "users": {
+    "Phat": {
+      "password": "Phat@12345",
+      "role": "admin",
+      "display_name": "Phat"
+    },
+    "Ha": {
+      "password": "Ha@12345",
+      "role": "user",
+      "display_name": "Ha"
+    },
+    "xuka": {
+      "password": "xuka@12345",
+      "role": "user",
+      "display_name": "Xuka"
+    },
+    "bong": {
+      "password": "bong@12345",
+      "role": "user",
+      "display_name": "Bong"
+    },
+    "A1": {
+      "password": "A1@12345",
+      "role": "user",
+      "display_name": "A1"
+    },
+    "A2": {
+      "password": "A2@12345",
+      "role": "user",
+      "display_name": "A2"
+    }
+  }
+}
