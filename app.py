@@ -44,20 +44,48 @@ st.set_page_config(
 )
 
 
-def get_api_key() -> str:
-    # Priority: Streamlit secrets → env → sidebar input (handled later)
+def get_configured_api_keys() -> list[str]:
+    """Lấy danh sách Gemini API keys từ Streamlit secrets và biến môi trường (hỗ trợ xoay tua)."""
+    keys: list[str] = []
+
+    # 1. Kiểm tra Streamlit secrets
     try:
-        if "GOOGLE_API_KEY" in st.secrets:
-            return st.secrets["GOOGLE_API_KEY"]
-        if "GEMINI_API_KEY" in st.secrets:
-            return st.secrets["GEMINI_API_KEY"]
+        if "GEMINI_API_KEYS" in st.secrets:
+            val = st.secrets["GEMINI_API_KEYS"]
+            if isinstance(val, (list, tuple)):
+                keys.extend([str(k).strip() for k in val if str(k).strip()])
+            elif isinstance(val, str):
+                keys.extend([k.strip() for k in val.split(",") if k.strip()])
+
+        for idx in range(1, 10):
+            k_name = f"GEMINI_API_KEY_{idx}"
+            if k_name in st.secrets and st.secrets[k_name]:
+                keys.append(str(st.secrets[k_name]).strip())
+
+        for k_name in ("GOOGLE_API_KEY", "GEMINI_API_KEY"):
+            if k_name in st.secrets and st.secrets[k_name]:
+                keys.append(str(st.secrets[k_name]).strip())
     except Exception:
         pass
-    for k in ("GOOGLE_API_KEY", "GEMINI_API_KEY", "GEMINI_API_KEY_1"):
-        v = os.getenv(k)
+
+    # 2. Kiểm tra biến môi trường
+    for idx in range(1, 10):
+        v = os.getenv(f"GEMINI_API_KEY_{idx}")
         if v and v.strip():
-            return v.strip()
-    return ""
+            keys.append(v.strip())
+
+    for k_name in ("GOOGLE_API_KEY", "GEMINI_API_KEY"):
+        v = os.getenv(k_name)
+        if v and v.strip():
+            keys.append(v.strip())
+
+    seen = set()
+    unique_keys = []
+    for k in keys:
+        if k and k not in seen:
+            seen.add(k)
+            unique_keys.append(k)
+    return unique_keys
 
 
 # -----------------------------------------------------------------------------
@@ -82,15 +110,30 @@ with st.sidebar:
 
     st.divider()
     st.markdown("#### 🔑 Gemini API Key")
-    default_key = get_api_key()
-    api_key = st.text_input(
-        "API Key (để trống nếu đã cấu hình Secrets)",
-        value=default_key if default_key else "",
-        type="password",
-        help="Trên Streamlit Cloud nên để trong Secrets: GOOGLE_API_KEY",
-    )
-    if not api_key:
-        api_key = default_key
+    configured_keys = get_configured_api_keys()
+
+    if configured_keys:
+        st.success(f"Đã nạp {len(configured_keys)} Key từ Secrets (Tự động xoay tua)")
+        with st.expander("⚙️ Tùy chọn Key riêng"):
+            override_key = st.text_input(
+                "Ghi đè bằng key khác (tùy chọn)",
+                value="",
+                type="password",
+                help="Để trống để hệ thống tự động xoay tua 3 key từ Secrets.",
+            )
+        if override_key.strip():
+            active_keys = [override_key.strip()] + [k for k in configured_keys if k != override_key.strip()]
+        else:
+            active_keys = configured_keys
+    else:
+        st.warning("Chưa có Secrets. Vui lòng nhập API Key:")
+        manual_key = st.text_input(
+            "Gemini API Key",
+            value="",
+            type="password",
+            help="Trên Streamlit Cloud nên cấu hình trong Secrets: GEMINI_API_KEYS",
+        )
+        active_keys = [manual_key.strip()] if manual_key.strip() else []
 
     model_choice = st.selectbox(
         "Model",
@@ -135,13 +178,13 @@ with tabs[0]:
     problem = st.text_area("Nội dung cần phân rã", value=initial, height=120)
 
     if st.button("🚀 Phân rã ngay", type="primary", use_container_width=True):
-        if not api_key:
-            st.warning("Cần Gemini API Key (sidebar hoặc Streamlit Secrets).")
+        if not active_keys:
+            st.warning("Cần Gemini API Key (cấu hình trong Secrets hoặc sidebar).")
         elif not problem.strip():
             st.warning("Hãy nhập nội dung.")
         else:
-            with st.spinner("Đang chạy 9 lenses..."):
-                result = analyze_problem(api_key, model_choice, problem.strip())
+            with st.spinner("Đang chạy 9 lenses qua Gemini (tự động xoay tua nếu bận/hết quota)..."):
+                result = analyze_problem(active_keys, model_choice, problem.strip())
 
             if not result:
                 st.error("Không có kết quả.")
@@ -154,7 +197,8 @@ with tabs[0]:
                 summary = result.get("first_principles_breakdown", "")[:300]
                 append_analysis(username, problem.strip(), summary, result)
 
-                st.success("Đã phân rã xong · Đã lưu vào lịch sử của bạn")
+                key_info = f" (Key: `{result.get('_used_key')}`)" if result.get("_used_key") else ""
+                st.success(f"Đã phân rã xong{key_info} · Đã lưu vào lịch sử của bạn")
 
                 c1, c2 = st.columns(2)
                 with c1:
@@ -262,11 +306,11 @@ with tabs[2]:
             if st.button("🤖 Xin feedback AI", type="primary", use_container_width=True):
                 if not answer.strip():
                     st.warning("Hãy viết câu trả lời trước.")
-                elif not api_key:
+                elif not active_keys:
                     st.warning("Cần API Key để nhận feedback.")
                 else:
-                    with st.spinner("Đang nhận xét..."):
-                        fb = feedback_on_answer(api_key, model_choice, lesson, answer.strip())
+                    with st.spinner("Đang nhận xét (tự động xoay tua nếu bận/hết quota)..."):
+                        fb = feedback_on_answer(active_keys, model_choice, lesson, answer.strip())
                     save_training_answer(username, lesson["id"], answer.strip(), fb)
                     st.rerun()
 

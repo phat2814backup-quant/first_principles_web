@@ -35,7 +35,18 @@ streamlit run app.py
 4. **Secrets** (App settings → Secrets):
 
 ```toml
-GOOGLE_API_KEY = "your_key_here"
+# Cấu hình 3 Gemini API Key dự phòng (Tự động xoay tua khi hết quota)
+GEMINI_API_KEY_1 = "AIzaSy..."
+GEMINI_API_KEY_2 = "AIzaSy..."
+GEMINI_API_KEY_3 = "AIzaSy..."
+
+GEMINI_API_KEYS = [
+    "AIzaSy...key1",
+    "AIzaSy...key2",
+    "AIzaSy...key3"
+]
+
+GOOGLE_API_KEY = "AIzaSy...key1"
 ```
 
 5. Deploy.
