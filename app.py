@@ -62,6 +62,9 @@ from utils.quiz_engine import (
     get_user_mastery_summary,
     generate_ai_quiz,
     evaluate_feynman_challenge,
+    get_theory_questions_for_modes,
+    get_theory_questions_for_models,
+    get_theory_questions_for_principles,
 )
 
 # -----------------------------------------------------------------------------
@@ -883,14 +886,109 @@ with tabs[4]:
 
     st.progress(mastery_data["mastery_pct"] / 100.0)
 
-    arena_tab1, arena_tab2, arena_tab3 = st.tabs([
+    arena_tab_th, arena_tab1, arena_tab2, arena_tab3 = st.tabs([
+        "📖 Trắc Nghiệm Lý Thuyết Cốt Lõi",
         "🎯 Trắc Nghiệm Tình Huống Thực Chiến",
         "🗂️ Thẻ Flashcards Phản Xạ 5 Giây",
         "✨ AI Đấu Trí & Thử Thách Feynman"
     ])
 
     # -------------------------------------------------------------------------
-    # Sub-tab 1: Trắc Nghiệm Tình Huống Thực Chiến
+    # Sub-tab 1: Trắc Nghiệm Lý Thuyết Cốt Lõi (Theory Foundation Quiz)
+    # -------------------------------------------------------------------------
+    with arena_tab_th:
+        st.markdown("### 📖 Trắc Nghiệm Lý Thuyết Cốt Lõi (Theory Foundation Quiz)")
+        st.caption("Muốn giải quyết được bài toán hóc búa, trước hết phải hiểu lý thuyết thật rành mạch: định nghĩa chuẩn xác, chân lý gốc (First Principles), cơ chế vận hành và bẫy ngụy biện (Inversion Traps).")
+
+        th_category = st.radio(
+            "Chọn phân hệ trắc nghiệm lý thuyết",
+            [
+                "🧠 9 Chế độ Tư duy Tinh hoa (Lý thuyết rành mạch)",
+                "🕸️ 88 Mô hình Hạt nhân (Chân lý gốc & Đòn bẩy)",
+                "🔬 100 Nguyên lý Khởi thủy (Định nghĩa & Điều kiện biên)"
+            ],
+            horizontal=True,
+            key="th_quiz_cat_radio"
+        )
+
+        th_selected_questions = []
+        th_cat_key = ""
+
+        if "9 Chế độ" in th_category:
+            th_cat_key = "th_modes"
+            th_selected_questions = get_theory_questions_for_modes()
+            st.info(f"📋 Khoang kiểm tra lý thuyết **9 Chế độ Tư duy Tinh hoa**. Khắc sâu bản chất lý thuyết, quy trình vận hành và bẫy tư duy của từng lăng kính.")
+        elif "88 Mô hình" in th_category:
+            th_cat_key = "th_models"
+            col_thm1, col_thm2 = st.columns(2)
+            with col_thm1:
+                th_filter_pillar = st.selectbox("Lọc theo Trụ cột", ["Tất cả"] + get_pillars(), key="th_filter_pillar")
+            with col_thm2:
+                th_only_tier1 = st.checkbox("Chỉ kiểm tra 25 Siêu mô hình Tier 1 Pareto", value=True, key="th_only_tier1")
+
+            p_arg = th_filter_pillar if th_filter_pillar != "Tất cả" else None
+            t_arg = 1 if th_only_tier1 else None
+            th_selected_questions = get_theory_questions_for_models(pillar=p_arg, tier=t_arg)
+            st.info(f"📋 Khoang kiểm tra lý thuyết **88 Mô hình Hạt nhân** (hiện có **{len(th_selected_questions)} câu hỏi**). Khắc sâu Chân lý gốc (First Principle), Đòn bẩy và Bẫy đảo ngược (Inversion Trap).")
+        else:
+            th_cat_key = "th_principles"
+            th_domain = st.selectbox("Lọc Trụ cột khoa học", get_domains(), key="th_filter_domain")
+            d_arg = th_domain if th_domain != "Tất cả" else None
+            th_selected_questions = get_theory_questions_for_principles(domain=d_arg)
+            st.info(f"📋 Khoang kiểm tra lý thuyết **100 Nguyên lý Khởi thủy** (hiện có **{len(th_selected_questions)} câu hỏi**). Khắc sâu định nghĩa hình thức, điều kiện biên và tính khả bác (falsification).")
+
+        th_score = 0
+        th_answered = 0
+
+        if len(th_selected_questions) > 15:
+            th_max_display = st.slider("Số lượng câu hỏi kiểm tra đợt này:", min_value=5, max_value=len(th_selected_questions), value=min(15, len(th_selected_questions)), step=5, key="th_slider_limit")
+            th_display_questions = th_selected_questions[:th_max_display]
+        else:
+            th_display_questions = th_selected_questions
+
+        for i, q in enumerate(th_display_questions):
+            q_title = q.get('concept') or q.get('model_name') or q.get('principle_name') or f"Câu {i+1}"
+            with st.expander(f"Câu {i+1}: {q_title}", expanded=(i < 2)):
+                st.markdown(f"**❓ Câu hỏi lý thuyết:** **{q.get('question')}**")
+
+                th_state_key = f"th_ans_{th_cat_key}_{q.get('id')}"
+                th_user_choice = st.radio(
+                    "Chọn đáp án chính xác:",
+                    q.get("options", []),
+                    key=th_state_key,
+                    index=None
+                )
+
+                if th_user_choice is not None:
+                    th_answered += 1
+                    th_chosen_idx = q["options"].index(th_user_choice)
+                    th_is_correct = (th_chosen_idx == q["correct_index"])
+
+                    if th_is_correct:
+                        th_score += 1
+                        st.success("🎉 **CHÍNH XÁC!** Bạn đã nắm rất rành mạch lý thuyết cốt lõi này.")
+                    else:
+                        st.error(f"❌ **CHƯA CHÍNH XÁC!** Đáp án chuẩn là: **{q['options'][q['correct_index']]}**")
+
+                    st.markdown(f"💡 **Chân lý gốc / Định nghĩa cốt lõi:** {q.get('explanation')}")
+                    st.markdown(f"⚠️ **Bẫy ngụy biện & Ranh giới điều kiện biên:** {q.get('trap_analysis')}")
+
+        st.divider()
+        c_thr1, c_thr2 = st.columns([2, 1])
+        with c_thr1:
+            if th_answered > 0:
+                th_pct = round(th_score / th_answered * 100, 1)
+                st.markdown(f"#### 📊 Kết quả trắc nghiệm lý thuyết: **{th_score}/{th_answered} câu đúng ({th_pct}%)**")
+            else:
+                st.caption("Hãy chọn đáp án cho các câu hỏi lý thuyết phía trên để kiểm tra kết quả.")
+        with c_thr2:
+            if th_answered > 0 and st.button("💾 Ghi nhận lượt thi lý thuyết vào Lịch sử", type="primary", use_container_width=True, key="btn_save_th_quiz"):
+                record_quiz_completion(username, f"Lý thuyết: {th_category}", th_score, th_answered)
+                st.success("🎉 Đã lưu kết quả thi lý thuyết vào Lịch sử cá nhân! Tăng cường điểm số Mastery.")
+                st.rerun()
+
+    # -------------------------------------------------------------------------
+    # Sub-tab 2: Trắc Nghiệm Tình Huống Thực Chiến
     # -------------------------------------------------------------------------
     with arena_tab1:
         st.markdown("### 🎯 Trắc Nghiệm Tình Huống Phản Xạ (Case-Based Reflex Quiz)")

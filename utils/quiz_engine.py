@@ -29,6 +29,406 @@ from utils.mental_models import get_all_models, filter_models
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
 # =============================================================================
+# 0. NGÂN HÀNG TRẮC NGHIỆM LÝ THUYẾT RÀNH MẠCH (THEORY FOUNDATION QUIZ)
+# =============================================================================
+THEORY_MODES_QUIZ = [
+    {
+        "id": "TH-MODE-01",
+        "concept": "First Principles (Tư duy Nguyên bản)",
+        "question": "Theo Aristotle và Elon Musk, bản chất lý thuyết cốt lõi của Tư duy Nguyên bản (First Principles Thinking) là gì?",
+        "options": [
+            "A. Phân rã bài toán về những chân lý cơ bản nhất không thể suy diễn thêm, tách biệt Sự thật (Fact) khỏi Ý kiến (Opinion) và tái thiết kế giải pháp từ số 0.",
+            "B. Tìm giải pháp đơn giản nhất trong số các phương án đang có sẵn trên thị trường.",
+            "C. Lập kế hoạch tài chính chi tiết 5 năm dựa trên kết quả của các công ty đi trước.",
+            "D. Phân tích điểm mạnh, điểm yếu, cơ hội và thách thức (SWOT) theo thông lệ ngành."
+        ],
+        "correct_index": 0,
+        "explanation": "First Principles là phương pháp tư duy bóc tách tận cùng chân lý bất biến (vật lý, toán học), đối lập hoàn toàn với Reasoning by Analogy (suy luận bắt chước theo kinh nghiệm đám đông).",
+        "trap_analysis": "Bẫy bắt chước (Analogy Trap): Tin rằng điều gì người khác đang làm thì mặc định là tối ưu nhất."
+    },
+    {
+        "id": "TH-MODE-02",
+        "concept": "Tư duy Xác suất & Cập nhật Bayes (Probabilistic & Bayesian)",
+        "question": "Trong tư duy xác suất Bayes, công thức cốt lõi để cập nhật niềm tin khi xuất hiện dữ kiện mới là gì?",
+        "options": [
+            "A. Posterior (Xác suất mới) ∝ Prior (Niềm tin ban đầu / Tỷ lệ nền) × Likelihood (Khả năng xuất hiện của dữ kiện mới).",
+            "B. Posterior = Trung bình cộng của tất cả các ý kiến chuyên gia uy tín trong ngành.",
+            "C. Posterior = Niềm tin ban đầu cộng thêm cảm xúc và trực giác nhạy bén của nhà đầu tư.",
+            "D. Posterior = 100% nếu có ít nhất một bài báo hoặc nguồn tin nội bộ xác nhận."
+        ],
+        "correct_index": 0,
+        "explanation": "Định lý Bayes ép tư duy không nhìn nhận thế giới theo nhị nguyên Đúng/Sai, mà nhìn theo phổ xác suất liên tục được điều chỉnh khách quan theo dữ kiện thực nghiệm.",
+        "trap_analysis": "Bẫy thờ ơ tỷ lệ nền (Base Rate Fallacy) & Bẫy Cố chấp: Quên mất xác suất ban đầu hoặc không chịu hạ xác suất khi dữ kiện thực tế xấu đi."
+    },
+    {
+        "id": "TH-MODE-03",
+        "concept": "Tư duy Đảo ngược (Inversion — Charlie Munger)",
+        "question": "Quy tắc cốt lõi của phương pháp Tư duy Đảo ngược (Inversion / Premortem) trong việc ra quyết định là gì?",
+        "options": [
+            "A. Thay vì tìm cách để thành công rực rỡ, hãy liệt kê mọi điều chắc chắn dẫn tới thảm họa/thất bại rồi chủ động né tránh chúng.",
+            "B. Luôn làm điều ngược lại với những gì đồng nghiệp hoặc đối thủ đang làm.",
+            "C. Bán tháo toàn bộ danh mục tài sản khi thị trường vừa mới xuất hiện một tin tức xấu.",
+            "D. Đảo ngược thứ tự các công việc trong ngày từ việc dễ nhất làm trước đến việc khó nhất."
+        ],
+        "correct_index": 0,
+        "explanation": "Charlie Munger đúc kết: 'Người ta thường quá tập trung vào việc làm sao để trở nên xuất chúng, mà quên mất rằng việc bền bỉ tránh những điều ngu ngốc mới tạo ra kết quả phi thường'.",
+        "trap_analysis": "Bẫy chỉ nhìn về phía trước (Forward-only): Chỉ vẽ kịch bản màu hồng mà mù tịt trước những lỗ thủng làm chìm tàu."
+    },
+    {
+        "id": "TH-MODE-04",
+        "concept": "Tư duy Bậc hai (Second-Order Thinking — Howard Marks)",
+        "question": "Điểm phân định cốt lõi giữa Tư duy Bậc một và Tư duy Bậc hai (Second-Order Thinking) là gì?",
+        "options": [
+            "A. Bậc một chỉ nhìn tác động hiển hiện trước mắt; Bậc hai luôn hỏi 'Và sau đó điều gì xảy ra?' để tính phản ứng của các tác nhân và hệ quả lan truyền 1–3 năm tới.",
+            "B. Bậc một là suy nghĩ định tính, Bậc hai là suy nghĩ định lượng bằng máy tính.",
+            "C. Bậc một dành cho người mới đi làm, Bậc hai chỉ dành riêng cho các tỷ phú.",
+            "D. Bậc hai là suy nghĩ đi suy nghĩ lại hai lần trước khi phát biểu."
+        ],
+        "correct_index": 0,
+        "explanation": "Hầu hết các sai lầm thảm họa xã hội và kinh tế đều bắt nguồn từ tư duy bậc một: làm một việc có vẻ tốt tức thời nhưng hủy hoại cấu trúc hệ thống về lâu dài.",
+        "trap_analysis": "Bẫy tầm nhìn ngắn hạn: Coi hệ quả trước mắt là toàn bộ câu chuyện mà không dự phóng phản ứng dây chuyền."
+    },
+    {
+        "id": "TH-MODE-05",
+        "concept": "Tư duy Tùy chọn & Bất đối xứng (Optionality & Barbell — Nassim Taleb)",
+        "question": "Chiến lược Đòn tạ (Barbell Strategy) của Nassim Nicholas Taleb được cấu trúc lý thuyết như thế nào?",
+        "options": [
+            "A. 85-90% nguồn lực đặt vào các tài sản an toàn tuyệt đối (tránh rủi ro hủy diệt), 10-15% phân bổ vào các tùy chọn có rủi ro giới hạn nhưng tiềm năng lợi nhuận vô hạn bất đối xứng.",
+            "B. Dồn toàn bộ 100% tài sản vào các cơ hội có rủi ro trung bình để sinh lời ổn định quanh năm.",
+            "C. Vay nợ tối đa (đòn bẩy cao) khi nhận thấy một cơ hội có vẻ chắc thắng 99%.",
+            "D. Chia đều tài sản thành 10 phần bằng nhau và đầu tư dàn trải không phân biệt rủi ro."
+        ],
+        "correct_index": 0,
+        "explanation": "Chiến lược Barbell giúp hệ thống đạt trạng thái Chống Mong Manh (Antifragile): Tuyệt đối không bị xóa sổ khi có thiên nga đen, nhưng luôn có cửa bùng nổ khi cơ hội lớn đến.",
+        "trap_analysis": "Bẫy vùng giữa chết chóc (Middle Ground): Chọn vị thế rủi ro trung bình — vừa đủ bấp bênh để mất sạch, nhưng tiềm năng tăng trưởng lại bị chặn trần."
+    },
+    {
+        "id": "TH-MODE-06",
+        "concept": "Mạng lưới Đa ngành Latticework (Charlie Munger)",
+        "question": "Tại sao Charlie Munger khẳng định việc nắm vững các mô hình hạt nhân từ nhiều ngành khoa học cơ bản là bắt buộc?",
+        "options": [
+            "A. Để tránh Hội chứng Người cầm búa (Man with a Hammer) và kích hoạt hiệu ứng cộng hưởng Lollapalooza khi các quy luật từ nhiều ngành cùng hội tụ.",
+            "B. Để có thể thể hiện sự uyên bác trong các cuộc đàm phán kinh doanh phức tạp.",
+            "C. Vì chỉ cần một môn khoa học duy nhất là kinh tế học đã đủ sức giải thích toàn bộ thế giới nếu học đủ sâu.",
+            "D. Để không bao giờ cần phải tham khảo ý kiến của các chuyên gia tư vấn."
+        ],
+        "correct_index": 0,
+        "explanation": "Thực tế là một mạng lưới liên kết phức tạp. Người chỉ có một lăng kính duy nhất sẽ luôn bóp méo thực tế để vừa vặn với chuyên môn hạn hẹp của mình.",
+        "trap_analysis": "Hội chứng chuyên gia hạn hẹp: Cầm búa thì nhìn đâu cũng thấy đinh."
+    },
+    {
+        "id": "TH-MODE-07",
+        "concept": "Thực nghiệm Nhanh (Iterative Lean Thinking)",
+        "question": "Vòng lặp học hỏi cốt lõi trong Tư duy Thực nghiệm Nhanh (Build - Measure - Learn) nhằm mục đích giải quyết căn bệnh tư duy nào?",
+        "options": [
+            "A. Bệnh Phân tích Tê liệt (Analysis Paralysis): Ngồi suy diễn lý thuyết trong phòng kín mà không đưa giả thuyết ra va chạm với thực tế đo lường được.",
+            "B. Bệnh thiếu vốn đầu tư mạo hiểm giai đoạn hạt giống.",
+            "C. Bệnh không thể xin được giấy phép kinh doanh của cơ quan quản lý.",
+            "D. Bệnh tuyển dụng nhân sự quá nhanh so với quy mô doanh thu."
+        ],
+        "correct_index": 0,
+        "explanation": "Trong môi trường bất định cao, mọi kế hoạch trên giấy đều là giả định chưa được chứng minh. Tốc độ thực nghiệm vi mô với chi phí thấp quyết định tốc độ chạm vào sự thật.",
+        "trap_analysis": "Bẫy ảo tưởng kế hoạch hoàn hảo: Bỏ hàng năm trời làm sản phẩm mà không chịu tiếp xúc với phản hồi của người dùng."
+    },
+    {
+        "id": "TH-MODE-08",
+        "concept": "Lý thuyết Trò chơi & Ma trận Động lực (Game Theory & Incentives)",
+        "question": "Quy tắc thiết kế cơ chế (Mechanism Design) trong Lý thuyết Trò chơi đòi hỏi điều gì để tổ chức tự vận hành bền vững?",
+        "options": [
+            "A. Căn chỉnh động lực (Aligned Incentives) sao cho việc hành động vì lợi ích chung cũng chính là phương án tối đa hóa lợi ích cá nhân của từng tác nhân.",
+            "B. Sử dụng camera giám sát dày đặc và các hình phạt tiền nặng nề cho mọi sai sót nhỏ.",
+            "C. Kêu gọi tinh thần trách nhiệm và lòng yêu nghề tự nguyện của các thành viên.",
+            "D. Thay đổi toàn bộ đội ngũ quản lý sau mỗi quý để tránh việc thông đồng lợi ích."
+        ],
+        "correct_index": 0,
+        "explanation": "Con người phản ứng với động lực (Incentives), không phản ứng với khẩu hiệu. Khi cơ chế win-win được thiết kế chuẩn, sự tự giác xuất hiện mà không cần cưỡng chế.",
+        "trap_analysis": "Bẫy ngây thơ: Trông đợi con người hành động vì sự tốt đẹp khi mà cơ chế lương thưởng ngầm lại đang khuyến khích họ gian lận."
+    },
+    {
+        "id": "TH-MODE-09",
+        "concept": "Đa quy mô Thời gian (Multi-Scale Time Horizons — Jeff Bezos)",
+        "question": "Theo triết lý kinh doanh của Jeff Bezos, đâu là trọng tâm của Tư duy Đa quy mô Thời gian (10-year horizon)?",
+        "options": [
+            "A. Xác định những nguyên lý và nhu cầu cốt lõi KHÔNG THAY ĐỔI trong 10-20 năm tới để dồn toàn lực đầu tư vào đó, thay vì mải miết chạy theo trào lưu ngắn hạn.",
+            "B. Bỏ qua hoàn toàn việc kiếm lợi nhuận và kiểm soát dòng tiền của ngày hôm nay.",
+            "C. Thay đổi chiến lược cốt lõi của công ty sau mỗi tháng dựa trên biến động giá cổ phiếu.",
+            "D. Thuê các nhà chiêm tinh học để dự báo chính xác nền kinh tế của 2 thập kỷ tới."
+        ],
+        "correct_index": 0,
+        "explanation": "Lợi thế cạnh tranh khổng lồ và sức mạnh lãi kép luôn thuộc về người dám neo giữ tầm nhìn vào những thứ không đổi và kiên định thực thi trong 10 năm.",
+        "trap_analysis": "Bẫy thiển cận (Hyperbolic Discounting): Bộ não người luôn muốn dopamine tức thì, định giá quá cao cái lợi hôm nay và xem nhẹ tương lai 10 năm."
+    }
+]
+
+THEORY_MODELS_QUIZ = [
+    {
+        "id": "TH-MOD-01",
+        "model_id": "PHYS-01",
+        "model_name": "Đòn bẩy (Leverage)",
+        "pillar": "Vật lý học",
+        "tier": 1,
+        "question": "Về mặt lý thuyết bản chất, 4 loại đòn bẩy tối thượng của nền kinh tế hiện đại (Naval Ravikant) bao gồm những gì?",
+        "options": [
+            "A. Lao động (Labor), Vốn (Capital), Mã nguồn (Code) và Nội dung (Media) — trong đó Code và Media có chi phí cận biên bằng 0.",
+            "B. Tiền vay ngân hàng, Vay nóng người thân, Bán nhà và Thế chấp tài sản.",
+            "C. Nói chuyện hay, Quan hệ ngoại giao tốt, Đi nhậu giỏi và Chăm chỉ làm thêm giờ.",
+            "D. Công nghệ thông tin, Bất động sản, Vàng miếng và Tiền điện tử."
+        ],
+        "correct_index": 0,
+        "explanation": "Đòn bẩy không cần sự cho phép (Permissionless leverage) là Code và Media: bạn làm việc một lần, nhưng sản phẩm có thể nhân bản phục vụ hàng triệu người trong lúc bạn ngủ.",
+        "trap_analysis": "Bẫy đòn bẩy tài chính thiếu biên độ an toàn: phóng đại lợi nhuận thì cũng phóng đại rủi ro đến mức cháy tài khoản."
+    },
+    {
+        "id": "TH-MOD-02",
+        "model_id": "PHYS-03",
+        "model_name": "Entropy & Định luật 2 Nhiệt động học",
+        "pillar": "Vật lý học",
+        "tier": 1,
+        "question": "Định luật 2 Nhiệt động học khẳng định điều gì về trạng thái mặc định của mọi hệ thống khép kín?",
+        "options": [
+            "A. Trong một hệ kín, mức độ hỗn loạn (Entropy) luôn có xu hướng tự nhiên tăng dần theo thời gian nếu không được nạp thêm năng lượng từ bên ngoài.",
+            "B. Hệ thống kín sẽ tự động trở nên ngăn nắp và tối ưu hơn theo thời gian nhờ quy luật chọn lọc tự nhiên.",
+            "C. Năng lượng trong hệ kín tự động nhân đôi sau mỗi chu kỳ nhiệt động lực học.",
+            "D. Mọi vật thể trong hệ kín đều giữ nguyên trạng thái chuyển động vĩnh cửu không ma sát."
+        ],
+        "correct_index": 0,
+        "explanation": "Sự thoái hóa, bừa bộn, lười biếng và rạn nứt là mặc định tự nhiên của vũ trụ. Muốn giữ trật tự và hiệu suất cao, bạn bắt buộc phải chủ động bơm năng lượng kỷ luật mỗi ngày.",
+        "trap_analysis": "Ảo tưởng ổn định vĩnh cửu: Tin rằng doanh nghiệp hay hôn nhân một khi đã tốt thì sẽ tự duy trì mà không cần bảo trì, chăm sóc."
+    },
+    {
+        "id": "TH-MOD-03",
+        "model_id": "BIOL-01",
+        "model_name": "Tiến hóa & Chọn lọc Tự nhiên",
+        "pillar": "Sinh học",
+        "tier": 1,
+        "question": "Theo thuyết tiến hóa hiện đại của Darwin, điều kiện quyết định sự sống còn của một thực thể trong môi trường biến động là gì?",
+        "options": [
+            "A. Khả năng thích nghi nhanh nhất với sự thay đổi của môi trường (Fitness), không phải kẻ to lớn nhất hay thông minh nhất.",
+            "B. Sức mạnh cơ bắp tuyệt đối và khả năng tiêu diệt toàn bộ các cá thể xung quanh.",
+            "C. Chỉ số thông minh IQ bẩm sinh cao nhất trong bầy đàn.",
+            "D. Sở hữu lượng dự trữ mỡ và năng lượng nhiều nhất trong cơ thể."
+        ],
+        "correct_index": 0,
+        "explanation": "Fitness (sự tương thích) đo lường mức độ khớp giữa thực thể và môi trường. Kẻ khổng lồ nhưng xơ cứng (như khủng long) sẽ tuyệt chủng khi môi trường biến đổi.",
+        "trap_analysis": "Bẫy tối ưu hóa cục bộ quá mức: Trở nên quá hoàn hảo cho môi trường cũ đến mức mất khả năng xoay trục khi môi trường mới xuất hiện."
+    },
+    {
+        "id": "TH-MOD-04",
+        "model_id": "PSYC-01",
+        "model_name": "Thiên kiến Xác nhận (Confirmation Bias)",
+        "pillar": "Tâm lý học",
+        "tier": 1,
+        "question": "Cơ chế tâm lý sâu xa nào khiến con người mắc Thiên kiến Xác nhận (Confirmation Bias)?",
+        "options": [
+            "A. Bộ não muốn bảo vệ cái tôi (Ego) và tiết kiệm năng lượng nhận thức bằng cách chỉ lọc lấy thông tin củng cố niềm tin có sẵn và gạt bỏ bằng chứng phản bác.",
+            "B. Do thị lực mắt người bị hạn chế không nhìn rõ toàn bộ các chữ cái trên báo chí.",
+            "C. Do con người bị ảnh hưởng bởi từ trường của Trái Đất vào những ngày trăng tròn.",
+            "D. Vì các công ty truyền thông cố tình không xuất bản các thông tin trái chiều."
+        ],
+        "correct_index": 0,
+        "explanation": "Não người ghét cảm giác 'mình đã sai' (Cognitive Dissonance). Giới tinh hoa khắc phục bằng cách chủ động săn lùng các luận điểm phản bác mạnh nhất đối với niềm tin của mình.",
+        "trap_analysis": "Biến niềm tin thành danh dự: Càng tranh cãi càng lún sâu vào sai lầm vì không phân biệt được bản thân mình với ý kiến của mình."
+    },
+    {
+        "id": "TH-MOD-05",
+        "model_id": "MATH-04",
+        "model_name": "Giá trị Kỳ vọng & Tiêu chuẩn Kelly (Kelly Criterion)",
+        "pillar": "Toán học & Xác suất",
+        "tier": 1,
+        "question": "Mục tiêu toán học tối thượng của Công thức Tiêu chuẩn Kelly (f* = (bp - q) / b) là gì?",
+        "options": [
+            "A. Tối đa hóa tốc độ tăng trưởng vốn hình học dài hạn đồng thời triệt tiêu hoàn toàn xác suất bị phá sản (Ruin Risk).",
+            "B. Giúp người chơi thắng được 100% trong mọi ván cược hoặc thương vụ đầu tư.",
+            "C. Tính toán chính xác thời điểm đỉnh và đáy của thị trường chứng khoán.",
+            "D. Chia đều tiền cược vào tất cả các cửa có sẵn trên bàn cờ."
+        ],
+        "correct_index": 0,
+        "explanation": "Kelly Criterion chỉ ra rằng: Có lợi thế (Edge) chưa đủ, quản trị quy mô vị thế (Position Sizing) mới là thứ quyết định bạn trở thành tỷ phú hay kẻ phá sản.",
+        "trap_analysis": "Cược quá tay (Over-betting): Dù xác suất thắng là 90%, nếu bạn all-in 100% tài sản, chuỗi thua lỗ bất ngờ sẽ đưa tài sản của bạn về 0 vĩnh viễn."
+    }
+]
+
+THEORY_PRINCIPLES_QUIZ = [
+    {
+        "id": "TH-PRIN-01",
+        "principle_name": "Nguyên lý Chuyển dịch Cân bằng Le Chatelier",
+        "domain": "Hóa học & Khoa học Vật liệu",
+        "question": "Định nghĩa lý thuyết hình thức của Nguyên lý Le Chatelier là gì?",
+        "options": [
+            "A. Khi một hệ thống đang ở trạng thái cân bằng chịu một tác động bên ngoài làm thay đổi nhiệt độ, áp suất hoặc nồng độ, hệ thống sẽ tự dịch chuyển theo hướng chống lại tác động đó.",
+            "B. Mọi phản ứng hóa học đều xảy ra với tốc độ không đổi bất kể nhiệt độ hay áp suất.",
+            "C. Tổng khối lượng các chất tham gia phản ứng luôn lớn hơn tổng khối lượng các sản phẩm tạo thành.",
+            "D. Năng lượng tỏa ra trong một phản ứng luôn bằng năng lượng hấp thụ của môi trường xung quanh."
+        ],
+        "correct_index": 0,
+        "explanation": "Hệ thống tự nhiên luôn tìm kiếm trạng thái cân bằng nội môi. Mọi nỗ lực cưỡng bức thay đổi quá đột ngột sẽ kích hoạt phản lực đề kháng tự nhiên của hệ thống.",
+        "trap_analysis": "Điều kiện biên: Hệ thống phải là hệ kín và đang ở trạng thái cân bằng động thuận nghịch."
+    },
+    {
+        "id": "TH-PRIN-02",
+        "principle_name": "Nguyên lý Chất Xúc tác (Catalysis)",
+        "domain": "Hóa học & Khoa học Vật liệu",
+        "question": "Cơ chế khoa học mà qua đó Chất xúc tác làm tăng tốc độ phản ứng là gì?",
+        "options": [
+            "A. Tạo ra một lộ trình phản ứng mới có năng lượng hoạt hóa (Activation Energy - E_a) thấp hơn mà không bị tiêu hao sau phản ứng.",
+            "B. Tăng nhiệt độ của toàn bộ hệ thống lên gấp 10 lần trong tích tắc.",
+            "C. Biến phản ứng thu nhiệt thành phản ứng tỏa nhiệt vĩnh cửu.",
+            "D. Thay đổi vị trí cân bằng nhiệt động học cuối cùng của các chất tham gia."
+        ],
+        "correct_index": 0,
+        "explanation": "Chất xúc tác không làm thay đổi điểm cân bằng nhiệt động học cuối cùng, nó chỉ hạ thấp bức tường cản trở ban đầu giúp phản ứng đạt đích nhanh hơn.",
+        "trap_analysis": "Phép thử bác bỏ (Falsification): Nếu một chất làm thay đổi hằng số cân bằng K_eq của phản ứng thì chất đó là chất tham gia phản ứng, không phải chất xúc tác."
+    },
+    {
+        "id": "TH-PRIN-03",
+        "principle_name": "Nguyên lý Bất định Heisenberg (Uncertainty Principle)",
+        "domain": "Vật lý học",
+        "question": "Hệ thức Bất định Heisenberg (Δx × Δp ≥ h / 4π) khẳng định giới hạn cơ bản nào của tự nhiên?",
+        "options": [
+            "A. Không thể xác định đồng thời cả vị trí và động lượng của một hạt hạ nguyên tử với độ chính xác tuyệt đối; hành động đo lường làm thay đổi trạng thái của hạt.",
+            "B. Vận tốc của ánh sáng trong chân không là một đại lượng hoàn toàn không thể đo đạc được.",
+            "C. Thời gian trôi đi với tốc độ khác nhau tùy thuộc vào cảm xúc vui hay buồn của người quan sát.",
+            "D. Mọi hạt vật chất đều có thể biến thành năng lượng nguyên tử ở nhiệt độ phòng."
+        ],
+        "correct_index": 0,
+        "explanation": "Bất định Heisenberg là đặc tính bản chất của cơ học lượng tử, không phải do dụng cụ đo bị lỗi. Trong xã hội học, nó tương đương với Định luật Goodhart (khi một thước đo trở thành mục tiêu quản trị, nó lập tức mất giá trị đo).",
+        "trap_analysis": "Hiểu sai: Nghĩ rằng đây chỉ là sự bất lực tạm thời của công nghệ đo lường hiện tại."
+    }
+]
+
+
+def get_theory_questions_for_modes() -> List[Dict[str, Any]]:
+    """Trả về bộ trắc nghiệm lý thuyết toàn diện cho 9 Chế độ Tư duy."""
+    return THEORY_MODES_QUIZ
+
+
+def get_theory_questions_for_models(pillar: Optional[str] = None, tier: Optional[int] = None) -> List[Dict[str, Any]]:
+    """
+    Sinh và tổng hợp danh sách câu hỏi trắc nghiệm lý thuyết cho 88 Mô hình Hạt nhân:
+    Bao gồm các câu hỏi curated chất lượng cao + câu hỏi lý thuyết sinh tự động deterministically từ dataset.
+    """
+    all_models = get_all_models()
+    filtered = filter_models(all_models, pillar=pillar, tier=tier)
+    
+    results = []
+    # Add matching curated theory questions first
+    for q in THEORY_MODELS_QUIZ:
+        if pillar and pillar != "Tất cả" and q.get("pillar") != pillar:
+            continue
+        if tier is not None and q.get("tier") != tier:
+            continue
+        results.append(q)
+        
+    covered_ids = {q.get("model_id") for q in results}
+    
+    for m in filtered:
+        if m.get("id") in covered_ids:
+            continue
+            
+        other_models = [om for om in all_models if om.get("id") != m.get("id")]
+        if len(other_models) < 3:
+            continue
+            
+        # Deterministic shuffle using id hash seed
+        seed_val = sum(ord(c) for c in m.get("id", "0"))
+        rng = random.Random(seed_val)
+        distractors = rng.sample(other_models, 3)
+        
+        raw_options = [
+            (m.get("first_principle"), True),
+            (distractors[0].get("first_principle"), False),
+            (distractors[1].get("first_principle"), False),
+            (distractors[2].get("first_principle"), False),
+        ]
+        rng.shuffle(raw_options)
+        
+        correct_idx = 0
+        final_options = []
+        letters = ["A", "B", "C", "D"]
+        for idx, (txt, is_corr) in enumerate(raw_options):
+            final_options.append(f"{letters[idx]}. {txt}")
+            if is_corr:
+                correct_idx = idx
+                
+        results.append({
+            "id": f"TH-M-{m.get('id')}",
+            "model_id": m.get("id"),
+            "model_name": f"{m.get('name_vi')} ({m.get('name_en')})",
+            "pillar": m.get("pillar"),
+            "tier": m.get("tier"),
+            "question": f"Về mặt lý thuyết bản chất, Chân lý gốc (First Principle) của mô hình '{m.get('name_vi')}' là gì?",
+            "options": final_options,
+            "correct_index": correct_idx,
+            "explanation": f"Chân lý gốc của {m.get('name_vi')}: {m.get('first_principle')}. Đòn bẩy Elite: {m.get('elite_leverage')}",
+            "trap_analysis": f"Bẫy đảo ngược (Inversion Trap) cần né tránh: {m.get('inversion_trap')}"
+        })
+        
+    return results
+
+
+def get_theory_questions_for_principles(domain: Optional[str] = None) -> List[Dict[str, Any]]:
+    """
+    Sinh và tổng hợp danh sách câu hỏi trắc nghiệm lý thuyết cho 100 Nguyên lý Khởi thủy:
+    Bao gồm các câu hỏi curated chất lượng cao + câu hỏi lý thuyết sinh tự động deterministically từ dataset.
+    """
+    kb = load_knowledge_base()
+    all_p = kb.get("principles", [])
+    filtered_p = all_p
+    if domain and domain != "Tất cả":
+        filtered_p = [p for p in all_p if p.get("domain") == domain]
+        
+    results = []
+    for q in THEORY_PRINCIPLES_QUIZ:
+        if domain and domain != "Tất cả" and q.get("domain") != domain:
+            continue
+        results.append(q)
+        
+    covered_names = {q.get("principle_name") for q in results}
+    
+    for p in filtered_p:
+        p_name = p.get("principle_name")
+        if p_name in covered_names:
+            continue
+            
+        other_p = [op for op in all_p if op.get("principle_name") != p_name]
+        if len(other_p) < 3:
+            continue
+            
+        seed_val = sum(ord(c) for c in p_name)
+        rng = random.Random(seed_val)
+        distractors = rng.sample(other_p, 3)
+        
+        raw_options = [
+            (p.get("intuitive_summary") or p.get("description"), True),
+            (distractors[0].get("intuitive_summary") or distractors[0].get("description"), False),
+            (distractors[1].get("intuitive_summary") or distractors[1].get("description"), False),
+            (distractors[2].get("intuitive_summary") or distractors[2].get("description"), False),
+        ]
+        rng.shuffle(raw_options)
+        
+        correct_idx = 0
+        final_options = []
+        letters = ["A", "B", "C", "D"]
+        for idx, (txt, is_corr) in enumerate(raw_options):
+            final_options.append(f"{letters[idx]}. {txt}")
+            if is_corr:
+                correct_idx = idx
+                
+        results.append({
+            "id": f"TH-P-{seed_val}",
+            "principle_name": p_name,
+            "domain": p.get("domain", "Khoa học"),
+            "question": f"Về mặt bản chất lý thuyết, nguyên lý khoa học '{p_name}' khẳng định điều gì?",
+            "options": final_options,
+            "correct_index": correct_idx,
+            "explanation": f"Định nghĩa hình thức: {p.get('formal_definition')}. Tóm tắt trực giác: {p.get('intuitive_summary')}",
+            "trap_analysis": f"Điều kiện biên: {p.get('boundary_conditions', '—')} | Khả bác: {p.get('falsification_test', '—')}"
+        })
+        
+    return results
+
+
+# =============================================================================
 # 1. NGÂN HÀNG TRẮC NGHIỆM TÌNH HUỐNG 9 CHẾ ĐỘ TƯ DUY ELITE (CURATED)
 # =============================================================================
 MODES_QUIZ = [

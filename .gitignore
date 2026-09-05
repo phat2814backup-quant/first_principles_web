@@ -5,3 +5,4 @@ __pycache__/
 data/histories/*.json
 !.gitkeep
 .streamlit/secrets.toml
+scratch/
