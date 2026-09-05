@@ -58,6 +58,29 @@ from utils.macro_evolution import (
     SAMPLE_MACRO_TRENDS,
     analyze_macro_radar,
 )
+from utils.daily_workout import (
+    DAILY_WORKOUT_BANK,
+    get_today_workout,
+    get_user_streak_info,
+    record_daily_workout_answer,
+    evaluate_daily_workout,
+)
+from utils.diagnostic import (
+    COGNITIVE_DIMENSIONS,
+    DIAGNOSTIC_QUESTIONS,
+    evaluate_diagnostic_submission,
+    save_user_diagnostic_result,
+    get_latest_diagnostic_result,
+)
+from utils.decision_journal import (
+    DECISION_CATEGORIES,
+    REVIEW_INTERVALS,
+    OUTCOME_RATINGS,
+    create_decision_entry,
+    get_user_decisions,
+    resolve_decision_review,
+    get_decision_summary_stats,
+)
 try:
     from utils.quiz_engine import (
         MODES_QUIZ,
@@ -193,6 +216,23 @@ with st.sidebar:
     st.caption(f"Vai trò: **{'Quản trị' if role == 'admin' else 'Thành viên'}**")
     if st.button("Đăng xuất", use_container_width=True):
         logout()
+
+    # Daily Workout Streak Widget
+    st.divider()
+    sb_streak = get_user_streak_info(username)
+    s_val = sb_streak["current_streak"]
+    s_badge = "⚡ Khởi động" if s_val < 7 else ("🔥 Thói quen thép" if s_val < 30 else "🏆 Phản xạ vô thức")
+    
+    col_sb1, col_sb2 = st.columns(2)
+    with col_sb1:
+        st.metric("🔥 Chuỗi Streak", f"{s_val} ngày", s_badge)
+    with col_sb2:
+        st.metric("✅ Đã hoàn thành", f"{sb_streak['total_completed']} bài")
+
+    if sb_streak["is_done_today"]:
+        st.success("✨ Hôm nay: Đã xong 15p rèn luyện!")
+    else:
+        st.info("⏳ Hôm nay: Chưa làm bài (Vào Tab 6)")
 
     st.divider()
     st.markdown("#### 🔑 Gemini API Key")
@@ -1186,12 +1226,94 @@ with tabs[5]:
 
     st.progress(mastery_data["mastery_pct"] / 100.0)
 
-    arena_tab_th, arena_tab1, arena_tab2, arena_tab3 = st.tabs([
+    arena_tab_diag, arena_tab_th, arena_tab1, arena_tab2, arena_tab3 = st.tabs([
+        "🧭 Chẩn Đoán Điểm Mù Nhận Thức",
         "📖 Trắc Nghiệm Lý Thuyết Cốt Lõi",
         "🎯 Trắc Nghiệm Tình Huống Thực Chiến",
         "🗂️ Thẻ Flashcards Phản Xạ 5 Giây",
         "✨ AI Đấu Trí & Thử Thách Feynman"
     ])
+
+    # -------------------------------------------------------------------------
+    # Sub-tab 0: Chẩn Đoán Điểm Mù Nhận Thức (Cognitive Blindspot Diagnostic)
+    # -------------------------------------------------------------------------
+    with arena_tab_diag:
+        st.markdown("### 🧭 Chẩn Đoán 6 Chiều Không Gian Nhận Thức & Điểm Mù Tinh Hoa")
+        st.caption("Khám phá bản đồ nhận thức của bạn qua 12 tình huống bẫy thực tế. Định vị thế mạnh và vạch trần điểm mù trước khi bước vào các quyết định lớn của cuộc đời.")
+
+        latest_diag = get_latest_diagnostic_result(username)
+
+        retake_key = "retake_diagnostic_flag"
+        show_test_form = (latest_diag is None) or st.session_state.get(retake_key, False)
+
+        if latest_diag and not show_test_form:
+            st.success(f"🏆 Kết quả chẩn đoán gần nhất của bạn ({latest_diag.get('timestamp')})")
+            
+            d_c1, d_c2, d_c3 = st.columns([1.5, 1.5, 2])
+            with d_c1:
+                st.metric("🎯 Chỉ Số Nhận Thức (Cognitive Index)", f"{latest_diag.get('overall_index')}%")
+            with d_c2:
+                st.markdown(f"**Danh hiệu:**  \n### 🎖️ {latest_diag.get('rank_title')}")
+                st.caption(latest_diag.get('rank_desc', ''))
+            with d_c3:
+                ts = latest_diag.get('top_strength', {})
+                cb = latest_diag.get('critical_blindspot', {})
+                st.markdown(f"🟢 **Thế mạnh:** {ts.get('name', '')} ({ts.get('score', 0)}%)")
+                st.markdown(f"🔴 **Điểm mù chí mạng:** {cb.get('name', '')} ({cb.get('score', 0)}%)")
+
+            st.divider()
+            st.markdown("#### 📊 Điểm Chi Tiết 6 Chiều Không Gian Nhận Thức")
+            dim_scores = latest_diag.get("dimension_scores", {})
+            dim_cols = st.columns(3)
+            col_idx = 0
+            for dim_key, dim_info in COGNITIVE_DIMENSIONS.items():
+                sc = dim_scores.get(dim_key, 0)
+                with dim_cols[col_idx % 3]:
+                    st.markdown(f"**{dim_info['icon']} {dim_info['name']}**")
+                    st.progress(sc / 100.0)
+                    st.caption(f"Điểm số: **{sc}%** — *{dim_info['description']}*")
+                col_idx += 1
+
+            st.divider()
+            st.markdown("#### 🗺️ Lộ Trình Hành Động Đề Xuất 3–6 Tháng Cho Bạn:")
+            for rec in latest_diag.get("recommendations", []):
+                st.info(f"💡 {rec}")
+
+            if st.button("🔄 Làm lại bài test chẩn đoán (12 câu hỏi)", use_container_width=True):
+                st.session_state[retake_key] = True
+                st.rerun()
+
+        else:
+            st.info("📝 Hãy chọn phương án phản ánh **chính xác nhất phản xạ tự nhiên của bạn trong thực tế**, không chọn theo câu trả lời nghe có vẻ 'đẹp đẽ' nhất để có kết quả chẩn đoán trung thực nhất.")
+
+            user_diag_answers = {}
+            for idx, q in enumerate(DIAGNOSTIC_QUESTIONS, 1):
+                dim_info = COGNITIVE_DIMENSIONS.get(q["dimension"], {})
+                st.markdown(f"##### Câu {idx}: {dim_info.get('icon', '🔹')} {q['title']}")
+                st.write(q["scenario"])
+                
+                options_text = [opt["text"] for opt in q["options"]]
+                chosen_opt_text = st.radio(
+                    f"Lựa chọn của bạn cho câu {idx}:",
+                    options_text,
+                    key=f"diag_q_{q['id']}",
+                    index=None,
+                )
+                if chosen_opt_text:
+                    chosen_idx = options_text.index(chosen_opt_text)
+                    user_diag_answers[q["id"]] = chosen_idx
+
+                st.markdown("---")
+
+            if st.button("📊 Nộp Bài & Xuất Báo Cáo Chẩn Đoán Điểm Mù", type="primary", use_container_width=True):
+                if len(user_diag_answers) < len(DIAGNOSTIC_QUESTIONS):
+                    st.warning(f"Bạn mới trả lời {len(user_diag_answers)}/{len(DIAGNOSTIC_QUESTIONS)} câu. Vui lòng hoàn thành toàn bộ câu hỏi để có kết quả chính xác.")
+                else:
+                    eval_res = evaluate_diagnostic_submission(user_diag_answers)
+                    save_user_diagnostic_result(username, eval_res)
+                    st.session_state[retake_key] = False
+                    st.success("✅ Đã hoàn tất chẩn đoán điểm mù nhận thức! Đang tải báo cáo...")
+                    st.rerun()
 
     # -------------------------------------------------------------------------
     # Sub-tab 1: Trắc Nghiệm Lý Thuyết Cốt Lõi (Theory Foundation Quiz)
@@ -1718,329 +1840,671 @@ with tabs[5]:
 # ========== TAB 6: Đào tạo tư duy ==========
 with tabs[6]:
     st.title("🎓 Đào tạo tư duy theo lộ trình đa tầng")
-    st.markdown("Chương trình rèn luyện 3 cấp độ dành cho học sinh phổ thông (Wellspring) & chuyên sâu thực chiến cho người lớn.")
+    st.caption("Hệ thống rèn luyện phản xạ 15 phút mỗi ngày kèm lộ trình 3 cấp độ cho K12 Wellspring & Người lớn.")
 
-    user_group = st.radio(
-        "Chọn nhóm đối tượng đào tạo",
-        ["🎒 Học sinh Wellspring (Lớp 6, 9, 10)", "💼 Chuyên sâu Người lớn (Trading, CKVN, Não bộ, Phật giáo, AI)"],
-        horizontal=True,
-    )
+    tab6_subtabs = st.tabs([
+        "🔥 Elite Daily Workout (15 Phút Hàng Ngày & Streak)",
+        "📚 Lộ Trình Đào Tạo Theo Cấp Độ (K12 & Người Lớn)",
+    ])
 
-    tracks_meta = get_tracks_meta()
+    # -------------------------------------------------------------------------
+    # Sub-tab 0: Elite Daily Workout
+    # -------------------------------------------------------------------------
+    with tab6_subtabs[0]:
+        st.markdown("### 🔥 Elite Daily Workout — Rèn Luyện Phản Xạ 15 Phút Mỗi Ngày")
+        st.caption("Nguyên lý Chuỗi Hạt (Seinfeld Streak): Mỗi ngày 1 tình huống thực chiến · 3 bước phân rã chuẩn Elite · Cài đặt tư duy vào tầng tiềm thức sau 90 ngày.")
 
-    if "Học sinh Wellspring" in user_group:
-        track_options = {
-            "grade_6": "Lớp 6 (Wellspring) — Khởi đầu tự chủ & AI cơ bản",
-            "grade_9": "Lớp 9 (Wellspring) — Tư duy phản biện & Chọn hướng đi",
-            "grade_10": "Lớp 10 (Wellspring) — Chiến lược dự án & Đòn bẩy AI",
-        }
-    else:
-        track_options = {
-            "trading": "Trading Vàng, FX, Crypto/BTC — Xác suất & Quản trị rủi ro",
-            "ckvn": "Đầu tư Chứng khoán VN — Chu kỳ & Dòng tiền Smart Money",
-            "neuroscience": "Khoa học Não bộ & Nhận thức — Dopamine & Khắc phục thiên kiến",
-            "buddhism": "Phật giáo & Tâm thức — Vô thường & Chánh niệm ra quyết định",
-            "ai_tech": "Công nghệ AI & Tương lai — Đòn bẩy không cần xin phép",
-        }
+        u_streak = get_user_streak_info(username)
+        s_count = u_streak["current_streak"]
+        s_status = "⚡ Đang khởi động" if s_count < 7 else ("🔥 Thói quen thép" if s_count < 30 else "🏆 Phản xạ vô thức")
 
-    c_sel1, c_sel2 = st.columns([3, 2])
-    with c_sel1:
-        sel_track_id = st.selectbox(
-            "Khóa học / Chủ đề đào tạo",
-            options=list(track_options.keys()),
-            format_func=lambda x: track_options.get(x, x),
-        )
-    with c_sel2:
-        level_choice = st.selectbox(
-            "Trình độ rèn luyện",
-            ["🌱 Cấp 1: Nền tảng (Foundation)", "🔥 Cấp 2: Thực hành (Practice)", "👑 Cấp 3: Nhuần nhuyễn (Mastery)"],
-            index=0,
-        )
-
-    track_info = tracks_meta.get(sel_track_id, {})
-    if track_info.get("desc"):
-        st.caption(f"💡 *Mục tiêu khóa:* {track_info['desc']}")
-
-    level_map = {
-        "🌱 Cấp 1: Nền tảng (Foundation)": ("level_1", "Cơ bản"),
-        "🔥 Cấp 2: Thực hành (Practice)": ("level_2", "Thực hành"),
-        "👑 Cấp 3: Nhuần nhuyễn (Mastery)": ("level_3", "Nâng cao"),
-    }
-    sel_level_code, sel_level_name = level_map[level_choice]
-
-    # Lấy danh sách bài học thuộc track và level đã chọn
-    lessons = get_lessons_by_track(sel_track_id, sel_level_code)
-
-    hist = load_user_history(username)
-    user_training = hist.get("training", {})
-    done_count = sum(1 for l in lessons if l["id"] in user_training)
-    total_count = len(lessons)
-
-    # Thanh trạng thái tiến độ cấp độ
-    c_p1, c_p2 = st.columns([3, 1])
-    with c_p1:
-        st.progress(done_count / max(total_count, 1))
-    with c_p2:
-        st.caption(f"Tiến độ cấp độ: **{done_count}/{total_count}** bài")
-
-    # Sub-tabs tách bạch rõ ràng giữa Lộ trình bài tập và AI Mentor sinh bài tập
-    sub_train_labels = [
-        f"📖 Lộ trình Bài tập ({total_count} bài)",
-        "✨ AI Mentor: Tự động tạo bài tập mở rộng",
-    ]
-    sub_train_tabs = st.tabs(sub_train_labels)
-
-    with sub_train_tabs[0]:
-        if not lessons:
-            st.warning(f"Chưa có bài tập nào trong `{track_options[sel_track_id]}` ({sel_level_name}).")
-            st.info("👉 Hãy bấm sang tab **'✨ AI Mentor: Tự động tạo bài tập mở rộng'** bên cạnh để AI tạo bài tập đầu tiên cho bạn!")
-        else:
-            def format_lesson_title(l: dict) -> str:
-                done_icon = "✅" if l["id"] in user_training else "📖"
-                is_ai = " [✨ AI]" if l.get("created_by") == "AI" or "_ai_" in l.get("id", "") else ""
-                return f"{done_icon} {l.get('title', l['id'])} — ({l.get('mode', '')}){is_ai}"
-
-            # Tự động chọn bài vừa tạo nếu có trong session
-            target_id = st.session_state.get(f"target_lesson_{sel_track_id}_{sel_level_code}")
-            default_index = 0
-            if target_id:
-                for idx, l in enumerate(lessons):
-                    if l.get("id") == target_id:
-                        default_index = idx
-                        break
-
-            choice = st.selectbox(
-                f"📚 Danh sách bài tập khả dụng ({len(lessons)} bài)",
-                options=lessons,
-                index=default_index,
-                format_func=format_lesson_title,
-                key=f"sel_lesson_{sel_track_id}_{sel_level_code}",
-            )
-            lesson = choice
-
-            st.subheader(lesson["title"])
-            st.caption(f"Chế độ: **{lesson.get('mode')}** · Mức: **{lesson.get('level')}** · ID: `{lesson.get('id')}`")
-            if lesson.get("related_principle"):
-                st.caption(f"Nguyên lý cốt lõi: **{lesson['related_principle']}**")
-
-            st.markdown(f"**Mục tiêu:** {lesson.get('objective')}")
-            st.markdown("#### Tình huống thực tế")
-            st.info(lesson.get("situation", ""))
-
-            st.markdown("#### Các bước hướng dẫn tư duy")
-            for i, step in enumerate(lesson.get("guide_steps", []), 1):
-                st.markdown(f"{i}. {step}")
-
-            with st.expander("💡 Gợi ý định hướng (mở khi cần)"):
-                st.write(lesson.get("hint", ""))
-
-            st.markdown("#### Thử thách của bạn")
-            st.write(lesson.get("exercise_prompt", ""))
-
-            # Load previous answer if any
-            prev = user_training.get(lesson["id"], {})
-            prev_answer = prev.get("answer", "")
-            prev_feedback = prev.get("feedback", "")
-
-            answer = st.text_area("Câu trả lời của bạn", value=prev_answer, height=150, key=f"ans_{lesson['id']}")
-
-            col_a, col_b = st.columns(2)
-            with col_a:
-                if st.button("💾 Lưu câu trả lời", use_container_width=True, key=f"save_{lesson['id']}"):
-                    save_training_answer(username, lesson["id"], answer.strip())
-                    st.success("Đã lưu vào tiến độ cá nhân của bạn.")
-                    st.rerun()
-            with col_b:
-                if st.button("🤖 Xin feedback AI", type="primary", use_container_width=True, key=f"fb_{lesson['id']}"):
-                    if not answer.strip():
-                        st.warning("Hãy viết câu trả lời trước khi xin feedback.")
-                    elif not active_keys:
-                        st.warning("Cần API Key để nhận feedback.")
-                    else:
-                        with st.spinner("AI Gia sư đang nhận xét và hiệu chỉnh tư duy (tự động xoay tua key)..."):
-                            fb = feedback_on_answer(active_keys, model_choice, lesson, answer.strip())
-                        save_training_answer(username, lesson["id"], answer.strip(), fb)
-                        st.rerun()
-
-            if prev_feedback:
-                st.markdown("#### Feedback từ AI Mentor")
-                st.success(prev_feedback)
-
-            st.divider()
-            st.info("💡 **Muốn rèn luyện thêm?** Bạn có thể bấm sang tab **'✨ AI Mentor: Tự động tạo bài tập mở rộng'** ở trên để yêu cầu thêm các tình huống thực tế khác không giới hạn!")
-
-    with sub_train_tabs[1]:
-        st.subheader(f"✨ AI Mentor: Tự Động Thiết Kế Bài Tập Thực Chiến")
-        st.markdown(f"Tạo đề bài độc bản cho: **{track_options[sel_track_id]}** · Cấp độ: **{sel_level_name}**")
-
-        quick_suggestions = {
-            "grade_6": [
-                "Lập kế hoạch tự học tại nhà không bị xao nhãng",
-                "Xung đột ý kiến khi làm bài tập nhóm môn Khoa học",
-                "Bị phân tâm vì xem video ngắn TikTok/Reels quá nhiều",
-                "Phân biệt tin tức thật và tin giả trên mạng xã hội",
-            ],
-            "grade_9": [
-                "Chọn trường cấp 3 công lập hay quốc tế dựa trên năng lực và tài chính",
-                "Quản lý áp lực thi cử và kỳ vọng điểm số từ gia đình",
-                "Tư duy xác suất và tỷ lệ cơ sở khi giải bài thi trắc nghiệm",
-                "Từ chối lời rủ rê trốn học của bạn bè mà không làm mất lòng",
-            ],
-            "grade_10": [
-                "Thiết kế dự án CLB trường học tạo tác động xã hội với ngân sách 0 đồng",
-                "Xây dựng hồ sơ ngoại khóa săn học bổng du học bằng First Principles",
-                "Ứng dụng AI vào học tập hiệu quả mà không bị thụ động tư duy",
-                "Cân bằng giữa ôn luyện IELTS 8.0 và làm trưởng ban tổ chức sự kiện",
-            ],
-            "trading": [
-                "Quản trị tâm lý và lệnh khi Vàng biến động 50 giá trong phiên Mỹ",
-                "Chiến lược bất đối xứng (Asymmetry) khi giao dịch BTC/Crypto",
-                "Cắt lỗ dứt khoát khi phân tích sai và tránh bẫy Revenge Trading",
-                "Quản lý vốn theo tiêu chuẩn Kelly khi hệ thống có Winrate 45%",
-            ],
-            "ckvn": [
-                "Nhận diện dấu chân dòng tiền Smart Money (VSA) ở vùng đáy gom hàng",
-                "Phân tích chu kỳ nhóm ngành Chứng khoán - Thép - Bất động sản",
-                "Quản trị rủi ro khi thị trường phân phối đỉnh với thanh khoản kỷ lục",
-                "Định giá thực chất doanh nghiệp dựa trên dòng tiền tự do FCF",
-            ],
-            "neuroscience": [
-                "Cơ chế Dopamine và cách cai nghiện dopamine rẻ tiền (Cheap Dopamine)",
-                "Thực hành Deep Work 90 phút vượt qua quán tính trì hoãn của não bộ",
-                "Tái cấu trúc nhận thức (Cognitive Reframing) khi gặp stress cực đại",
-                "Khắc phục thiên kiến xác nhận khi đánh giá một cơ hội đầu tư",
-            ],
-            "buddhism": [
-                "Ứng dụng tư duy Vô thường để không bị dính mắc vào thành công/thất bại",
-                "Quan sát cảm xúc bằng Chánh niệm trước khi bấm nút Enter vào lệnh",
-                "Bản chất Nhân - Quả trong các mối quan hệ gia đình và đối tác",
-                "Tâm bất biến giữa dòng đời vạn biến: Quản trị sự bất định của thị trường",
-            ],
-            "ai_tech": [
-                "Xây dựng Agentic Workflow tự động hóa quy trình phân tích dữ liệu",
-                "Tư duy đòn bẩy không cần xin phép (Permissionless Leverage) thời AI",
-                "Thiết kế Prompt First Principles để giải quyết bài toán kỹ thuật phức tạp",
-                "Định vị năng lực cạnh tranh cốt lõi của con người khi AI làm chủ ngôn ngữ",
-            ]
-        }
-
-        curr_suggestions = quick_suggestions.get(sel_track_id, ["Tình huống thực tế tùy biến theo chuyên môn"])
-        sel_suggest = st.selectbox(
-            "💡 Gợi ý chủ đề nhanh (chọn hoặc tự nhập bên dưới):",
-            ["— Tự nhập tình huống riêng của bạn —"] + curr_suggestions,
-            key=f"sel_sug_{sel_track_id}_{sel_level_code}",
-        )
-        initial_topic = "" if sel_suggest.startswith("—") else sel_suggest
-
-        custom_topic = st.text_input(
-            "Chủ đề hoặc tình huống bạn muốn AI ra đề thử thách:",
-            value=initial_topic,
-            placeholder="vd: Bài tập nhóm STEM lớp 10, quản lý lệnh Vàng phiên Mỹ, kiềm chế cơn giận khi bị chỉ trích...",
-            key=f"topic_input_{sel_track_id}_{sel_level_code}",
-        )
-
-        if st.button("🚀 Yêu Cầu AI Sinh Bài Tập Mới Ngay", key=f"btn_gen_{sel_track_id}_{sel_level_code}", type="primary", use_container_width=True):
-            if not active_keys:
-                st.warning("Cần API Key để sinh bài tập.")
+        w_col1, w_col2, w_col3, w_col4 = st.columns(4)
+        with w_col1:
+            st.metric("🔥 Chuỗi Streak", f"{s_count} ngày", s_status)
+        with w_col2:
+            st.metric("🏆 Kỷ lục chuỗi", f"{u_streak['longest_streak']} ngày")
+        with w_col3:
+            st.metric("📝 Đã hoàn thành", f"{u_streak['total_completed']} bài")
+        with w_col4:
+            if u_streak["is_done_today"]:
+                st.success("✅ Hôm nay: Đã xong!")
             else:
-                with st.spinner("AI Mentor đang thiết kế bài tập tình huống thực chiến độc bản (tự động xoay tua API key)..."):
-                    new_lesson = generate_dynamic_lesson(
-                        api_keys=active_keys,
-                        model_name=model_choice,
-                        track_title=track_options[sel_track_id],
-                        level_code=sel_level_code,
-                        level_name=sel_level_name,
-                        custom_topic=custom_topic.strip(),
-                    )
-                if new_lesson and not new_lesson.get("error"):
-                    add_custom_lesson(sel_track_id, new_lesson, updated_by="AI")
-                    st.session_state[f"target_lesson_{sel_track_id}_{sel_level_code}"] = new_lesson.get("id")
-                    st.success(f"🎉 Đã tạo thành công bài tập mới: **{new_lesson.get('title')}**!")
-                    st.rerun()
-                else:
-                    st.error(new_lesson.get("error", "Lỗi khi sinh bài tập."))
+                st.warning("⏳ Hôm nay: Chưa làm")
 
-        # Danh sách các bài đã do AI tạo trong cấp độ này
-        ai_lessons = [l for l in lessons if l.get("created_by") == "AI" or "_ai_" in l.get("id", "")]
-        if ai_lessons:
-            st.markdown(f"#### 📚 Các bài tập do AI mở rộng trong cấp độ này ({len(ai_lessons)} bài)")
-            for al in ai_lessons:
-                is_done = al["id"] in user_training
-                icon = "✅" if is_done else "📖"
-                st.markdown(f"- {icon} **{al.get('title')}** (Chế độ: `{al.get('mode')}`) — ID: `{al.get('id')}`")
+        st.divider()
+
+        w_track = st.radio(
+            "Chọn chủ đề bài tập hôm nay:",
+            ["all", "k12", "adult"],
+            format_func=lambda x: "🌐 Đa Lĩnh Vực / Tổng Hợp" if x == "all" else ("🎒 Học Sinh Wellspring (K12)" if x == "k12" else "💼 Chuyên Sâu Người Lớn"),
+            horizontal=True,
+            key="dw_track_filter",
+        )
+
+        today_workout = get_today_workout(track=w_track)
+
+        st.markdown(f"#### 🎯 Bài Tập Hôm Nay: {today_workout['title']}")
+        st.info(f"**Tình huống thực tế:**\n\n{today_workout['scenario']}")
+        st.caption("Các nguyên lý / mô hình định hướng: " + " · ".join([f"`{p}`" for p in today_workout.get('guiding_principles', [])]))
+
+        with st.form(key=f"form_dw_{today_workout['id']}"):
+            st.markdown(f"##### 1️⃣ {today_workout['step1_prompt']}")
+            dw_ans_step1 = st.text_area(
+                "Phân tích Sự thật vs Ý kiến:",
+                height=90,
+                placeholder="Chỉ ra rõ: Sự thật đo lường được là gì? Điều gì chỉ là ý kiến, phỏng đoán hoặc cảm xúc đám đông?",
+                key="dw_step1_input",
+            )
+
+            st.markdown(f"##### 2️⃣ {today_workout['step2_prompt']}")
+            dw_ans_step2 = st.text_area(
+                "Chiếu lăng kính mô hình hạt nhân:",
+                height=90,
+                placeholder="Gọi tên chính xác mô hình hạt nhân (Tâm lý, Vật lý, Kinh tế) đang chi phối tình huống này và cơ chế của nó...",
+                key="dw_step2_input",
+            )
+
+            st.markdown(f"##### 3️⃣ {today_workout['step3_prompt']}")
+            dw_ans_step3 = st.text_area(
+                "Đề xuất hành động bất đối xứng:",
+                height=90,
+                placeholder="Nếu ở vị thế người trong cuộc, nước cờ tối ưu nào giúp hạn chế tối đa rủi ro tổn thất và đón đầu thặng dư lớn nhất?",
+                key="dw_step3_input",
+            )
+
+            submit_dw = st.form_submit_button("🔥 Hoàn Tất 15 Phút & Nhận Phản Hồi AI Mentor", type="primary", use_container_width=True)
+
+        if submit_dw:
+            if not dw_ans_step1.strip() or not dw_ans_step2.strip() or not dw_ans_step3.strip():
+                st.warning("Vui lòng hoàn thành đủ cả 3 bước để bài tập đạt hiệu quả rèn luyện tối đa.")
+            else:
+                with st.spinner("AI Mentor đang đánh giá bài tập 15 phút của bạn..."):
+                    ai_dw_feedback = evaluate_daily_workout(
+                        active_keys,
+                        model_choice,
+                        today_workout,
+                        dw_ans_step1.strip(),
+                        dw_ans_step2.strip(),
+                        dw_ans_step3.strip(),
+                    )
+                
+                rec_res = record_daily_workout_answer(
+                    username=username,
+                    workout_id=today_workout["id"],
+                    workout_title=today_workout["title"],
+                    step1_ans=dw_ans_step1.strip(),
+                    step2_ans=dw_ans_step2.strip(),
+                    step3_ans=dw_ans_step3.strip(),
+                    ai_feedback=ai_dw_feedback,
+                )
+
+                st.balloons()
+                st.success(f"🎉 Xuất sắc! Bạn đã duy trì chuỗi Streak lên **{rec_res['current_streak']} ngày liên tục**!")
+                
+                st.markdown("#### 🌟 Nhận Xét Phản Biện Từ AI Mentor:")
+                st.info(ai_dw_feedback)
+
+                with st.expander("💡 Xem Gợi Ý Tinh Hoa của Bậc Thầy (Elite Hint)", expanded=True):
+                    st.write(today_workout.get("elite_hint", ""))
+
+        history_dw = u_streak.get("history", [])
+        if history_dw:
+            with st.expander(f"📜 Xem Lịch Sử {len(history_dw)} Bài Tập Daily Workout Đã Hoàn Thành"):
+                for h_item in history_dw[:10]:
+                    st.markdown(f"**🗓️ {h_item.get('date')} — {h_item.get('title')}**")
+                    st.caption(f"Bước 1: {h_item.get('step1')[:100]}...")
+                    if h_item.get("ai_feedback"):
+                        st.caption(f"AI Mentor: {h_item.get('ai_feedback')[:150]}...")
+                    st.markdown("---")
+
+    # -------------------------------------------------------------------------
+    # Sub-tab 1: Lộ Trình Đào Tạo Theo Cấp Độ
+    # -------------------------------------------------------------------------
+    with tab6_subtabs[1]:
+        user_group = st.radio(
+            "Chọn nhóm đối tượng đào tạo",
+            ["🎒 Học sinh Wellspring (Lớp 6, 9, 10)", "💼 Chuyên sâu Người lớn (Trading, CKVN, Não bộ, Phật giáo, AI)"],
+            horizontal=True,
+        )
+
+        tracks_meta = get_tracks_meta()
+
+        if "Học sinh Wellspring" in user_group:
+            track_options = {
+                "grade_6": "Lớp 6 (Wellspring) — Khởi đầu tự chủ & AI cơ bản",
+                "grade_9": "Lớp 9 (Wellspring) — Tư duy phản biện & Chọn hướng đi",
+                "grade_10": "Lớp 10 (Wellspring) — Chiến lược dự án & Đòn bẩy AI",
+            }
+        else:
+            track_options = {
+                "trading": "Trading Vàng, FX, Crypto/BTC — Xác suất & Quản trị rủi ro",
+                "ckvn": "Đầu tư Chứng khoán VN — Chu kỳ & Dòng tiền Smart Money",
+                "neuroscience": "Khoa học Não bộ & Nhận thức — Dopamine & Khắc phục thiên kiến",
+                "buddhism": "Phật giáo & Tâm thức — Vô thường & Chánh niệm ra quyết định",
+                "ai_tech": "Công nghệ AI & Tương lai — Đòn bẩy không cần xin phép",
+            }
+    
+        c_sel1, c_sel2 = st.columns([3, 2])
+        with c_sel1:
+            sel_track_id = st.selectbox(
+                "Khóa học / Chủ đề đào tạo",
+                options=list(track_options.keys()),
+                format_func=lambda x: track_options.get(x, x),
+            )
+        with c_sel2:
+            level_choice = st.selectbox(
+                "Trình độ rèn luyện",
+                ["🌱 Cấp 1: Nền tảng (Foundation)", "🔥 Cấp 2: Thực hành (Practice)", "👑 Cấp 3: Nhuần nhuyễn (Mastery)"],
+                index=0,
+            )
+    
+        track_info = tracks_meta.get(sel_track_id, {})
+        if track_info.get("desc"):
+            st.caption(f"💡 *Mục tiêu khóa:* {track_info['desc']}")
+    
+        level_map = {
+            "🌱 Cấp 1: Nền tảng (Foundation)": ("level_1", "Cơ bản"),
+            "🔥 Cấp 2: Thực hành (Practice)": ("level_2", "Thực hành"),
+            "👑 Cấp 3: Nhuần nhuyễn (Mastery)": ("level_3", "Nâng cao"),
+        }
+        sel_level_code, sel_level_name = level_map[level_choice]
+    
+        # Lấy danh sách bài học thuộc track và level đã chọn
+        lessons = get_lessons_by_track(sel_track_id, sel_level_code)
+    
+        hist = load_user_history(username)
+        user_training = hist.get("training", {})
+        done_count = sum(1 for l in lessons if l["id"] in user_training)
+        total_count = len(lessons)
+    
+        # Thanh trạng thái tiến độ cấp độ
+        c_p1, c_p2 = st.columns([3, 1])
+        with c_p1:
+            st.progress(done_count / max(total_count, 1))
+        with c_p2:
+            st.caption(f"Tiến độ cấp độ: **{done_count}/{total_count}** bài")
+    
+        # Sub-tabs tách bạch rõ ràng giữa Lộ trình bài tập và AI Mentor sinh bài tập
+        sub_train_labels = [
+            f"📖 Lộ trình Bài tập ({total_count} bài)",
+            "✨ AI Mentor: Tự động tạo bài tập mở rộng",
+        ]
+        sub_train_tabs = st.tabs(sub_train_labels)
+    
+        with sub_train_tabs[0]:
+            if not lessons:
+                st.warning(f"Chưa có bài tập nào trong `{track_options[sel_track_id]}` ({sel_level_name}).")
+                st.info("👉 Hãy bấm sang tab **'✨ AI Mentor: Tự động tạo bài tập mở rộng'** bên cạnh để AI tạo bài tập đầu tiên cho bạn!")
+            else:
+                def format_lesson_title(l: dict) -> str:
+                    done_icon = "✅" if l["id"] in user_training else "📖"
+                    is_ai = " [✨ AI]" if l.get("created_by") == "AI" or "_ai_" in l.get("id", "") else ""
+                    return f"{done_icon} {l.get('title', l['id'])} — ({l.get('mode', '')}){is_ai}"
+    
+                # Tự động chọn bài vừa tạo nếu có trong session
+                target_id = st.session_state.get(f"target_lesson_{sel_track_id}_{sel_level_code}")
+                default_index = 0
+                if target_id:
+                    for idx, l in enumerate(lessons):
+                        if l.get("id") == target_id:
+                            default_index = idx
+                            break
+    
+                choice = st.selectbox(
+                    f"📚 Danh sách bài tập khả dụng ({len(lessons)} bài)",
+                    options=lessons,
+                    index=default_index,
+                    format_func=format_lesson_title,
+                    key=f"sel_lesson_{sel_track_id}_{sel_level_code}",
+                )
+                lesson = choice
+    
+                st.subheader(lesson["title"])
+                st.caption(f"Chế độ: **{lesson.get('mode')}** · Mức: **{lesson.get('level')}** · ID: `{lesson.get('id')}`")
+                if lesson.get("related_principle"):
+                    st.caption(f"Nguyên lý cốt lõi: **{lesson['related_principle']}**")
+    
+                st.markdown(f"**Mục tiêu:** {lesson.get('objective')}")
+                st.markdown("#### Tình huống thực tế")
+                st.info(lesson.get("situation", ""))
+    
+                st.markdown("#### Các bước hướng dẫn tư duy")
+                for i, step in enumerate(lesson.get("guide_steps", []), 1):
+                    st.markdown(f"{i}. {step}")
+    
+                with st.expander("💡 Gợi ý định hướng (mở khi cần)"):
+                    st.write(lesson.get("hint", ""))
+    
+                st.markdown("#### Thử thách của bạn")
+                st.write(lesson.get("exercise_prompt", ""))
+    
+                # Load previous answer if any
+                prev = user_training.get(lesson["id"], {})
+                prev_answer = prev.get("answer", "")
+                prev_feedback = prev.get("feedback", "")
+    
+                answer = st.text_area("Câu trả lời của bạn", value=prev_answer, height=150, key=f"ans_{lesson['id']}")
+    
+                col_a, col_b = st.columns(2)
+                with col_a:
+                    if st.button("💾 Lưu câu trả lời", use_container_width=True, key=f"save_{lesson['id']}"):
+                        save_training_answer(username, lesson["id"], answer.strip())
+                        st.success("Đã lưu vào tiến độ cá nhân của bạn.")
+                        st.rerun()
+                with col_b:
+                    if st.button("🤖 Xin feedback AI", type="primary", use_container_width=True, key=f"fb_{lesson['id']}"):
+                        if not answer.strip():
+                            st.warning("Hãy viết câu trả lời trước khi xin feedback.")
+                        elif not active_keys:
+                            st.warning("Cần API Key để nhận feedback.")
+                        else:
+                            with st.spinner("AI Gia sư đang nhận xét và hiệu chỉnh tư duy (tự động xoay tua key)..."):
+                                fb = feedback_on_answer(active_keys, model_choice, lesson, answer.strip())
+                            save_training_answer(username, lesson["id"], answer.strip(), fb)
+                            st.rerun()
+    
+                if prev_feedback:
+                    st.markdown("#### Feedback từ AI Mentor")
+                    st.success(prev_feedback)
+    
+                st.divider()
+                st.info("💡 **Muốn rèn luyện thêm?** Bạn có thể bấm sang tab **'✨ AI Mentor: Tự động tạo bài tập mở rộng'** ở trên để yêu cầu thêm các tình huống thực tế khác không giới hạn!")
+    
+        with sub_train_tabs[1]:
+            st.subheader(f"✨ AI Mentor: Tự Động Thiết Kế Bài Tập Thực Chiến")
+            st.markdown(f"Tạo đề bài độc bản cho: **{track_options[sel_track_id]}** · Cấp độ: **{sel_level_name}**")
+    
+            quick_suggestions = {
+                "grade_6": [
+                    "Lập kế hoạch tự học tại nhà không bị xao nhãng",
+                    "Xung đột ý kiến khi làm bài tập nhóm môn Khoa học",
+                    "Bị phân tâm vì xem video ngắn TikTok/Reels quá nhiều",
+                    "Phân biệt tin tức thật và tin giả trên mạng xã hội",
+                ],
+                "grade_9": [
+                    "Chọn trường cấp 3 công lập hay quốc tế dựa trên năng lực và tài chính",
+                    "Quản lý áp lực thi cử và kỳ vọng điểm số từ gia đình",
+                    "Tư duy xác suất và tỷ lệ cơ sở khi giải bài thi trắc nghiệm",
+                    "Từ chối lời rủ rê trốn học của bạn bè mà không làm mất lòng",
+                ],
+                "grade_10": [
+                    "Thiết kế dự án CLB trường học tạo tác động xã hội với ngân sách 0 đồng",
+                    "Xây dựng hồ sơ ngoại khóa săn học bổng du học bằng First Principles",
+                    "Ứng dụng AI vào học tập hiệu quả mà không bị thụ động tư duy",
+                    "Cân bằng giữa ôn luyện IELTS 8.0 và làm trưởng ban tổ chức sự kiện",
+                ],
+                "trading": [
+                    "Quản trị tâm lý và lệnh khi Vàng biến động 50 giá trong phiên Mỹ",
+                    "Chiến lược bất đối xứng (Asymmetry) khi giao dịch BTC/Crypto",
+                    "Cắt lỗ dứt khoát khi phân tích sai và tránh bẫy Revenge Trading",
+                    "Quản lý vốn theo tiêu chuẩn Kelly khi hệ thống có Winrate 45%",
+                ],
+                "ckvn": [
+                    "Nhận diện dấu chân dòng tiền Smart Money (VSA) ở vùng đáy gom hàng",
+                    "Phân tích chu kỳ nhóm ngành Chứng khoán - Thép - Bất động sản",
+                    "Quản trị rủi ro khi thị trường phân phối đỉnh với thanh khoản kỷ lục",
+                    "Định giá thực chất doanh nghiệp dựa trên dòng tiền tự do FCF",
+                ],
+                "neuroscience": [
+                    "Cơ chế Dopamine và cách cai nghiện dopamine rẻ tiền (Cheap Dopamine)",
+                    "Thực hành Deep Work 90 phút vượt qua quán tính trì hoãn của não bộ",
+                    "Tái cấu trúc nhận thức (Cognitive Reframing) khi gặp stress cực đại",
+                    "Khắc phục thiên kiến xác nhận khi đánh giá một cơ hội đầu tư",
+                ],
+                "buddhism": [
+                    "Ứng dụng tư duy Vô thường để không bị dính mắc vào thành công/thất bại",
+                    "Quan sát cảm xúc bằng Chánh niệm trước khi bấm nút Enter vào lệnh",
+                    "Bản chất Nhân - Quả trong các mối quan hệ gia đình và đối tác",
+                    "Tâm bất biến giữa dòng đời vạn biến: Quản trị sự bất định của thị trường",
+                ],
+                "ai_tech": [
+                    "Xây dựng Agentic Workflow tự động hóa quy trình phân tích dữ liệu",
+                    "Tư duy đòn bẩy không cần xin phép (Permissionless Leverage) thời AI",
+                    "Thiết kế Prompt First Principles để giải quyết bài toán kỹ thuật phức tạp",
+                    "Định vị năng lực cạnh tranh cốt lõi của con người khi AI làm chủ ngôn ngữ",
+                ]
+            }
+    
+            curr_suggestions = quick_suggestions.get(sel_track_id, ["Tình huống thực tế tùy biến theo chuyên môn"])
+            sel_suggest = st.selectbox(
+                "💡 Gợi ý chủ đề nhanh (chọn hoặc tự nhập bên dưới):",
+                ["— Tự nhập tình huống riêng của bạn —"] + curr_suggestions,
+                key=f"sel_sug_{sel_track_id}_{sel_level_code}",
+            )
+            initial_topic = "" if sel_suggest.startswith("—") else sel_suggest
+    
+            custom_topic = st.text_input(
+                "Chủ đề hoặc tình huống bạn muốn AI ra đề thử thách:",
+                value=initial_topic,
+                placeholder="vd: Bài tập nhóm STEM lớp 10, quản lý lệnh Vàng phiên Mỹ, kiềm chế cơn giận khi bị chỉ trích...",
+                key=f"topic_input_{sel_track_id}_{sel_level_code}",
+            )
+    
+            if st.button("🚀 Yêu Cầu AI Sinh Bài Tập Mới Ngay", key=f"btn_gen_{sel_track_id}_{sel_level_code}", type="primary", use_container_width=True):
+                if not active_keys:
+                    st.warning("Cần API Key để sinh bài tập.")
+                else:
+                    with st.spinner("AI Mentor đang thiết kế bài tập tình huống thực chiến độc bản (tự động xoay tua API key)..."):
+                        new_lesson = generate_dynamic_lesson(
+                            api_keys=active_keys,
+                            model_name=model_choice,
+                            track_title=track_options[sel_track_id],
+                            level_code=sel_level_code,
+                            level_name=sel_level_name,
+                            custom_topic=custom_topic.strip(),
+                        )
+                    if new_lesson and not new_lesson.get("error"):
+                        add_custom_lesson(sel_track_id, new_lesson, updated_by="AI")
+                        st.session_state[f"target_lesson_{sel_track_id}_{sel_level_code}"] = new_lesson.get("id")
+                        st.success(f"🎉 Đã tạo thành công bài tập mới: **{new_lesson.get('title')}**!")
+                        st.rerun()
+                    else:
+                        st.error(new_lesson.get("error", "Lỗi khi sinh bài tập."))
+    
+            # Danh sách các bài đã do AI tạo trong cấp độ này
+            ai_lessons = [l for l in lessons if l.get("created_by") == "AI" or "_ai_" in l.get("id", "")]
+            if ai_lessons:
+                st.markdown(f"#### 📚 Các bài tập do AI mở rộng trong cấp độ này ({len(ai_lessons)} bài)")
+                for al in ai_lessons:
+                    is_done = al["id"] in user_training
+                    icon = "✅" if is_done else "📖"
+                    st.markdown(f"- {icon} **{al.get('title')}** (Chế độ: `{al.get('mode')}`) — ID: `{al.get('id')}`")
 
 # ========== TAB 7: Phân rã thực chiến ==========
 with tabs[7]:
-    st.title("🚀 Phân Rã Thực Chiến Đa Chế Độ (Elite Lenses)")
-    st.markdown("""
-    Đưa bất kỳ vấn đề, quyết định, tình huống hóc búa hay dự án thực tế vào đây. 
-    Hệ thống AI sẽ kích hoạt cùng lúc **9 Lăng kính Tinh hoa & Các Mô hình Hạt nhân** để bóc tách tận cùng First Principles, 
-    nhận diện hệ quả bậc hai, lật ngược vấn đề và đề xuất hành động đòn bẩy cao nhất.
-    """)
+    st.title("🚀 Phân Rã Thực Chiến & Nhật Ký Quyết Định")
+    st.caption("Bóc tách vấn đề qua 9 Lăng kính Tinh hoa & Lưu vết quyết định để tự hiệu chỉnh sai số nhận thức sau 30-90 ngày.")
 
-    sample = st.selectbox(
-        "💡 Chọn ví dụ mẫu để thử nghiệm:",
-        [
-            "— Chọn ví dụ —",
-            "Đầu tư CKVN: Thị trường giảm mạnh, tin tức xấu bủa vây, có nên bán tháo hay giải ngân tích sản?",
-            "Quyết định nghề nghiệp: Nên ở lại công ty ổn định hay khởi nghiệp với rủi ro cao nhưng tiềm năng lớn?",
-            "Học sinh Wellspring: Muốn tham gia nhiều CLB nhưng sợ tụt điểm số và áp lực thi cử, giải quyết ra sao?",
-            "Thời gian: Cuối tuần nên cày phim xả stress hay dành 3 giờ rèn luyện tư duy và đọc sách?",
-        ],
-    )
-    initial = "" if sample.startswith("—") else sample
+    tab7_subtabs = st.tabs([
+        "🚀 Phân Rã Vấn Đề Tức Thì (AI 9 Lenses)",
+        "📓 Elite Decision Journal (Nhật Ký Quyết Định & Đo Sai Số)",
+    ])
 
-    problem = st.text_area("Nội dung vấn đề cần phân rã:", value=initial, height=120, placeholder="Mô tả cụ thể bối cảnh, mục tiêu, các ràng buộc và điều bạn đang băn khoăn...")
+    with tab7_subtabs[0]:
+        st.markdown("""
+        Đưa bất kỳ vấn đề, quyết định, tình huống hóc búa hay dự án thực tế vào đây. 
+        Hệ thống AI sẽ kích hoạt cùng lúc **9 Lăng kính Tinh hoa & Các Mô hình Hạt nhân** để bóc tách tận cùng First Principles, 
+        nhận diện hệ quả bậc hai, lật ngược vấn đề và đề xuất hành động đòn bẩy cao nhất.
+        """)
 
-    if st.button("🚀 Phân rã ngay", type="primary", use_container_width=True):
-        if not active_keys:
-            st.warning("Cần Gemini API Key (cấu hình trong Secrets hoặc sidebar).")
-        elif not problem.strip():
-            st.warning("Hãy nhập nội dung.")
-        else:
-            with st.spinner("Đang chạy 9 lenses qua Gemini (tự động xoay tua nếu bận/hết quota)..."):
-                result = analyze_problem(active_keys, model_choice, problem.strip())
+        sample = st.selectbox(
+            "💡 Chọn ví dụ mẫu để thử nghiệm:",
+            [
+                "— Chọn ví dụ —",
+                "Đầu tư CKVN: Thị trường giảm mạnh, tin tức xấu bủa vây, có nên bán tháo hay giải ngân tích sản?",
+                "Quyết định nghề nghiệp: Nên ở lại công ty ổn định hay khởi nghiệp với rủi ro cao nhưng tiềm năng lớn?",
+                "Học sinh Wellspring: Muốn tham gia nhiều CLB nhưng sợ tụt điểm số và áp lực thi cử, giải quyết ra sao?",
+                "Thời gian: Cuối tuần nên cày phim xả stress hay dành 3 giờ rèn luyện tư duy và đọc sách?",
+            ],
+            key="tab7_sample_select",
+        )
+        initial = "" if sample.startswith("—") else sample
 
-            if not result:
-                st.error("Không có kết quả.")
-            elif result.get("error"):
-                st.error(result["error"])
-                if result.get("raw"):
-                    st.code(result["raw"])
+        problem = st.text_area("Nội dung vấn đề cần phân rã:", value=initial, height=120, placeholder="Mô tả cụ thể bối cảnh, mục tiêu, các ràng buộc và điều bạn đang băn khoăn...", key="tab7_problem_input")
+
+        if st.button("🚀 Phân rã ngay", type="primary", use_container_width=True, key="tab7_btn_breakdown"):
+            if not active_keys:
+                st.warning("Cần Gemini API Key (cấu hình trong Secrets hoặc sidebar).")
+            elif not problem.strip():
+                st.warning("Hãy nhập nội dung.")
             else:
-                # Save personal history
-                summary = result.get("first_principles_breakdown", "")[:300]
-                append_analysis(username, problem.strip(), summary, result)
+                with st.spinner("Đang chạy 9 lenses qua Gemini (tự động xoay tua nếu bận/hết quota)..."):
+                    result = analyze_problem(active_keys, model_choice, problem.strip())
 
-                key_info = f" (Key: `{result.get('_used_key')}`)" if result.get("_used_key") else ""
-                st.success(f"Đã phân rã xong{key_info} · Đã lưu vào lịch sử của bạn")
+                if not result:
+                    st.error("Không có kết quả.")
+                elif result.get("error"):
+                    st.error(result["error"])
+                    if result.get("raw"):
+                        st.code(result["raw"])
+                else:
+                    summary = result.get("first_principles_breakdown", "")[:300]
+                    append_analysis(username, problem.strip(), summary, result)
 
-                c1, c2 = st.columns(2)
-                with c1:
-                    st.markdown("#### First Principles")
-                    st.write(result.get("first_principles_breakdown", "—"))
-                    st.markdown("#### Nguyên lý liên quan")
-                    for p in result.get("core_principles_found", [])[:5]:
-                        st.markdown(f"- **{p.get('name')}** ({p.get('domain')}): {p.get('description', '')[:120]}")
+                    key_info = f" (Key: `{result.get('_used_key')}`)" if result.get("_used_key") else ""
+                    st.success(f"Đã phân rã xong{key_info} · Đã lưu vào lịch sử của bạn")
 
-                with c2:
-                    st.markdown("#### Elite Lenses")
-                    lenses = result.get("elite_lenses", {})
-                    for k, v in lenses.items():
-                        st.markdown(f"**{k}**: {v}")
+                    st.session_state["dj_pref_title"] = problem.strip()[:60]
+                    st.session_state["dj_pref_hypo"] = result.get("first_principles_breakdown", "")[:300]
+                    st.session_state["dj_pref_inv"] = result.get("elite_lenses", {}).get("inversion", "")[:200]
+                    st.session_state["dj_pref_sec"] = result.get("elite_lenses", {}).get("second_order", "")[:200]
+                    st.session_state["open_new_decision_form"] = True
 
-                st.markdown("#### Hành động gợi ý")
-                for a in result.get("actionable_insights", []):
-                    st.markdown(f"- {a}")
+                    st.info("💡 **Gợi ý:** Dữ liệu phân tích đã được nạp sẵn. Hãy bấm sang tab **'📓 Elite Decision Journal'** bên cạnh để lưu quyết định này và đặt lịch kiểm định sau 30/90 ngày!")
 
-                st.markdown("#### Cần bạn quyết định")
-                for h in result.get("human_decision_needed", []):
-                    st.markdown(f"- {h}")
+                    c1, c2 = st.columns(2)
+                    with c1:
+                        st.markdown("#### First Principles")
+                        st.write(result.get("first_principles_breakdown", "—"))
+                        st.markdown("#### Nguyên lý liên quan")
+                        for p in result.get("core_principles_found", [])[:5]:
+                            st.markdown(f"- **{p.get('name')}** ({p.get('domain')}): {p.get('description', '')[:120]}")
+
+                    with c2:
+                        st.markdown("#### Elite Lenses")
+                        lenses = result.get("elite_lenses", {})
+                        for k, v in lenses.items():
+                            st.markdown(f"**{k}**: {v}")
+
+                    st.markdown("#### Hành động gợi ý")
+                    for a in result.get("actionable_insights", []):
+                        st.markdown(f"- {a}")
+
+                    st.markdown("#### Cần bạn quyết định")
+                    for h in result.get("human_decision_needed", []):
+                        st.markdown(f"- {h}")
+
+    with tab7_subtabs[1]:
+        st.markdown("### 📓 Elite Decision Journal — Lưu Vết & Hiệu Chuẩn Quyết Định")
+        st.caption("Phương pháp của Ray Dalio & Howard Marks: Không thể nâng cao chất lượng tư duy nếu không ghi chép giả định ban đầu và kiểm định lại kết quả thực tế sau 30-90 ngày để triệt tiêu Thiên kiến nhận thức muộn (Hindsight Bias).")
+
+        d_stats = get_decision_summary_stats(username)
+
+        dj_c1, dj_c2, dj_c3, dj_c4 = st.columns(4)
+        with dj_c1:
+            st.metric("📋 Tổng quyết định", f"{d_stats['total_logged']} mục")
+        with dj_c2:
+            st.metric("🕒 Đang chờ kiểm định", f"{d_stats['pending_count']} mục")
+        with dj_c3:
+            due_cnt = d_stats['due_count']
+            st.metric("⏳ Đến hạn kiểm định", f"{due_cnt} mục", "Cần xem lại ngay!" if due_cnt > 0 else "Đúng tiến độ")
+        with dj_c4:
+            acc = d_stats['calibration_accuracy']
+            st.metric("🎯 Điểm Hiệu Chuẩn", f"{acc}%" if d_stats['reviewed_count'] > 0 else "Chưa có", f"{d_stats['reviewed_count']} bài đã duyệt")
+
+        st.divider()
+
+        with st.expander("➕ Ghi Nhận Quyết Định Mới Vào Nhật Ký", expanded=(d_stats['total_logged'] == 0 or st.session_state.get("open_new_decision_form", False))):
+            with st.form("form_create_decision"):
+                pref_title = st.session_state.get("dj_pref_title", "")
+                pref_hypo = st.session_state.get("dj_pref_hypo", "")
+                pref_inv = st.session_state.get("dj_pref_inv", "")
+                pref_sec = st.session_state.get("dj_pref_sec", "")
+
+                dec_title = st.text_input("Tiêu đề quyết định:", value=pref_title, placeholder="Ví dụ: Đầu tư cổ phiếu FPT, Chọn chuyên ngành AI, Rời bỏ công ty X...")
+                
+                c_f1, c_f2 = st.columns(2)
+                with c_f1:
+                    dec_cat = st.selectbox("Lĩnh vực:", DECISION_CATEGORIES)
+                with c_f2:
+                    dec_interval_label = st.selectbox("Mốc hẹn kiểm định thực tế:", list(REVIEW_INTERVALS.keys()), index=1)
+                    dec_interval_days = REVIEW_INTERVALS[dec_interval_label]
+
+                dec_hypo = st.text_area(
+                    "Giả định cốt lõi (Core Hypothesis):",
+                    value=pref_hypo,
+                    height=80,
+                    placeholder="Tại sao bạn đưa ra quyết định này? Bạn tin rằng điều gì sẽ xảy ra và vì sao?",
+                )
+
+                dec_conf = st.slider(
+                    "Mức độ tự tin / Xác suất Bayes chủ quan của bạn:",
+                    min_value=10,
+                    max_value=100,
+                    value=75,
+                    step=5,
+                    format="%d%%",
+                    help="Theo tư duy Bayes: Đừng bao giờ đặt 100% hay 0%. Hãy thành thật với mức độ không chắc chắn.",
+                )
+
+                c_ta1, c_ta2 = st.columns(2)
+                with c_ta1:
+                    dec_inv = st.text_area(
+                        "Bẫy đảo ngược đã lường trước (Inversion):",
+                        value=pref_inv,
+                        height=80,
+                        placeholder="Những điều gì có thể biến quyết định này thành thảm họa? Bạn phòng vệ thế nào?",
+                    )
+                with c_ta2:
+                    dec_sec = st.text_area(
+                        "Hệ quả bậc hai dự kiến (Second-Order Effects):",
+                        value=pref_sec,
+                        height=80,
+                        placeholder="Sau khi quyết định này được thực thi, phản ứng tiếp theo của hệ thống sẽ là gì?",
+                    )
+
+                btn_save_dec = st.form_submit_button("💾 Lưu Quyết Định Vào Nhật Ký", type="primary", use_container_width=True)
+
+            if btn_save_dec:
+                if not dec_title.strip() or not dec_hypo.strip():
+                    st.warning("Vui lòng nhập ít nhất Tiêu đề và Giả định cốt lõi của quyết định.")
+                else:
+                    new_dec = create_decision_entry(
+                        username=username,
+                        title=dec_title.strip(),
+                        category=dec_cat,
+                        hypothesis=dec_hypo.strip(),
+                        confidence_pct=dec_conf,
+                        inversion_traps=dec_inv.strip(),
+                        second_order_consequences=dec_sec.strip(),
+                        review_days=dec_interval_days,
+                    )
+                    st.session_state["open_new_decision_form"] = False
+                    st.success(f"✅ Đã ghi nhận quyết định '{new_dec['title']}'! Hệ thống sẽ nhắc bạn kiểm định vào ngày {new_dec['review_date']}.")
+                    st.rerun()
+
+        st.markdown("#### 📋 Danh Sách Quyết Định Trong Nhật Ký")
+        user_decs = d_stats["decisions"]
+
+        if not user_decs:
+            st.info("Nhật ký của bạn đang trống. Hãy bấm '➕ Ghi Nhận Quyết Định Mới Vào Nhật Ký' ở trên để bắt đầu lưu vết các quyết định quan trọng!")
+        else:
+            filter_status = st.radio(
+                "Lọc theo trạng thái:",
+                ["Tất cả", "⏳ Đến hạn kiểm định (Due)", "🕒 Đang chờ (Pending)", "✅ Đã kiểm định (Reviewed)"],
+                horizontal=True,
+                key="dj_filter_status",
+            )
+
+            status_map = {
+                "⏳ Đến hạn kiểm định (Due)": "due",
+                "🕒 Đang chờ (Pending)": "pending",
+                "✅ Đã kiểm định (Reviewed)": "reviewed",
+            }
+
+            for d in user_decs:
+                if filter_status != "Tất cả":
+                    target_st = status_map[filter_status]
+                    if d.get("status") != target_st:
+                        continue
+
+                st_icon = "⏳ CẦN KIỂM ĐỊNH" if d.get("status") == "due" else ("🕒 Đang chờ" if d.get("status") == "pending" else "✅ Đã kiểm định")
+                expander_title = f"{st_icon} · [{d.get('category', '').split()[0]}] {d.get('title')} (Tạo: {d.get('created_at')} — Hẹn: {d.get('review_date')})"
+
+                with st.expander(expander_title, expanded=(d.get("status") == "due")):
+                    c_det1, c_det2 = st.columns(2)
+                    with c_det1:
+                        st.markdown(f"**📌 Giả định gốc:**  \n{d.get('hypothesis')}")
+                        st.markdown(f"**🎯 Độ tự tin ban đầu:** `{d.get('confidence_pct')}%`")
+                    with c_det2:
+                        if d.get("inversion_traps"):
+                            st.markdown(f"**⚠️ Bẫy đảo ngược lường trước:**  \n{d.get('inversion_traps')}")
+                        if d.get("second_order_consequences"):
+                            st.markdown(f"**🌊 Hệ quả bậc hai dự kiến:**  \n{d.get('second_order_consequences')}")
+
+                    st.markdown("---")
+
+                    if d.get("status") == "reviewed":
+                        st.success(f"**Kết quả thực tế ({d.get('reviewed_at')}):**  \n{d.get('actual_outcome')}")
+                        sc_c1, sc_c2 = st.columns(2)
+                        with sc_c1:
+                            st.metric("Đánh giá kết quả", f"{d.get('outcome_score')}%")
+                        with sc_c2:
+                            diff_val = d.get('calibration_diff', 0)
+                            st.metric("Độ lệch nhận thức", f"{diff_val}%", "Khớp hoàn hảo!" if diff_val <= 10 else "Có sai lệch")
+                        if d.get("lessons_learned"):
+                            st.info(f"💡 **Bài học rút ra:** {d.get('lessons_learned')}")
+                    else:
+                        st.markdown("##### 🔍 Kiểm Định Thực Tế & Tự Đo Sai Số Nhận Thức")
+                        with st.form(key=f"form_review_{d['id']}"):
+                            actual_res = st.text_area(
+                                "Thực tế diễn ra như thế nào?",
+                                height=80,
+                                placeholder="Ghi nhận khách quan: Điều gì đã xảy ra so với giả định ban đầu của bạn?",
+                            )
+                            rate_label = st.selectbox(
+                                "Mức độ chính xác so với dự tính ban đầu:",
+                                list(OUTCOME_RATINGS.keys()),
+                                index=1,
+                            )
+                            outcome_num = OUTCOME_RATINGS[rate_label]
+
+                            lessons = st.text_area(
+                                "Bài học rút ra (Tư duy nào đã giúp ích hoặc mô hình nào bạn đã bỏ sót?):",
+                                height=80,
+                                placeholder="Ví dụ: Đã quá lạc quan về tiến độ, bỏ quên bẫy chi phí chìm...",
+                            )
+
+                            btn_submit_rev = st.form_submit_button("🎯 Hoàn Tất Kiểm Định & Ghi Nhận Sai Số", type="primary", use_container_width=True)
+
+                        if btn_submit_rev:
+                            if not actual_res.strip():
+                                st.warning("Vui lòng ghi lại kết quả thực tế để hoàn tất kiểm định.")
+                            else:
+                                resolve_decision_review(
+                                    username=username,
+                                    decision_id=d["id"],
+                                    actual_outcome=actual_res.strip(),
+                                    outcome_score=outcome_num,
+                                    lessons_learned=lessons.strip(),
+                                )
+                                st.success("✅ Đã hoàn tất kiểm định quyết định! Điểm hiệu chuẩn của bạn đã được cập nhật.")
+                                st.rerun()
+
 
 # ========== TAB 8: Lịch sử cá nhân ==========
 with tabs[8]:
     st.title("📝 Lịch sử của tôi")
     hist = load_user_history(username)
+
+    # Thống kê Bộ 3 Động Lực Tinh Hoa (Elite Trinity)
+    st.markdown("#### 🔥 Chỉ Số Rèn Luyện & Hiệu Chuẩn Tinh Hoa")
+    trin_c1, trin_c2, trin_c3 = st.columns(3)
+    
+    # 1. Streak
+    u_streak_tab8 = get_user_streak_info(username)
+    with trin_c1:
+        s_val_t8 = u_streak_tab8["current_streak"]
+        s_badge_t8 = "⚡ Khởi động" if s_val_t8 < 7 else ("🔥 Thói quen thép" if s_val_t8 < 30 else "🏆 Phản xạ vô thức")
+        st.metric("🔥 Chuỗi Streak 15 Phút", f"{s_val_t8} ngày", f"Kỷ lục: {u_streak_tab8['longest_streak']} ngày ({s_badge_t8})")
+    
+    # 2. Diagnostic
+    latest_diag_t8 = get_latest_diagnostic_result(username)
+    with trin_c2:
+        if latest_diag_t8:
+            st.metric("🧭 Chỉ Số Nhận Thức (Radar)", f"{latest_diag_t8['overall_index']}%", latest_diag_t8['rank_title'].split()[0] + " " + latest_diag_t8['rank_title'].split()[1])
+        else:
+            st.metric("🧭 Điểm Mù Nhận Thức", "Chưa làm test", "Vào Tab 5 để test")
+
+    # 3. Decision Calibration
+    d_stats_t8 = get_decision_summary_stats(username)
+    with trin_c3:
+        if d_stats_t8["reviewed_count"] > 0:
+            st.metric("📓 Điểm Hiệu Chuẩn Quyết Định", f"{d_stats_t8['calibration_accuracy']}%", f"{d_stats_t8['reviewed_count']} quyết định đã duyệt")
+        else:
+            st.metric("📓 Quyết Định Đang Lưu", f"{d_stats_t8['total_logged']} mục", f"{d_stats_t8['due_count']} đến hạn kiểm định")
+
+    st.divider()
 
     # Thống kê thành tích Trắc nghiệm & Làm chủ
     m_info = get_user_mastery_summary(username)
