@@ -174,11 +174,12 @@ with st.sidebar:
 # Main tabs
 # -----------------------------------------------------------------------------
 tab_labels = [
-    "🚀 Phân rã vấn đề",
-    "📖 Cẩm nang 9 Tư duy Elite",
-    "🕸️ 80-90 Mô hình Hạt nhân",
-    "📚 Thư viện nguyên lý",
+    "🧭 Hướng dẫn & Bản đồ",
+    "📖 9 Chế độ Tư duy",
+    "🕸️ 88 Mô hình Hạt nhân",
     "🎓 Đào tạo tư duy",
+    "📚 Thư viện nguyên lý",
+    "🚀 Phân rã thực chiến",
     "📝 Lịch sử của tôi",
 ]
 if is_admin():
@@ -186,68 +187,138 @@ if is_admin():
 
 tabs = st.tabs(tab_labels)
 
-# ========== TAB 1: Phân rã ==========
+# ========== TAB 0: Hướng dẫn & Bản đồ tư duy ==========
 with tabs[0]:
-    st.title("🧠 Phân rã đa chế độ (Elite Lenses)")
-    st.markdown("Nhập vấn đề / quyết định / tình huống cần làm rõ.")
+    st.title("🧭 Bản Đồ Huấn Luyện Tư Duy Tinh Hoa (Elite Thinking Roadmap)")
+    st.markdown("""
+    Chào mừng bạn đến với **Hệ thống Huấn luyện Tư duy Tinh hoa & Nguyên lý Khởi thủy**. 
+    Hệ thống này được xây dựng dựa trên phương pháp tư duy của các bậc thầy kiệt xuất: **Charlie Munger, Richard Feynman, Elon Musk và John von Neumann** — 
+    nhằm giúp bạn giải phóng khỏi lối mòn suy nghĩ bắt chước (analogy), làm chủ các quy luật bất biến của tự nhiên và ra quyết định chính xác trong môi trường phức tạp.
+    """)
 
-    sample = st.selectbox(
-        "Ví dụ nhanh",
-        [
-            "— Chọn ví dụ —",
-            "Cuối tuần nên chơi game cả ngày hay dành 2 giờ ôn bài?",
-            "Bạn rủ mình học theo method TikTok để điểm tăng nhanh, có nên không?",
-            "Muốn tham gia nhiều CLB nhưng sợ điểm giảm, phải làm sao?",
-        ],
-    )
-    initial = "" if sample.startswith("—") else sample
+    # 3 Triết lý cốt lõi
+    c_q1, c_q2, c_q3 = st.columns(3)
+    with c_q1:
+        st.info("""
+        **🕸️ Charlie Munger**
+        > *"Bạn phải xây dựng một mạng lưới các mô hình trong đầu, và bạn phải treo kinh nghiệm của mình lên mạng lưới đó. Nếu chỉ có một mô hình, bạn sẽ bóp méo thực tế để vừa vặn với nó."*
+        """)
+    with c_q2:
+        st.success("""
+        **🔬 Richard Feynman**
+        > *"Bạn không thực sự hiểu điều gì cho đến khi bạn có thể giải thích nó bằng ngôn ngữ giản dị nhất từ nguyên lý gốc, không dùng thuật ngữ hoa mỹ."*
+        """)
+    with c_q3:
+        st.warning("""
+        **⚡ Elon Musk**
+        > *"Đừng suy luận bằng cách bắt chước. Hãy đập vụn sự vật về những chân lý cơ bản nhất không thể phủ nhận, rồi suy luận ngược lên từ đó."*
+        """)
 
-    problem = st.text_area("Nội dung cần phân rã", value=initial, height=120)
+    st.markdown("---")
+    st.subheader("🗺️ Quy Trình 5 Bước Chuyển Hóa Năng Lực Tư Duy")
+    st.markdown("Để biến tri thức thành phản xạ tự nhiên và giải quyết được mọi bài toán hóc búa, hãy đi theo lộ trình 5 bước sư phạm:")
 
-    if st.button("🚀 Phân rã ngay", type="primary", use_container_width=True):
-        if not active_keys:
-            st.warning("Cần Gemini API Key (cấu hình trong Secrets hoặc sidebar).")
-        elif not problem.strip():
-            st.warning("Hãy nhập nội dung.")
-        else:
-            with st.spinner("Đang chạy 9 lenses qua Gemini (tự động xoay tua nếu bận/hết quota)..."):
-                result = analyze_problem(active_keys, model_choice, problem.strip())
+    step_cols = st.columns(5)
+    with step_cols[0]:
+        st.markdown("""
+        #### 1️⃣ Nạp Lăng Kính
+        **Tab 1: 9 Chế độ Tư duy**
+        *Hiểu các công cụ tư duy nền tảng:*
+        - Nguyên lý khởi thủy
+        - Đảo ngược (Inversion)
+        - Hệ quả bậc 2
+        - Xác suất Bayes
+        - Tư duy hệ thống
+        """)
+    with step_cols[1]:
+        st.markdown("""
+        #### 2️⃣ Cài Mô Hình
+        **Tab 2: 88 Mô hình Hạt nhân**
+        *Nắm vững 6 trụ cột liên ngành:*
+        - Vật lý (Đòn bẩy, Entropy)
+        - Sinh học (Tiến hóa, Thích nghi)
+        - Tâm lý (Thiên kiến, FOMO)
+        - Kinh tế (Chi phí cơ hội)
+        - Toán học & Hệ thống
+        """)
+    with step_cols[2]:
+        st.markdown("""
+        #### 3️⃣ Luyện Chủ Đích
+        **Tab 3: Đào tạo tư duy**
+        *Rèn luyện phản xạ qua tình huống:*
+        - Học sinh K12 & Chuyên sâu Người lớn.
+        - 3 cấp độ: Cơ bản ➔ Thực hành ➔ Nâng cao.
+        - **AI Mentor**: Phản biện và tự động tạo bài tập mở rộng vô hạn.
+        """)
+    with step_cols[3]:
+        st.markdown("""
+        #### 4️⃣ Tra Cứu Sâu
+        **Tab 4: Thư viện nguyên lý**
+        *Tra cứu 100 định luật cốt lõi:*
+        - Định nghĩa toán học / chặt chẽ
+        - Điều kiện biên áp dụng
+        - Kiểm chứng tính khả bác (Falsification test)
+        """)
+    with step_cols[4]:
+        st.markdown("""
+        #### 5️⃣ Thực Chiến
+        **Tab 5: Phân rã thực chiến**
+        *Vũ khí giải quyết vấn đề tối thượng:*
+        - Đưa bài toán / quyết định thực tế vào
+        - AI kích hoạt cùng lúc 9 lăng kính tinh hoa
+        - Bóc tách bản chất, tìm đòn bẩy bất đối xứng và hành động ngay.
+        """)
 
-            if not result:
-                st.error("Không có kết quả.")
-            elif result.get("error"):
-                st.error(result["error"])
-                if result.get("raw"):
-                    st.code(result["raw"])
-            else:
-                # Save personal history
-                summary = result.get("first_principles_breakdown", "")[:300]
-                append_analysis(username, problem.strip(), summary, result)
+    st.markdown("---")
 
-                key_info = f" (Key: `{result.get('_used_key')}`)" if result.get("_used_key") else ""
-                st.success(f"Đã phân rã xong{key_info} · Đã lưu vào lịch sử của bạn")
+    st.subheader("🎯 Chọn Lộ Trình Huấn Luyện Phù Hợp Với Bạn")
+    t_c1, t_c2 = st.columns(2)
+    with t_c1:
+        st.markdown("""
+        ### 🎒 Track 1: Học sinh Phổ thông (Wellspring Lớp 6, 9, 10)
+        - **Mục tiêu:** Thoát khỏi thói quen học vẹt và tin đồn, xây dựng tư duy phản biện độc lập, định hình tư duy logic trước tuổi trưởng thành.
+        - **Các bài toán trọng tâm:**
+          - *Lớp 6:* Xây dựng thói quen hỏi "Tại sao?", nhận diện giả định ngầm, đối chiếu sự thật khách quan.
+          - *Lớp 9:* Quản lý năng lượng & thời gian thi cử, phân biệt hệ quả trước mắt vs hệ quả lâu dài, cân bằng sở thích và trách nhiệm.
+          - *Lớp 10:* Ra quyết định chọn ngành nghề / môn học, quản trị mối quan hệ bạn bè, tư duy chi phí cơ hội.
+        - **Bắt đầu ngay:** Chuyển sang **Tab [🎓 Đào tạo tư duy]** ➔ Chọn nhóm **Học sinh Wellspring**.
+        """)
+    with t_c2:
+        st.markdown("""
+        ### 💼 Track 2: Người lớn & Chuyên gia (Trading CKVN, Quản trị, Não bộ, AI)
+        - **Mục tiêu:** Ra quyết định đầu tư/kinh doanh thượng thừa, làm chủ tâm lý đám đông, quản trị rủi ro bất đối xứng và thiết kế hệ thống.
+        - **Các bài toán trọng tâm:**
+          - *Tài chính & CKVN:* Tư duy xác suất Bayes, quản trị rủi ro bất đối xứng (Asymmetry), chu kỳ Mr. Market, đòn bẩy tài chính.
+          - *Não bộ & Tâm lý:* Kiểm soát thiên kiến xác nhận, bẫy chi phí chìm, hiệu ứng sợ mất mát (Loss Aversion).
+          - *Phật giáo & Quy luật:* Vô thường (Entropy), Duyên khởi (Tư duy hệ thống phức hợp), Nhân quả (Hệ quả bậc 2).
+        - **Bắt đầu ngay:** Xem **Tab [🕸️ 88 Mô hình Hạt nhân]** để nạp 25 mô hình Tier 1 ➔ Sau đó vào **Tab [🎓 Đào tạo tư duy]**.
+        """)
 
-                c1, c2 = st.columns(2)
-                with c1:
-                    st.markdown("#### First Principles")
-                    st.write(result.get("first_principles_breakdown", "—"))
-                    st.markdown("#### Nguyên lý liên quan")
-                    for p in result.get("core_principles_found", [])[:5]:
-                        st.markdown(f"- **{p.get('name')}** ({p.get('domain')}): {p.get('description', '')[:120]}")
+    st.markdown("---")
 
-                with c2:
-                    st.markdown("#### Elite Lenses")
-                    lenses = result.get("elite_lenses", {})
-                    for k, v in lenses.items():
-                        st.markdown(f"**{k}**: {v}")
+    st.subheader("⭐ 4 Nguyên Tắc Vàng Khi Rèn Luyện")
+    r1, r2 = st.columns(2)
+    with r1:
+        st.markdown("""
+        **1. Chống bẫy "Người cầm búa" (Man with a Hammer Syndrome)**
+        - *"Nếu công cụ duy nhất bạn có là một cây búa, bạn sẽ đối xử với mọi thứ như thể nó là một chiếc đinh."* — Abraham Maslow / Charlie Munger.
+        - Giới tinh hoa không bao giờ giải quyết bài toán phức tạp bằng một góc nhìn đơn lẻ. Hãy kết hợp ít nhất 2–3 mô hình từ các ngành khác nhau để tạo hiệu ứng cộng hưởng (**Lollapalooza**).
 
-                st.markdown("#### Hành động gợi ý")
-                for a in result.get("actionable_insights", []):
-                    st.markdown(f"- {a}")
+        **2. Kiểm chứng tính khả bác (Falsification Principle)**
+        - Đừng chỉ tìm bằng chứng ủng hộ ý kiến có sẵn của mình (bẫy Confirmation Bias). 
+        - Hãy luôn tự hỏi: *"Tình huống nào hoặc bằng chứng nào sẽ chứng minh là tôi đang sai?"* Nếu không tìm được điều kiện biên làm cho nó sai, bạn chưa thực sự thấu suốt vấn đề.
+        """)
+    with r2:
+        st.markdown("""
+        **3. Rèn luyện có chủ đích & Nhận phản hồi (Deliberate Practice & Feedback Loop)**
+        - Chỉ đọc lý thuyết chỉ tạo ra ảo tưởng về sự hiểu biết.
+        - Bạn phải tự tay gõ câu trả lời, nhấn nộp bài để nhận phản biện sắc bén từ **AI Mentor**, và theo dõi sự tiến bộ của mình tại **Tab [📝 Lịch sử của tôi]**.
 
-                st.markdown("#### Cần bạn quyết định")
-                for h in result.get("human_decision_needed", []):
-                    st.markdown(f"- {h}")
+        **4. Chuyển hóa kiến thức thành Đòn bẩy Thực chiến**
+        - Mọi mô hình và nguyên lý đều vô giá trị nếu không tạo ra kết quả trong thế giới thực.
+        - Khi gặp bất kỳ khúc mắc nào trong công việc, đầu tư hay cuộc sống, hãy đưa ngay vào **Tab [🚀 Phân rã thực chiến]** để bóc tách tận gốc rễ.
+        """)
+
 
 # ========== TAB 2: Cẩm nang 9 Tư duy Elite ==========
 with tabs[1]:
@@ -727,40 +798,8 @@ with tabs[2]:
             - **Kết quả:** Hình thành trực giác tinh hoa, biến mạng lưới mô hình thành bản năng phản xạ tự nhiên.
             """)
 
-# ========== TAB 4: Thư viện ==========
+# ========== TAB 3: Đào tạo tư duy ==========
 with tabs[3]:
-    st.title("📚 Thư viện nguyên lý cốt lõi (dùng chung)")
-    domains = get_domains()
-    col_f1, col_f2 = st.columns([1, 2])
-    with col_f1:
-        domain = st.selectbox("Lọc trụ cột", domains)
-    with col_f2:
-        q = st.text_input("Tìm kiếm", placeholder="Bayes, đòn bẩy, bảo toàn...")
-
-    if q.strip():
-        principles = search_principles(q)
-    else:
-        principles = get_principles(domain if domain != "Tất cả" else None)
-
-    st.caption(f"Hiển thị {len(principles)} nguyên lý")
-
-    for p in principles[:40]:
-        with st.expander(f"{p.get('principle_name', '?')} · {p.get('domain', '')}"):
-            st.markdown(f"**Mô tả:** {p.get('description', '')}")
-            if p.get("formal_definition"):
-                st.info(p["formal_definition"])
-            if p.get("intuitive_summary"):
-                st.write(f"💡 {p['intuitive_summary']}")
-            c1, c2 = st.columns(2)
-            with c1:
-                if p.get("boundary_conditions"):
-                    st.caption(f"Điều kiện biên: {p['boundary_conditions']}")
-            with c2:
-                if p.get("falsification_test"):
-                    st.caption(f"Falsify: {p['falsification_test']}")
-
-# ========== TAB 5: Đào tạo tư duy ==========
-with tabs[4]:
     st.title("🎓 Đào tạo tư duy theo lộ trình đa tầng")
     st.markdown("Chương trình rèn luyện 3 cấp độ dành cho học sinh phổ thông (Wellspring) & chuyên sâu thực chiến cho người lớn.")
 
@@ -1013,8 +1052,109 @@ with tabs[4]:
                 icon = "✅" if is_done else "📖"
                 st.markdown(f"- {icon} **{al.get('title')}** (Chế độ: `{al.get('mode')}`) — ID: `{al.get('id')}`")
 
-# ========== TAB 5: Lịch sử cá nhân ==========
+# ========== TAB 4: Thư viện nguyên lý ==========
+with tabs[4]:
+    st.title("📚 Thư viện nguyên lý cốt lõi (dùng chung)")
+    st.caption("Kho 100 nguyên lý khởi thủy từ Vật lý, Sinh học, Toán học, Triết học & Khoa học máy tính")
+    domains = get_domains()
+    col_f1, col_f2 = st.columns([1, 2])
+    with col_f1:
+        domain = st.selectbox("Lọc trụ cột", domains)
+    with col_f2:
+        q = st.text_input("Tìm kiếm nguyên lý", placeholder="Bayes, đòn bẩy, bảo toàn, entropy...")
+
+    if q.strip():
+        principles = search_principles(q)
+    else:
+        principles = get_principles(domain if domain != "Tất cả" else None)
+
+    st.caption(f"Hiển thị {len(principles)} nguyên lý")
+
+    for p in principles[:40]:
+        with st.expander(f"{p.get('principle_name', '?')} · {p.get('domain', '')}"):
+            st.markdown(f"**Mô tả:** {p.get('description', '')}")
+            if p.get("formal_definition"):
+                st.info(p["formal_definition"])
+            if p.get("intuitive_summary"):
+                st.write(f"💡 {p['intuitive_summary']}")
+            c1, c2 = st.columns(2)
+            with c1:
+                if p.get("boundary_conditions"):
+                    st.caption(f"Điều kiện biên: {p['boundary_conditions']}")
+            with c2:
+                if p.get("falsification_test"):
+                    st.caption(f"Falsify: {p['falsification_test']}")
+
+# ========== TAB 5: Phân rã thực chiến ==========
 with tabs[5]:
+    st.title("🚀 Phân Rã Thực Chiến Đa Chế Độ (Elite Lenses)")
+    st.markdown("""
+    Đưa bất kỳ vấn đề, quyết định, tình huống hóc búa hay dự án thực tế vào đây. 
+    Hệ thống AI sẽ kích hoạt cùng lúc **9 Lăng kính Tinh hoa & Các Mô hình Hạt nhân** để bóc tách tận cùng First Principles, 
+    nhận diện hệ quả bậc hai, lật ngược vấn đề và đề xuất hành động đòn bẩy cao nhất.
+    """)
+
+    sample = st.selectbox(
+        "💡 Chọn ví dụ mẫu để thử nghiệm:",
+        [
+            "— Chọn ví dụ —",
+            "Đầu tư CKVN: Thị trường giảm mạnh, tin tức xấu bủa vây, có nên bán tháo hay giải ngân tích sản?",
+            "Quyết định nghề nghiệp: Nên ở lại công ty ổn định hay khởi nghiệp với rủi ro cao nhưng tiềm năng lớn?",
+            "Học sinh Wellspring: Muốn tham gia nhiều CLB nhưng sợ tụt điểm số và áp lực thi cử, giải quyết ra sao?",
+            "Thời gian: Cuối tuần nên cày phim xả stress hay dành 3 giờ rèn luyện tư duy và đọc sách?",
+        ],
+    )
+    initial = "" if sample.startswith("—") else sample
+
+    problem = st.text_area("Nội dung vấn đề cần phân rã:", value=initial, height=120, placeholder="Mô tả cụ thể bối cảnh, mục tiêu, các ràng buộc và điều bạn đang băn khoăn...")
+
+    if st.button("🚀 Phân rã ngay", type="primary", use_container_width=True):
+        if not active_keys:
+            st.warning("Cần Gemini API Key (cấu hình trong Secrets hoặc sidebar).")
+        elif not problem.strip():
+            st.warning("Hãy nhập nội dung.")
+        else:
+            with st.spinner("Đang chạy 9 lenses qua Gemini (tự động xoay tua nếu bận/hết quota)..."):
+                result = analyze_problem(active_keys, model_choice, problem.strip())
+
+            if not result:
+                st.error("Không có kết quả.")
+            elif result.get("error"):
+                st.error(result["error"])
+                if result.get("raw"):
+                    st.code(result["raw"])
+            else:
+                # Save personal history
+                summary = result.get("first_principles_breakdown", "")[:300]
+                append_analysis(username, problem.strip(), summary, result)
+
+                key_info = f" (Key: `{result.get('_used_key')}`)" if result.get("_used_key") else ""
+                st.success(f"Đã phân rã xong{key_info} · Đã lưu vào lịch sử của bạn")
+
+                c1, c2 = st.columns(2)
+                with c1:
+                    st.markdown("#### First Principles")
+                    st.write(result.get("first_principles_breakdown", "—"))
+                    st.markdown("#### Nguyên lý liên quan")
+                    for p in result.get("core_principles_found", [])[:5]:
+                        st.markdown(f"- **{p.get('name')}** ({p.get('domain')}): {p.get('description', '')[:120]}")
+
+                with c2:
+                    st.markdown("#### Elite Lenses")
+                    lenses = result.get("elite_lenses", {})
+                    for k, v in lenses.items():
+                        st.markdown(f"**{k}**: {v}")
+
+                st.markdown("#### Hành động gợi ý")
+                for a in result.get("actionable_insights", []):
+                    st.markdown(f"- {a}")
+
+                st.markdown("#### Cần bạn quyết định")
+                for h in result.get("human_decision_needed", []):
+                    st.markdown(f"- {h}")
+
+# ========== TAB 6: Lịch sử cá nhân ==========
+with tabs[6]:
     st.title("📝 Lịch sử của tôi")
     hist = load_user_history(username)
 
@@ -1042,9 +1182,9 @@ with tabs[5]:
                     st.markdown("**Feedback:**")
                     st.write(info["feedback"])
 
-# ========== TAB 6: Admin (Phat) ==========
+# ========== TAB 7: Admin (Phat) ==========
 if is_admin():
-    with tabs[6]:
+    with tabs[7]:
         st.title("👑 Khu vực quản trị (Phat)")
         st.markdown("Xem tiến độ mọi thành viên · Cập nhật bài học")
 
