@@ -52,20 +52,51 @@ from utils.mental_models import (
     export_models_to_csv,
     analyze_latticework_synthesis,
 )
-from utils.quiz_engine import (
-    MODES_QUIZ,
-    MODELS_QUIZ,
-    PRINCIPLES_QUIZ,
-    get_all_flashcards,
-    record_quiz_completion,
-    update_flashcard_mastery,
-    get_user_mastery_summary,
-    generate_ai_quiz,
-    evaluate_feynman_challenge,
-    get_theory_questions_for_modes,
-    get_theory_questions_for_models,
-    get_theory_questions_for_principles,
-)
+try:
+    from utils.quiz_engine import (
+        MODES_QUIZ,
+        MODELS_QUIZ,
+        PRINCIPLES_QUIZ,
+        get_all_flashcards,
+        record_quiz_completion,
+        update_flashcard_mastery,
+        get_user_mastery_summary,
+        generate_ai_quiz,
+        evaluate_feynman_challenge,
+        get_theory_questions_for_modes,
+        get_theory_questions_for_models,
+        get_theory_questions_for_principles,
+    )
+    QUIZ_ENGINE_READY = True
+    QUIZ_IMPORT_ERROR = None
+except Exception as _quiz_err:
+    import traceback
+    QUIZ_ENGINE_READY = False
+    QUIZ_IMPORT_ERROR = f"{type(_quiz_err).__name__}: {_quiz_err}\n\n{traceback.format_exc()}"
+    MODES_QUIZ = []
+    MODELS_QUIZ = []
+    PRINCIPLES_QUIZ = []
+    def get_all_flashcards(*args, **kwargs):
+        return []
+    def record_quiz_completion(*args, **kwargs):
+        return {}
+    def update_flashcard_mastery(*args, **kwargs):
+        return {}
+    def get_user_mastery_summary(*args, **kwargs):
+        return {
+            "accuracy": 0.0, "total_quizzes": 0, "mastered_count": 0,
+            "learning_count": 0, "review_count": 0, "mastery_pct": 0.0, "recent_tests": []
+        }
+    def generate_ai_quiz(*args, **kwargs):
+        return None
+    def evaluate_feynman_challenge(*args, **kwargs):
+        return None
+    def get_theory_questions_for_modes(*args, **kwargs):
+        return []
+    def get_theory_questions_for_models(*args, **kwargs):
+        return []
+    def get_theory_questions_for_principles(*args, **kwargs):
+        return []
 
 # -----------------------------------------------------------------------------
 # Config
@@ -871,6 +902,10 @@ with tabs[3]:
 with tabs[4]:
     st.title("⚡ Đấu Trường Luyện Nhớ & Trắc Nghiệm Phản Xạ")
     st.caption("Nắm trọn 9 Chế độ · 88 Mô hình Hạt nhân · 100 Nguyên lý Khởi thủy qua Active Recall & Case Quizzes")
+
+    if QUIZ_IMPORT_ERROR:
+        st.error(f"⚠️ **Thông báo hệ thống Quiz Engine:**\n\n```\n{QUIZ_IMPORT_ERROR}\n```")
+        st.info("💡 Nếu bạn đang trên Streamlit Cloud, hãy thử bấm nút **Manage app** ở góc dưới bên phải màn hình và chọn **Reboot app** để nạp lại đầy đủ các module mới.")
 
     # Thống kê thành tích làm chủ
     mastery_data = get_user_mastery_summary(username)

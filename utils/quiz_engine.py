@@ -21,7 +21,10 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Any, Optional, Union
 
-import google.generativeai as genai
+try:
+    import google.generativeai as genai
+except Exception:
+    genai = None
 
 from utils.knowledge import load_user_history, save_user_history, load_knowledge_base
 from utils.mental_models import get_all_models, filter_models
@@ -1143,6 +1146,8 @@ def generate_ai_quiz(
     num_questions: int = 3
 ) -> Optional[List[Dict[str, Any]]]:
     """Sinh bộ câu hỏi trắc nghiệm tình huống mới toanh bằng AI qua Gemini đa khóa."""
+    if genai is None:
+        return None
     keys = _normalize_keys(api_keys)
     if not keys:
         return None
@@ -1198,6 +1203,8 @@ def evaluate_feynman_challenge(
     user_explanation: str
 ) -> Optional[Dict[str, Any]]:
     """Đánh giá bài kiểm tra Feynman: Giải thích nguyên lý phức tạp bằng ngôn ngữ giản dị nhất."""
+    if genai is None:
+        return None
     keys = _normalize_keys(api_keys)
     if not keys:
         return None
