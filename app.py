@@ -827,91 +827,167 @@ with tabs[4]:
     with c_p2:
         st.caption(f"Tiến độ cấp độ: **{done_count}/{total_count}** bài")
 
-    st.info("💡 **Lời khuyên sư phạm:** Học viên nên hoàn thành toàn bộ các **bài tập nền tảng có sẵn** bên dưới trước để nắm vững phương pháp cốt lõi và tiết kiệm API. Sau khi đã nắm vững, hãy mở mục *'AI Mentor: Luyện tập Mở rộng'* phía dưới để tự yêu cầu ra thêm đề theo tình huống thực tế!")
+    # Sub-tabs tách bạch rõ ràng giữa Lộ trình bài tập và AI Mentor sinh bài tập
+    sub_train_labels = [
+        f"📖 Lộ trình Bài tập ({total_count} bài)",
+        "✨ AI Mentor: Tự động tạo bài tập mở rộng",
+    ]
+    sub_train_tabs = st.tabs(sub_train_labels)
 
-    if not lessons:
-        st.warning("Chưa có bài tập nào trong cấp độ này. Hãy mở mục AI Mentor bên dưới để tạo bài tập đầu tiên!")
-    else:
-        def format_lesson_title(l: dict) -> str:
-            done_icon = "✅" if l["id"] in user_training else "📖"
-            is_ai = " [✨ AI]" if l.get("created_by") == "AI" or "_ai_" in l.get("id", "") else ""
-            return f"{done_icon} {l.get('title', l['id'])} — ({l.get('mode', '')}){is_ai}"
-
-        choice = st.selectbox(
-            f"📚 Lộ trình bài tập ({len(lessons)} bài khả dụng)",
-            options=lessons,
-            format_func=format_lesson_title,
-            key=f"sel_lesson_{sel_track_id}_{sel_level_code}",
-        )
-        lesson = choice
-
-        st.subheader(lesson["title"])
-        st.caption(f"Chế độ: **{lesson.get('mode')}** · Mức: **{lesson.get('level')}** · ID: `{lesson.get('id')}`")
-        if lesson.get("related_principle"):
-            st.caption(f"Nguyên lý cốt lõi: **{lesson['related_principle']}**")
-
-        st.markdown(f"**Mục tiêu:** {lesson.get('objective')}")
-        st.markdown("#### Tình huống thực tế")
-        st.info(lesson.get("situation", ""))
-
-        st.markdown("#### Các bước hướng dẫn tư duy")
-        for i, step in enumerate(lesson.get("guide_steps", []), 1):
-            st.markdown(f"{i}. {step}")
-
-        with st.expander("💡 Gợi ý định hướng (mở khi cần)"):
-            st.write(lesson.get("hint", ""))
-
-        st.markdown("#### Thử thách của bạn")
-        st.write(lesson.get("exercise_prompt", ""))
-
-        # Load previous answer if any
-        prev = user_training.get(lesson["id"], {})
-        prev_answer = prev.get("answer", "")
-        prev_feedback = prev.get("feedback", "")
-
-        answer = st.text_area("Câu trả lời của bạn", value=prev_answer, height=150, key=f"ans_{lesson['id']}")
-
-        col_a, col_b = st.columns(2)
-        with col_a:
-            if st.button("💾 Lưu câu trả lời", use_container_width=True, key=f"save_{lesson['id']}"):
-                save_training_answer(username, lesson["id"], answer.strip())
-                st.success("Đã lưu vào tiến độ cá nhân của bạn.")
-                st.rerun()
-        with col_b:
-            if st.button("🤖 Xin feedback AI", type="primary", use_container_width=True, key=f"fb_{lesson['id']}"):
-                if not answer.strip():
-                    st.warning("Hãy viết câu trả lời trước khi xin feedback.")
-                elif not active_keys:
-                    st.warning("Cần API Key để nhận feedback.")
-                else:
-                    with st.spinner("AI Gia sư đang nhận xét và hiệu chỉnh tư duy (tự động xoay tua key)..."):
-                        fb = feedback_on_answer(active_keys, model_choice, lesson, answer.strip())
-                    save_training_answer(username, lesson["id"], answer.strip(), fb)
-                    st.rerun()
-
-        if prev_feedback:
-            st.markdown("#### Feedback từ AI Mentor")
-            st.success(prev_feedback)
-
-    # ---------- AI Generator Expander (Mở rộng sau khi học cơ bản) ----------
-    st.divider()
-    with st.expander("🚀 AI Mentor: Luyện tập Mở rộng & Tự yêu cầu ra đề mới (Tùy biến không giới hạn)", expanded=False):
-        st.markdown(f"**Sinh đề bài tình huống mới tinh cho:** `{track_options[sel_track_id]}` · Mức `{sel_level_name}`")
-        if done_count == 0:
-            st.caption("🌱 *Gợi ý:* Bạn chưa hoàn thành bài nền tảng nào ở cấp độ này. Nên làm thử bài 01, 02 ở trên trước nhé!")
+    with sub_train_tabs[0]:
+        if not lessons:
+            st.warning(f"Chưa có bài tập nào trong `{track_options[sel_track_id]}` ({sel_level_name}).")
+            st.info("👉 Hãy bấm sang tab **'✨ AI Mentor: Tự động tạo bài tập mở rộng'** bên cạnh để AI tạo bài tập đầu tiên cho bạn!")
         else:
-            st.caption(f"🌟 Tuyệt vời! Bạn đã hoàn thành {done_count} bài nền tảng. Hãy nhập tình huống bạn muốn thử thách thêm:")
+            def format_lesson_title(l: dict) -> str:
+                done_icon = "✅" if l["id"] in user_training else "📖"
+                is_ai = " [✨ AI]" if l.get("created_by") == "AI" or "_ai_" in l.get("id", "") else ""
+                return f"{done_icon} {l.get('title', l['id'])} — ({l.get('mode', '')}){is_ai}"
+
+            # Tự động chọn bài vừa tạo nếu có trong session
+            target_id = st.session_state.get(f"target_lesson_{sel_track_id}_{sel_level_code}")
+            default_index = 0
+            if target_id:
+                for idx, l in enumerate(lessons):
+                    if l.get("id") == target_id:
+                        default_index = idx
+                        break
+
+            choice = st.selectbox(
+                f"📚 Danh sách bài tập khả dụng ({len(lessons)} bài)",
+                options=lessons,
+                index=default_index,
+                format_func=format_lesson_title,
+                key=f"sel_lesson_{sel_track_id}_{sel_level_code}",
+            )
+            lesson = choice
+
+            st.subheader(lesson["title"])
+            st.caption(f"Chế độ: **{lesson.get('mode')}** · Mức: **{lesson.get('level')}** · ID: `{lesson.get('id')}`")
+            if lesson.get("related_principle"):
+                st.caption(f"Nguyên lý cốt lõi: **{lesson['related_principle']}**")
+
+            st.markdown(f"**Mục tiêu:** {lesson.get('objective')}")
+            st.markdown("#### Tình huống thực tế")
+            st.info(lesson.get("situation", ""))
+
+            st.markdown("#### Các bước hướng dẫn tư duy")
+            for i, step in enumerate(lesson.get("guide_steps", []), 1):
+                st.markdown(f"{i}. {step}")
+
+            with st.expander("💡 Gợi ý định hướng (mở khi cần)"):
+                st.write(lesson.get("hint", ""))
+
+            st.markdown("#### Thử thách của bạn")
+            st.write(lesson.get("exercise_prompt", ""))
+
+            # Load previous answer if any
+            prev = user_training.get(lesson["id"], {})
+            prev_answer = prev.get("answer", "")
+            prev_feedback = prev.get("feedback", "")
+
+            answer = st.text_area("Câu trả lời của bạn", value=prev_answer, height=150, key=f"ans_{lesson['id']}")
+
+            col_a, col_b = st.columns(2)
+            with col_a:
+                if st.button("💾 Lưu câu trả lời", use_container_width=True, key=f"save_{lesson['id']}"):
+                    save_training_answer(username, lesson["id"], answer.strip())
+                    st.success("Đã lưu vào tiến độ cá nhân của bạn.")
+                    st.rerun()
+            with col_b:
+                if st.button("🤖 Xin feedback AI", type="primary", use_container_width=True, key=f"fb_{lesson['id']}"):
+                    if not answer.strip():
+                        st.warning("Hãy viết câu trả lời trước khi xin feedback.")
+                    elif not active_keys:
+                        st.warning("Cần API Key để nhận feedback.")
+                    else:
+                        with st.spinner("AI Gia sư đang nhận xét và hiệu chỉnh tư duy (tự động xoay tua key)..."):
+                            fb = feedback_on_answer(active_keys, model_choice, lesson, answer.strip())
+                        save_training_answer(username, lesson["id"], answer.strip(), fb)
+                        st.rerun()
+
+            if prev_feedback:
+                st.markdown("#### Feedback từ AI Mentor")
+                st.success(prev_feedback)
+
+            st.divider()
+            st.info("💡 **Muốn rèn luyện thêm?** Bạn có thể bấm sang tab **'✨ AI Mentor: Tự động tạo bài tập mở rộng'** ở trên để yêu cầu thêm các tình huống thực tế khác không giới hạn!")
+
+    with sub_train_tabs[1]:
+        st.subheader(f"✨ AI Mentor: Tự Động Thiết Kế Bài Tập Thực Chiến")
+        st.markdown(f"Tạo đề bài độc bản cho: **{track_options[sel_track_id]}** · Cấp độ: **{sel_level_name}**")
+
+        quick_suggestions = {
+            "grade_6": [
+                "Lập kế hoạch tự học tại nhà không bị xao nhãng",
+                "Xung đột ý kiến khi làm bài tập nhóm môn Khoa học",
+                "Bị phân tâm vì xem video ngắn TikTok/Reels quá nhiều",
+                "Phân biệt tin tức thật và tin giả trên mạng xã hội",
+            ],
+            "grade_9": [
+                "Chọn trường cấp 3 công lập hay quốc tế dựa trên năng lực và tài chính",
+                "Quản lý áp lực thi cử và kỳ vọng điểm số từ gia đình",
+                "Tư duy xác suất và tỷ lệ cơ sở khi giải bài thi trắc nghiệm",
+                "Từ chối lời rủ rê trốn học của bạn bè mà không làm mất lòng",
+            ],
+            "grade_10": [
+                "Thiết kế dự án CLB trường học tạo tác động xã hội với ngân sách 0 đồng",
+                "Xây dựng hồ sơ ngoại khóa săn học bổng du học bằng First Principles",
+                "Ứng dụng AI vào học tập hiệu quả mà không bị thụ động tư duy",
+                "Cân bằng giữa ôn luyện IELTS 8.0 và làm trưởng ban tổ chức sự kiện",
+            ],
+            "trading": [
+                "Quản trị tâm lý và lệnh khi Vàng biến động 50 giá trong phiên Mỹ",
+                "Chiến lược bất đối xứng (Asymmetry) khi giao dịch BTC/Crypto",
+                "Cắt lỗ dứt khoát khi phân tích sai và tránh bẫy Revenge Trading",
+                "Quản lý vốn theo tiêu chuẩn Kelly khi hệ thống có Winrate 45%",
+            ],
+            "ckvn": [
+                "Nhận diện dấu chân dòng tiền Smart Money (VSA) ở vùng đáy gom hàng",
+                "Phân tích chu kỳ nhóm ngành Chứng khoán - Thép - Bất động sản",
+                "Quản trị rủi ro khi thị trường phân phối đỉnh với thanh khoản kỷ lục",
+                "Định giá thực chất doanh nghiệp dựa trên dòng tiền tự do FCF",
+            ],
+            "neuroscience": [
+                "Cơ chế Dopamine và cách cai nghiện dopamine rẻ tiền (Cheap Dopamine)",
+                "Thực hành Deep Work 90 phút vượt qua quán tính trì hoãn của não bộ",
+                "Tái cấu trúc nhận thức (Cognitive Reframing) khi gặp stress cực đại",
+                "Khắc phục thiên kiến xác nhận khi đánh giá một cơ hội đầu tư",
+            ],
+            "buddhism": [
+                "Ứng dụng tư duy Vô thường để không bị dính mắc vào thành công/thất bại",
+                "Quan sát cảm xúc bằng Chánh niệm trước khi bấm nút Enter vào lệnh",
+                "Bản chất Nhân - Quả trong các mối quan hệ gia đình và đối tác",
+                "Tâm bất biến giữa dòng đời vạn biến: Quản trị sự bất định của thị trường",
+            ],
+            "ai_tech": [
+                "Xây dựng Agentic Workflow tự động hóa quy trình phân tích dữ liệu",
+                "Tư duy đòn bẩy không cần xin phép (Permissionless Leverage) thời AI",
+                "Thiết kế Prompt First Principles để giải quyết bài toán kỹ thuật phức tạp",
+                "Định vị năng lực cạnh tranh cốt lõi của con người khi AI làm chủ ngôn ngữ",
+            ]
+        }
+
+        curr_suggestions = quick_suggestions.get(sel_track_id, ["Tình huống thực tế tùy biến theo chuyên môn"])
+        sel_suggest = st.selectbox(
+            "💡 Gợi ý chủ đề nhanh (chọn hoặc tự nhập bên dưới):",
+            ["— Tự nhập tình huống riêng của bạn —"] + curr_suggestions,
+            key=f"sel_sug_{sel_track_id}_{sel_level_code}",
+        )
+        initial_topic = "" if sel_suggest.startswith("—") else sel_suggest
 
         custom_topic = st.text_input(
-            "Chủ đề hoặc tình huống bạn muốn AI ra đề thử thách (tùy chọn):",
+            "Chủ đề hoặc tình huống bạn muốn AI ra đề thử thách:",
+            value=initial_topic,
             placeholder="vd: Bài tập nhóm STEM lớp 10, quản lý lệnh Vàng phiên Mỹ, kiềm chế cơn giận khi bị chỉ trích...",
             key=f"topic_input_{sel_track_id}_{sel_level_code}",
         )
-        if st.button("✨ Yêu cầu AI sinh bài tập mở rộng ngay", key=f"btn_gen_{sel_track_id}_{sel_level_code}", type="primary"):
+
+        if st.button("🚀 Yêu Cầu AI Sinh Bài Tập Mới Ngay", key=f"btn_gen_{sel_track_id}_{sel_level_code}", type="primary", use_container_width=True):
             if not active_keys:
                 st.warning("Cần API Key để sinh bài tập.")
             else:
-                with st.spinner("AI Mentor đang thiết kế bài tập tình huống thực chiến độc bản..."):
+                with st.spinner("AI Mentor đang thiết kế bài tập tình huống thực chiến độc bản (tự động xoay tua API key)..."):
                     new_lesson = generate_dynamic_lesson(
                         api_keys=active_keys,
                         model_name=model_choice,
@@ -922,20 +998,20 @@ with tabs[4]:
                     )
                 if new_lesson and not new_lesson.get("error"):
                     add_custom_lesson(sel_track_id, new_lesson, updated_by="AI")
-                    st.success(f"🎉 Đã tạo thành công bài tập mở rộng: **{new_lesson.get('title')}**!")
+                    st.session_state[f"target_lesson_{sel_track_id}_{sel_level_code}"] = new_lesson.get("id")
+                    st.success(f"🎉 Đã tạo thành công bài tập mới: **{new_lesson.get('title')}**!")
                     st.rerun()
                 else:
                     st.error(new_lesson.get("error", "Lỗi khi sinh bài tập."))
-        st.markdown(f"#### Tiến độ rèn luyện cấp độ này ({sel_level_name})")
-        done = 0
-        for l in lessons:
-            done_flag = l["id"] in hist.get("training", {})
-            icon = "✅" if done_flag else "⬜"
-            st.markdown(f"{icon} {l['title']}")
-            if done_flag:
-                done += 1
-        st.progress(done / max(len(lessons), 1))
-        st.caption(f"Đã hoàn thành {done}/{len(lessons)} bài trong cấp độ này")
+
+        # Danh sách các bài đã do AI tạo trong cấp độ này
+        ai_lessons = [l for l in lessons if l.get("created_by") == "AI" or "_ai_" in l.get("id", "")]
+        if ai_lessons:
+            st.markdown(f"#### 📚 Các bài tập do AI mở rộng trong cấp độ này ({len(ai_lessons)} bài)")
+            for al in ai_lessons:
+                is_done = al["id"] in user_training
+                icon = "✅" if is_done else "📖"
+                st.markdown(f"- {icon} **{al.get('title')}** (Chế độ: `{al.get('mode')}`) — ID: `{al.get('id')}`")
 
 # ========== TAB 5: Lịch sử cá nhân ==========
 with tabs[5]:
