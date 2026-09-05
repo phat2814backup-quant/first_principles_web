@@ -52,6 +52,12 @@ from utils.mental_models import (
     export_models_to_csv,
     analyze_latticework_synthesis,
 )
+from utils.macro_evolution import (
+    CIVILIZATIONAL_ERAS,
+    ELITE_HIDDEN_LAWS,
+    SAMPLE_MACRO_TRENDS,
+    analyze_macro_radar,
+)
 try:
     from utils.quiz_engine import (
         MODES_QUIZ,
@@ -220,6 +226,7 @@ with st.sidebar:
 # -----------------------------------------------------------------------------
 tab_labels = [
     "🧭 Hướng dẫn & Bản đồ",
+    "🌐 Thế cuộc & Quy luật Elite",
     "📖 9 Chế độ Tư duy",
     "🕸️ 88 Mô hình Hạt nhân",
     "📚 Thư viện nguyên lý",
@@ -261,25 +268,35 @@ with tabs[0]:
         """)
 
     st.markdown("---")
-    st.subheader("🗺️ Quy Trình 6 Bước Chuyển Hóa Năng Lực Tư Duy")
-    st.markdown("Để biến tri thức thành phản xạ tự nhiên và giải quyết được mọi bài toán hóc búa, hãy đi theo lộ trình 6 bước sư phạm:")
+    st.subheader("🗺️ Quy Trình 7 Bước Chuyển Hóa Năng Lực Tư Duy Tinh Hoa")
+    st.markdown("Để biến tri thức thành phản xạ tự nhiên và giải quyết được mọi bài toán hóc búa, hãy đi theo lộ trình 7 bước sư phạm:")
 
-    step_cols = st.columns(6)
+    step_cols = st.columns(7)
     with step_cols[0]:
         st.markdown("""
-        #### 1️⃣ Nạp Lăng Kính
-        **Tab 1: 9 Chế độ**
-        *Hiểu các công cụ tư duy:*
-        - First Principles
-        - Đảo ngược Inversion
-        - Hệ quả bậc 2
-        - Xác suất Bayes
-        - Hệ thống phức hợp
+        #### 1️⃣ Định Vị Thế Cuộc
+        **Tab 1: Thế cuộc & Elite**
+        *Hiểu chiến trường thực tại:*
+        - 5 kỷ nguyên tiến hóa
+        - 8 mật mã vận hành ngầm
+        - Nút thắt khan hiếm mới
+        - AI Macro Radar
         """)
     with step_cols[1]:
         st.markdown("""
-        #### 2️⃣ Cài Mô Hình
-        **Tab 2: 88 Mô hình**
+        #### 2️⃣ Nạp Lăng Kính
+        **Tab 2: 9 Chế độ**
+        *Làm chủ hệ điều hành não:*
+        - First Principles
+        - Đảo ngược Inversion
+        - Hệ quả bậc hai
+        - Xác suất Bayes
+        - Đa quy mô thời gian
+        """)
+    with step_cols[2]:
+        st.markdown("""
+        #### 3️⃣ Cài Mô Hình
+        **Tab 3: 88 Mô hình**
         *Nắm 6 trụ cột Munger:*
         - Vật lý (Đòn bẩy, Entropy)
         - Sinh học (Tiến hóa)
@@ -287,42 +304,42 @@ with tabs[0]:
         - Kinh tế (Chi phí cơ hội)
         - Toán/Xác suất & Hệ thống
         """)
-    with step_cols[2]:
+    with step_cols[3]:
         st.markdown("""
-        #### 3️⃣ Tra Cứu Sâu
-        **Tab 3: Thư viện**
+        #### 4️⃣ Tra Cứu Sâu
+        **Tab 4: Thư viện**
         *100 định luật khoa học:*
         - Định nghĩa toán học
         - Điều kiện biên
-        - Kiểm chứng khả bác (Falsification test)
-        """)
-    with step_cols[3]:
-        st.markdown("""
-        #### 4️⃣ Luyện Phản Xạ
-        **Tab 4: Đấu trường**
-        *Khắc sâu vào trí nhớ:*
-        - Thẻ Flashcards 5 giây
-        - Trắc nghiệm tình huống
-        - AI Dynamic Quiz
-        - Thử thách Feynman
+        - Tiêu chuẩn khả bác Karl Popper
         """)
     with step_cols[4]:
         st.markdown("""
-        #### 5️⃣ Rèn Chủ Đích
-        **Tab 5: Đào tạo**
+        #### 5️⃣ Luyện Phản Xạ
+        **Tab 5: Đấu trường**
+        *Khắc sâu vào phản xạ:*
+        - Thẻ Flashcards 5 giây
+        - Ma trận 731 câu trắc nghiệm
+        - Dynamic AI Quiz
+        - Thử thách Richard Feynman
+        """)
+    with step_cols[5]:
+        st.markdown("""
+        #### 6️⃣ Rèn Chủ Đích
+        **Tab 6: Đào tạo**
         *Bài tập tự luận đa tầng:*
         - K12 Wellspring & Người lớn
         - 3 Cấp độ thực hành
         - AI Mentor phản biện
         - Tự động sinh đề mở rộng
         """)
-    with step_cols[5]:
+    with step_cols[6]:
         st.markdown("""
-        #### 6️⃣ Thực Chiến
-        **Tab 6: Phân rã**
+        #### 7️⃣ Thực Chiến
+        **Tab 7: Phân rã**
         *Vũ khí giải quyết vấn đề:*
         - Đưa vấn đề thực tế vào
-        - AI kích hoạt 9 lăng kính
+        - AI kích hoạt đa lăng kính
         - Tìm đòn bẩy bất đối xứng
         - Ra quyết định thượng thừa
         """)
@@ -378,8 +395,256 @@ with tabs[0]:
         """)
 
 
-# ========== TAB 2: Cẩm nang 9 Tư duy Elite ==========
+# ========== TAB 1: Lăng kính Thế cuộc & Quy luật Elite ==========
 with tabs[1]:
+    st.title("🌐 Lăng Kính Thế Cuộc & Quy Luật Vận Hành Ngầm Của Giới Elite")
+    st.caption("Bóc tách dòng chảy chuyển dịch các thời đại kinh tế và giải mã 8 mật mã chiến lược của tầng lớp tinh hoa dưới lăng kính First Principles.")
+
+    macro_sub_tabs = st.tabs([
+        "⏳ Trục Tiến Hóa 5 Kỷ Nguyên",
+        "👁️ 8 Mật Mã Vận Hành Ngầm Elite",
+        "📡 Máy Quét Đọc Vị Thế Cuộc (AI Radar)",
+    ])
+
+    # --- SUB-TAB 0: Trục Tiến Hóa 5 Kỷ Nguyên ---
+    with macro_sub_tabs[0]:
+        st.markdown("""
+        ### 🧬 Bản Chất Chuyển Dịch Kinh Tế Qua Các Thời Đại
+        Bản chất của mọi nền kinh tế, dù ở bất kỳ thời đại nào, đều xoay quanh việc giải quyết bài toán cốt lõi: 
+        **Phân bổ nguồn lực khan hiếm để tối đa hóa sự sinh tồn và phát triển.**
+        
+        Sự chuyển giao giữa các kỷ nguyên không diễn ra ngẫu nhiên, mà tuân theo cơ chế vật lý bất biến:
+        """)
+
+        st.info("""
+        💥 **Định luật Chuyển Pha Kinh Tế (The Phase-Transition Law):**  
+        Khi một rào cản về **Năng lượng** hoặc **Công nghệ** bị phá vỡ ➔ **Nguồn lực cốt lõi cũ bị bình dân hóa (tiến về giá trị 0đ)** ➔ **Một nguồn lực mới lên ngôi** ➔ Dẫn đến sự tổ chức lại toàn bộ cấu trúc quyền lực, nhà nước và xã hội.
+        """)
+
+        st.markdown("#### 📐 Công Thức 3 Biến Số Đọc Vị Mọi Biến Động Vĩ Mô:")
+        c_m1, c_m2, c_m3 = st.columns(3)
+        with c_m1:
+            st.markdown("""
+            **1. Chi Phí Giao Dịch (Transaction Costs)**  
+            Mô hình mới luôn thắng mô hình cũ vì kéo tụt chi phí giao dịch (tìm kiếm, niềm tin, đàm phán, thực thi). Tiền giấy thay vàng vì nhẹ; E-commerce thay chợ vì bỏ mặt bằng; AI thay quy trình vì chi phí nhận thức = 0.
+            """)
+        with c_m2:
+            st.markdown("""
+            **2. Sự Trượt Giá Của Nguồn Lực Cũ**  
+            Khi thời đại mới đến, nguồn lực cũ không biến mất nhưng bị *bình dân hóa (commoditized)*, tỷ trọng trong tổng của cải toàn cầu ngày càng teo nhỏ so với nguồn lực công nghệ mới.
+            """)
+        with c_m3:
+            st.markdown("""
+            **3. Công Cụ Đòn Bẩy (Leverage Shift)**  
+            - Thời Nông nghiệp: Đòn bẩy **Sức người (Tá điền)**  
+            - Thời Công nghiệp: Đòn bẩy **Vốn (Tư bản & Máy móc)**  
+            - Thời Thông tin & AI: Đòn bẩy **Code, Media & AI Compute** (Không cần xin phép ai).
+            """)
+
+        st.divider()
+        st.markdown("### 🗺️ Khám Phá 5 Kỷ Nguyên Tiến Hóa Văn Minh")
+
+        era_titles = [f"{e['icon']} {e['name']}" for e in CIVILIZATIONAL_ERAS]
+        selected_era_idx = st.radio(
+            "Chọn thời đại để mổ xẻ cấu trúc kinh tế:",
+            range(len(CIVILIZATIONAL_ERAS)),
+            format_func=lambda i: era_titles[i],
+            horizontal=True,
+            key="macro_era_selector",
+        )
+
+        era_data = CIVILIZATIONAL_ERAS[selected_era_idx]
+
+        st.markdown(f"#### {era_data['icon']} {era_data['name']} — *{era_data['subtitle']}*")
+        st.caption(f"⏱️ Khung thời gian: **{era_data['timeframe']}**")
+
+        c_e_left, c_e_right = st.columns([1, 1])
+        with c_e_left:
+            st.markdown(f"**📌 Nguồn Lực Cốt Lõi:**  \n{era_data['core_resource']}")
+            st.markdown(f"**⚡ Năng Lượng & Công Nghệ:**  \n{era_data['energy_tech']}")
+            st.markdown(f"**🛑 Giới Hạn / Điểm Nghẽn (Constraint):**  \n{era_data['constraint']}")
+            st.markdown(f"**💼 Mô Hình Kinh Tế & Thặng Dư:**  \n{era_data['economic_model']}")
+
+        with c_e_right:
+            st.error(f"**📉 Bị Bình Dân Hóa (Rớt Giá Về 0đ):**  \n{era_data['commoditized']}")
+            st.success(f"**💎 Nút Thắt Khan Hiếm Mới Lên Ngôi:**  \n{era_data['new_scarce_asset']}")
+            st.markdown(f"**🚀 Đòn Bẩy Của Giới Tinh Hoa:**  \n{era_data['elite_leverage']}")
+            st.warning(f"**💥 Tại Sao Chuyển Giao? (Turning Point):**  \n{era_data['turning_point']}")
+
+        with st.expander("🔬 Phân tích bản chất sâu sắc & Bài học lịch sử", expanded=True):
+            st.markdown(era_data['deep_dive'])
+            st.markdown("**Các mô hình hạt nhân kích hoạt:**")
+            st.write(" · ".join([f"`{m['name']}`" for m in era_data.get('associated_models', [])]))
+            st.markdown("**Chế độ tư duy tương ứng:**")
+            st.write(" · ".join([f"**[{mode}]**" for mode in era_data.get('associated_modes', [])]))
+
+        st.divider()
+        st.markdown("### 📊 Ma Trận So Sánh Tổng Hợp 5 Kỷ Nguyên")
+        comparison_rows = []
+        for e in CIVILIZATIONAL_ERAS:
+            comparison_rows.append({
+                "Kỷ Nguyên": f"{e['icon']} {e['name']}",
+                "Nguồn Lực Cốt Lõi": e['core_resource'][:32] + "...",
+                "Giới Hạn Vật Lý": e['constraint'][:32] + "...",
+                "Thứ Rớt Giá Về 0": e['commoditized'][:28] + "...",
+                "Nút Thắt Khan Hiếm Mới": e['new_scarce_asset'].replace('\n', ' ')[:35] + "...",
+                "Đòn Bẩy Elite": e['elite_leverage'][:32] + "...",
+            })
+        st.dataframe(comparison_rows, use_container_width=True)
+
+        st.divider()
+        st.markdown("""
+        ### 🤖 Tiêu Điểm: Kỷ Nguyên 5 — Nền Kinh Tế "Khan Hiếm Tính Chân Thực"
+        Trong kỷ nguyên AI (Synthetic Abundance), chi phí biên để tạo ra nội dung, hình ảnh, văn bản, mã code và thậm chí logic cơ bản **đều lao dốc về 0**. 
+        Theo **Định lý Khan hiếm Bổ trợ**, giá trị kinh tế lập tức dịch chuyển sang 4 trụ cột không thể giả mạo:
+        """)
+
+        c_p1, c_p2 = st.columns(2)
+        with c_p1:
+            st.info("""
+            **1. 🆔 Nền Kinh Tế Chứng Minh Nhân Dạng (Proof-of-Personhood)**
+            - Web mở bị ngập trong bot và AI Slop. 'Ẩn danh' sẽ bị thuật toán coi là bot rác và bỏ qua.
+            - Người dùng trả phí cho tích xanh (X, Meta) và World ID để chứng minh 'Tôi là một thực thể sinh học có thật'.
+            """)
+            st.warning("""
+            **2. 🎭 Định Giá Cho "Sự Không Hoàn Hảo" (The Imperfection Premium)**
+            - AI tạo ra những bài viết mượt mà, video không tì vết. Hệ quả: Con người bắt đầu chán ngấy sự hoàn hảo vô hồn.
+            - Lên ngôi: Nội dung Raw/Unedited, podcast kéo dài 3 tiếng, livestream tự nhiên không kịch bản. Con người khao khát nhìn thấy sai sót duyên dáng, sự ngập ngừng và cảm xúc nguyên bản.
+            """)
+        with c_p2:
+            st.success("""
+            **3. 🎪 Bùng Nổ Trải Nghiệm Vật Lý (Physicality & Live Presence)**
+            - Bạn có thể nghe bài hát AI tạo ra miễn phí, nhưng không thể làm giả việc bạn đang đứng cùng 50.000 người thật tại Concert.
+            - Vé concert, sự kiện thể thao, hội thảo offline và đĩa than analog (Vinyl) tăng trưởng phi mã vì tính xác thực vật lý không thể sao chép số.
+            """)
+            st.error("""
+            **4. 🏰 Thuyết Internet Chết (Dead Internet) & Các Ốc Đảo Khép Kín**
+            - Web mở trở thành bãi rác nội dung AI giật gân (Low-trust environment).
+            - Giới tinh hoa và người cầu tiến rút lui vào các **Cộng đồng khép kín (Gated Communities)**: Discord riêng, nhóm kín có bảo lãnh, nơi tỷ lệ Tín hiệu/Nhiễu (Signal-to-Noise) đạt 99%.
+            """)
+
+    # --- SUB-TAB 1: 8 Mật Mã Vận Hành Ngầm Elite ---
+    with macro_sub_tabs[1]:
+        st.markdown("""
+        ### 👁️ Bộ Mật Mã 8 Quy Tắc Vận Hành Ngầm Của Giới Tinh Hoa (The Elite Playbook)
+        Những quy tắc dưới đây không phải là thuyết âm mưu, mà là **các định luật toán học, vật lý và kinh tế học hành vi** 
+        được giới tinh hoa thấu hiểu và áp dụng triệt để nhằm định vị dòng chảy tài sản và quyền lực.
+        """)
+
+        search_law = st.text_input("🔍 Tìm kiếm quy tắc ngầm hoặc mô hình liên kết:", "", placeholder="Ví dụ: Cantillon, Bất đối xứng, Khan hiếm, Coase, Đòn bẩy...")
+
+        for law in ELITE_HIDDEN_LAWS:
+            if search_law.strip():
+                match = (
+                    search_law.lower() in law["title"].lower()
+                    or search_law.lower() in law["axiom"].lower()
+                    or any(search_law.lower() in m.lower() for m in law.get("linked_models", []))
+                )
+                if not match:
+                    continue
+
+            with st.expander(f"{law['icon']} #{law['number']}. {law['title']}", expanded=(law['number'] <= 2 and not search_law.strip())):
+                st.markdown(f"> *\"{law['axiom']}\"*")
+                
+                c_l1, c_l2 = st.columns(2)
+                with c_l1:
+                    st.error(f"👥 **Góc Nhìn Đám Đông (Bẫy Nhận Thức):**  \n{law['mass_perception']}")
+                    st.success(f"👁️ **Hành Động Của Giới Elite:**  \n{law['elite_execution']}")
+                with c_l2:
+                    st.info(f"🔬 **Cơ Sở Toán Học / Vật Lý / Kinh Tế:**  \n{law['physics_math_basis']}")
+                    st.warning(f"💡 **Ví Dụ Thực Chiến & Lịch Sử:**  \n{law['real_world_case']}")
+
+                st.markdown("---")
+                c_sub1, c_sub2, c_sub3 = st.columns([1, 1, 1])
+                with c_sub1:
+                    st.markdown("**🕸️ Mô hình hạt nhân liên kết:**")
+                    st.caption(" · ".join([f"`{m}`" for m in law['linked_models']]))
+                with c_sub2:
+                    st.markdown("**🧠 Chế độ tư duy tương ứng:**")
+                    st.caption(" · ".join([f"**{mode}**" for mode in law['linked_modes']]))
+                with c_sub3:
+                    st.markdown("**🎯 Câu hỏi tự vấn vị thế bản thân:**")
+                    st.caption(f"*{law['self_inquiry']}*")
+
+    # --- SUB-TAB 2: Máy Quét Đọc Vị Thế Cuộc (AI Radar) ---
+    with macro_sub_tabs[2]:
+        st.markdown("""
+        ### 📡 Máy Quét Đọc Vị Thế Cuộc Bằng AI (First-Principles Macro Radar)
+        Ứng dụng **Định lý Khan hiếm Bổ trợ**, **Tư duy Bậc hai** và **Bộ Mật mã Elite** để bóc tách bất kỳ biến động vĩ mô, công nghệ mới hoặc xu hướng xã hội nào. 
+        Máy quét sẽ phân tích: *Thứ gì sắp rớt giá về 0? Nút thắt khan hiếm mới ở đâu? Giới tinh hoa sẽ đi nước cờ gì?*
+        """)
+
+        st.markdown("##### 💡 Hoặc bấm chọn một xu hướng mẫu kinh điển để quét nhanh:")
+        sample_cols = st.columns(len(SAMPLE_MACRO_TRENDS))
+        for s_idx, sample in enumerate(SAMPLE_MACRO_TRENDS):
+            with sample_cols[s_idx]:
+                sample_short_title = sample["title"].split()[0] + " " + " ".join(sample["title"].split()[1:3])
+                if st.button(sample_short_title, key=f"macro_sample_{s_idx}", help=sample["title"]):
+                    st.session_state["macro_radar_input"] = sample["query"]
+                    st.rerun()
+
+        default_query = st.session_state.get(
+            "macro_radar_input",
+            "Sự xuất hiện của các AI Agents tự hành có khả năng lập trình, viết báo cáo, xử lý dữ liệu và vận hành quy trình kinh doanh 24/7 với chi phí tiệm cận 0."
+        )
+
+        trend_text = st.text_area(
+            "Nhập mô tả biến động vĩ mô, công nghệ hoặc sự kiện cần bóc tách:",
+            value=default_query,
+            height=110,
+            key="macro_trend_text_area",
+        )
+
+        btn_radar = st.button("📡 Quét Đọc Vị Theo First Principles", type="primary", use_container_width=True)
+
+        if btn_radar:
+            if not active_keys:
+                st.error("Chưa có API key để chạy AI Macro Radar. Hãy thêm key ở sidebar.")
+            elif not trend_text.strip():
+                st.warning("Vui lòng nhập mô tả sự kiện hoặc xu hướng cần phân tích.")
+            else:
+                with st.spinner("Đang kích hoạt Bộ máy Phân tích Thế cuộc & First Principles Engine..."):
+                    result = analyze_macro_radar(active_keys, model_choice, trend_text.strip())
+
+                if not result:
+                    st.error("Không nhận được phản hồi từ AI Engine.")
+                elif "error" in result and not result.get("trend_summary"):
+                    st.error(f"Lỗi phân tích: {result['error']}")
+                else:
+                    st.success("✅ Đã hoàn tất bóc tách thế cuộc theo First Principles!")
+                    if result.get("_used_key"):
+                        st.caption(f"Đã xử lý an toàn qua Key: `{result['_used_key']}`")
+
+                    st.markdown(f"#### 🎯 Bản Chất Cốt Lõi: {result.get('trend_summary', '')}")
+                    st.info(f"**⚡ Chi Phí Giao Dịch Bị Kéo Tụt:** {result.get('transaction_costs_impact', '')}")
+
+                    c_r1, c_r2 = st.columns(2)
+                    with c_r1:
+                        st.error("#### 📉 Nguồn Lực Bị Trượt Giá Về 0 (Commoditized)")
+                        for item in result.get("commoditized_assets", []):
+                            st.markdown(f"- **{item.get('asset', '')}**: {item.get('why', '')}")
+
+                    with c_r2:
+                        st.success("#### 💎 Nút Thắt Khan Hiếm Mới (Complementary Scarcity)")
+                        for item in result.get("complementary_scarcities", []):
+                            st.markdown(f"- **{item.get('asset', '')}**: {item.get('why', '')}")
+
+                    st.markdown("#### 👁️ Nước Cờ Chiến Lược Của Giới Elite")
+                    for move in result.get("elite_strategic_moves", []):
+                        st.markdown(f"- ♟️ {move}")
+
+                    c_bot1, c_bot2 = st.columns(2)
+                    with c_bot1:
+                        st.markdown("#### 🕸️ Các Mô Hình Hạt Nhân Kích Hoạt")
+                        for m in result.get("activated_mental_models", []):
+                            st.markdown(f"- `{m.get('model_name', '')}`: {m.get('mechanism', '')}")
+                    with c_bot2:
+                        st.markdown("#### 🧭 Playbook Hành Động Cho Bạn")
+                        for act in result.get("action_playbook_for_individual", []):
+                            st.markdown(f"- 🚀 {act}")
+
+# ========== TAB 2: Cẩm nang 9 Tư duy Elite ==========
+with tabs[2]:
     st.title("📖 Cẩm Nang 9 Chế Độ Tư Duy Tinh Hoa (Elite Mental Modes)")
     st.markdown("""
     Giới tinh hoa hiếm khi chỉ dùng một góc nhìn đơn độc. Họ xây dựng một **mạng lưới các mô hình tư duy (Latticework of Mental Models)** 
@@ -622,8 +887,8 @@ with tabs[1]:
     st.divider()
     st.info("🎯 **Đã nắm vững 9 Lăng kính Tinh hoa?** Hãy chuyển sang **Tab [⚡ Đấu trường Luyện nhớ]** để kiểm tra phản xạ của bạn qua 9 tình huống thực chiến kinh điển hoặc lật thẻ Flashcard 5 giây!")
 
-# ========== TAB 2: 88 Mô hình Hạt nhân (Munger Latticework) ==========
-with tabs[2]:
+# ========== TAB 3: 88 Mô hình Hạt nhân (Munger Latticework) ==========
+with tabs[3]:
     st.title("🕸️ Ma Trận 88 Mô Hình Hạt Nhân (Munger Latticework)")
     st.caption("Mạng lưới tư duy đa ngành đỉnh cao của Charlie Munger — Tối ưu hóa học siêu tốc với ít nguồn lực nhất")
 
@@ -862,8 +1127,8 @@ with tabs[2]:
     st.divider()
     st.info("🎯 **Sẵn sàng kiểm tra phản xạ của bạn?** Vào ngay **Tab [⚡ Đấu trường Luyện nhớ]** để làm trắc nghiệm tình huống 88 mô hình, lật Flashcards và thử thách Richard Feynman!")
 
-# ========== TAB 3: Thư viện nguyên lý ==========
-with tabs[3]:
+# ========== TAB 4: Thư viện nguyên lý ==========
+with tabs[4]:
     st.title("📚 Thư viện nguyên lý cốt lõi (dùng chung)")
     st.caption("Kho 100 nguyên lý khởi thủy từ Vật lý, Sinh học, Toán học, Triết học & Khoa học máy tính")
     domains = get_domains()
@@ -898,8 +1163,8 @@ with tabs[3]:
     st.divider()
     st.info("🎯 **Muốn thử thách nhận diện 100 Nguyên lý khoa học?** Chuyển sang **Tab [⚡ Đấu trường Luyện nhớ]** để làm trắc nghiệm kiểm chứng điều kiện biên và tính khả bác!")
 
-# ========== TAB 4: Đấu trường Luyện nhớ & Trắc nghiệm phản xạ ==========
-with tabs[4]:
+# ========== TAB 5: Đấu trường Luyện nhớ & Trắc nghiệm phản xạ ==========
+with tabs[5]:
     st.title("⚡ Đấu Trường Luyện Nhớ & Trắc Nghiệm Phản Xạ")
     st.caption("Nắm trọn 9 Chế độ · 88 Mô hình Hạt nhân · 100 Nguyên lý Khởi thủy qua Active Recall & Case Quizzes")
 
@@ -1450,8 +1715,8 @@ with tabs[4]:
                         else:
                             st.error("Không thể kết nối với AI. Vui lòng thử lại.")
 
-# ========== TAB 5: Đào tạo tư duy ==========
-with tabs[5]:
+# ========== TAB 6: Đào tạo tư duy ==========
+with tabs[6]:
     st.title("🎓 Đào tạo tư duy theo lộ trình đa tầng")
     st.markdown("Chương trình rèn luyện 3 cấp độ dành cho học sinh phổ thông (Wellspring) & chuyên sâu thực chiến cho người lớn.")
 
@@ -1704,8 +1969,8 @@ with tabs[5]:
                 icon = "✅" if is_done else "📖"
                 st.markdown(f"- {icon} **{al.get('title')}** (Chế độ: `{al.get('mode')}`) — ID: `{al.get('id')}`")
 
-# ========== TAB 6: Phân rã thực chiến ==========
-with tabs[6]:
+# ========== TAB 7: Phân rã thực chiến ==========
+with tabs[7]:
     st.title("🚀 Phân Rã Thực Chiến Đa Chế Độ (Elite Lenses)")
     st.markdown("""
     Đưa bất kỳ vấn đề, quyết định, tình huống hóc búa hay dự án thực tế vào đây. 
@@ -1772,8 +2037,8 @@ with tabs[6]:
                 for h in result.get("human_decision_needed", []):
                     st.markdown(f"- {h}")
 
-# ========== TAB 7: Lịch sử cá nhân ==========
-with tabs[7]:
+# ========== TAB 8: Lịch sử cá nhân ==========
+with tabs[8]:
     st.title("📝 Lịch sử của tôi")
     hist = load_user_history(username)
 
@@ -1818,9 +2083,9 @@ with tabs[7]:
                     st.markdown("**Feedback:**")
                     st.write(info["feedback"])
 
-# ========== TAB 8: Admin (Phat) ==========
+# ========== TAB 9: Admin (Phat) ==========
 if is_admin():
-    with tabs[8]:
+    with tabs[9]:
         st.title("👑 Khu vực quản trị (Phat)")
         st.markdown("Xem tiến độ mọi thành viên · Cập nhật bài học")
 
