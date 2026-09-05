@@ -52,6 +52,17 @@ from utils.mental_models import (
     export_models_to_csv,
     analyze_latticework_synthesis,
 )
+from utils.quiz_engine import (
+    MODES_QUIZ,
+    MODELS_QUIZ,
+    PRINCIPLES_QUIZ,
+    get_all_flashcards,
+    record_quiz_completion,
+    update_flashcard_mastery,
+    get_user_mastery_summary,
+    generate_ai_quiz,
+    evaluate_feynman_challenge,
+)
 
 # -----------------------------------------------------------------------------
 # Config
@@ -177,8 +188,9 @@ tab_labels = [
     "🧭 Hướng dẫn & Bản đồ",
     "📖 9 Chế độ Tư duy",
     "🕸️ 88 Mô hình Hạt nhân",
-    "🎓 Đào tạo tư duy",
     "📚 Thư viện nguyên lý",
+    "⚡ Đấu trường Luyện nhớ",
+    "🎓 Đào tạo tư duy",
     "🚀 Phân rã thực chiến",
     "📝 Lịch sử của tôi",
 ]
@@ -215,58 +227,70 @@ with tabs[0]:
         """)
 
     st.markdown("---")
-    st.subheader("🗺️ Quy Trình 5 Bước Chuyển Hóa Năng Lực Tư Duy")
-    st.markdown("Để biến tri thức thành phản xạ tự nhiên và giải quyết được mọi bài toán hóc búa, hãy đi theo lộ trình 5 bước sư phạm:")
+    st.subheader("🗺️ Quy Trình 6 Bước Chuyển Hóa Năng Lực Tư Duy")
+    st.markdown("Để biến tri thức thành phản xạ tự nhiên và giải quyết được mọi bài toán hóc búa, hãy đi theo lộ trình 6 bước sư phạm:")
 
-    step_cols = st.columns(5)
+    step_cols = st.columns(6)
     with step_cols[0]:
         st.markdown("""
         #### 1️⃣ Nạp Lăng Kính
-        **Tab 1: 9 Chế độ Tư duy**
-        *Hiểu các công cụ tư duy nền tảng:*
-        - Nguyên lý khởi thủy
-        - Đảo ngược (Inversion)
+        **Tab 1: 9 Chế độ**
+        *Hiểu các công cụ tư duy:*
+        - First Principles
+        - Đảo ngược Inversion
         - Hệ quả bậc 2
         - Xác suất Bayes
-        - Tư duy hệ thống
+        - Hệ thống phức hợp
         """)
     with step_cols[1]:
         st.markdown("""
         #### 2️⃣ Cài Mô Hình
-        **Tab 2: 88 Mô hình Hạt nhân**
-        *Nắm vững 6 trụ cột liên ngành:*
+        **Tab 2: 88 Mô hình**
+        *Nắm 6 trụ cột Munger:*
         - Vật lý (Đòn bẩy, Entropy)
-        - Sinh học (Tiến hóa, Thích nghi)
-        - Tâm lý (Thiên kiến, FOMO)
+        - Sinh học (Tiến hóa)
+        - Tâm lý (Thiên kiến)
         - Kinh tế (Chi phí cơ hội)
-        - Toán học & Hệ thống
+        - Toán/Xác suất & Hệ thống
         """)
     with step_cols[2]:
         st.markdown("""
-        #### 3️⃣ Luyện Chủ Đích
-        **Tab 3: Đào tạo tư duy**
-        *Rèn luyện phản xạ qua tình huống:*
-        - Học sinh K12 & Chuyên sâu Người lớn.
-        - 3 cấp độ: Cơ bản ➔ Thực hành ➔ Nâng cao.
-        - **AI Mentor**: Phản biện và tự động tạo bài tập mở rộng vô hạn.
+        #### 3️⃣ Tra Cứu Sâu
+        **Tab 3: Thư viện**
+        *100 định luật khoa học:*
+        - Định nghĩa toán học
+        - Điều kiện biên
+        - Kiểm chứng khả bác (Falsification test)
         """)
     with step_cols[3]:
         st.markdown("""
-        #### 4️⃣ Tra Cứu Sâu
-        **Tab 4: Thư viện nguyên lý**
-        *Tra cứu 100 định luật cốt lõi:*
-        - Định nghĩa toán học / chặt chẽ
-        - Điều kiện biên áp dụng
-        - Kiểm chứng tính khả bác (Falsification test)
+        #### 4️⃣ Luyện Phản Xạ
+        **Tab 4: Đấu trường**
+        *Khắc sâu vào trí nhớ:*
+        - Thẻ Flashcards 5 giây
+        - Trắc nghiệm tình huống
+        - AI Dynamic Quiz
+        - Thử thách Feynman
         """)
     with step_cols[4]:
         st.markdown("""
-        #### 5️⃣ Thực Chiến
-        **Tab 5: Phân rã thực chiến**
-        *Vũ khí giải quyết vấn đề tối thượng:*
-        - Đưa bài toán / quyết định thực tế vào
-        - AI kích hoạt cùng lúc 9 lăng kính tinh hoa
-        - Bóc tách bản chất, tìm đòn bẩy bất đối xứng và hành động ngay.
+        #### 5️⃣ Rèn Chủ Đích
+        **Tab 5: Đào tạo**
+        *Bài tập tự luận đa tầng:*
+        - K12 Wellspring & Người lớn
+        - 3 Cấp độ thực hành
+        - AI Mentor phản biện
+        - Tự động sinh đề mở rộng
+        """)
+    with step_cols[5]:
+        st.markdown("""
+        #### 6️⃣ Thực Chiến
+        **Tab 6: Phân rã**
+        *Vũ khí giải quyết vấn đề:*
+        - Đưa vấn đề thực tế vào
+        - AI kích hoạt 9 lăng kính
+        - Tìm đòn bẩy bất đối xứng
+        - Ra quyết định thượng thừa
         """)
 
     st.markdown("---")
@@ -561,7 +585,10 @@ with tabs[1]:
             st.caption("• *Điều gì sẽ KHÔNG thay đổi trong lĩnh vực của tôi 10 năm nữa?*")
             st.caption("• *Hành động hôm nay của tôi đang phục vụ cho tầm nhìn 1 tuần hay tầm nhìn 10 năm?*")
 
-# ========== TAB 3: 80-90 Mô hình Hạt nhân (Munger Latticework) ==========
+    st.divider()
+    st.info("🎯 **Đã nắm vững 9 Lăng kính Tinh hoa?** Hãy chuyển sang **Tab [⚡ Đấu trường Luyện nhớ]** để kiểm tra phản xạ của bạn qua 9 tình huống thực chiến kinh điển hoặc lật thẻ Flashcard 5 giây!")
+
+# ========== TAB 2: 88 Mô hình Hạt nhân (Munger Latticework) ==========
 with tabs[2]:
     st.title("🕸️ Ma Trận 88 Mô Hình Hạt Nhân (Munger Latticework)")
     st.caption("Mạng lưới tư duy đa ngành đỉnh cao của Charlie Munger — Tối ưu hóa học siêu tốc với ít nguồn lực nhất")
@@ -798,8 +825,379 @@ with tabs[2]:
             - **Kết quả:** Hình thành trực giác tinh hoa, biến mạng lưới mô hình thành bản năng phản xạ tự nhiên.
             """)
 
-# ========== TAB 3: Đào tạo tư duy ==========
+    st.divider()
+    st.info("🎯 **Sẵn sàng kiểm tra phản xạ của bạn?** Vào ngay **Tab [⚡ Đấu trường Luyện nhớ]** để làm trắc nghiệm tình huống 88 mô hình, lật Flashcards và thử thách Richard Feynman!")
+
+# ========== TAB 3: Thư viện nguyên lý ==========
 with tabs[3]:
+    st.title("📚 Thư viện nguyên lý cốt lõi (dùng chung)")
+    st.caption("Kho 100 nguyên lý khởi thủy từ Vật lý, Sinh học, Toán học, Triết học & Khoa học máy tính")
+    domains = get_domains()
+    col_f1, col_f2 = st.columns([1, 2])
+    with col_f1:
+        domain = st.selectbox("Lọc trụ cột", domains)
+    with col_f2:
+        q = st.text_input("Tìm kiếm nguyên lý", placeholder="Bayes, đòn bẩy, bảo toàn, entropy...")
+
+    if q.strip():
+        principles = search_principles(q)
+    else:
+        principles = get_principles(domain if domain != "Tất cả" else None)
+
+    st.caption(f"Hiển thị {len(principles)} nguyên lý")
+
+    for p in principles[:40]:
+        with st.expander(f"{p.get('principle_name', '?')} · {p.get('domain', '')}"):
+            st.markdown(f"**Mô tả:** {p.get('description', '')}")
+            if p.get("formal_definition"):
+                st.info(p["formal_definition"])
+            if p.get("intuitive_summary"):
+                st.write(f"💡 {p['intuitive_summary']}")
+            c1, c2 = st.columns(2)
+            with c1:
+                if p.get("boundary_conditions"):
+                    st.caption(f"Điều kiện biên: {p['boundary_conditions']}")
+            with c2:
+                if p.get("falsification_test"):
+                    st.caption(f"Falsify: {p['falsification_test']}")
+
+    st.divider()
+    st.info("🎯 **Muốn thử thách nhận diện 100 Nguyên lý khoa học?** Chuyển sang **Tab [⚡ Đấu trường Luyện nhớ]** để làm trắc nghiệm kiểm chứng điều kiện biên và tính khả bác!")
+
+# ========== TAB 4: Đấu trường Luyện nhớ & Trắc nghiệm phản xạ ==========
+with tabs[4]:
+    st.title("⚡ Đấu Trường Luyện Nhớ & Trắc Nghiệm Phản Xạ")
+    st.caption("Nắm trọn 9 Chế độ · 88 Mô hình Hạt nhân · 100 Nguyên lý Khởi thủy qua Active Recall & Case Quizzes")
+
+    # Thống kê thành tích làm chủ
+    mastery_data = get_user_mastery_summary(username)
+    col_m1, col_m2, col_m3, col_m4 = st.columns(4)
+    with col_m1:
+        st.metric("🎯 Độ chính xác Trắc nghiệm", f"{mastery_data['accuracy']}%", f"{mastery_data['total_quizzes']} lượt test")
+    with col_m2:
+        st.metric("🟢 Đã làm chủ (Mastered)", f"{mastery_data['mastered_count']} / 88", f"{mastery_data['mastery_pct']}% tổng mô hình")
+    with col_m3:
+        st.metric("🟡 Đang ghi nhớ", f"{mastery_data['learning_count']} thẻ")
+    with col_m4:
+        st.metric("🔴 Cần ôn tập lại", f"{mastery_data['review_count']} thẻ")
+
+    st.progress(mastery_data["mastery_pct"] / 100.0)
+
+    arena_tab1, arena_tab2, arena_tab3 = st.tabs([
+        "🎯 Trắc Nghiệm Tình Huống Thực Chiến",
+        "🗂️ Thẻ Flashcards Phản Xạ 5 Giây",
+        "✨ AI Đấu Trí & Thử Thách Feynman"
+    ])
+
+    # -------------------------------------------------------------------------
+    # Sub-tab 1: Trắc Nghiệm Tình Huống Thực Chiến
+    # -------------------------------------------------------------------------
+    with arena_tab1:
+        st.markdown("### 🎯 Trắc Nghiệm Tình Huống Phản Xạ (Case-Based Reflex Quiz)")
+        st.caption("Mỗi câu hỏi là một tình huống thực tế hóc búa. Đọc tình huống, chọn mô hình chi phối và giải mã bẫy ngụy biện.")
+
+        quiz_category = st.radio(
+            "Chọn khoang bài thi trắc nghiệm",
+            [
+                "🧠 9 Chế độ Tư duy Tinh hoa (9 tình huống kinh điển)",
+                "🕸️ 88 Mô hình Hạt nhân (Munger Latticework)",
+                "🔬 100 Nguyên lý Khởi thủy (Quy luật khoa học nền tảng)"
+            ],
+            horizontal=True
+        )
+
+        selected_questions = []
+        cat_key = ""
+        if "9 Chế độ" in quiz_category:
+            selected_questions = MODES_QUIZ
+            cat_key = "modes"
+        elif "88 Mô hình" in quiz_category:
+            cat_key = "models"
+            col_q1, col_q2 = st.columns(2)
+            with col_q1:
+                filter_pillar = st.selectbox("Lọc theo Trụ cột", ["Tất cả"] + get_pillars())
+            with col_q2:
+                only_tier1 = st.checkbox("Chỉ luyện 25 Mô hình Siêu hạt nhân (Tier 1 Pareto)", value=True)
+
+            filtered_q = MODELS_QUIZ
+            if filter_pillar != "Tất cả":
+                filtered_q = [q for q in filtered_q if q.get("pillar") == filter_pillar]
+            if only_tier1:
+                filtered_q = [q for q in filtered_q if q.get("tier") == 1]
+            selected_questions = filtered_q if filtered_q else MODELS_QUIZ
+        else:
+            cat_key = "principles"
+            selected_questions = PRINCIPLES_QUIZ
+
+        st.info(f"📋 Khoang thi hiện có **{len(selected_questions)} câu hỏi tình huống**. Hãy đọc kỹ tình huống để tìm ra bản chất:")
+
+        quiz_score = 0
+        answered_count = 0
+
+        for i, q in enumerate(selected_questions):
+            with st.expander(f"Câu {i+1}: {q.get('concept', q.get('model_name', q.get('principle_name', 'Tình huống')))}", expanded=(i < 2)):
+                st.markdown(f"**📖 Bối cảnh tình huống:**\n> *{q.get('scenario')}*")
+                st.markdown(f"**❓ Câu hỏi:** **{q.get('question')}**")
+
+                state_key = f"quiz_ans_{cat_key}_{q.get('id')}"
+                user_choice = st.radio(
+                    "Chọn phương án trả lời:",
+                    q.get("options", []),
+                    key=state_key,
+                    index=None
+                )
+
+                if user_choice is not None:
+                    answered_count += 1
+                    chosen_idx = q["options"].index(user_choice)
+                    is_correct = (chosen_idx == q["correct_index"])
+
+                    if is_correct:
+                        quiz_score += 1
+                        st.success("🎉 **CHÍNH XÁC TUYỆT ĐỐI!** Bạn đã nhìn xuyên qua bề mặt để chạm vào bản chất gốc.")
+                    else:
+                        st.error(f"❌ **CHƯA CHÍNH XÁC!** Đáp án đúng là: **{q['options'][q['correct_index']]}**")
+
+                    st.markdown(f"💡 **Chân lý gốc (First Principles):** {q.get('explanation')}")
+                    st.markdown(f"⚠️ **Phân tích Bẫy ngụy biện:** {q.get('trap_analysis')}")
+
+        st.divider()
+        col_res1, col_res2 = st.columns([2, 1])
+        with col_res1:
+            if answered_count > 0:
+                pct = round(quiz_score / answered_count * 100, 1)
+                st.markdown(f"#### 📊 Kết quả tạm tính: **{quiz_score}/{answered_count} câu đúng ({pct}%)**")
+            else:
+                st.caption("Hãy chọn đáp án cho các câu hỏi phía trên để tính điểm.")
+        with col_res2:
+            if answered_count > 0 and st.button("💾 Ghi nhận lượt thi vào Lịch sử cá nhân", type="primary", use_container_width=True):
+                record_quiz_completion(username, quiz_category, quiz_score, answered_count)
+                st.success("🎉 Đã lưu thành tích vào Lịch sử của bạn! Cập nhật lại chỉ số Mastery.")
+                st.rerun()
+
+    # -------------------------------------------------------------------------
+    # Sub-tab 2: Thẻ Flashcards Phản Xạ 5 Giây (Active Recall)
+    # -------------------------------------------------------------------------
+    with arena_tab2:
+        st.markdown("### 🗂️ Thẻ Flashcards Phản Xạ 5 Giây (Active Recall & Spaced Repetition)")
+        st.caption("Phương pháp ghi nhớ đỉnh cao: Đọc câu hỏi kích hoạt 5 giây ➔ Lật thẻ đối chiếu ➔ Tự đánh giá để hệ thống vẽ biểu đồ trí nhớ.")
+
+        fc_col1, fc_col2, fc_col3 = st.columns([2, 2, 1])
+        with fc_col1:
+            fc_cat = st.selectbox("Bộ thẻ", ["88 Mô hình Hạt nhân", "9 Chế độ Tư duy", "100 Nguyên lý Khởi thủy", "Tất cả thẻ"])
+        with fc_col2:
+            fc_filter_pillar = "Tất cả"
+            if "88 Mô hình" in fc_cat:
+                fc_filter_pillar = st.selectbox("Lọc Trụ cột", ["Tất cả"] + get_pillars())
+        with fc_col3:
+            fc_tier = None
+            if "88 Mô hình" in fc_cat:
+                if st.checkbox("Tier 1 Pareto", value=False):
+                    fc_tier = 1
+
+        filter_type_map = {
+            "88 Mô hình Hạt nhân": "models",
+            "9 Chế độ Tư duy": "modes",
+            "100 Nguyên lý Khởi thủy": "principles",
+            "Tất cả thẻ": "all"
+        }
+        raw_cards = get_all_flashcards(
+            filter_type=filter_type_map.get(fc_cat, "models"),
+            pillar=fc_filter_pillar if fc_filter_pillar != "Tất cả" else None,
+            tier=fc_tier
+        )
+
+        if not raw_cards:
+            st.warning("Không tìm thấy thẻ nào phù hợp với bộ lọc.")
+        else:
+            if "fc_card_idx" not in st.session_state:
+                st.session_state["fc_card_idx"] = 0
+            if "fc_is_flipped" not in st.session_state:
+                st.session_state["fc_is_flipped"] = False
+
+            total_c = len(raw_cards)
+            curr_idx = st.session_state["fc_card_idx"] % total_c
+            card = raw_cards[curr_idx]
+
+            st.caption(f"Thẻ **{curr_idx + 1} / {total_c}** · {card.get('front_badge')}")
+
+            # Giao diện Thẻ lật
+            with st.container(border=True):
+                if not st.session_state["fc_is_flipped"]:
+                    st.markdown(f"## ❓ {card.get('name_vi')} *({card.get('name_en', '')})*")
+                    st.markdown(f"### ⚡ Câu hỏi kích hoạt 5 giây:\n> **\"{card.get('front_trigger')}\"**")
+                    st.caption("💭 Hãy nhắm mắt lại 5 giây: Bạn có định nghĩa được chân lý gốc, đòn bẩy và bẫy đảo ngược của mô hình này không?")
+                    
+                    if st.button("🔄 Lật thẻ xem Chân lý gốc & Đòn bẩy Elite", type="primary", use_container_width=True):
+                        st.session_state["fc_is_flipped"] = True
+                        st.rerun()
+                else:
+                    st.markdown(f"## 💡 {card.get('name_vi')} *({card.get('name_en', '')})*")
+                    st.info(f"🔬 **Chân lý gốc (First Principle):**\n\n{card.get('back_principle')}")
+                    st.success(f"⚡ **Đòn bẩy Elite:**\n\n{card.get('back_leverage')}")
+                    st.warning(f"⚠️ **Bẫy đảo ngược (Inversion Trap):**\n\n{card.get('back_trap')}")
+                    if card.get("back_lollapalooza"):
+                        st.caption(f"🔗 **Cặp cộng hưởng Lollapalooza:** {card.get('back_lollapalooza')}")
+
+                    st.markdown("#### Tự đánh giá mức độ ghi nhớ:")
+                    btn_c1, btn_c2, btn_c3 = st.columns(3)
+                    with btn_c1:
+                        if st.button("🔴 Chưa nhớ (Cần ôn lại)", use_container_width=True):
+                            update_flashcard_mastery(username, card.get("id"), "review_needed")
+                            st.session_state["fc_is_flipped"] = False
+                            st.session_state["fc_card_idx"] = (curr_idx + 1) % total_c
+                            st.rerun()
+                    with btn_c2:
+                        if st.button("🟡 Nhớ mang máng", use_container_width=True):
+                            update_flashcard_mastery(username, card.get("id"), "learning")
+                            st.session_state["fc_is_flipped"] = False
+                            st.session_state["fc_card_idx"] = (curr_idx + 1) % total_c
+                            st.rerun()
+                    with btn_c3:
+                        if st.button("🟢 Đã thuộc làu (Mastered)", type="primary", use_container_width=True):
+                            update_flashcard_mastery(username, card.get("id"), "mastered")
+                            st.session_state["fc_is_flipped"] = False
+                            st.session_state["fc_card_idx"] = (curr_idx + 1) % total_c
+                            st.rerun()
+
+                    if st.button("🔄 Úp thẻ lại mặt trước", use_container_width=True):
+                        st.session_state["fc_is_flipped"] = False
+                        st.rerun()
+
+            # Điều hướng thẻ
+            nav_c1, nav_c2, nav_c3 = st.columns([1, 1, 1])
+            with nav_c1:
+                if st.button("⬅️ Thẻ trước", use_container_width=True):
+                    st.session_state["fc_is_flipped"] = False
+                    st.session_state["fc_card_idx"] = (curr_idx - 1) % total_c
+                    st.rerun()
+            with nav_c2:
+                if st.button("🎲 Thẻ ngẫu nhiên", use_container_width=True):
+                    st.session_state["fc_is_flipped"] = False
+                    st.session_state["fc_card_idx"] = random.randint(0, total_c - 1)
+                    st.rerun()
+            with nav_c3:
+                if st.button("Thẻ tiếp theo ➡️", use_container_width=True):
+                    st.session_state["fc_is_flipped"] = False
+                    st.session_state["fc_card_idx"] = (curr_idx + 1) % total_c
+                    st.rerun()
+
+    # -------------------------------------------------------------------------
+    # Sub-tab 3: AI Đấu Trí & Thử Thách Feynman
+    # -------------------------------------------------------------------------
+    with arena_tab3:
+        st.markdown("### ✨ AI Đấu Trí & Thử Thách Feynman")
+        st.caption("Khắc sâu bản chất bằng cách giải thích cho đứa trẻ 10 tuổi hiểu hoặc yêu cầu AI tạo đề thi tình huống mới toanh.")
+
+        ai_sec1, ai_sec2 = st.tabs(["✨ AI Tạo Đề Trắc Nghiệm Động", "🔬 Thử Thách Feynman (Socratic Arena)"])
+
+        with ai_sec1:
+            st.markdown("#### 🎲 AI Tự Động Sinh Đề Trắc Nghiệm Tình Huống Mới Toanh")
+            st.caption("Không bị gò bó bởi các câu hỏi có sẵn; AI Gemini sẽ tạo câu hỏi theo tình huống đời thực bạn đưa vào.")
+
+            ai_col1, ai_col2 = st.columns(2)
+            with ai_col1:
+                ai_quiz_cat = st.selectbox(
+                    "Loại mô hình cần kiểm tra",
+                    ["88 Mô hình Hạt nhân (Charlie Munger)", "9 Chế độ Tư duy Tinh hoa", "100 Nguyên lý Khởi thủy"]
+                )
+                ai_quiz_num = st.slider("Số lượng câu hỏi", 2, 5, 3)
+            with ai_col2:
+                ai_quiz_topic = st.text_input(
+                    "Chủ đề / Bối cảnh thực tế mong muốn",
+                    value="Thị trường chứng khoán Việt Nam, Bắt đáy cổ phiếu & FOMO đám đông",
+                    help="Gõ bất kỳ chủ đề nào: Khởi nghiệp SaaS, Học sinh Wellspring giải quyết bài tập, Quản trị sa thải..."
+                )
+
+            if st.button("🚀 AI Tạo Đề Thi Tình Huống Ngay", type="primary", use_container_width=True):
+                if not active_keys:
+                    st.warning("Cần cấu hình Gemini API Key.")
+                else:
+                    with st.spinner("AI đang thiết kế các tình huống thực tế hóc búa..."):
+                        generated_quiz = generate_ai_quiz(
+                            active_keys,
+                            model_choice,
+                            category=ai_quiz_cat,
+                            topic=ai_quiz_topic.strip(),
+                            num_questions=ai_quiz_num
+                        )
+                    if generated_quiz:
+                        st.session_state["current_ai_quiz"] = generated_quiz
+                        st.success(f"🎉 Đã sinh thành công {len(generated_quiz)} câu hỏi tình huống mới toanh!")
+                    else:
+                        st.error("Không thể sinh câu hỏi bằng AI lúc này. Vui lòng kiểm tra lại API Key.")
+
+            if "current_ai_quiz" in st.session_state and st.session_state["current_ai_quiz"]:
+                st.markdown("---")
+                st.markdown("#### 📝 Đề Thi Tình Huống Do AI Thiết Kế:")
+                for idx, q_ai in enumerate(st.session_state["current_ai_quiz"]):
+                    with st.expander(f"Tình huống {idx+1}: {q_ai.get('concept')}", expanded=True):
+                        st.markdown(f"**📖 Bối cảnh:**\n> *{q_ai.get('scenario')}*")
+                        st.markdown(f"**❓ Câu hỏi:** **{q_ai.get('question')}**")
+
+                        choice = st.radio("Lựa chọn của bạn:", q_ai.get("options", []), key=f"ai_q_{idx}", index=None)
+                        if choice is not None:
+                            c_idx = q_ai["options"].index(choice)
+                            if c_idx == q_ai.get("correct_index"):
+                                st.success("🎉 **CHÍNH XÁC!** Bạn đã nhận diện chuẩn xác mô hình.")
+                            else:
+                                st.error(f"❌ **CHƯA ĐÚNG!** Đáp án chuẩn: {q_ai['options'][q_ai.get('correct_index')]}")
+                            st.info(f"💡 **First Principles:** {q_ai.get('explanation')}")
+                            st.warning(f"⚠️ **Bẫy ngụy biện:** {q_ai.get('trap_analysis')}")
+
+        with ai_sec2:
+            st.markdown("#### 🔬 Thử Thách Kỹ Thuật Feynman: 'Giải thích cho học sinh lớp 6 hiểu'")
+            st.markdown("""
+            > *"Bạn không thực sự hiểu điều gì cho đến khi bạn có thể giải thích nó bằng ngôn ngữ đơn giản nhất cho một đứa trẻ 10 tuổi mà không dùng bất kỳ từ ngữ cao siêu nào."* — **Richard Feynman**
+            """)
+
+            fey_col1, fey_col2 = st.columns([1, 2])
+            with fey_col1:
+                concept_source = st.radio("Khái niệm từ nguồn", ["88 Mô hình Hạt nhân", "9 Chế độ Tư duy"])
+                if "88 Mô hình" in concept_source:
+                    all_m = get_all_models()
+                    m_names = [f"{m['name_vi']} ({m['name_en']})" for m in all_m]
+                    chosen_concept = st.selectbox("Chọn mô hình", m_names)
+                    c_type = "Mô hình Hạt nhân"
+                else:
+                    mode_names = [q["concept"] for q in MODES_QUIZ]
+                    chosen_concept = st.selectbox("Chọn chế độ", mode_names)
+                    c_type = "Chế độ Tư duy Elite"
+
+            with fey_col2:
+                user_feynman_exp = st.text_area(
+                    f"Lời giải thích của bạn về '{chosen_concept}' cho một đứa trẻ:",
+                    height=130,
+                    placeholder="Hãy dùng một ví dụ trong đồ chơi, đời sống gia đình, trường học... Tuyệt đối không dùng các thuật ngữ chuyên môn."
+                )
+
+                if st.button("🎯 Nộp bài cho Giám khảo Feynman chấm điểm", type="primary", use_container_width=True):
+                    if not active_keys:
+                        st.warning("Cần cấu hình Gemini API Key.")
+                    elif not user_feynman_exp.strip():
+                        st.warning("Hãy nhập lời giải thích của bạn.")
+                    else:
+                        with st.spinner("Richard Feynman AI đang lắng nghe và phản biện..."):
+                            fey_res = evaluate_feynman_challenge(
+                                active_keys,
+                                model_choice,
+                                concept_name=chosen_concept,
+                                concept_type=c_type,
+                                user_explanation=user_feynman_exp.strip()
+                            )
+                        if fey_res:
+                            score = fey_res.get("feynman_score", 5)
+                            verdict = fey_res.get("verdict", "")
+                            st.metric("🏆 Điểm Thấu Suốt Feynman", f"{score} / 10", verdict)
+
+                            st.success(f"✨ **Điểm sáng:** {fey_res.get('praise')}")
+                            st.warning(f"🔍 **Điểm mù / Lỗ hổng:** {fey_res.get('blind_spots')}")
+                            st.info(f"💡 **Phiên bản Richard Feynman giải thích:**\n\n> *\"{fey_res.get('feynman_refinement')}\"*")
+                        else:
+                            st.error("Không thể kết nối với AI. Vui lòng thử lại.")
+
+# ========== TAB 5: Đào tạo tư duy ==========
+with tabs[5]:
     st.title("🎓 Đào tạo tư duy theo lộ trình đa tầng")
     st.markdown("Chương trình rèn luyện 3 cấp độ dành cho học sinh phổ thông (Wellspring) & chuyên sâu thực chiến cho người lớn.")
 
@@ -1052,41 +1450,8 @@ with tabs[3]:
                 icon = "✅" if is_done else "📖"
                 st.markdown(f"- {icon} **{al.get('title')}** (Chế độ: `{al.get('mode')}`) — ID: `{al.get('id')}`")
 
-# ========== TAB 4: Thư viện nguyên lý ==========
-with tabs[4]:
-    st.title("📚 Thư viện nguyên lý cốt lõi (dùng chung)")
-    st.caption("Kho 100 nguyên lý khởi thủy từ Vật lý, Sinh học, Toán học, Triết học & Khoa học máy tính")
-    domains = get_domains()
-    col_f1, col_f2 = st.columns([1, 2])
-    with col_f1:
-        domain = st.selectbox("Lọc trụ cột", domains)
-    with col_f2:
-        q = st.text_input("Tìm kiếm nguyên lý", placeholder="Bayes, đòn bẩy, bảo toàn, entropy...")
-
-    if q.strip():
-        principles = search_principles(q)
-    else:
-        principles = get_principles(domain if domain != "Tất cả" else None)
-
-    st.caption(f"Hiển thị {len(principles)} nguyên lý")
-
-    for p in principles[:40]:
-        with st.expander(f"{p.get('principle_name', '?')} · {p.get('domain', '')}"):
-            st.markdown(f"**Mô tả:** {p.get('description', '')}")
-            if p.get("formal_definition"):
-                st.info(p["formal_definition"])
-            if p.get("intuitive_summary"):
-                st.write(f"💡 {p['intuitive_summary']}")
-            c1, c2 = st.columns(2)
-            with c1:
-                if p.get("boundary_conditions"):
-                    st.caption(f"Điều kiện biên: {p['boundary_conditions']}")
-            with c2:
-                if p.get("falsification_test"):
-                    st.caption(f"Falsify: {p['falsification_test']}")
-
-# ========== TAB 5: Phân rã thực chiến ==========
-with tabs[5]:
+# ========== TAB 6: Phân rã thực chiến ==========
+with tabs[6]:
     st.title("🚀 Phân Rã Thực Chiến Đa Chế Độ (Elite Lenses)")
     st.markdown("""
     Đưa bất kỳ vấn đề, quyết định, tình huống hóc búa hay dự án thực tế vào đây. 
@@ -1153,10 +1518,27 @@ with tabs[5]:
                 for h in result.get("human_decision_needed", []):
                     st.markdown(f"- {h}")
 
-# ========== TAB 6: Lịch sử cá nhân ==========
-with tabs[6]:
+# ========== TAB 7: Lịch sử cá nhân ==========
+with tabs[7]:
     st.title("📝 Lịch sử của tôi")
     hist = load_user_history(username)
+
+    # Thống kê thành tích Trắc nghiệm & Làm chủ
+    m_info = get_user_mastery_summary(username)
+    st.markdown("#### 🏆 Thành tích Trắc nghiệm & Làm chủ Mô hình")
+    mc1, mc2, mc3 = st.columns(3)
+    with mc1:
+        st.metric("Độ chính xác Trắc nghiệm", f"{m_info['accuracy']}%", f"{m_info['total_quizzes']} bài test")
+    with mc2:
+        st.metric("Mô hình đã Mastered", f"{m_info['mastered_count']} / 88", f"{m_info['mastery_pct']}%")
+    with mc3:
+        st.metric("Đang học / Cần ôn", f"{m_info['learning_count']} học · {m_info['review_count']} ôn")
+
+    recent_tests = m_info.get("recent_tests", [])
+    if recent_tests:
+        with st.expander(f"📜 Xem {len(recent_tests)} lượt làm bài trắc nghiệm gần nhất"):
+            for t in recent_tests[:10]:
+                st.markdown(f"- `{t.get('time')}` · **{t.get('category')}**: **{t.get('score')}/{t.get('total')}** đúng ({t.get('percentage')}%)")
 
     st.markdown("#### Phân rã đã làm")
     analyses = hist.get("analyses", [])
@@ -1182,9 +1564,9 @@ with tabs[6]:
                     st.markdown("**Feedback:**")
                     st.write(info["feedback"])
 
-# ========== TAB 7: Admin (Phat) ==========
+# ========== TAB 8: Admin (Phat) ==========
 if is_admin():
-    with tabs[7]:
+    with tabs[8]:
         st.title("👑 Khu vực quản trị (Phat)")
         st.markdown("Xem tiến độ mọi thành viên · Cập nhật bài học")
 
