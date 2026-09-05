@@ -932,15 +932,18 @@ with tabs[4]:
     # Sub-tab 1: Trắc Nghiệm Lý Thuyết Cốt Lõi (Theory Foundation Quiz)
     # -------------------------------------------------------------------------
     with arena_tab_th:
-        st.markdown("### 📖 Trắc Nghiệm Lý Thuyết Cốt Lõi (Theory Foundation Quiz)")
-        st.caption("Muốn giải quyết được bài toán hóc búa, trước hết phải hiểu lý thuyết thật rành mạch: định nghĩa chuẩn xác, chân lý gốc (First Principles), cơ chế vận hành và bẫy ngụy biện (Inversion Traps).")
+        st.markdown("### 📖 Trắc Nghiệm Lý Thuyết Cốt Lõi & Ma Trận Phản Xạ Đa Chiều")
+        st.caption("Muốn làm chủ tư duy đỉnh cao, bạn phải hiểu lý thuyết thật rành mạch: từ Chân lý gốc, Đòn bẩy tối thượng, Bẫy đảo ngược cho đến Ma trận phân biệt tương hỗ giữa các mô hình.")
+
+        if "th_shuffle_seed" not in st.session_state:
+            st.session_state["th_shuffle_seed"] = 42
 
         th_category = st.radio(
             "Chọn phân hệ trắc nghiệm lý thuyết",
             [
-                "🧠 9 Chế độ Tư duy Tinh hoa (Lý thuyết rành mạch)",
-                "🕸️ 88 Mô hình Hạt nhân (Chân lý gốc & Đòn bẩy)",
-                "🔬 100 Nguyên lý Khởi thủy (Định nghĩa & Điều kiện biên)"
+                "🧠 9 Chế độ Tư duy Tinh hoa (27 câu hỏi đa chiều)",
+                "🕸️ 88 Mô hình Hạt nhân (Toàn bộ 88 mô hình · Ma trận 352 câu)",
+                "🔬 100 Nguyên lý Khởi thủy (Toàn bộ 100 nguyên lý khoa học · Ma trận 352 câu)"
             ],
             horizontal=True,
             key="th_quiz_cat_radio"
@@ -951,42 +954,160 @@ with tabs[4]:
 
         if "9 Chế độ" in th_category:
             th_cat_key = "th_modes"
-            th_selected_questions = get_theory_questions_for_modes()
-            st.info(f"📋 Khoang kiểm tra lý thuyết **9 Chế độ Tư duy Tinh hoa**. Khắc sâu bản chất lý thuyết, quy trình vận hành và bẫy tư duy của từng lăng kính.")
+            col_m1, col_m2 = st.columns([3, 1])
+            with col_m1:
+                th_mode_angle = st.selectbox(
+                    "Góc độ khảo sát lý thuyết:",
+                    [
+                        "🌟 Tất cả 3 góc độ (27 câu hỏi chuyên sâu)",
+                        "🔬 Bản chất & Định nghĩa cốt lõi (9 câu)",
+                        "⚡ Quy trình & Kích hoạt vận hành (9 câu)",
+                        "⚠️ Bẫy tư duy đối nghịch & Lỗi ngụy biện (9 câu)"
+                    ],
+                    key="th_mode_angle_sel"
+                )
+            with col_m2:
+                if st.button("🎲 Xáo trộn câu hỏi", key="btn_shuf_modes", use_container_width=True):
+                    st.session_state["th_shuffle_seed"] = random.randint(1, 999999)
+                    st.rerun()
+
+            angle_map = {
+                "🌟 Tất cả 3 góc độ (27 câu hỏi chuyên sâu)": "all",
+                "🔬 Bản chất & Định nghĩa cốt lõi (9 câu)": "concept",
+                "⚡ Quy trình & Kích hoạt vận hành (9 câu)": "operation",
+                "⚠️ Bẫy tư duy đối nghịch & Lỗi ngụy biện (9 câu)": "trap"
+            }
+            th_selected_questions = get_theory_questions_for_modes(angle=angle_map.get(th_mode_angle, "all"))
+            st.info(f"📋 Khoang thi **9 Chế độ Tư duy Tinh hoa** đang hiển thị **{len(th_selected_questions)} câu hỏi lý thuyết**. Khắc sâu bản chất lý thuyết, quy trình vận hành và bẫy tư duy đối nghịch.")
+
         elif "88 Mô hình" in th_category:
             th_cat_key = "th_models"
-            col_thm1, col_thm2 = st.columns(2)
-            with col_thm1:
+            col_f1, col_f2, col_f3 = st.columns([2, 2, 2])
+            with col_f1:
+                th_scope = st.selectbox(
+                    "Phạm vi mô hình:",
+                    [
+                        "🌐 Toàn bộ 88 Mô hình (100% đầy đủ)",
+                        "⭐ 25 Siêu mô hình Tier 1 Pareto (80/20)",
+                        "🎯 37 Mô hình Chiến lược Tier 2",
+                        "🔬 26 Mô hình Chuyên sâu Tier 3"
+                    ],
+                    key="th_scope_sel"
+                )
+            with col_f2:
                 th_filter_pillar = st.selectbox("Lọc theo Trụ cột", ["Tất cả"] + get_pillars(), key="th_filter_pillar")
-            with col_thm2:
-                th_only_tier1 = st.checkbox("Chỉ kiểm tra 25 Siêu mô hình Tier 1 Pareto", value=True, key="th_only_tier1")
+            with col_f3:
+                th_model_angle = st.selectbox(
+                    "Góc độ khảo sát:",
+                    [
+                        "🌟 Tất cả các góc độ (Ma trận hỗn hợp)",
+                        "🔬 Chân lý gốc (First Principle)",
+                        "⚡ Đòn bẩy tối thượng (Elite Leverage)",
+                        "⚠️ Bẫy đảo ngược (Inversion Trap)",
+                        "🔀 Ma trận Phân biệt Tương hỗ (Discriminative Matrix)"
+                    ],
+                    key="th_model_angle_sel"
+                )
 
+            tier_map = {
+                "🌐 Toàn bộ 88 Mô hình (100% đầy đủ)": None,
+                "⭐ 25 Siêu mô hình Tier 1 Pareto (80/20)": 1,
+                "🎯 37 Mô hình Chiến lược Tier 2": 2,
+                "🔬 26 Mô hình Chuyên sâu Tier 3": 3
+            }
+            angle_map = {
+                "🌟 Tất cả các góc độ (Ma trận hỗn hợp)": "all",
+                "🔬 Chân lý gốc (First Principle)": "first_principle",
+                "⚡ Đòn bẩy tối thượng (Elite Leverage)": "leverage",
+                "⚠️ Bẫy đảo ngược (Inversion Trap)": "inversion",
+                "🔀 Ma trận Phân biệt Tương hỗ (Discriminative Matrix)": "matrix"
+            }
             p_arg = th_filter_pillar if th_filter_pillar != "Tất cả" else None
-            t_arg = 1 if th_only_tier1 else None
-            th_selected_questions = get_theory_questions_for_models(pillar=p_arg, tier=t_arg)
-            st.info(f"📋 Khoang kiểm tra lý thuyết **88 Mô hình Hạt nhân** (hiện có **{len(th_selected_questions)} câu hỏi**). Khắc sâu Chân lý gốc (First Principle), Đòn bẩy và Bẫy đảo ngược (Inversion Trap).")
+            t_arg = tier_map.get(th_scope)
+            a_arg = angle_map.get(th_model_angle, "all")
+
+            col_btn, _ = st.columns([2, 4])
+            with col_btn:
+                if st.button("🎲 Xáo trộn phương án & đề mới", key="btn_shuf_models", use_container_width=True):
+                    st.session_state["th_shuffle_seed"] = random.randint(1, 999999)
+                    st.rerun()
+
+            th_selected_questions = get_theory_questions_for_models(
+                pillar=p_arg,
+                tier=t_arg,
+                angle=a_arg,
+                seed=st.session_state["th_shuffle_seed"]
+            )
+            st.info(f"📋 Khoang thi **88 Mô hình Hạt nhân** tìm thấy **{len(th_selected_questions)} câu hỏi lý thuyết**. Khắc sâu Chân lý gốc, Đòn bẩy tối thượng, Bẫy đảo ngược và Ma trận phân biệt mô hình.")
+
         else:
             th_cat_key = "th_principles"
-            th_domain = st.selectbox("Lọc Trụ cột khoa học", get_domains(), key="th_filter_domain")
+            col_p1, col_p2, col_p3 = st.columns([2, 2, 2])
+            with col_p1:
+                th_domain = st.selectbox("Lọc Trụ cột khoa học", get_domains(), key="th_filter_domain")
+            with col_p2:
+                th_prin_angle = st.selectbox(
+                    "Góc độ khảo sát:",
+                    [
+                        "🌟 Tất cả các góc độ (Ma trận hỗn hợp)",
+                        "🔬 Định nghĩa hình thức & Trực giác",
+                        "⚖️ Điều kiện biên nghiệm đúng",
+                        "💥 Phép thử bác bỏ (Karl Popper Falsification)",
+                        "🔀 Ma trận Phân biệt Nguyên lý"
+                    ],
+                    key="th_prin_angle_sel"
+                )
+            with col_p3:
+                if st.button("🎲 Xáo trộn phương án & đề mới", key="btn_shuf_prin", use_container_width=True):
+                    st.session_state["th_shuffle_seed"] = random.randint(1, 999999)
+                    st.rerun()
+
+            angle_p_map = {
+                "🌟 Tất cả các góc độ (Ma trận hỗn hợp)": "all",
+                "🔬 Định nghĩa hình thức & Trực giác": "definition",
+                "⚖️ Điều kiện biên nghiệm đúng": "boundary",
+                "💥 Phép thử bác bỏ (Karl Popper Falsification)": "falsification",
+                "🔀 Ma trận Phân biệt Nguyên lý": "matrix"
+            }
             d_arg = th_domain if th_domain != "Tất cả" else None
-            th_selected_questions = get_theory_questions_for_principles(domain=d_arg)
-            st.info(f"📋 Khoang kiểm tra lý thuyết **100 Nguyên lý Khởi thủy** (hiện có **{len(th_selected_questions)} câu hỏi**). Khắc sâu định nghĩa hình thức, điều kiện biên và tính khả bác (falsification).")
+            a_p_arg = angle_p_map.get(th_prin_angle, "all")
+
+            th_selected_questions = get_theory_questions_for_principles(
+                domain=d_arg,
+                angle=a_p_arg,
+                seed=st.session_state["th_shuffle_seed"]
+            )
+            st.info(f"📋 Khoang thi **100 Nguyên lý Khởi thủy** tìm thấy **{len(th_selected_questions)} câu hỏi khoa học**. Khắc sâu định nghĩa hình thức, điều kiện biên, tính khả bác và ma trận nhận diện nguyên lý.")
 
         th_score = 0
         th_answered = 0
 
-        if len(th_selected_questions) > 15:
-            th_max_display = st.slider("Số lượng câu hỏi kiểm tra đợt này:", min_value=5, max_value=len(th_selected_questions), value=min(15, len(th_selected_questions)), step=5, key="th_slider_limit")
+        # Slider to choose how many questions to display
+        if len(th_selected_questions) > 10:
+            default_lim = min(25, len(th_selected_questions))
+            th_max_display = st.slider(
+                "Số lượng câu hỏi kiểm tra đợt này:",
+                min_value=5,
+                max_value=len(th_selected_questions),
+                value=default_lim,
+                step=5 if len(th_selected_questions) <= 100 else 10,
+                key=f"th_slider_limit_{th_cat_key}"
+            )
             th_display_questions = th_selected_questions[:th_max_display]
         else:
             th_display_questions = th_selected_questions
 
         for i, q in enumerate(th_display_questions):
             q_title = q.get('concept') or q.get('model_name') or q.get('principle_name') or f"Câu {i+1}"
-            with st.expander(f"Câu {i+1}: {q_title}", expanded=(i < 2)):
+            q_angle_tag = q.get('angle_label', '')
+            exp_header = f"Câu {i+1}: {q_title}"
+            if q_angle_tag:
+                exp_header += f" · [{q_angle_tag}]"
+
+            with st.expander(exp_header, expanded=(i < 2)):
                 st.markdown(f"**❓ Câu hỏi lý thuyết:** **{q.get('question')}**")
 
-                th_state_key = f"th_ans_{th_cat_key}_{q.get('id')}"
+                th_state_key = f"th_ans_{th_cat_key}_{q.get('id')}_{st.session_state.get('th_shuffle_seed', 42)}"
                 th_user_choice = st.radio(
                     "Chọn đáp án chính xác:",
                     q.get("options", []),

@@ -38,6 +38,8 @@ THEORY_MODES_QUIZ = [
     {
         "id": "TH-MODE-01",
         "concept": "First Principles (Tư duy Nguyên bản)",
+        "angle": "concept",
+        "angle_label": "🔬 Bản chất & Định nghĩa",
         "question": "Theo Aristotle và Elon Musk, bản chất lý thuyết cốt lõi của Tư duy Nguyên bản (First Principles Thinking) là gì?",
         "options": [
             "A. Phân rã bài toán về những chân lý cơ bản nhất không thể suy diễn thêm, tách biệt Sự thật (Fact) khỏi Ý kiến (Opinion) và tái thiết kế giải pháp từ số 0.",
@@ -52,6 +54,8 @@ THEORY_MODES_QUIZ = [
     {
         "id": "TH-MODE-02",
         "concept": "Tư duy Xác suất & Cập nhật Bayes (Probabilistic & Bayesian)",
+        "angle": "concept",
+        "angle_label": "🔬 Bản chất & Định nghĩa",
         "question": "Trong tư duy xác suất Bayes, công thức cốt lõi để cập nhật niềm tin khi xuất hiện dữ kiện mới là gì?",
         "options": [
             "A. Posterior (Xác suất mới) ∝ Prior (Niềm tin ban đầu / Tỷ lệ nền) × Likelihood (Khả năng xuất hiện của dữ kiện mới).",
@@ -66,6 +70,8 @@ THEORY_MODES_QUIZ = [
     {
         "id": "TH-MODE-03",
         "concept": "Tư duy Đảo ngược (Inversion — Charlie Munger)",
+        "angle": "concept",
+        "angle_label": "🔬 Bản chất & Định nghĩa",
         "question": "Quy tắc cốt lõi của phương pháp Tư duy Đảo ngược (Inversion / Premortem) trong việc ra quyết định là gì?",
         "options": [
             "A. Thay vì tìm cách để thành công rực rỡ, hãy liệt kê mọi điều chắc chắn dẫn tới thảm họa/thất bại rồi chủ động né tránh chúng.",
@@ -80,6 +86,8 @@ THEORY_MODES_QUIZ = [
     {
         "id": "TH-MODE-04",
         "concept": "Tư duy Bậc hai (Second-Order Thinking — Howard Marks)",
+        "angle": "concept",
+        "angle_label": "🔬 Bản chất & Định nghĩa",
         "question": "Điểm phân định cốt lõi giữa Tư duy Bậc một và Tư duy Bậc hai (Second-Order Thinking) là gì?",
         "options": [
             "A. Bậc một chỉ nhìn tác động hiển hiện trước mắt; Bậc hai luôn hỏi 'Và sau đó điều gì xảy ra?' để tính phản ứng của các tác nhân và hệ quả lan truyền 1–3 năm tới.",
@@ -94,6 +102,8 @@ THEORY_MODES_QUIZ = [
     {
         "id": "TH-MODE-05",
         "concept": "Tư duy Tùy chọn & Bất đối xứng (Optionality & Barbell — Nassim Taleb)",
+        "angle": "concept",
+        "angle_label": "🔬 Bản chất & Định nghĩa",
         "question": "Chiến lược Đòn tạ (Barbell Strategy) của Nassim Nicholas Taleb được cấu trúc lý thuyết như thế nào?",
         "options": [
             "A. 85-90% nguồn lực đặt vào các tài sản an toàn tuyệt đối (tránh rủi ro hủy diệt), 10-15% phân bổ vào các tùy chọn có rủi ro giới hạn nhưng tiềm năng lợi nhuận vô hạn bất đối xứng.",
@@ -108,6 +118,8 @@ THEORY_MODES_QUIZ = [
     {
         "id": "TH-MODE-06",
         "concept": "Mạng lưới Đa ngành Latticework (Charlie Munger)",
+        "angle": "concept",
+        "angle_label": "🔬 Bản chất & Định nghĩa",
         "question": "Tại sao Charlie Munger khẳng định việc nắm vững các mô hình hạt nhân từ nhiều ngành khoa học cơ bản là bắt buộc?",
         "options": [
             "A. Để tránh Hội chứng Người cầm búa (Man with a Hammer) và kích hoạt hiệu ứng cộng hưởng Lollapalooza khi các quy luật từ nhiều ngành cùng hội tụ.",
@@ -122,6 +134,8 @@ THEORY_MODES_QUIZ = [
     {
         "id": "TH-MODE-07",
         "concept": "Thực nghiệm Nhanh (Iterative Lean Thinking)",
+        "angle": "concept",
+        "angle_label": "🔬 Bản chất & Định nghĩa",
         "question": "Vòng lặp học hỏi cốt lõi trong Tư duy Thực nghiệm Nhanh (Build - Measure - Learn) nhằm mục đích giải quyết căn bệnh tư duy nào?",
         "options": [
             "A. Bệnh Phân tích Tê liệt (Analysis Paralysis): Ngồi suy diễn lý thuyết trong phòng kín mà không đưa giả thuyết ra va chạm với thực tế đo lường được.",
@@ -136,6 +150,8 @@ THEORY_MODES_QUIZ = [
     {
         "id": "TH-MODE-08",
         "concept": "Lý thuyết Trò chơi & Ma trận Động lực (Game Theory & Incentives)",
+        "angle": "concept",
+        "angle_label": "🔬 Bản chất & Định nghĩa",
         "question": "Quy tắc thiết kế cơ chế (Mechanism Design) trong Lý thuyết Trò chơi đòi hỏi điều gì để tổ chức tự vận hành bền vững?",
         "options": [
             "A. Căn chỉnh động lực (Aligned Incentives) sao cho việc hành động vì lợi ích chung cũng chính là phương án tối đa hóa lợi ích cá nhân của từng tác nhân.",
@@ -150,6 +166,8 @@ THEORY_MODES_QUIZ = [
     {
         "id": "TH-MODE-09",
         "concept": "Đa quy mô Thời gian (Multi-Scale Time Horizons — Jeff Bezos)",
+        "angle": "concept",
+        "angle_label": "🔬 Bản chất & Định nghĩa",
         "question": "Theo triết lý kinh doanh của Jeff Bezos, đâu là trọng tâm của Tư duy Đa quy mô Thời gian (10-year horizon)?",
         "options": [
             "A. Xác định những nguyên lý và nhu cầu cốt lõi KHÔNG THAY ĐỔI trong 10-20 năm tới để dồn toàn lực đầu tư vào đó, thay vì mải miết chạy theo trào lưu ngắn hạn.",
@@ -160,8 +178,299 @@ THEORY_MODES_QUIZ = [
         "correct_index": 0,
         "explanation": "Lợi thế cạnh tranh khổng lồ và sức mạnh lãi kép luôn thuộc về người dám neo giữ tầm nhìn vào những thứ không đổi và kiên định thực thi trong 10 năm.",
         "trap_analysis": "Bẫy thiển cận (Hyperbolic Discounting): Bộ não người luôn muốn dopamine tức thì, định giá quá cao cái lợi hôm nay và xem nhẹ tương lai 10 năm."
+    },
+    # --- 9 CÂU HỎI VẬN HÀNH & KÍCH HOẠT (OPERATIONAL PROCESS) ---
+    {
+        "id": "TH-MODE-OP-01",
+        "concept": "First Principles (Tư duy Nguyên bản)",
+        "angle": "operation",
+        "angle_label": "⚡ Quy trình & Kích hoạt vận hành",
+        "question": "Quy trình 3 bước chuẩn mực của Elon Musk để áp dụng Tư duy Nguyên bản vào bài toán khó là gì?",
+        "options": [
+            "A. 1. Nhận diện & chất vấn các giả định ngầm ➔ 2. Bóc tách bài toán về các chân lý vật lý/khoa học cơ bản nhất ➔ 3. Tái thiết kế giải pháp mới từ số 0.",
+            "B. 1. Khảo sát các đối thủ đầu ngành ➔ 2. Sao chép 80% tính năng cốt lõi ➔ 3. Hạ giá bán 10% để cạnh tranh.",
+            "C. 1. Thuê công ty tư vấn chiến lược ➔ 2. Biểu quyết theo ý kiến đa số ➔ 3. Triển khai theo quy trình ISO.",
+            "D. 1. Dự toán ngân sách tối đa ➔ 2. Mua thiết bị có sẵn trên thị trường ➔ 3. Tuyển dụng nhân sự quy mô lớn."
+        ],
+        "correct_index": 0,
+        "explanation": "Elon Musk áp dụng 3 bước: Ép mọi chuyên gia phải trả lời câu hỏi 'Tại sao phải như vậy theo định luật vật lý?', sau đó tính toán chi phí nguyên tử và tái lập quy trình.",
+        "trap_analysis": "Bẫy chấp nhận định kiến: Coi quy trình của người khác là giới hạn bất biến của vũ trụ."
+    },
+    {
+        "id": "TH-MODE-OP-02",
+        "concept": "Tư duy Xác suất & Cập nhật Bayes (Probabilistic & Bayesian)",
+        "angle": "operation",
+        "angle_label": "⚡ Quy trình & Kích hoạt vận hành",
+        "question": "Khi tiếp nhận một thông tin hoặc bằng chứng mới (Evidence), quy trình cập nhật niềm tin chuẩn xác theo Tư duy Bayes là gì?",
+        "options": [
+            "A. Khởi đầu từ Tỷ lệ nền khách quan (Base Rate / Prior) ➔ Đo lường độ tin cậy của dữ kiện mới (Likelihood) ➔ Tính toán xác suất mới (Posterior).",
+            "B. Lập tức thay đổi 100% quan điểm ngay khi có một người nổi tiếng hoặc bài báo lớn đưa tin.",
+            "C. Bỏ qua hoàn toàn dữ kiện mới nếu nó trái ngược với niềm tin ban đầu của bản thân.",
+            "D. Lấy trung bình cộng giữa niềm tin cũ và cảm xúc nhất thời khi đọc tin tức."
+        ],
+        "correct_index": 0,
+        "explanation": "Tư duy Bayes đòi hỏi bạn phải có điểm tựa Tỷ lệ nền (Base Rate). Một bằng chứng mạnh mới đủ sức làm dịch chuyển đáng kể xác suất niềm tin.",
+        "trap_analysis": "Bẫy phóng đại bằng chứng hiếm: Bị kích động bởi một tin tức giật gân mà quên mất xác suất nền của sự việc vốn rất nhỏ."
+    },
+    {
+        "id": "TH-MODE-OP-03",
+        "concept": "Tư duy Đảo ngược (Inversion — Charlie Munger)",
+        "angle": "operation",
+        "angle_label": "⚡ Quy trình & Kích hoạt vận hành",
+        "question": "Kỹ thuật Khám nghiệm trước thất bại (Premortem) trong Tư duy Đảo ngược được tiến hành như thế nào?",
+        "options": [
+            "A. Đặt giả định dự án đã thất bại thảm hại sau 1 năm nữa, yêu cầu cả đội ngũ lùi lại tìm mọi nguyên nhân tiềm tàng gây ra cái chết đó để triệt tiêu ngay hôm nay.",
+            "B. Chờ đến khi dự án thất bại thật rồi mới họp toàn công ty để tìm người chịu trách nhiệm kỷ luật.",
+            "C. Cấm toàn bộ nhân viên nói về rủi ro hay những điều tiêu cực trong các cuộc họp kế hoạch.",
+            "D. Lùi ngày triển khai dự án vô thời hạn cho đến khi thị trường không còn bất kỳ rủi ro nào."
+        ],
+        "correct_index": 0,
+        "explanation": "Premortem (Gary Klein & Charlie Munger) hợp pháp hóa việc phê bình và tìm lỗ hổng: biến nỗi sợ thành bảng kiểm phòng vệ trước khi viên đạn đầu tiên được bắn ra.",
+        "trap_analysis": "Bẫy tư duy lạc quan mù quáng: Xem việc phòng ngừa rủi ro là bàn lùi hoặc thiếu quyết tâm."
+    },
+    {
+        "id": "TH-MODE-OP-04",
+        "concept": "Tư duy Bậc hai (Second-Order Thinking — Howard Marks)",
+        "angle": "operation",
+        "angle_label": "⚡ Quy trình & Kích hoạt vận hành",
+        "question": "Câu hỏi kích hoạt (Trigger Question) phản xạ tư duy bậc hai của nhà đầu tư huyền thoại Howard Marks là gì?",
+        "options": [
+            "A. 'Và sau đó điều gì sẽ xảy ra?' (And then what?) — Nhằm dự phóng phản ứng của các đối thủ và hệ quả lan truyền trong tương lai.",
+            "B. 'Làm thế nào để kiếm lợi nhuận tối đa trong phiên giao dịch ngày hôm nay?'",
+            "C. 'Ai là người chịu trách nhiệm pháp lý nếu kế hoạch này đổ vỡ?'",
+            "D. 'Làm sao để làm hài lòng tất cả các bên trong 1 tháng tới?'"
+        ],
+        "correct_index": 0,
+        "explanation": "Tư duy bậc hai buộc bạn phải tự hỏi: 'Nếu mọi người đều đổ xô làm việc này thì thị trường sẽ phản ứng thế nào? Lợi thế có còn tồn tại không?'.",
+        "trap_analysis": "Bẫy hệ quả bậc 1: Nhìn thấy món hời trước mắt mà không thấy chiếc bẫy chuột treo phía trên."
+    },
+    {
+        "id": "TH-MODE-OP-05",
+        "concept": "Tư duy Tùy chọn & Bất đối xứng (Optionality & Barbell — Nassim Taleb)",
+        "angle": "operation",
+        "angle_label": "⚡ Quy trình & Kích hoạt vận hành",
+        "question": "Để bảo vệ sự nghiệp hoặc danh mục đầu tư theo Chiến lược Thanh tạ (Barbell Allocation), bạn nên phân bổ nguồn lực như thế nào?",
+        "options": [
+            "A. Giữ 85–90% cực kỳ an toàn (chống rủi ro hủy diệt) + 10–15% thử nghiệm mạo hiểm có tiềm năng tăng trưởng vô hạn bất đối xứng; né tránh vùng trung bình mập mờ.",
+            "B. Chia đều 50% vào tài sản rủi ro cao và 50% vào tài sản rủi ro trung bình.",
+            "C. Vay nợ đòn bẩy tối đa để đầu tư vào một cơ hội duy nhất mà bạn tin tưởng 99%.",
+            "D. Giữ 100% tiền mặt trong két sắt và từ chối mọi cơ hội mạo hiểm trong suốt cuộc đời."
+        ],
+        "correct_index": 0,
+        "explanation": "Chiến lược Barbell giúp hệ thống đạt trạng thái Antifragile: Cực đoan ở hai đầu (Siêu an toàn & Siêu tùy chọn) và loại bỏ hoàn toàn vùng giữa nguy hiểm.",
+        "trap_analysis": "Bẫy lầm tưởng vùng an toàn: Nghĩ rằng chọn mức rủi ro trung bình là khôn ngoan, trong khi đó là vùng dễ chết nhất khi khủng hoảng xảy ra."
+    },
+    {
+        "id": "TH-MODE-OP-06",
+        "concept": "Mạng lưới Đa ngành Latticework (Charlie Munger)",
+        "angle": "operation",
+        "angle_label": "⚡ Quy trình & Kích hoạt vận hành",
+        "question": "Quy trình kích hoạt hiệu ứng cộng hưởng Lollapalooza Synthesis đòi hỏi người ra quyết định phải làm gì?",
+        "options": [
+            "A. Đặt vấn đề vào ma trận giao thoa của ít nhất 3 lăng kính khoa học cơ bản độc lập (như Vật lý, Sinh học, Tâm lý) để tìm điểm hội tụ lực.",
+            "B. Chỉ đọc sách của một chuyên gia duy nhất và làm theo đúng từng bước của chuyên gia đó.",
+            "C. Tập hợp ý kiến của các nhân viên và lấy điểm trung bình cộng để hòa giải xung đột.",
+            "D. Áp dụng máy móc mô hình kinh tế học vào tất cả các mối quan hệ tình cảm và gia đình."
+        ],
+        "correct_index": 0,
+        "explanation": "Hiệu ứng Lollapalooza xảy ra khi 3-4 quy luật tự nhiên cùng tác động theo một hướng, tạo ra lực đẩy cực đại vượt xa tổng của các yếu tố riêng lẻ.",
+        "trap_analysis": "Bẫy suy nghĩ đơn ngành (Silo Thinking): Giải thích một hiện tượng xã hội phức tạp chỉ bằng lăng kính tài chính hoặc kỹ thuật thuần túy."
+    },
+    {
+        "id": "TH-MODE-OP-07",
+        "concept": "Thực nghiệm Nhanh (Iterative Lean Thinking)",
+        "angle": "operation",
+        "angle_label": "⚡ Quy trình & Kích hoạt vận hành",
+        "question": "Trong vòng lặp Thực nghiệm nhanh (Build - Measure - Learn), thứ cần được tạo ra (Build) đầu tiên là gì?",
+        "options": [
+            "A. Một Thử nghiệm vi mô (MVP) nhỏ nhất, rẻ nhất để kiểm chứng giả định nguy hiểm nhất (Leap-of-Faith Assumption).",
+            "B. Một sản phẩm hoàn thiện 100% với giao diện sang trọng để bán cho khách hàng lớn.",
+            "C. Một chiến dịch marketing rầm rộ trên toàn quốc trước khi phát triển sản phẩm.",
+            "D. Một bản kế hoạch tài chính dày 200 trang dự báo chính xác doanh thu 5 năm tới."
+        ],
+        "correct_index": 0,
+        "explanation": "MVP không phải là sản phẩm lỗi; MVP là công cụ học hỏi nhanh nhất với ít tài nguyên nhất để trả lời câu hỏi: 'Khách hàng có thực sự cần thứ này không?'.",
+        "trap_analysis": "Bẫy hoàn hảo hóa sản phẩm trong phòng kín: Bỏ hàng tỷ đồng làm sản phẩm mà không thèm kiểm chứng nhu cầu thị trường."
+    },
+    {
+        "id": "TH-MODE-OP-08",
+        "concept": "Lý thuyết Trò chơi & Ma trận Động lực (Game Theory & Incentives)",
+        "angle": "operation",
+        "angle_label": "⚡ Quy trình & Kích hoạt vận hành",
+        "question": "Quy tắc 'Một người cắt bánh, người kia chọn trước' (Cut-and-Choose) trong Thiết kế cơ chế minh họa cho nguyên tắc nào?",
+        "options": [
+            "A. Động lực tự điều chỉnh: Người tạo ra luật phải chịu trực tiếp hệ quả của luật đó (Skin in the Game), buộc họ phải hành xử công bằng tuyệt đối.",
+            "B. Kẻ cầm dao luôn có quyền chiếm phần bánh lớn hơn.",
+            "C. Cần phải có một trọng tài đứng giữa cân đo từng miligram bánh để chia đều.",
+            "D. Không nên chia bánh mà nên cất vào tủ lạnh để tránh tranh chấp."
+        ],
+        "correct_index": 0,
+        "explanation": "Cơ chế thông minh là cơ chế không cần công an hay thanh tra giám sát; chính cấu trúc luật chơi khiến mọi tác nhân tự động hành động vì lợi ích chung.",
+        "trap_analysis": "Bẫy trông đợi lòng trung thực: Xây dựng quy chế dựa trên giả định mọi người đều là thiên thần mà không có ràng buộc quyền lợi."
+    },
+    {
+        "id": "TH-MODE-OP-09",
+        "concept": "Đa quy mô Thời gian (Multi-Scale Time Horizons — Jeff Bezos)",
+        "angle": "operation",
+        "angle_label": "⚡ Quy trình & Kích hoạt vận hành",
+        "question": "Kỹ thuật 10-10-10 của Suzy Welch dùng để rèn luyện Tư duy Đa quy mô thời gian như thế nào?",
+        "options": [
+            "A. Đặt câu hỏi: Quyết định này sẽ tác động đến tôi như thế nào sau 10 phút, sau 10 tháng, và sau 10 năm?",
+            "B. Mỗi ngày dành đúng 10 phút để lên kế hoạch cho 10 tháng tiếp theo.",
+            "C. Chia mục tiêu cuộc đời thành 10 phần và hoàn thành trong 10 năm.",
+            "D. Thay đổi công việc sau mỗi 10 tháng để trải nghiệm nhiều môi trường khác nhau."
+        ],
+        "correct_index": 0,
+        "explanation": "Kỹ thuật 10-10-10 giúp tách biệt cảm xúc ngắn hạn (10 phút) khỏi hệ quả bền vững lâu dài (10 năm), giúp bạn không hy sinh tương lai vì sự dễ chịu hôm nay.",
+        "trap_analysis": "Bẫy thiển cận: Bị chi phối bởi sự bốc đồng trong 10 phút đầu mà hủy hoại thành quả 10 năm gầy dựng."
+    },
+    # --- 9 CÂU HỎI BẪY TƯ DUY ĐỐI NGHỊCH (INVERSION TRAPS & ANTI-PATTERNS) ---
+    {
+        "id": "TH-MODE-TR-01",
+        "concept": "First Principles (Tư duy Nguyên bản)",
+        "angle": "trap",
+        "angle_label": "⚠️ Bẫy tư duy đối nghịch",
+        "question": "Cạm bẫy 'Tối ưu hóa cục bộ' (Local Optimization Trap) vi phạm Tư duy Nguyên bản như thế nào?",
+        "options": [
+            "A. Cố gắng làm tốt hơn một quy trình/bước công việc mà đáng lẽ ra nó hoàn toàn không nên tồn tại ngay từ đầu.",
+            "B. Cắt giảm chi phí nguyên vật liệu đầu vào quá mức khiến chất lượng giảm sút.",
+            "C. Đổi mới công nghệ quá nhanh khiến nhân viên không kịp thích ứng.",
+            "D. Không tham khảo ý kiến của khách hàng trung thành trước khi nâng cấp sản phẩm."
+        ],
+        "correct_index": 0,
+        "explanation": "Elon Musk chỉ ra sai lầm phổ biến nhất của kỹ sư là: Tối ưu hóa một bộ phận mà lẽ ra phải xóa bỏ hoàn toàn bộ phận đó.",
+        "trap_analysis": "Bẫy yêu thích giải pháp cũ: Cố gắng đánh bóng chiếc xe ngựa thay vì phát minh ra ô tô."
+    },
+    {
+        "id": "TH-MODE-TR-02",
+        "concept": "Tư duy Xác suất & Cập nhật Bayes (Probabilistic & Bayesian)",
+        "angle": "trap",
+        "angle_label": "⚠️ Bẫy tư duy đối nghịch",
+        "question": "Bẫy Thờ ơ tỷ lệ nền (Base Rate Neglect) khiến người ra quyết định mắc sai lầm gì?",
+        "options": [
+            "A. Quá tin vào một câu chuyện khởi nghiệp thành công cá biệt hào nhoáng mà phớt lờ thực tế 90% các công ty khởi nghiệp trong ngành đều thất bại.",
+            "B. Không chịu vay vốn ngân hàng khi lãi suất đang ở mức thấp kỷ lục.",
+            "C. Phân tích quá nhiều số liệu thống kê trong quá khứ dẫn đến chậm trễ hành động.",
+            "D. Luôn chọn các cổ phiếu có giá trị vốn hóa lớn nhất thị trường."
+        ],
+        "correct_index": 0,
+        "explanation": "Tỷ lệ nền (Base Rate) là lực hút trọng trường của xác suất. Nếu bạn tham gia một cuộc chơi có tỷ lệ thất bại nền là 95%, bạn cần bằng chứng phi thường để tin mình là ngoại lệ.",
+        "trap_analysis": "Bẫy ảo tưởng bản thân đặc biệt: Tin rằng nhiệt huyết cá nhân có thể đánh bại quy luật thống kê khách quan."
+    },
+    {
+        "id": "TH-MODE-TR-03",
+        "concept": "Tư duy Đảo ngược (Inversion — Charlie Munger)",
+        "angle": "trap",
+        "angle_label": "⚠️ Bẫy tư duy đối nghịch",
+        "question": "Bẫy Ngụy biện người sống sót (Survivorship Bias) làm sai lệch nhận thức như thế nào nếu thiếu Tư duy Đảo ngược?",
+        "options": [
+            "A. Chỉ nghiên cứu những kẻ chiến thắng và ngộ nhận đó là công thức thành công, trong khi bỏ qua 'nghĩa địa' của những người đã làm y hệt nhưng đã thất bại.",
+            "B. Luôn chuẩn bị phương án dự phòng quá kỹ lưỡng làm mất đi tính quyết đoán.",
+            "C. Không chịu lắng nghe lời khuyên của những người đã vượt qua nghịch cảnh.",
+            "D. Đầu tư vào các doanh nghiệp đã có bề dày lịch sử hoạt động trên 50 năm."
+        ],
+        "correct_index": 0,
+        "explanation": "Nghiên cứu nghĩa địa thất bại (Inversion) luôn mang lại nhiều bài học giá trị và chân thật hơn là đọc những cuốn hồi ký hào nhoáng của người sống sót.",
+        "trap_analysis": "Bẫy hào quang chiến thắng: Học thói quen bỏ học của Steve Jobs hay Bill Gates mà quên mất hàng triệu người bỏ học khác đã lâm vào cảnh bế tắc."
+    },
+    {
+        "id": "TH-MODE-TR-04",
+        "concept": "Tư duy Bậc hai (Second-Order Thinking — Howard Marks)",
+        "angle": "trap",
+        "angle_label": "⚠️ Bẫy tư duy đối nghịch",
+        "question": "Hiện tượng 'Hiệu ứng Rắn hổ mang' (Cobra Effect) là ví dụ kinh điển của việc thiếu tư duy bậc hai, nó mô tả điều gì?",
+        "options": [
+            "A. Giải pháp bậc một tạo ra động lực sai lầm khiến vấn đề sau đó còn trở nên tồi tệ hơn nhiều so với trước khi can thiệp (chính quyền trả tiền diệt rắn dẫn đến việc người dân thi nhau nuôi rắn).",
+            "B. Rắn hổ mang thích nghi với các loại thuốc độc mới và sinh sôi nảy nở nhanh hơn.",
+            "C. Giá rắn hổ mang trên thị trường tăng cao khiến chính quyền bị thâm hụt ngân sách.",
+            "D. Người dân không chịu giao nộp rắn vì sợ bị chính quyền xử phạt."
+        ],
+        "correct_index": 0,
+        "explanation": "Tư duy bậc một ngây thơ nghĩ rằng treo thưởng diệt rắn thì rắn sẽ hết. Tư duy bậc hai thấy ngay phản ứng của con người: Họ sẽ nuôi rắn để lấy tiền thưởng!",
+        "trap_analysis": "Bẫy chính sách ngây thơ: Can thiệp vào hệ thống phức hợp bằng giải pháp tuyến tính thô bạo."
+    },
+    {
+        "id": "TH-MODE-TR-05",
+        "concept": "Tư duy Tùy chọn & Bất đối xứng (Optionality & Barbell — Nassim Taleb)",
+        "angle": "trap",
+        "angle_label": "⚠️ Bẫy tư duy đối nghịch",
+        "question": "Cạm bẫy 'Vùng giữa chết chóc' (The Murky Middle) trong đầu tư và sự nghiệp là gì?",
+        "options": [
+            "A. Chọn các vị thế có rủi ro vừa phải nhưng trần lợi nhuận bị giới hạn — vừa đủ bấp bênh để mất sạch tài sản khi có khủng hoảng, nhưng lại không có tiềm năng tăng trưởng đột phá.",
+            "B. Đầu tư toàn bộ tiền vào vàng miếng và bất động sản thổ cư ven đô.",
+            "C. Tham gia vào các công ty khởi nghiệp mạo hiểm giai đoạn đầu với số vốn nhỏ.",
+            "D. Gửi tiết kiệm ngân hàng nhà nước để nhận lãi suất ổn định hàng năm."
+        ],
+        "correct_index": 0,
+        "explanation": "Vùng giữa là nơi tồi tệ nhất của phổ rủi ro. Bạn nhận lấy rủi ro tiềm ẩn của một cuộc chơi lớn nhưng lại chỉ nhận về phần thưởng còm cõi của một cuộc chơi nhỏ.",
+        "trap_analysis": "Bẫy trung dung sai lầm: Đánh đồng sự thỏa hiệp ở giữa với sự cân bằng thông thái."
+    },
+    {
+        "id": "TH-MODE-TR-06",
+        "concept": "Mạng lưới Đa ngành Latticework (Charlie Munger)",
+        "angle": "trap",
+        "angle_label": "⚠️ Bẫy tư duy đối nghịch",
+        "question": "Hội chứng 'Người cầm búa' (Man with a Hammer Syndrome) phá hủy chất lượng quyết định như thế nào?",
+        "options": [
+            "A. Khi bạn chỉ có duy nhất một cây búa trong tay (một chuyên môn hạn hẹp), bạn sẽ nhìn mọi vấn đề trong cuộc đời đều giống như một chiếc đinh và bóp méo thực tế để dùng búa đập.",
+            "B. Bạn từ chối nâng cấp dụng cụ làm việc mới vì tiếc tiền mua sắm trang thiết bị.",
+            "C. Bạn làm việc quá chăm chỉ bằng sức mạnh cơ bắp thay vì dùng trí tuệ.",
+            "D. Bạn dành quá nhiều thời gian để sửa chữa các lỗi nhỏ không quan trọng."
+        ],
+        "correct_index": 0,
+        "explanation": "Bác sĩ phẫu thuật thì muốn mổ, luật sư thì muốn kiện, lập trình viên thì muốn viết app. Mạng lưới Munger giúp bạn nhìn sự việc đúng như bản chất của nó, không qua lăng kính nghề nghiệp.",
+        "trap_analysis": "Bẫy ngạo mạn chuyên gia: Tin rằng thành công trong một lĩnh vực hẹp cho phép mình phán xét mọi vấn đề khác của thế giới."
+    },
+    {
+        "id": "TH-MODE-TR-07",
+        "concept": "Thực nghiệm Nhanh (Iterative Lean Thinking)",
+        "angle": "trap",
+        "angle_label": "⚠️ Bẫy tư duy đối nghịch",
+        "question": "Cạm bẫy 'Chi phí chìm' (Sunk Cost Fallacy) bóp nghẹt Tư duy Thực nghiệm Nhanh như thế nào?",
+        "options": [
+            "A. Tiếp tục đổ thêm tiền bạc, công sức và thời gian vào một dự án thất bại chỉ vì tiếc nuối những nguồn lực đã trót đầu tư trong quá khứ mà không thể lấy lại.",
+            "B. Bán tháo toàn bộ máy móc nhà xưởng khi dự án vừa mới bắt đầu có lãi.",
+            "C. Cắt giảm chi phí nghiên cứu và phát triển (R&D) trong giai đoạn khó khăn.",
+            "D. Không tính toán chi phí vận hành biến đổi khi mở rộng quy mô kinh doanh."
+        ],
+        "correct_index": 0,
+        "explanation": "Trong tư duy Lean, tiền đã mất là đã mất. Quyết định của ngày hôm nay chỉ được dựa trên triển vọng giá trị trong tương lai, hoàn toàn không dựa trên chi phí quá khứ.",
+        "trap_analysis": "Bẫy sĩ diện cá nhân: Sợ thừa nhận mình đã sai nên tiếp tục ném tiền tốt vào chỗ tiền xấu."
+    },
+    {
+        "id": "TH-MODE-TR-08",
+        "concept": "Lý thuyết Trò chơi & Ma trận Động lực (Game Theory & Incentives)",
+        "angle": "trap",
+        "angle_label": "⚠️ Bẫy tư duy đối nghịch",
+        "question": "Cạm bẫy 'Thưởng cho việc A nhưng kỳ vọng việc B' (Folly of Rewarding A While Hoping for B) thể hiện lỗi thiết kế nào?",
+        "options": [
+            "A. Doanh nghiệp thưởng cho nhân viên dựa trên khối lượng công việc ngắn hạn nhưng lại hy vọng họ cống hiến cho chất lượng và sự phát triển dài hạn.",
+            "B. Doanh nghiệp trả lương quá cao so với mặt bằng chung của thị trường lao động.",
+            "C. Doanh nghiệp không công khai bảng lương thưởng cho toàn thể nhân viên.",
+            "D. Doanh nghiệp thay đổi chỉ số đánh giá hiệu quả công việc (KPI) hàng tuần."
+        ],
+        "correct_index": 0,
+        "explanation": "Charlie Munger từng nói: 'Nếu bạn bảo tôi động lực ở đâu, tôi sẽ chỉ cho bạn kết quả ở đó'. Con người sẽ luôn tối ưu hóa chỉ số mà họ được trả tiền để làm.",
+        "trap_analysis": "Bẫy kỳ vọng viển vông: Dùng khẩu hiệu đạo đức để thay thế cho một cấu trúc cơ chế khen thưởng méo mó."
+    },
+    {
+        "id": "TH-MODE-TR-09",
+        "concept": "Đa quy mô Thời gian (Multi-Scale Time Horizons — Jeff Bezos)",
+        "angle": "trap",
+        "angle_label": "⚠️ Bẫy tư duy đối nghịch",
+        "question": "Hiện tượng 'Chiết khấu quá mức tương lai' (Hyperbolic Discounting) khiến con người đưa ra những quyết định tai hại nào?",
+        "options": [
+            "A. Đánh giá quá cao niềm vui hoặc sự thỏa mãn nhỏ trước mắt (Dopamine tức thì) và xem nhẹ cái giá khủng khiếp phải trả trong tương lai 5-10 năm tới.",
+            "B. Lên kế hoạch quá xa khiến bản thân rơi vào trạng thái lo âu và căng thẳng kéo dài.",
+            "C. Tiết kiệm quá nhiều tiền cho tuổi già mà không chịu chi tiêu cho hiện tại.",
+            "D. Đầu tư vào các dự án hạ tầng lớn có thời gian thu hồi vốn trên 20 năm."
+        ],
+        "correct_index": 0,
+        "explanation": "Bộ não tiến hóa của loài vượn người được lập trình để tìm kiếm thức ăn ngay lập tức. Giới tinh hoa chiến thắng nhờ khả năng trì hoãn sự thỏa mãn (Delayed Gratification).",
+        "trap_analysis": "Bẫy dopamine ngắn hạn: Đánh đổi sức khỏe, danh tiếng và sự giàu có dài hạn lấy vài giây thỏa mãn tức thời."
     }
 ]
+
 
 THEORY_MODELS_QUIZ = [
     {
@@ -300,79 +609,188 @@ THEORY_PRINCIPLES_QUIZ = [
 ]
 
 
-def get_theory_questions_for_modes() -> List[Dict[str, Any]]:
-    """Trả về bộ trắc nghiệm lý thuyết toàn diện cho 9 Chế độ Tư duy."""
+def get_theory_questions_for_modes(angle: str = "all") -> List[Dict[str, Any]]:
+    """
+    Trả về bộ trắc nghiệm lý thuyết toàn diện cho 9 Chế độ Tư duy (27 câu hỏi chuyên sâu):
+    - angle in ['all', 'concept', 'operation', 'trap']
+    - 3 góc độ: Bản chất & Định nghĩa (9 câu), Quy trình & Vận hành (9 câu), Bẫy tư duy đối nghịch (9 câu).
+    """
+    if angle == "concept":
+        return [q for q in THEORY_MODES_QUIZ if q.get("angle") == "concept"]
+    elif angle == "operation":
+        return [q for q in THEORY_MODES_QUIZ if q.get("angle") == "operation"]
+    elif angle == "trap":
+        return [q for q in THEORY_MODES_QUIZ if q.get("angle") == "trap"]
     return THEORY_MODES_QUIZ
 
 
-def get_theory_questions_for_models(pillar: Optional[str] = None, tier: Optional[int] = None) -> List[Dict[str, Any]]:
+def get_theory_questions_for_models(
+    pillar: Optional[str] = None,
+    tier: Optional[int] = None,
+    angle: str = "all",
+    seed: Optional[int] = None
+) -> List[Dict[str, Any]]:
     """
-    Sinh và tổng hợp danh sách câu hỏi trắc nghiệm lý thuyết cho 88 Mô hình Hạt nhân:
-    Bao gồm các câu hỏi curated chất lượng cao + câu hỏi lý thuyết sinh tự động deterministically từ dataset.
+    Sinh và tổng hợp danh sách câu hỏi trắc nghiệm lý thuyết đa chiều cho 88 Mô hình Hạt nhân:
+    - angle in ['all', 'first_principle', 'leverage', 'inversion', 'matrix']
+    - 4 góc độ khảo sát: Chân lý gốc, Đòn bẩy tối thượng, Bẫy đảo ngược, và Ma trận nhận diện tương hỗ.
+    - Đầy đủ 88 mô hình x 4 góc độ = tối đa 352 câu hỏi lý thuyết đa chiều!
     """
     all_models = get_all_models()
     filtered = filter_models(all_models, pillar=pillar, tier=tier)
     
     results = []
-    # Add matching curated theory questions first
-    for q in THEORY_MODELS_QUIZ:
-        if pillar and pillar != "Tất cả" and q.get("pillar") != pillar:
-            continue
-        if tier is not None and q.get("tier") != tier:
-            continue
-        results.append(q)
-        
-    covered_ids = {q.get("model_id") for q in results}
+    base_seed = seed or 42
     
     for m in filtered:
-        if m.get("id") in covered_ids:
-            continue
-            
         other_models = [om for om in all_models if om.get("id") != m.get("id")]
         if len(other_models) < 3:
             continue
             
-        # Deterministic shuffle using id hash seed
-        seed_val = sum(ord(c) for c in m.get("id", "0"))
-        rng = random.Random(seed_val)
-        distractors = rng.sample(other_models, 3)
+        m_id = m.get("id", "0")
+        seed_val = base_seed + sum(ord(c) for c in m_id)
         
-        raw_options = [
-            (m.get("first_principle"), True),
-            (distractors[0].get("first_principle"), False),
-            (distractors[1].get("first_principle"), False),
-            (distractors[2].get("first_principle"), False),
-        ]
-        rng.shuffle(raw_options)
-        
-        correct_idx = 0
-        final_options = []
-        letters = ["A", "B", "C", "D"]
-        for idx, (txt, is_corr) in enumerate(raw_options):
-            final_options.append(f"{letters[idx]}. {txt}")
-            if is_corr:
-                correct_idx = idx
-                
-        results.append({
-            "id": f"TH-M-{m.get('id')}",
-            "model_id": m.get("id"),
-            "model_name": f"{m.get('name_vi')} ({m.get('name_en')})",
-            "pillar": m.get("pillar"),
-            "tier": m.get("tier"),
-            "question": f"Về mặt lý thuyết bản chất, Chân lý gốc (First Principle) của mô hình '{m.get('name_vi')}' là gì?",
-            "options": final_options,
-            "correct_index": correct_idx,
-            "explanation": f"Chân lý gốc của {m.get('name_vi')}: {m.get('first_principle')}. Đòn bẩy Elite: {m.get('elite_leverage')}",
-            "trap_analysis": f"Bẫy đảo ngược (Inversion Trap) cần né tránh: {m.get('inversion_trap')}"
-        })
-        
+        # 1. GÓC ĐỘ 1: CHÂN LÝ GỐC (FIRST PRINCIPLE)
+        if angle in ("all", "first_principle"):
+            rng_fp = random.Random(seed_val + 101)
+            distractors = rng_fp.sample(other_models, 3)
+            raw_options = [
+                (m.get("first_principle"), True),
+                (distractors[0].get("first_principle"), False),
+                (distractors[1].get("first_principle"), False),
+                (distractors[2].get("first_principle"), False),
+            ]
+            rng_fp.shuffle(raw_options)
+            corr_idx = 0
+            opts = []
+            for idx, (txt, is_corr) in enumerate(raw_options):
+                opts.append(f"{['A','B','C','D'][idx]}. {txt}")
+                if is_corr:
+                    corr_idx = idx
+            results.append({
+                "id": f"TH-M-{m_id}-FP",
+                "model_id": m_id,
+                "model_name": f"{m.get('name_vi')} ({m.get('name_en')})",
+                "pillar": m.get("pillar"),
+                "tier": m.get("tier"),
+                "angle": "first_principle",
+                "angle_label": "🔬 Chân lý gốc (First Principle)",
+                "question": f"Về mặt lý thuyết bản chất, Chân lý gốc (First Principle) của mô hình '{m.get('name_vi')}' là gì?",
+                "options": opts,
+                "correct_index": corr_idx,
+                "explanation": f"Chân lý gốc của {m.get('name_vi')}: {m.get('first_principle')}. Câu hỏi kích hoạt: {m.get('trigger_question')}",
+                "trap_analysis": f"Bẫy đảo ngược (Inversion Trap) cần né tránh: {m.get('inversion_trap')}"
+            })
+            
+        # 2. GÓC ĐỘ 2: ĐÒN BẨY TỐI THƯỢNG (ELITE LEVERAGE)
+        if angle in ("all", "leverage"):
+            rng_lev = random.Random(seed_val + 202)
+            distractors = rng_lev.sample(other_models, 3)
+            raw_options = [
+                (m.get("elite_leverage"), True),
+                (distractors[0].get("elite_leverage"), False),
+                (distractors[1].get("elite_leverage"), False),
+                (distractors[2].get("elite_leverage"), False),
+            ]
+            rng_lev.shuffle(raw_options)
+            corr_idx = 0
+            opts = []
+            for idx, (txt, is_corr) in enumerate(raw_options):
+                opts.append(f"{['A','B','C','D'][idx]}. {txt}")
+                if is_corr:
+                    corr_idx = idx
+            results.append({
+                "id": f"TH-M-{m_id}-LEV",
+                "model_id": m_id,
+                "model_name": f"{m.get('name_vi')} ({m.get('name_en')})",
+                "pillar": m.get("pillar"),
+                "tier": m.get("tier"),
+                "angle": "leverage",
+                "angle_label": "⚡ Đòn bẩy tối thượng (Elite Leverage)",
+                "question": f"Đòn bẩy tối thượng (Elite Leverage) của mô hình '{m.get('name_vi')}' giúp tối đa hóa kết quả với ít nguồn lực nhất như thế nào?",
+                "options": opts,
+                "correct_index": corr_idx,
+                "explanation": f"Đòn bẩy tối thượng của {m.get('name_vi')}: {m.get('elite_leverage')}. Cộng hưởng Lollapalooza: {', '.join(m.get('lollapalooza_pairs', []))}",
+                "trap_analysis": f"Nếu lạm dụng đòn bẩy mà bỏ qua biên độ an toàn, bẫy nguy hiểm là: {m.get('inversion_trap')}"
+            })
+            
+        # 3. GÓC ĐỘ 3: BẪY ĐẢO NGƯỢC (INVERSION TRAP)
+        if angle in ("all", "inversion"):
+            rng_inv = random.Random(seed_val + 303)
+            distractors = rng_inv.sample(other_models, 3)
+            raw_options = [
+                (m.get("inversion_trap"), True),
+                (distractors[0].get("inversion_trap"), False),
+                (distractors[1].get("inversion_trap"), False),
+                (distractors[2].get("inversion_trap"), False),
+            ]
+            rng_inv.shuffle(raw_options)
+            corr_idx = 0
+            opts = []
+            for idx, (txt, is_corr) in enumerate(raw_options):
+                opts.append(f"{['A','B','C','D'][idx]}. {txt}")
+                if is_corr:
+                    corr_idx = idx
+            results.append({
+                "id": f"TH-M-{m_id}-INV",
+                "model_id": m_id,
+                "model_name": f"{m.get('name_vi')} ({m.get('name_en')})",
+                "pillar": m.get("pillar"),
+                "tier": m.get("tier"),
+                "angle": "inversion",
+                "angle_label": "⚠️ Bẫy đảo ngược (Inversion Trap)",
+                "question": f"Bẫy đảo ngược (Inversion Trap) và cạm bẫy tư duy nguy hiểm nhất liên quan đến mô hình '{m.get('name_vi')}' là gì?",
+                "options": opts,
+                "correct_index": corr_idx,
+                "explanation": f"Bẫy đảo ngược của {m.get('name_vi')}: {m.get('inversion_trap')}. Chân lý gốc phòng thủ: {m.get('first_principle')}",
+                "trap_analysis": f"Cách né tránh: Luôn đặt câu hỏi kích hoạt: \"{m.get('trigger_question')}\""
+            })
+            
+        # 4. GÓC ĐỘ 4: MA TRẬN PHÂN BIỆT TƯƠNG HỖ (DISCRIMINATIVE MATRIX)
+        if angle in ("all", "matrix"):
+            rng_mat = random.Random(seed_val + 404)
+            distractors = rng_mat.sample(other_models, 3)
+            raw_options = [
+                (f"{m.get('name_vi')} ({m.get('name_en')})", True),
+                (f"{distractors[0].get('name_vi')} ({distractors[0].get('name_en')})", False),
+                (f"{distractors[1].get('name_vi')} ({distractors[1].get('name_en')})", False),
+                (f"{distractors[2].get('name_vi')} ({distractors[2].get('name_en')})", False),
+            ]
+            rng_mat.shuffle(raw_options)
+            corr_idx = 0
+            opts = []
+            for idx, (txt, is_corr) in enumerate(raw_options):
+                opts.append(f"{['A','B','C','D'][idx]}. {txt}")
+                if is_corr:
+                    corr_idx = idx
+            results.append({
+                "id": f"TH-M-{m_id}-MAT",
+                "model_id": m_id,
+                "model_name": f"{m.get('name_vi')} ({m.get('name_en')})",
+                "pillar": m.get("pillar"),
+                "tier": m.get("tier"),
+                "angle": "matrix",
+                "angle_label": "🔀 Ma trận Phân biệt Tương hỗ (Discriminative Matrix)",
+                "question": f"Đoạn chân lý gốc: \"{m.get('first_principle')}\" thuộc về Mô hình Hạt nhân nào sau đây?",
+                "options": opts,
+                "correct_index": corr_idx,
+                "explanation": f"Chính xác! Đó là mô hình {m.get('name_vi')}. Đòn bẩy tối thượng: {m.get('elite_leverage')}",
+                "trap_analysis": f"Cần phân biệt với {distractors[0].get('name_vi')} và các mô hình cùng trụ cột {m.get('pillar')}."
+            })
+            
     return results
 
 
-def get_theory_questions_for_principles(domain: Optional[str] = None) -> List[Dict[str, Any]]:
+def get_theory_questions_for_principles(
+    domain: Optional[str] = None,
+    angle: str = "all",
+    seed: Optional[int] = None
+) -> List[Dict[str, Any]]:
     """
-    Sinh và tổng hợp danh sách câu hỏi trắc nghiệm lý thuyết cho 100 Nguyên lý Khởi thủy:
-    Bao gồm các câu hỏi curated chất lượng cao + câu hỏi lý thuyết sinh tự động deterministically từ dataset.
+    Sinh và tổng hợp danh sách câu hỏi trắc nghiệm lý thuyết đa chiều cho 100 Nguyên lý Khởi thủy:
+    - angle in ['all', 'definition', 'boundary', 'falsification', 'matrix']
+    - 4 góc độ khảo sát: Định nghĩa & Trực giác, Điều kiện biên, Phép thử bác bỏ (Karl Popper), và Ma trận phân biệt nguyên lý.
+    - Đầy đủ 100 nguyên lý x 4 góc độ = tối đa 350-400 câu hỏi lý thuyết khoa học!
     """
     kb = load_knowledge_base()
     all_p = kb.get("principles", [])
@@ -381,53 +799,140 @@ def get_theory_questions_for_principles(domain: Optional[str] = None) -> List[Di
         filtered_p = [p for p in all_p if p.get("domain") == domain]
         
     results = []
-    for q in THEORY_PRINCIPLES_QUIZ:
-        if domain and domain != "Tất cả" and q.get("domain") != domain:
-            continue
-        results.append(q)
-        
-    covered_names = {q.get("principle_name") for q in results}
+    base_seed = seed or 42
     
     for p in filtered_p:
         p_name = p.get("principle_name")
-        if p_name in covered_names:
-            continue
-            
         other_p = [op for op in all_p if op.get("principle_name") != p_name]
         if len(other_p) < 3:
             continue
             
-        seed_val = sum(ord(c) for c in p_name)
-        rng = random.Random(seed_val)
-        distractors = rng.sample(other_p, 3)
+        seed_val = base_seed + sum(ord(c) for c in p_name)
         
-        raw_options = [
-            (p.get("intuitive_summary") or p.get("description"), True),
-            (distractors[0].get("intuitive_summary") or distractors[0].get("description"), False),
-            (distractors[1].get("intuitive_summary") or distractors[1].get("description"), False),
-            (distractors[2].get("intuitive_summary") or distractors[2].get("description"), False),
-        ]
-        rng.shuffle(raw_options)
-        
-        correct_idx = 0
-        final_options = []
-        letters = ["A", "B", "C", "D"]
-        for idx, (txt, is_corr) in enumerate(raw_options):
-            final_options.append(f"{letters[idx]}. {txt}")
-            if is_corr:
-                correct_idx = idx
-                
-        results.append({
-            "id": f"TH-P-{seed_val}",
-            "principle_name": p_name,
-            "domain": p.get("domain", "Khoa học"),
-            "question": f"Về mặt bản chất lý thuyết, nguyên lý khoa học '{p_name}' khẳng định điều gì?",
-            "options": final_options,
-            "correct_index": correct_idx,
-            "explanation": f"Định nghĩa hình thức: {p.get('formal_definition')}. Tóm tắt trực giác: {p.get('intuitive_summary')}",
-            "trap_analysis": f"Điều kiện biên: {p.get('boundary_conditions', '—')} | Khả bác: {p.get('falsification_test', '—')}"
-        })
-        
+        # 1. GÓC ĐỘ 1: ĐỊNH NGHĨA HÌNH THỨC & TRỰC GIÁC
+        if angle in ("all", "definition"):
+            rng_def = random.Random(seed_val + 101)
+            distractors = rng_def.sample(other_p, 3)
+            raw_options = [
+                (p.get("intuitive_summary") or p.get("description"), True),
+                (distractors[0].get("intuitive_summary") or distractors[0].get("description"), False),
+                (distractors[1].get("intuitive_summary") or distractors[1].get("description"), False),
+                (distractors[2].get("intuitive_summary") or distractors[2].get("description"), False),
+            ]
+            rng_def.shuffle(raw_options)
+            corr_idx = 0
+            opts = []
+            for idx, (txt, is_corr) in enumerate(raw_options):
+                opts.append(f"{['A','B','C','D'][idx]}. {txt}")
+                if is_corr:
+                    corr_idx = idx
+            results.append({
+                "id": f"TH-P-{seed_val}-DEF",
+                "principle_name": p_name,
+                "domain": p.get("domain", "Khoa học"),
+                "angle": "definition",
+                "angle_label": "🔬 Định nghĩa hình thức & Trực giác",
+                "question": f"Về mặt bản chất khoa học, nguyên lý '{p_name}' ({p.get('domain')}) khẳng định điều gì?",
+                "options": opts,
+                "correct_index": corr_idx,
+                "explanation": f"Định nghĩa hình thức: {p.get('formal_definition')}. Tóm tắt trực giác: {p.get('intuitive_summary')}",
+                "trap_analysis": f"Điều kiện biên: {p.get('boundary_conditions', '—')} | Khả bác: {p.get('falsification_test', '—')}"
+            })
+
+        # 2. GÓC ĐỘ 2: ĐIỀU KIỆN BIÊN NGHIỆM ĐÚNG (BOUNDARY CONDITIONS)
+        if angle in ("all", "boundary") and p.get("boundary_conditions"):
+            valid_distractors = [op for op in other_p if op.get("boundary_conditions")]
+            if len(valid_distractors) >= 3:
+                rng_bd = random.Random(seed_val + 202)
+                distractors = rng_bd.sample(valid_distractors, 3)
+                raw_options = [
+                    (p.get("boundary_conditions"), True),
+                    (distractors[0].get("boundary_conditions"), False),
+                    (distractors[1].get("boundary_conditions"), False),
+                    (distractors[2].get("boundary_conditions"), False),
+                ]
+                rng_bd.shuffle(raw_options)
+                corr_idx = 0
+                opts = []
+                for idx, (txt, is_corr) in enumerate(raw_options):
+                    opts.append(f"{['A','B','C','D'][idx]}. {txt}")
+                    if is_corr:
+                        corr_idx = idx
+                results.append({
+                    "id": f"TH-P-{seed_val}-BD",
+                    "principle_name": p_name,
+                    "domain": p.get("domain", "Khoa học"),
+                    "angle": "boundary",
+                    "angle_label": "⚖️ Điều kiện biên nghiệm đúng (Boundary Conditions)",
+                    "question": f"Điều kiện biên (Boundary Condition) để nguyên lý khoa học '{p_name}' nghiệm đúng trong thực tế là gì?",
+                    "options": opts,
+                    "correct_index": corr_idx,
+                    "explanation": f"Điều kiện biên chuẩn xác: {p.get('boundary_conditions')}. Vượt ra ngoài ranh giới này, định luật sẽ sụp đổ.",
+                    "trap_analysis": f"Định nghĩa gốc: {p.get('formal_definition')}"
+                })
+
+        # 3. GÓC ĐỘ 3: PHÉP THỬ BÁC BỎ (FALSIFICATION TEST)
+        if angle in ("all", "falsification") and p.get("falsification_test"):
+            valid_distractors = [op for op in other_p if op.get("falsification_test")]
+            if len(valid_distractors) >= 3:
+                rng_fs = random.Random(seed_val + 303)
+                distractors = rng_fs.sample(valid_distractors, 3)
+                raw_options = [
+                    (p.get("falsification_test"), True),
+                    (distractors[0].get("falsification_test"), False),
+                    (distractors[1].get("falsification_test"), False),
+                    (distractors[2].get("falsification_test"), False),
+                ]
+                rng_fs.shuffle(raw_options)
+                corr_idx = 0
+                opts = []
+                for idx, (txt, is_corr) in enumerate(raw_options):
+                    opts.append(f"{['A','B','C','D'][idx]}. {txt}")
+                    if is_corr:
+                        corr_idx = idx
+                results.append({
+                    "id": f"TH-P-{seed_val}-FS",
+                    "principle_name": p_name,
+                    "domain": p.get("domain", "Khoa học"),
+                    "angle": "falsification",
+                    "angle_label": "💥 Phép thử bác bỏ (Karl Popper's Falsification Test)",
+                    "question": f"Theo tiêu chí khả bác của Karl Popper, bằng chứng hoặc hiện tượng nào chứng minh nguyên lý '{p_name}' bị vi phạm/sai lệch nếu xuất hiện?",
+                    "options": opts,
+                    "correct_index": corr_idx,
+                    "explanation": f"Tiêu chí bác bỏ (Falsification): {p.get('falsification_test')}. Đây là nền tảng phân biệt khoa học thực thụ với giả khoa học.",
+                    "trap_analysis": f"Điều kiện biên: {p.get('boundary_conditions', '—')}"
+                })
+
+        # 4. GÓC ĐỘ 4: MA TRẬN PHÂN BIỆT NGUYÊN LÝ (DISCRIMINATIVE MATRIX)
+        if angle in ("all", "matrix"):
+            rng_mat = random.Random(seed_val + 404)
+            distractors = rng_mat.sample(other_p, 3)
+            raw_options = [
+                (f"{p_name} ({p.get('domain')})", True),
+                (f"{distractors[0].get('principle_name')} ({distractors[0].get('domain')})", False),
+                (f"{distractors[1].get('principle_name')} ({distractors[1].get('domain')})", False),
+                (f"{distractors[2].get('principle_name')} ({distractors[2].get('domain')})", False),
+            ]
+            rng_mat.shuffle(raw_options)
+            corr_idx = 0
+            opts = []
+            for idx, (txt, is_corr) in enumerate(raw_options):
+                opts.append(f"{['A','B','C','D'][idx]}. {txt}")
+                if is_corr:
+                    corr_idx = idx
+            results.append({
+                "id": f"TH-P-{seed_val}-MAT",
+                "principle_name": p_name,
+                "domain": p.get("domain", "Khoa học"),
+                "angle": "matrix",
+                "angle_label": "🔀 Ma trận Phân biệt Nguyên lý (Discriminative Matrix)",
+                "question": f"Đoạn định nghĩa khoa học: \"{p.get('formal_definition')}\" thuộc về nguyên lý khởi thủy nào?",
+                "options": opts,
+                "correct_index": corr_idx,
+                "explanation": f"Chính xác! Đó là {p_name}. Tóm tắt trực giác: {p.get('intuitive_summary')}",
+                "trap_analysis": f"Cần phân biệt với {distractors[0].get('principle_name')} và các nguyên lý cùng phân ngành {p.get('domain')}."
+            })
+            
     return results
 
 
