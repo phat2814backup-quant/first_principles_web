@@ -1,0 +1,1419 @@
+{
+  "metadata": {
+    "title": "Munger Latticework: 88 Nuclear Mental Models",
+    "version": "1.0",
+    "total_models": 88,
+    "curated_for": "Elite Thinking & Accelerated Mastery",
+    "description": "88 canonical mental models across 6 pillars: Physics, Biology, Psychology, Economics, Math/Probability, Systems Thinking."
+  },
+  "models": [
+    {
+      "id": "PHYS-01",
+      "name_vi": "Đòn bẩy",
+      "name_en": "Leverage",
+      "pillar": "Vật lý học",
+      "tier": 1,
+      "first_principle": "Một lực nhỏ tác động qua cánh tay đòn đủ dài quanh một điểm tựa vững chắc có thể nâng bổng một vật nặng gấp bội (M = F × d).",
+      "elite_leverage": "Không đổi sức lấy kết quả tuyến tính. Giới tinh hoa tìm kiếm 4 loại đòn bẩy tối thượng (Naval Ravikant): Lao động, Vốn, Mã nguồn (Code) và Nội dung (Media) - hai loại sau có chi phí biên bằng 0.",
+      "trigger_question": "Điểm tựa của tôi ở đâu và làm sao để 1 giờ làm việc hôm nay tạo ra giá trị lặp lại 1.000 lần trong tương lai?",
+      "inversion_trap": "Bẫy đòn bẩy hai chiều: Đòn bẩy tài chính (Margin) phóng đại lợi nhuận thì cũng phóng đại thua lỗ đến mức cháy tài khoản nếu thiếu biên độ an toàn.",
+      "lollapalooza_pairs": [
+        "Biên độ an toàn",
+        "Lãi kép",
+        "Chi phí cơ hội"
+      ]
+    },
+    {
+      "id": "PHYS-02",
+      "name_vi": "Quán tính",
+      "name_en": "Inertia (Newton's 1st Law)",
+      "pillar": "Vật lý học",
+      "tier": 1,
+      "first_principle": "Một vật thể sẽ giữ nguyên trạng thái đứng yên hoặc chuyển động thẳng đều trừ khi có ngoại lực tác động vào nó.",
+      "elite_leverage": "Sử dụng sức mạnh của đà (Momentum). Chi phí năng lượng lớn nhất luôn nằm ở lúc khởi động từ 0 lên 1; khi hệ thống đã chuyển động, chỉ cần duy trì lực rất nhỏ để giữ tốc độ cao.",
+      "trigger_question": "Dự án/thói quen này đang bị ì ở trạng thái đứng yên, hay nó đã có đà tự chạy mà tôi chỉ cần đẩy nhẹ?",
+      "inversion_trap": "Quán tính tổ chức: Các công ty lớn thường chết vì không thể bẻ lái kịp trước sự thay đổi công nghệ do cỗ máy cồng kềnh có quán tính quá lớn.",
+      "lollapalooza_pairs": [
+        "Ma sát",
+        "Năng lượng hoạt hóa",
+        "Phá hủy sáng tạo"
+      ]
+    },
+    {
+      "id": "PHYS-03",
+      "name_vi": "Entropy & Định luật 2 Nhiệt động học",
+      "name_en": "Entropy & Second Law",
+      "pillar": "Vật lý học",
+      "tier": 1,
+      "first_principle": "Trong một hệ kín, mức độ hỗn loạn (entropy) luôn có xu hướng tự nhiên tăng dần theo thời gian nếu không được nạp thêm năng lượng từ bên ngoài.",
+      "elite_leverage": "Sự suy thoái, bừa bộn hay sa sút là mặc định tự nhiên. Giới tinh hoa thiết lập các quy trình tự động bơm năng lượng có chủ đích (kỷ luật, bảo trì, review định kỳ) để giữ hệ thống trật tự.",
+      "trigger_question": "Nếu tôi không chủ động bảo trì hay bơm năng lượng vào mảng này trong 3 tháng tới, nó sẽ tự suy thoái theo hướng nào?",
+      "inversion_trap": "Ảo tưởng ổn định vĩnh cửu: Tin rằng một mô hình kinh doanh hay mối quan hệ một khi đã tốt đẹp thì sẽ tự duy trì mãi mãi mà không cần chăm sóc.",
+      "lollapalooza_pairs": [
+        "Vòng phản hồi âm",
+        "Cân bằng nội môi",
+        "Chi phí chuyển hóa"
+      ]
+    },
+    {
+      "id": "PHYS-04",
+      "name_vi": "Khối lượng tới hạn",
+      "name_en": "Critical Mass",
+      "pillar": "Vật lý học",
+      "tier": 1,
+      "first_principle": "Lượng vật chất tối thiểu cần thiết để một phản ứng dây chuyền hạt nhân có thể tự duy trì và bùng nổ liên tục.",
+      "elite_leverage": "Tập trung toàn lực nguồn lực vào một điểm hẹp cho đến khi vượt ngưỡng tới hạn thay vì dàn trải tài nguyên. Một khi vượt ngưỡng, hệ thống sẽ tự nhân bản không cần trợ lực.",
+      "trigger_question": "Tôi đã tích lũy đủ mật độ nguồn lực để kích hoạt phản ứng dây chuyền tự vận hành chưa, hay đang dừng lại ngay trước ngưỡng?",
+      "inversion_trap": "Dàn trải tài nguyên: Đổ một chút công sức vào 10 dự án khác nhau khiến không có dự án nào đạt tới khối lượng tới hạn để cất cánh.",
+      "lollapalooza_pairs": [
+        "Hiệu ứng Mạng lưới",
+        "Điểm bùng phát",
+        "Lãi kép"
+      ]
+    },
+    {
+      "id": "PHYS-05",
+      "name_vi": "Vận tốc thoát",
+      "name_en": "Escape Velocity",
+      "pillar": "Vật lý học",
+      "tier": 2,
+      "first_principle": "Vận tốc tối thiểu mà một vật thể cần đạt để thoát khỏi lực hút trọng trường của một thiên thể mà không cần động cơ đẩy tiếp.",
+      "elite_leverage": "Khi muốn bứt phá khỏi một môi trường độc hại hoặc thói quen cũ, bạn cần nỗ lực cực đại trong thời gian ngắn để thoát khỏi lực kéo của quá khứ.",
+      "trigger_question": "Nỗ lực hiện tại của tôi có đủ mạnh để thoát khỏi trọng lực của môi trường cũ không, hay vẫn đang bị kéo rơi trở lại?",
+      "inversion_trap": "Nửa vời bế tắc: Tăng tốc đủ để bay lên một chút rồi hết nhiên liệu, rơi trở lại mặt đất và tiêu hao sạch năng lượng tích lũy.",
+      "lollapalooza_pairs": [
+        "Quán tính",
+        "Năng lượng hoạt hóa",
+        "Chi phí cơ hội"
+      ]
+    },
+    {
+      "id": "PHYS-06",
+      "name_vi": "Cộng hưởng",
+      "name_en": "Resonance",
+      "pillar": "Vật lý học",
+      "tier": 2,
+      "first_principle": "Khi tần số của ngoại lực trùng với tần số dao động tự nhiên của hệ thống, biên độ dao động sẽ tăng vọt tới mức cực đại.",
+      "elite_leverage": "Đừng cố ép thông điệp vào đám đông không tương thích. Tìm đúng tần số rung cảm của thị trường (Product-Market Fit) hoặc thế mạnh bẩm sinh để tạo hiệu ứng khuếch đại tự nhiên.",
+      "trigger_question": "Hành động này có đang rung cùng tần số với xu thế vĩ mô và giá trị tự nhiên của đối tác không?",
+      "inversion_trap": "Cộng hưởng phá hủy (Sập cầu Tacoma): Biên độ dao động quá lớn mà không có giảm chấn sẽ làm gãy vỡ toàn bộ cấu trúc tổ chức.",
+      "lollapalooza_pairs": [
+        "Hiệu ứng Lollapalooza",
+        "Đòn bẩy",
+        "Giảm chấn"
+      ]
+    },
+    {
+      "id": "PHYS-07",
+      "name_vi": "Bảo toàn Năng lượng & Động lượng",
+      "name_en": "Conservation of Energy & Momentum",
+      "pillar": "Vật lý học",
+      "tier": 2,
+      "first_principle": "Năng lượng không tự sinh ra cũng không tự mất đi, chỉ chuyển hóa từ dạng này sang dạng khác trong một hệ cô lập.",
+      "elite_leverage": "Không có bữa trưa miễn phí. Muốn có đầu ra (Output) xuất chúng thì năng lượng đầu vào (Input) phải được gom tụ chính xác, tránh các rò rỉ vi mô.",
+      "trigger_question": "Lợi ích này thực chất được chi trả bằng nguồn năng lượng hay sự đánh đổi nào ở một góc khuất tôi chưa nhìn thấy?",
+      "inversion_trap": "Niềm tin vào động cơ vĩnh cửu: Tin rằng có thể đạt thành công bền vững mà không cần đầu tư nỗ lực, thời gian hoặc tài nguyên tương xứng.",
+      "lollapalooza_pairs": [
+        "Chi phí cơ hội",
+        "Hiệu dụng biên giảm dần",
+        "Định luật bảo toàn hệ thống"
+      ]
+    },
+    {
+      "id": "PHYS-08",
+      "name_vi": "Ma sát",
+      "name_en": "Friction",
+      "pillar": "Vật lý học",
+      "tier": 2,
+      "first_principle": "Lực cản trở chuyển động tương đối giữa hai bề mặt tiếp xúc, làm tiêu hao động năng thành nhiệt năng vô ích.",
+      "elite_leverage": "Tối ưu hóa hành vi bằng cách giảm ma sát đối với thói quen tốt (để sách ngay đầu giường) và tăng tối đa ma sát đối với thói quen xấu (đặt mật khẩu phức tạp cho mạng xã hội).",
+      "trigger_question": "Đâu là lực cản ma sát vi mô đang âm thầm làm nản lòng khách hàng hoặc làm hao tổn năng lượng làm việc của tôi?",
+      "inversion_trap": "Triệt tiêu ma sát cần thiết: Ma sát giúp bánh xe bám đường; loại bỏ hoàn toàn ma sát kiểm soát rủi ro sẽ dẫn đến trượt dốc không phanh.",
+      "lollapalooza_pairs": [
+        "Nút cổ chai",
+        "Quán tính",
+        "Biên độ an toàn"
+      ]
+    },
+    {
+      "id": "PHYS-09",
+      "name_vi": "Lực hấp dẫn & Trọng tâm",
+      "name_en": "Gravity & Center of Mass",
+      "pillar": "Vật lý học",
+      "tier": 2,
+      "first_principle": "Vật thể có khối lượng càng lớn thì lực hút lên các vật thể xung quanh càng mạnh; hệ thống giữ cân bằng bền vững nhất khi trọng tâm đặt thấp.",
+      "elite_leverage": "Xây dựng các cụm tài sản hoặc uy tín lớn để trở thành hố đen hút cơ hội; giữ trọng tâm cái tôi thấp để không bị lật đổ khi sóng gió.",
+      "trigger_question": "Tài sản hạt nhân nào của tôi đang có lực hấp dẫn tự nhiên để hút các cơ hội tốt nhất về phía mình?",
+      "inversion_trap": "Bị hút vào quỹ đạo của người khác: Nếu khối lượng cá nhân quá nhỏ, bạn sẽ mãi chỉ là vệ tinh bay quanh quỹ đạo phục vụ mục tiêu kẻ khác.",
+      "lollapalooza_pairs": [
+        "Hiệu ứng Mạng lưới",
+        "Lợi thế quy mô",
+        "Tự phóng đại bản thân"
+      ]
+    },
+    {
+      "id": "PHYS-10",
+      "name_vi": "Thuyết Tương đối & Hệ quy chiếu",
+      "name_en": "Relativity & Frames of Reference",
+      "pillar": "Vật lý học",
+      "tier": 2,
+      "first_principle": "Trạng thái chuyển động và vận tốc của một vật thể chỉ có ý nghĩa khi so sánh với một hệ quy chiếu cụ thể được chọn làm mốc.",
+      "elite_leverage": "Thay đổi hoàn toàn bản chất một vấn đề bế tắc bằng cách đổi hệ quy chiếu (từ góc nhìn cá nhân sang góc nhìn đối tác, từ 1 ngày sang 10 năm).",
+      "trigger_question": "Nếu đổi hệ quy chiếu sang góc nhìn của đối thủ hoặc một người ngoài cuộc khách quan, sự việc này trông sẽ như thế nào?",
+      "inversion_trap": "Chủ nghĩa tương đối vô nguyên tắc: Lợi dụng hệ quy chiếu để bào chữa cho những hành vi phi đạo đức hoặc trốn tránh trách nhiệm.",
+      "lollapalooza_pairs": [
+        "First Principles",
+        "Đa quy mô thời gian",
+        "Thiên kiến nhận thức"
+      ]
+    },
+    {
+      "id": "PHYS-11",
+      "name_vi": "Nguyên lý Cực tiểu Tác dụng",
+      "name_en": "Principle of Least Action",
+      "pillar": "Vật lý học",
+      "tier": 3,
+      "first_principle": "Trong tự nhiên, một hệ vật lý luôn chuyển động theo quỹ đạo có độ tác dụng nhỏ nhất có thể.",
+      "elite_leverage": "Dòng nước luôn chọn con đường ít cản trở nhất. Thiết kế sản phẩm và chính sách sao cho hành vi đúng đắn nhất cũng chính là con đường tiện lợi và tốn ít công sức nhất của người dùng.",
+      "trigger_question": "Con đường tự nhiên nhất, ít sức cản nhất để dòng chảy sự việc tự động đi tới kết quả mong muốn là gì?",
+      "inversion_trap": "Lười biếng thiển cận: Nhầm lẫn giữa con đường tối ưu năng lượng với việc chọn lối tắt cẩu thả làm hỏng nền móng lâu dài.",
+      "lollapalooza_pairs": [
+        "Ma sát",
+        "Lý thuyết Động lực",
+        "Cân bằng Nash"
+      ]
+    },
+    {
+      "id": "PHYS-12",
+      "name_vi": "Bất định Heisenberg",
+      "name_en": "Heisenberg Uncertainty Principle",
+      "pillar": "Vật lý học",
+      "tier": 3,
+      "first_principle": "Không thể xác định chính xác đồng thời cả vị trí và động lượng của một hạt; việc đo lường can thiệp trực tiếp vào trạng thái của hạt.",
+      "elite_leverage": "Chấp nhận rằng trong các hệ phức tạp (thị trường tài chính, tâm lý con người), chính hành động quan sát, thăm dò hoặc ra chính sách sẽ làm thay đổi hành vi đối tượng.",
+      "trigger_question": "Hành động đo lường hay can thiệp này của tôi đang vô tình làm sai lệch hành vi thực tế của đối tượng như thế nào?",
+      "inversion_trap": "Cố đo lường cực đoan: Tốn cạn kiệt tài nguyên để đòi hỏi dữ liệu chính xác 100% trong một môi trường vốn dĩ bất định.",
+      "lollapalooza_pairs": [
+        "Định luật Goodhart",
+        "Phản xạ thị trường",
+        "Tư duy Xác suất"
+      ]
+    },
+    {
+      "id": "PHYS-13",
+      "name_vi": "Chuyển pha",
+      "name_en": "Phase Transitions",
+      "pillar": "Vật lý học",
+      "tier": 3,
+      "first_principle": "Sự biến đổi trạng thái đột ngột của vật chất (nước đá thành nước lỏng ở 0°C, sôi thành hơi ở 100°C) khi một thông số đạt tới ngưỡng tới hạn.",
+      "elite_leverage": "Kiên nhẫn đun nước từ 1°C đến 99°C dù bên ngoài chưa thấy chuyển biến gì; hiểu rằng sự đột phá bề mặt chỉ xuất hiện đột ngột sau một chuỗi tích lũy ngầm liên tục.",
+      "trigger_question": "Hệ thống này đang ở giai đoạn gia nhiệt tiệm tiến hay sắp chạm ngưỡng chuyển pha đột ngột sang trạng thái mới?",
+      "inversion_trap": "Bỏ cuộc ở 99 độ C: Dừng lại ngay trước ngưỡng chuyển biến vì nghĩ rằng những nỗ lực vừa qua không tạo ra kết quả nào.",
+      "lollapalooza_pairs": [
+        "Lãi kép",
+        "Điểm bùng phát",
+        "Khối lượng tới hạn"
+      ]
+    },
+    {
+      "id": "PHYS-14",
+      "name_vi": "Phản hồi Đàn hồi & Giới hạn Bền",
+      "name_en": "Elasticity & Yield Strength",
+      "pillar": "Vật lý học",
+      "tier": 3,
+      "first_principle": "Vật liệu chịu lực biến dạng đàn hồi có thể tự hồi phục hình dạng ban đầu (Hooke: F = kx); nhưng nếu vượt quá giới hạn chảy, nó sẽ biến dạng vĩnh viễn hoặc gãy đứt.",
+      "elite_leverage": "Thiết kế năng lực tinh thần và tài chính có tính đàn hồi cao; luôn giữ áp lực cuộc sống dưới ngưỡng giới hạn bền để không bị gãy vỡ tâm lý (Burnout).",
+      "trigger_question": "Tổ chức hoặc cơ thể tôi có đang bị kéo giãn vượt quá giới hạn đàn hồi để đến mức tổn thương vĩnh viễn không?",
+      "inversion_trap": "Kéo căng tối đa liên tục: Vắt kiệt nhân sự hay sức khỏe với kỳ vọng họ sẽ phục hồi tức thì như dây thun không bao giờ dão.",
+      "lollapalooza_pairs": [
+        "Biên độ an toàn",
+        "Tính chống mong manh",
+        "Cân bằng nội môi"
+      ]
+    },
+    {
+      "id": "PHYS-15",
+      "name_vi": "Hệ Tiêu tán & Cấu trúc Phân tán",
+      "name_en": "Dissipative Systems (Prigogine)",
+      "pillar": "Vật lý học",
+      "tier": 3,
+      "first_principle": "Hệ mở ở xa trạng thái cân bằng có khả năng duy trì trật tự và tự tổ chức cấu trúc mới bằng cách liên tục tiêu tán entropy ra môi trường ngoài.",
+      "elite_leverage": "Một tổ chức muốn tiến hóa lên cấp độ cao hơn phải liên tục mở cửa đón nhận thông tin mới, chấp nhận biến động và chủ động xả bỏ các quy trình già cỗi ra ngoài.",
+      "trigger_question": "Cơ cấu này đang đóng kín để thối rữa từ bên trong hay đang mở cửa trao đổi năng lượng với bên ngoài để tái tạo trật tự mới?",
+      "inversion_trap": "Đóng băng phòng thủ: Bế quan tỏa cảng trước thị trường để bảo vệ sự êm ấm ngắn hạn, khiến entropy nội bộ tăng vọt đến mức sụp đổ.",
+      "lollapalooza_pairs": [
+        "Entropy",
+        "Tính chống mong manh",
+        "Phá hủy sáng tạo"
+      ]
+    },
+    {
+      "id": "BIO-01",
+      "name_vi": "Tiến hóa & Chọn lọc Tự nhiên",
+      "name_en": "Natural Selection & Evolution",
+      "pillar": "Sinh học",
+      "tier": 1,
+      "first_principle": "Các cá thể mang biến dị thích nghi tốt hơn với áp lực môi trường sẽ có cơ hội sống sót và sinh sản cao hơn, truyền lại tính trạng đó cho thế hệ sau.",
+      "elite_leverage": "Không phải kẻ mạnh nhất sống sót, mà là kẻ thích nghi nhanh nhất. Tạo ra nhiều thử nghiệm vi mô giá rẻ và để thị trường thực hiện việc chọn lọc tự nhiên.",
+      "trigger_question": "Áp lực chọn lọc thực tế của môi trường này là gì, và tôi đang thích nghi với thực tế hay đang chống đối nó?",
+      "inversion_trap": "Bảo thủ tự mãn: Tin rằng công thức thành công trong quá khứ sẽ tiếp tục đúng khi môi trường cạnh tranh đã thay đổi hoàn toàn.",
+      "lollapalooza_pairs": [
+        "Thực nghiệm nhanh",
+        "Phá hủy sáng tạo",
+        "Cập nhật Bayes"
+      ]
+    },
+    {
+      "id": "BIO-02",
+      "name_vi": "Hốc sinh thái & Chuyên biệt hóa",
+      "name_en": "Ecological Niches & Specialization",
+      "pillar": "Sinh học",
+      "tier": 1,
+      "first_principle": "Hai loài cạnh tranh cùng một nguồn thức ăn hạn chế không thể cùng tồn tại vĩnh viễn (Nguyên lý Gause); loài yếu hơn phải tìm hoặc tạo ra một hốc sinh thái riêng.",
+      "elite_leverage": "Tránh đối đầu trực diện với những gã khổng lồ. Chiếm lĩnh một hốc nhỏ nhưng có giá trị cao, trở thành số 1 tuyệt đối trong hốc đó trước khi mở rộng.",
+      "trigger_question": "Hốc sinh thái độc quyền mà ở đó tôi không có đối thủ cạnh tranh trực tiếp là gì?",
+      "inversion_trap": "Ảo tưởng đại trà: Cố gắng làm hài lòng tất cả mọi người, biến mình thành kẻ mờ nhạt không có bất kỳ vũ khí đặc trưng nào.",
+      "lollapalooza_pairs": [
+        "Lợi thế so sánh",
+        "Con hào kinh tế",
+        "Chi phí cơ hội"
+      ]
+    },
+    {
+      "id": "BIO-03",
+      "name_vi": "Cân bằng nội môi",
+      "name_en": "Homeostasis",
+      "pillar": "Sinh học",
+      "tier": 1,
+      "first_principle": "Cơ chế tự điều chỉnh của một sinh vật sống để duy trì trạng thái ổn định sinh lý bên trong bất chấp biến động dữ dội của môi trường ngoài.",
+      "elite_leverage": "Xây dựng các cơ chế tự cân bằng tài chính và tâm lý (quy tắc tái cân bằng danh mục đầu tư khi giá biến động, tự động trích tiết kiệm khi có thu nhập).",
+      "trigger_question": "Hệ thống quản trị của tôi có cơ chế tự động cân bằng lại khi bị sốc không, hay cần sự can thiệp thủ công đầy căng thẳng?",
+      "inversion_trap": "Cứng nhắc quá mức: Cố giữ nguyên trạng thái cũ đến mức ngăn cản mọi sự thay đổi và học hỏi cần thiết cho quá trình phát triển.",
+      "lollapalooza_pairs": [
+        "Vòng phản hồi âm",
+        "Biên độ an toàn",
+        "Entropy"
+      ]
+    },
+    {
+      "id": "BIO-04",
+      "name_vi": "Hiệu ứng Nữ hoàng Đỏ",
+      "name_en": "The Red Queen Effect",
+      "pillar": "Sinh học",
+      "tier": 2,
+      "first_principle": "Trong Alice in Wonderland: 'Bạn phải chạy hết tốc lực chỉ để giữ nguyên vị trí cũ' - các loài phải liên tục tiến hóa chỉ để theo kịp các loài đồng tiến hóa xung quanh.",
+      "elite_leverage": "Đứng yên đồng nghĩa với đi lùi. Nâng cấp năng lực và ứng dụng công nghệ mới (như AI) không phải để vượt trội người khác, mà là điều kiện tiên quyết để không bị đào thải.",
+      "trigger_question": "Hôm nay tôi đã học hỏi và thích nghi đủ nhanh để ít nhất duy trì được vị thế cạnh tranh của mình trong thị trường chưa?",
+      "inversion_trap": "Chạy đua vũ trang kiệt sức: Bị cuốn vào cuộc đua tiêu hao vô nghĩa với đối thủ mà không hề xây dựng được bất kỳ con hào bền vững nào.",
+      "lollapalooza_pairs": [
+        "Tiến hóa",
+        "Cân bằng Nash",
+        "Hốc sinh thái"
+      ]
+    },
+    {
+      "id": "BIO-05",
+      "name_vi": "Đồng sinh & Cộng sinh",
+      "name_en": "Mutualism & Symbiosis",
+      "pillar": "Sinh học",
+      "tier": 2,
+      "first_principle": "Mối quan hệ tương tác mật thiết giữa hai sinh vật khác loài, trong đó cả hai bên đều hưởng lợi ích sinh tồn thiết yếu từ sự hiện diện của nhau.",
+      "elite_leverage": "Xây dựng các mối quan hệ cộng sinh cùng thắng (Win-Win) bền vững thay vì các giao dịch săn mồi ngắn hạn (Zero-sum). Trở thành đối tác không thể thiếu trong chuỗi giá trị của người khác.",
+      "trigger_question": "Mối quan hệ này có bản chất đôi bên cùng có lợi lâu dài, hay một bên đang vô thức bóc lột bên kia?",
+      "inversion_trap": "Nhầm lẫn ký sinh với cộng sinh: Nuôi dưỡng một mối quan hệ độc hại chỉ vì nghĩ rằng mình đang hợp tác giúp đỡ lẫn nhau.",
+      "lollapalooza_pairs": [
+        "Lý thuyết trò chơi",
+        "Thiên kiến động lực",
+        "Hiệu ứng Mạng lưới"
+      ]
+    },
+    {
+      "id": "BIO-06",
+      "name_vi": "Sức chứa Môi trường",
+      "name_en": "Carrying Capacity (K)",
+      "pillar": "Sinh học",
+      "tier": 2,
+      "first_principle": "Quy mô quần thể tối đa của một loài mà môi trường nhất định có thể nuôi dưỡng bền vững với nguồn thức ăn, nước uống và không gian hiện có.",
+      "elite_leverage": "Nhận diện trần thị trường (TAM) trước khi đầu tư vốn lớn; không kỳ vọng một cây con có thể lớn mãi vượt quá sức chứa của cái chậu.",
+      "trigger_question": "Quy mô của dự án/thị trường này có đang tiệm cận trần sức chứa tự nhiên của nó chưa?",
+      "inversion_trap": "Ngoại suy tăng trưởng vô hạn: Dự phóng doanh thu tăng trưởng hình học mãi mãi trong một thị trường có sức chứa vật lý hữu hạn.",
+      "lollapalooza_pairs": [
+        "Hiệu dụng biên giảm dần",
+        "Bi kịch của chung",
+        "Nút cổ chai"
+      ]
+    },
+    {
+      "id": "BIO-07",
+      "name_vi": "Bắt chước Sinh học",
+      "name_en": "Biomimicry & Adaptation",
+      "pillar": "Sinh học",
+      "tier": 2,
+      "first_principle": "Thiên nhiên đã trải qua 3.8 tỷ năm R&D thực nghiệm để tối ưu hóa các cấu trúc, vật liệu và giải pháp sinh tồn với hiệu suất năng lượng cao nhất.",
+      "elite_leverage": "Khi gặp bài toán nan giải, tìm xem tự nhiên đã giải quyết bài toán tương tự như thế nào (ví dụ: mũi tàu Shinkansen học từ mỏ chim bói cá).",
+      "trigger_question": "Có quy luật sinh học nào trong tự nhiên đã giải quyết bài toán phân bổ hay kết nối tương tự như thế này chưa?",
+      "inversion_trap": "Bắt chước hình thức: Sao chép hình dáng bên ngoài mà không hiểu bản chất cơ học hay áp lực chọn lọc sinh học đằng sau.",
+      "lollapalooza_pairs": [
+        "First Principles",
+        "Thực nghiệm nhanh",
+        "Đòn bẩy"
+      ]
+    },
+    {
+      "id": "BIO-08",
+      "name_vi": "Đột biến & Đa dạng Di truyền",
+      "name_en": "Mutation & Genetic Diversity",
+      "pillar": "Sinh học",
+      "tier": 2,
+      "first_principle": "Đa số đột biến là có hại, nhưng những đột biến hiếm hoi có lợi lại là cội nguồn duy nhất của sự đổi mới thích nghi khi môi trường đảo lộn.",
+      "elite_leverage": "Dành 10-15% nguồn lực cho các thể nghiệm khác biệt với số đông (Chiến lược quả tạ Barbell). Sự đa dạng góc nhìn trong đội ngũ bảo vệ tổ chức khỏi thảm họa chung.",
+      "trigger_question": "Hệ thống của tôi có chấp nhận một tỷ lệ lỗi/đột biến thử nghiệm nhỏ để tìm ra những đột phá tiến hóa lớn không?",
+      "inversion_trap": "Đồng nhất hóa tư duy: Sa thải những người có ý kiến trái chiều, tạo nên một tập thể đồng nhất cực kỳ mỏng manh trước các cú sốc mới.",
+      "lollapalooza_pairs": [
+        "Tính chống mong manh",
+        "Tùy chọn",
+        "Phân phối đuôi dày"
+      ]
+    },
+    {
+      "id": "BIO-09",
+      "name_vi": "Ký sinh trùng & Lợi dụng vật chủ",
+      "name_en": "Parasitism & Host Manipulation",
+      "pillar": "Sinh học",
+      "tier": 3,
+      "first_principle": "Sinh vật ký sinh sống dựa vào vật chủ, hút dưỡng chất và thao túng hành vi vật chủ để phục vụ cho sự sinh sản của kẻ ký sinh.",
+      "elite_leverage": "Nhận diện những cá nhân, đối tác hoặc thói quen đang âm thầm bòn rút tài nguyên của bạn mà không tạo ra bất kỳ giá trị thặng dư nào; kiên quyết cắt bỏ khối ký sinh.",
+      "trigger_question": "Ai hay quy trình nào trong hệ thống đang hút năng lượng của tôi mà không trả lại giá trị tương xứng?",
+      "inversion_trap": "Dung túng ký sinh: Nuôi dưỡng những kẻ ăn bám vì e ngại xung đột, khiến vật chủ kiệt quệ và chết dần từ bên trong.",
+      "lollapalooza_pairs": [
+        "Vấn đề người đại diện",
+        "Rủi ro đạo đức",
+        "Inversion"
+      ]
+    },
+    {
+      "id": "BIO-10",
+      "name_vi": "Báo hiệu Đắt giá",
+      "name_en": "Costly Signaling Theory (Zahavi)",
+      "pillar": "Sinh học",
+      "tier": 3,
+      "first_principle": "Một tín hiệu chỉ đáng tin cậy khi nó quá đắt đỏ và tốn kém đến mức kẻ giả mạo không thể nào trả giá nổi (như cái đuôi nặng nề của con công đực).",
+      "elite_leverage": "Đừng tin vào lời nói suông. Đo lường cam kết của người khác bằng những gì họ sẵn sàng đánh cược (Skin in the game - tiền cọc, thời gian, uy tín đánh đổi).",
+      "trigger_question": "Tín hiệu này có thực sự đắt giá và không thể làm giả, hay chỉ là lời hứa suông chi phí bằng 0?",
+      "inversion_trap": "Bị lừa bởi tín hiệu rẻ tiền: Ra quyết định hợp tác dựa trên những màn trình diễn hào nhoáng mà đối phương có thể thuê hoặc dựng lên trong 1 ngày.",
+      "lollapalooza_pairs": [
+        "Bất cân xứng thông tin",
+        "Skin in the game",
+        "Thiên kiến xác nhận"
+      ]
+    },
+    {
+      "id": "BIO-11",
+      "name_vi": "Chi phí Chuyển hóa & Đánh đổi Năng lượng",
+      "name_en": "Metabolic Cost & Trade-offs",
+      "pillar": "Sinh học",
+      "tier": 3,
+      "first_principle": "Lượng calo một sinh vật hấp thụ mỗi ngày là hữu hạn; năng lượng dành cho việc phát triển cơ bắp sẽ không thể dành cho hệ miễn dịch hay sinh sản.",
+      "elite_leverage": "Năng lượng ý chí và sự tập trung của não bộ là tài nguyên sinh học cực kỳ khan hiếm. Tiết kiệm năng lượng cho 2-3 quyết định sinh tử thay vì lãng phí vào chuyện lặt vặt.",
+      "trigger_question": "Tôi có đang tiêu hao calo trí tuệ vào những cuộc tranh cãi vô bổ thay vì các mục tiêu chiến lược cốt tử?",
+      "inversion_trap": "Tham lam ôm đồm: Đòi hỏi cơ thể và tâm trí vừa làm việc 16 tiếng, vừa tập gym nặng, vừa ngoại giao hoàn hảo mà không sập nguồn.",
+      "lollapalooza_pairs": [
+        "Chi phí cơ hội",
+        "Entropy",
+        "Nút cổ chai"
+      ]
+    },
+    {
+      "id": "BIO-12",
+      "name_vi": "Thắt cổ chai Di truyền & Tuyệt chủng",
+      "name_en": "Genetic Bottlenecks & Extinction",
+      "pillar": "Sinh học",
+      "tier": 3,
+      "first_principle": "Khi một quần thể bị suy giảm số lượng đột ngột do thảm họa, vốn gen bị thu hẹp khiến các thế hệ sau dễ bị dị tật và tuyệt diệt khi có dịch bệnh mới.",
+      "elite_leverage": "Bảo tồn sự đa dạng trong nguồn doanh thu và danh mục đầu tư; tránh để công ty phụ thuộc sống chết vào một khách hàng hoặc một nhà cung cấp duy nhất.",
+      "trigger_question": "Nếu kênh dẫn dòng tiền hiện tại bị chặn đứng, nguồn lực dự phòng của tôi có vượt qua được nút thắt sinh tử này không?",
+      "inversion_trap": "Đơn nguồn cực đoan: Tối ưu chi phí ngắn hạn bằng cách dùng duy nhất 1 nhà cung cấp giá rẻ nhất, để rồi phá sản khi đối tác gặp sự cố.",
+      "lollapalooza_pairs": [
+        "Biên độ an toàn",
+        "Tính chống mong manh",
+        "Nút cổ chai"
+      ]
+    },
+    {
+      "id": "BIO-13",
+      "name_vi": "Chọn lọc Giới tính & Trò chơi Vị thế",
+      "name_en": "Sexual Selection & Status Games",
+      "pillar": "Sinh học",
+      "tier": 3,
+      "first_principle": "Nhiều đặc điểm sinh học tiến hóa không phải để sinh tồn vật lý, mà để hấp dẫn bạn tình và khẳng định vị thế thống trị trong bầy đàn.",
+      "elite_leverage": "Nhìn thấu động cơ ngầm: Phần lớn hàng xa xỉ, chức tước là trò chơi vị thế (Status Games). Giới tinh hoa chọn chơi trò chơi của cải (Wealth Games) tự do thay vì trò chơi vị thế hao tổn.",
+      "trigger_question": "Hành động này thực sự tạo ra giá trị thặng dư hay chỉ là phản xạ tự nhiên của việc khoe mẽ vị thế trong bầy?",
+      "inversion_trap": "Nghiện trò chơi vị thế: Vay nợ mua sắm để gây ấn tượng với những người mình không thích, tự đưa mình vào cảnh nô lệ tài chính.",
+      "lollapalooza_pairs": [
+        "Báo hiệu đắt giá",
+        "Bằng chứng xã hội",
+        "Lý thuyết trò chơi"
+      ]
+    },
+    {
+      "id": "BIO-14",
+      "name_vi": "Tự Nhân bản & Gen Vị kỷ",
+      "name_en": "Self-Replication & The Selfish Gene",
+      "pillar": "Sinh học",
+      "tier": 3,
+      "first_principle": "Sinh vật chỉ là những cỗ máy tạm thời được xây dựng bởi các đơn vị thông tin di truyền nhằm mục đích tối thượng là nhân bản chính các gen đó sang thế hệ sau.",
+      "elite_leverage": "Tập trung xây dựng các thực thể thông tin có khả năng tự nhân bản và tự lan truyền (Ý tưởng, Sách, Mã nguồn phần mềm, Quy trình) vượt ra ngoài giới hạn thể xác.",
+      "trigger_question": "Mô hình này có khả năng tự sao chép và lan tỏa độc lập mà không cần sự hiện diện trực tiếp của tôi không?",
+      "inversion_trap": "Đồng nhất mình với cỗ máy: Quên mất việc bảo dưỡng phương tiện thể xác trong khi phục vụ cho sự lan truyền của các ý tưởng trừu tượng.",
+      "lollapalooza_pairs": [
+        "Đòn bẩy",
+        "Hiệu ứng Mạng lưới",
+        "Lãi kép"
+      ]
+    },
+    {
+      "id": "PSY-01",
+      "name_vi": "Thiên kiến Xác nhận",
+      "name_en": "Confirmation Bias",
+      "pillar": "Tâm lý học",
+      "tier": 1,
+      "first_principle": "Bộ não tự động tìm kiếm, ghi nhớ và đánh giá cao thông tin củng cố niềm tin có sẵn, đồng thời chủ động phớt lờ các bằng chứng trái ngược.",
+      "elite_leverage": "Quy tắc Darwin: Bắt buộc ghi chép lại mọi bằng chứng mâu thuẫn với niềm tin của mình trong vòng 30 phút, nếu không não bộ sẽ tự xóa sạch nó.",
+      "trigger_question": "Bằng chứng nào có thể chứng minh luận điểm yêu thích nhất hiện tại của tôi là hoàn toàn sai?",
+      "inversion_trap": "Buồng vang thông tin: Chỉ đọc các bài báo và kết bạn với những người đồng thuận với mình, dẫn đến các phán đoán đầu tư thảm họa.",
+      "lollapalooza_pairs": [
+        "Cập nhật Bayes",
+        "Inversion",
+        "Hiệu ứng Lollapalooza"
+      ]
+    },
+    {
+      "id": "PSY-02",
+      "name_vi": "Ác cảm Mất mát & Hiệu ứng Sở hữu",
+      "name_en": "Loss Aversion & Endowment Effect",
+      "pillar": "Tâm lý học",
+      "tier": 1,
+      "first_principle": "Nỗi đau khi mất 100 đô mạnh gấp 2 đến 2.5 lần niềm vui khi kiếm được 100 đô; con người định giá tài sản của mình cao hơn thực tế chỉ vì họ sở hữu nó.",
+      "elite_leverage": "Bài kiểm tra tờ giấy trắng: 'Nếu hôm nay tôi chưa sở hữu tài sản này, tôi có sẵn sàng bỏ tiền túi ra mua lại nó với giá hiện tại không?'",
+      "trigger_question": "Tôi đang nắm giữ quyết định này vì tiềm năng thực sự hay vì nỗi sợ phải đối mặt với một khoản lỗ đã xảy ra?",
+      "inversion_trap": "Gồng lỗ bán non: Cắt phăng lệnh lãi nhỏ để chốt niềm vui và gồng các lệnh lỗ sâu đến khi cháy tài khoản vì không chịu chấp nhận mất mát.",
+      "lollapalooza_pairs": [
+        "Bẫy chi phí chìm",
+        "Tư duy Xác suất",
+        "Chi phí cơ hội"
+      ]
+    },
+    {
+      "id": "PSY-03",
+      "name_vi": "Bằng chứng Xã hội & Tâm lý Bầy đàn",
+      "name_en": "Social Proof & Herding Tendency",
+      "pillar": "Tâm lý học",
+      "tier": 1,
+      "first_principle": "Khi đối mặt sự không chắc chắn, con người có xu hướng nhìn vào hành vi của số đông và mặc định rằng đám đông đang làm điều đúng đắn.",
+      "elite_leverage": "Dùng bằng chứng xã hội làm đòn bẩy marketing; nhưng trong đầu tư và chiến lược, kiên quyết đi ngược đám đông khi đám đông đang hưng phấn cực độ.",
+      "trigger_question": "Tôi đang làm việc này vì phân tích độc lập từ số liệu hay chỉ vì thấy mọi người xung quanh ai cũng đang làm?",
+      "inversion_trap": "Đu đỉnh FOMO: Mua vào tài sản ở mức định giá điên rồ chỉ vì thấy bạn bè ai cũng khoe lãi.",
+      "lollapalooza_pairs": [
+        "Hiệu ứng Lollapalooza",
+        "First Principles",
+        "Khối lượng tới hạn"
+      ]
+    },
+    {
+      "id": "PSY-04",
+      "name_vi": "Thiên kiến Động lực & Lợi ích",
+      "name_en": "Incentive-Caused Bias (Munger)",
+      "pillar": "Tâm lý học",
+      "tier": 1,
+      "first_principle": "'Hãy cho tôi thấy động lực của một người, tôi sẽ cho bạn thấy hành vi tương lai của họ'. Lợi ích cá nhân bóp méo nhận thức đạo đức một cách vô thức.",
+      "elite_leverage": "Không bao giờ hỏi thợ cắt tóc xem bạn có cần cắt tóc không. Luôn phân tích ma trận lợi ích của đối phương trước khi nghe lời khuyên chuyên môn của họ.",
+      "trigger_question": "Người đưa ra lời khuyên này kiếm được tiền hay hưởng lợi gì nếu tôi làm theo đề xuất của họ?",
+      "inversion_trap": "Tin vào lòng tốt vô tư trong thương trường: Thiết kế thưởng phạt sai lầm khiến nhân viên có động lực gian lận để đạt chỉ tiêu ngắn hạn.",
+      "lollapalooza_pairs": [
+        "Lý thuyết trò chơi",
+        "Rủi ro đạo đức",
+        "Vấn đề người đại diện"
+      ]
+    },
+    {
+      "id": "PSY-05",
+      "name_vi": "Hiệu ứng Lollapalooza",
+      "name_en": "Lollapalooza Tendency (Munger)",
+      "pillar": "Tâm lý học",
+      "tier": 1,
+      "first_principle": "Khi nhiều thiên kiến nhận thức và yếu tố tâm lý cùng hội tụ, chúng nhân sức mạnh lên gấp bội, dẫn đến những hành vi cực đoan phi lý trí.",
+      "elite_leverage": "Tạo ra sự cộng hưởng đa mô hình để xây dựng văn hóa doanh nghiệp bùng nổ; đồng thời nhận diện sớm cơn say Lollapalooza để rút khỏi bong bóng tài sản.",
+      "trigger_question": "Có những động lực và thiên kiến tâm lý nào đang cùng nhau kéo đám đông vào một cơn say phi lý trí?",
+      "inversion_trap": "Nạn nhân ma trận tâm lý: Bị thôi miên bởi sự kết hợp của Bằng chứng xã hội + Khan hiếm + Thẩm quyền + Cam kết nhất quán.",
+      "lollapalooza_pairs": [
+        "Cộng hưởng",
+        "Khối lượng tới hạn",
+        "Bằng chứng xã hội"
+      ]
+    },
+    {
+      "id": "PSY-06",
+      "name_vi": "Bẫy Cam kết & Nhất quán",
+      "name_en": "Commitment & Consistency Bias",
+      "pillar": "Tâm lý học",
+      "tier": 2,
+      "first_principle": "Khi đã công khai tuyên bố quan điểm hoặc cam kết nhỏ, con người chịu áp lực tâm lý dữ dội phải hành động nhất quán với tuyên bố đó để giữ thể diện.",
+      "elite_leverage": "Đạt mục tiêu lớn bằng các cam kết vi mô tăng dần; tự do giải phóng bản thân bằng việc công khai: 'Dữ liệu mới đã cho thấy quan điểm cũ của tôi là sai'.",
+      "trigger_question": "Tôi đang tiếp tục bảo vệ việc này vì sự thật hay chỉ để chứng minh mình không sai trước mặt người khác?",
+      "inversion_trap": "Chết chìm cùng con tàu: Tiếp tục đổ tiền vào dự án thất bại chỉ vì đã lỡ tuyên bố đây là dự án thế kỷ.",
+      "lollapalooza_pairs": [
+        "Bẫy chi phí chìm",
+        "Tự phóng đại bản thân",
+        "Cập nhật Bayes"
+      ]
+    },
+    {
+      "id": "PSY-07",
+      "name_vi": "Hiệu ứng Mỏ neo",
+      "name_en": "Anchoring Heuristic",
+      "pillar": "Tâm lý học",
+      "tier": 2,
+      "first_principle": "Con số đầu tiên xuất hiện trong tâm trí đóng vai trò như một chiếc mỏ neo hút chặt mọi phán đoán và sự điều chỉnh sau đó quanh con số đó.",
+      "elite_leverage": "Trong đàm phán, chủ động thả mỏ neo hợp lý đầu tiên để định khung; khi định giá, xóa bỏ giá mua quá khứ để định giá độc lập theo dòng tiền tương lai.",
+      "trigger_question": "Con số tham chiếu đầu tiên này có cơ sở thực tế nào không, hay chỉ là cái bẫy mỏ neo do đối phương giăng ra?",
+      "inversion_trap": "Bắt đáy hớ: Cổ phiếu giảm từ 100k xuống 50k, nhà đầu tư thấy 'rẻ một nửa' và mua vào, mà không nhận ra giá trị thật chỉ là 10k.",
+      "lollapalooza_pairs": [
+        "Ác cảm mất mát",
+        "Thiên kiến sẵn có",
+        "Chi phí cơ hội"
+      ]
+    },
+    {
+      "id": "PSY-08",
+      "name_vi": "Thiên kiến Sẵn có",
+      "name_en": "Availability Heuristic",
+      "pillar": "Tâm lý học",
+      "tier": 2,
+      "first_principle": "Đánh giá xác suất xảy ra của một sự kiện dựa trên mức độ dễ dàng mà ví dụ về sự kiện đó được gợi nhớ lại trong tâm trí.",
+      "elite_leverage": "Những gì giật gân trên bản tin luôn bị thổi phồng quá mức; sử dụng số liệu thống kê thực tế (Base rate) thay vì tin vào cảm giác của trí nhớ.",
+      "trigger_question": "Tôi đang lo sợ rủi ro này vì nó thực sự có xác suất cao, hay chỉ vì nó vừa xuất hiện ồn ào trên báo sáng nay?",
+      "inversion_trap": "Bỏ tiền mua bảo hiểm tai nạn máy bay sau khi xem tin tức máy bay rơi, trong khi bỏ quên việc thắt dây an toàn khi đi xe máy mỗi ngày.",
+      "lollapalooza_pairs": [
+        "Tư duy Xác suất",
+        "Bằng chứng xã hội",
+        "Hiệu ứng hào quang"
+      ]
+    },
+    {
+      "id": "PSY-09",
+      "name_vi": "Hiệu ứng Người có Thẩm quyền",
+      "name_en": "Authority Bias",
+      "pillar": "Tâm lý học",
+      "tier": 2,
+      "first_principle": "Xu hướng tuân lệnh hoặc tin tưởng mù quáng vào phán đoán của các nhân vật mang biểu tượng quyền uy (giáo sư, bác sĩ, CEO, chuyên gia).",
+      "elite_leverage": "Tôn trọng kinh nghiệm nhưng luôn kiểm chứng bằng First Principles và thực nghiệm; không xem điều gì là đúng chỉ vì một người nổi tiếng nói ra.",
+      "trigger_question": "Nếu gạt bỏ học hàm và danh tiếng của người nói, bản thân lập luận logic này có đứng vững được không?",
+      "inversion_trap": "Làm theo chỉ dẫn sai lầm của 'chuyên gia' mà không chịu dùng tư duy phản biện độc lập.",
+      "lollapalooza_pairs": [
+        "First Principles",
+        "Bằng chứng xã hội",
+        "Thiên kiến động lực"
+      ]
+    },
+    {
+      "id": "PSY-10",
+      "name_vi": "Phản ứng Chống đối Tâm lý",
+      "name_en": "Psychological Reactance",
+      "pillar": "Tâm lý học",
+      "tier": 2,
+      "first_principle": "Khi cảm thấy quyền tự do lựa chọn bị đe dọa hoặc tước đoạt, con người sẽ sinh ra phản ứng thôi thúc làm điều ngược lại để khẳng định tự chủ.",
+      "elite_leverage": "Lãnh đạo và nuôi dạy con bằng cách trao quyền lựa chọn và thiết kế bối cảnh (Nudge) thay vì ra lệnh cấm đoán thô bạo.",
+      "trigger_question": "Tôi đang muốn làm việc này vì nó thực sự có lợi hay chỉ vì ai đó vừa cấm tôi làm nó?",
+      "inversion_trap": "Bẫy cấm đoán: Càng bị cấm cản thì người ta càng tò mò và thèm muốn làm điều đó bằng mọi giá.",
+      "lollapalooza_pairs": [
+        "Lý thuyết Động lực",
+        "Lý thuyết trò chơi",
+        "Cân bằng nội môi"
+      ]
+    },
+    {
+      "id": "PSY-11",
+      "name_vi": "Hiệu ứng Hào quang",
+      "name_en": "Halo Effect",
+      "pillar": "Tâm lý học",
+      "tier": 2,
+      "first_principle": "Ấn tượng tích cực về một đặc điểm nổi bật duy nhất (ngoại hình, tài hùng biện) khiến người ta tự động gán cho đối tượng hàng loạt phẩm chất tốt đẹp khác.",
+      "elite_leverage": "Bóc tách từng tiêu chí đánh giá độc lập khi tuyển dụng hoặc thẩm định dự án; dùng các bài kiểm tra ẩn danh để tránh bị hào quang đánh lừa.",
+      "trigger_question": "Tôi có đang suy diễn rằng người này thông minh trong kinh doanh chỉ vì họ ăn mặc lịch thiệp và thuyết trình lôi cuốn?",
+      "inversion_trap": "Rót tiền cho những kẻ lừa đảo có tài hùng biện như Elizabeth Holmes (Theranos) vì ánh hào quang bề ngoài.",
+      "lollapalooza_pairs": [
+        "Thiên kiến xác nhận",
+        "Hiệu ứng người có thẩm quyền",
+        "First Principles"
+      ]
+    },
+    {
+      "id": "PSY-12",
+      "name_vi": "Tự Phóng đại Bản thân & Tự ái",
+      "name_en": "Excessive Self-Regard Tendency",
+      "pillar": "Tâm lý học",
+      "tier": 2,
+      "first_principle": "Xu hướng tự nhiên đánh giá quá cao năng lực và phẩm chất của bản thân so với thực tế khách quan.",
+      "elite_leverage": "Duy trì sự khiêm nhường trí tuệ tột độ; định kỳ mời những người phản biện sắc sảo chỉ ra những góc mù và sai sót trong suy nghĩ của mình.",
+      "trigger_question": "Tôi thực sự có năng lực vượt trội ở đây hay chỉ đang ngộ nhận do cái tôi tự phóng đại?",
+      "inversion_trap": "Bước ra khỏi vòng tròn năng lực thực sự để đầu tư vào các lĩnh vực phức tạp vì tự tin thái quá.",
+      "lollapalooza_pairs": [
+        "Hiệu ứng Dunning-Kruger",
+        "Biên độ an toàn",
+        "Vòng tròn năng lực"
+      ]
+    },
+    {
+      "id": "PSY-13",
+      "name_vi": "Phản ứng Tương phản & Vòng xoáy Thích ứng",
+      "name_en": "Contrast-Caused Misreaction",
+      "pillar": "Tâm lý học",
+      "tier": 2,
+      "first_principle": "Hệ thần kinh không đo lường các đại lượng tuyệt đối mà nhận thức thông qua sự chênh lệch tương phản so với trạng thái liền trước.",
+      "elite_leverage": "Cảnh giác với những sự suy thoái diễn ra từ từ từng bước nhỏ (Hiệu ứng ếch luộc); thiết lập các chỉ số cảnh báo tuyệt đối thay vì chỉ so với tháng trước.",
+      "trigger_question": "Tôi có đang chấp nhận một sai sót nguy hiểm chỉ vì nó chỉ tệ hơn trạng thái hôm qua một chút không?",
+      "inversion_trap": "Bắt đầu từ việc gian dối một việc nhỏ, do mức độ tương phản thấp nên dần dần trượt dài thành sai phạm nghiêm trọng.",
+      "lollapalooza_pairs": [
+        "Hiệu ứng mỏ neo",
+        "Entropy",
+        "Độ trễ hệ thống"
+      ]
+    },
+    {
+      "id": "PSY-14",
+      "name_vi": "Bẫy Chi phí Chìm",
+      "name_en": "Sunk Cost Fallacy",
+      "pillar": "Tâm lý học",
+      "tier": 2,
+      "first_principle": "Tiếp tục đổ thêm thời gian, tiền bạc vào một việc không còn triển vọng chỉ vì tiếc nuối tài nguyên đã bỏ ra trong quá khứ và không thể thu hồi.",
+      "elite_leverage": "Tài nguyên đã mất là chi phí chìm, không được tham gia vào quyết định tương lai. Quyết định chỉ dựa trên: Từ thời điểm này trở đi, nguồn lực bỏ vào đâu sinh giá trị lớn nhất?",
+      "trigger_question": "Nếu bỏ qua hoàn toàn số tiền và công sức đã mất trong quá khứ, hôm nay tôi có muốn tiếp tục làm việc này không?",
+      "inversion_trap": "Đổ thêm 10 tỷ vào một dự án lỗ triền miên chỉ để 'cứu vãn' 5 tỷ đã bỏ ra lúc đầu.",
+      "lollapalooza_pairs": [
+        "Chi phí cơ hội",
+        "Ác cảm mất mát",
+        "Bẫy cam kết nhất quán"
+      ]
+    },
+    {
+      "id": "PSY-15",
+      "name_vi": "Hiệu ứng Dunning-Kruger",
+      "name_en": "Dunning-Kruger Effect",
+      "pillar": "Tâm lý học",
+      "tier": 3,
+      "first_principle": "Người có trình độ yếu kém trong một lĩnh vực không đủ năng lực nhận thức để nhận ra sự yếu kém của mình, dẫn đến việc cực kỳ tự tin vào hiểu biết sai lệch.",
+      "elite_leverage": "Biết rõ ranh giới Vòng tròn năng lực của bản thân; khi bắt đầu học một môn mới, luôn ý thức rằng mình đang ở trên 'Đỉnh cao của sự ngu dốt'.",
+      "trigger_question": "Tôi đã thực sự kiểm chứng giả thuyết này qua va chạm thực tế chưa, hay chỉ đang tự tin vì mới đọc xong một cuốn sách?",
+      "inversion_trap": "Người mới đọc tài liệu lướt qua trên mạng đi dạy dỗ những chuyên gia đã lăn lộn 20 năm trong ngành.",
+      "lollapalooza_pairs": [
+        "Tự phóng đại bản thân",
+        "First Principles",
+        "Vòng tròn năng lực"
+      ]
+    },
+    {
+      "id": "PSY-16",
+      "name_vi": "Thiên kiến Kết quả",
+      "name_en": "Outcome Bias",
+      "pillar": "Tâm lý học",
+      "tier": 3,
+      "first_principle": "Đánh giá chất lượng của một quyết định chỉ dựa trên kết quả cuối cùng mà phớt lờ chất lượng quy trình và yếu tố may rủi tại thời điểm đó.",
+      "elite_leverage": "Tách bạch giữa Quy trình (Process) và Kết quả (Outcome). Khen thưởng những quyết định có kỳ vọng toán học dương dù ngắn hạn đen đủi; trừng phạt sự cẩu thả dù ăn may trúng lớn.",
+      "trigger_question": "Quyết định này thành công là nhờ quy trình phân tích chặt chẽ hay chỉ là sự ăn may ngẫu nhiên?",
+      "inversion_trap": "Người say rượu lái xe về nhà an toàn tự kết luận rằng việc say xỉn lái xe chẳng có gì nguy hiểm.",
+      "lollapalooza_pairs": [
+        "Tư duy Xác suất",
+        "Hồi quy về trung bình",
+        "Giá trị kỳ vọng"
+      ]
+    },
+    {
+      "id": "PSY-17",
+      "name_vi": "Ảo tưởng Kiểm soát",
+      "name_en": "Illusion of Control",
+      "pillar": "Tâm lý học",
+      "tier": 3,
+      "first_principle": "Xu hướng tin rằng bản thân có thể kiểm soát các kết quả mà thực chất hoàn toàn do ngẫu nhiên chi phối.",
+      "elite_leverage": "Phân chia rành mạch thế giới (Khắc kỷ): Những gì hoàn toàn trong tầm kiểm soát (hành động, đạo đức) và những gì ngoài tầm kiểm soát (thị trường, ý kiến người khác).",
+      "trigger_question": "Tôi có đang lãng phí năng lượng cố gắng kiểm soát một biến số vốn dĩ thuộc về sự ngẫu nhiên?",
+      "inversion_trap": "Người quản lý cố kiểm soát từng cử chỉ nhỏ của nhân viên để tạo ảo tưởng an toàn trong khi bỏ quên chiến lược lớn.",
+      "lollapalooza_pairs": [
+        "Tư duy Xác suất",
+        "Tính phi công thái học",
+        "Biên độ an toàn"
+      ]
+    },
+    {
+      "id": "PSY-18",
+      "name_vi": "Thiên kiến Nhóm trong - Nhóm ngoài",
+      "name_en": "In-Group / Out-Group Bias",
+      "pillar": "Tâm lý học",
+      "tier": 3,
+      "first_principle": "Bản năng bầy đàn khiến con người tự động ưu ái cho nhóm mình, đồng thời định kiến tiêu cực cho những người thuộc nhóm khác.",
+      "elite_leverage": "Tạo bản sắc nhóm mạnh mẽ để gắn kết đội ngũ; nhưng khi phân tích chiến lược, phải thoát khỏi định kiến phe phái để nhìn nhận đối thủ công bằng và học hỏi họ.",
+      "trigger_question": "Tôi đang chỉ trích ý kiến này vì nó vô lý hay chỉ vì nó được phát ngôn bởi một người thuộc phe đối lập?",
+      "inversion_trap": "Tẩy chay các ý tưởng đột phá chỉ vì người đề xuất không thuộc phe cánh quen thuộc của mình.",
+      "lollapalooza_pairs": [
+        "Bằng chứng xã hội",
+        "Thiên kiến xác nhận",
+        "Lý thuyết trò chơi"
+      ]
+    },
+    {
+      "id": "ECON-01",
+      "name_vi": "Quy luật Cung & Cầu",
+      "name_en": "Supply and Demand",
+      "pillar": "Kinh tế học",
+      "tier": 1,
+      "first_principle": "Giá cả hàng hóa được xác định tại giao điểm giữa lượng cung (sẵn lòng bán) và lượng cầu (sẵn lòng mua) trên thị trường tự do.",
+      "elite_leverage": "Muốn thu nhập cao, đừng chỉ làm việc chăm chỉ mà hãy tạo ra các kỹ năng cực kỳ hiếm (Cung thấp) nhưng giải quyết nỗi đau lớn của xã hội (Cầu cao).",
+      "trigger_question": "Động thái này đang làm thay đổi đường cung hay đường cầu, và điểm cân bằng giá mới sẽ nằm ở đâu?",
+      "inversion_trap": "Định giá theo công sức bỏ ra: Nghĩ rằng món đồ làm mất 100 giờ công thì đương nhiên sẽ bán được giá cao, trong khi thị trường không có nhu cầu.",
+      "lollapalooza_pairs": [
+        "Chi phí cơ hội",
+        "Lợi thế quy mô",
+        "Hiệu ứng Mạng lưới"
+      ]
+    },
+    {
+      "id": "ECON-02",
+      "name_vi": "Chi phí Cơ hội",
+      "name_en": "Opportunity Cost",
+      "pillar": "Kinh tế học",
+      "tier": 1,
+      "first_principle": "Chi phí thực sự của bất kỳ hành động nào chính là giá trị của sự lựa chọn thay thế tốt nhất bị bỏ qua.",
+      "elite_leverage": "'Nói CÓ với việc này đồng nghĩa với việc bạn đang nói KHÔNG với việc tốt nhất khác'. Luôn so sánh phương án hiện tại với phương án thay thế tốt nhất.",
+      "trigger_question": "Nếu dành 2 giờ hoặc 100 triệu này cho việc này, tôi đang vĩnh viễn đánh mất cơ hội làm việc xuất sắc nào khác?",
+      "inversion_trap": "Chỉ nhìn chi phí sổ sách: Bỏ 4 năm học một ngành nghề lỗi thời chỉ vì 'học phí rẻ', mà quên mất chi phí cơ hội của 4 năm tuổi trẻ.",
+      "lollapalooza_pairs": [
+        "Giá trị kỳ vọng",
+        "Lợi thế so sánh",
+        "Đa quy mô thời gian"
+      ]
+    },
+    {
+      "id": "ECON-03",
+      "name_vi": "Lợi thế Kinh tế nhờ Quy mô",
+      "name_en": "Economies of Scale",
+      "pillar": "Kinh tế học",
+      "tier": 1,
+      "first_principle": "Khi sản lượng tăng lên, chi phí cố định được phân bổ cho nhiều đơn vị sản phẩm hơn, khiến chi phí trung bình trên mỗi đơn vị giảm dần.",
+      "elite_leverage": "Xây dựng các mô hình kinh doanh có chi phí cận biên tiệm cận 0 (Phần mềm, Khóa học số, Thuật toán). Quy mô càng lớn thì biên lợi nhuận càng bùng nổ.",
+      "trigger_question": "Mô hình này có càng làm càng rẻ trên mỗi đơn vị không, hay chi phí đang phình to theo quy mô?",
+      "inversion_trap": "Bất lợi quy mô: Bộ máy phình to sinh ra vô số tầng nấc quan liêu, khiến chi phí quản lý tăng nhanh hơn doanh thu.",
+      "lollapalooza_pairs": [
+        "Đòn bẩy",
+        "Con hào kinh tế",
+        "Khối lượng tới hạn"
+      ]
+    },
+    {
+      "id": "ECON-04",
+      "name_vi": "Hiệu ứng Mạng lưới",
+      "name_en": "Network Effects",
+      "pillar": "Kinh tế học",
+      "tier": 1,
+      "first_principle": "Giá trị của một mạng lưới đối với mỗi người dùng tăng phi tuyến theo cấp số mũ khi có thêm người dùng mới gia nhập (Định luật Metcalfe: V ~ n²).",
+      "elite_leverage": "Xây dựng hiệu ứng mạng lưới hai chiều (chợ điện tử, nền tảng, mạng xã hội) để tạo ra sự độc quyền tự nhiên bền vững nhất thời đại số.",
+      "trigger_question": "Mỗi người dùng mới gia nhập có làm cho trải nghiệm của toàn bộ người dùng cũ tốt lên và gia tăng rào cản rời đi không?",
+      "inversion_trap": "Hiệu ứng mạng lưới tiêu cực: Nền tảng quá tải rác rưởi hoặc lừa đảo khi đông người, khiến người dùng chất lượng cao bỏ đi.",
+      "lollapalooza_pairs": [
+        "Khối lượng tới hạn",
+        "Con hào kinh tế",
+        "Lãi kép"
+      ]
+    },
+    {
+      "id": "ECON-05",
+      "name_vi": "Lợi thế So sánh & Chuyên môn hóa",
+      "name_en": "Comparative Advantage",
+      "pillar": "Kinh tế học",
+      "tier": 2,
+      "first_principle": "Một cá nhân nên chuyên môn hóa vào sản xuất thứ mà họ có chi phí cơ hội thấp hơn người khác, rồi trao đổi thương mại để cả hai cùng thịnh vượng.",
+      "elite_leverage": "Ủy quyền triệt để những việc bạn làm giỏi nhưng chi phí cơ hội của bạn quá cao (CEO không nên tự lau dọn nhà dù lau nhà giỏi hơn người giúp việc).",
+      "trigger_question": "Đâu là kỹ năng mà tôi có chi phí cơ hội thấp nhất và tạo ra giá trị tương đối cao nhất để tập trung 90% thời gian?",
+      "inversion_trap": "Tự làm lấy tất cả: Cố trở thành thợ sửa ống nước, kế toán, lập trình viên và shipper của chính công ty mình, khiến doanh nghiệp mãi tí hon.",
+      "lollapalooza_pairs": [
+        "Chi phí cơ hội",
+        "Hốc sinh thái",
+        "Đòn bẩy"
+      ]
+    },
+    {
+      "id": "ECON-06",
+      "name_vi": "Phá hủy Sáng tạo",
+      "name_en": "Creative Destruction (Schumpeter)",
+      "pillar": "Kinh tế học",
+      "tier": 2,
+      "first_principle": "Quá trình đột biến liên tục cách mạng hóa cấu trúc kinh tế từ bên trong, không ngừng phá hủy cấu trúc cũ và sáng tạo nên cấu trúc mới hiệu quả hơn.",
+      "elite_leverage": "Chủ động tự 'ăn thịt' sản phẩm cũ của chính mình trước khi đối thủ làm điều đó (Apple tạo ra iPhone dù biết nó sẽ giết chết iPod đang hái ra tiền).",
+      "trigger_question": "Công nghệ hoặc mô hình mới nào đang âm thầm làm cho toàn bộ ngành nghề của tôi trở nên lỗi thời?",
+      "inversion_trap": "Thảm kịch Kodak: Phát minh ra máy ảnh kỹ thuật số đầu tiên nhưng giấu nhẹm đi vì sợ mất doanh thu bán phim truyền thống.",
+      "lollapalooza_pairs": [
+        "Tiến hóa",
+        "Tính chống mong manh",
+        "Quán tính"
+      ]
+    },
+    {
+      "id": "ECON-07",
+      "name_vi": "Con hào Kinh tế & Rào cản Gia nhập",
+      "name_en": "Economic Moats",
+      "pillar": "Kinh tế học",
+      "tier": 2,
+      "first_principle": "Khả năng duy trì lợi thế cạnh tranh khác biệt nhằm bảo vệ lợi nhuận và thị phần dài hạn trước sự xói mòn của các đối thủ cạnh tranh mới.",
+      "elite_leverage": "Đầu tư vào 4 loại hào nước của Buffett: Chi phí chuyển đổi cao, Tài sản vô hình (Thương hiệu/Bằng sáng chế), Lợi thế chi phí thấp và Hiệu ứng mạng lưới.",
+      "trigger_question": "Nếu một đối thủ có 1 tỷ USD nhảy vào ngành này, họ có thể sao chép và đánh bại tôi trong 2 năm tới không?",
+      "inversion_trap": "Lợi nhuận cao không có hào: Kinh doanh sản phẩm hot theo trào lưu, chỉ sau 6 tháng hàng trăm đối thủ nhảy vào kéo biên lợi nhuận về 0.",
+      "lollapalooza_pairs": [
+        "Hiệu ứng Mạng lưới",
+        "Lợi thế quy mô",
+        "Lợi thế so sánh"
+      ]
+    },
+    {
+      "id": "ECON-08",
+      "name_vi": "Hiệu dụng Biên Giảm dần",
+      "name_en": "Diminishing Marginal Utility",
+      "pillar": "Kinh tế học",
+      "tier": 2,
+      "first_principle": "Khi tiêu thụ thêm liên tiếp các đơn vị của cùng một hàng hóa, mức độ thỏa mãn tăng thêm từ mỗi đơn vị sau sẽ giảm dần so với đơn vị trước.",
+      "elite_leverage": "Biết dừng lại ở điểm bão hòa; chiếc bánh thứ nhất mang lại hạnh phúc vô bờ, chiếc thứ tư ngán và chiếc thứ bảy ngộ độc.",
+      "trigger_question": "Đơn vị thời gian/tiền bạc tiếp theo tôi đầu tư vào đây đang mang lại giá trị gia tăng nhảy vọt hay chỉ còn lại những giọt hiệu quả tí hon?",
+      "inversion_trap": "Ép bản thân ngồi học thêm 3 tiếng vào đêm khuya khi não đã bão hòa, chỉ rước thêm mệt mỏi mà không nạp được kiến thức.",
+      "lollapalooza_pairs": [
+        "Định luật Pareto",
+        "Chi phí cơ hội",
+        "Nút cổ chai"
+      ]
+    },
+    {
+      "id": "ECON-09",
+      "name_vi": "Bi kịch của Của chung",
+      "name_en": "Tragedy of the Commons",
+      "pillar": "Kinh tế học",
+      "tier": 2,
+      "first_principle": "Khi một tài nguyên mở thuộc sở hữu chung của tất cả, mỗi cá nhân hành động vì lợi ích riêng sẽ khai thác tối đa cho đến khi tài nguyên cạn kiệt.",
+      "elite_leverage": "Giải quyết bi kịch bằng cách tư nhân hóa tài sản (gắn quyền sở hữu rõ ràng) hoặc thiết lập các quy chế chế tài minh bạch và công bằng (Elinor Ostrom).",
+      "trigger_question": "Tài nguyên chung này có đang bị các bên tự do bòn rút đến cạn kiệt vì không ai có trách nhiệm trực tiếp bảo dưỡng nó không?",
+      "inversion_trap": "Trách nhiệm chung là không ai chịu trách nhiệm: Trong nhóm, việc dùng chung tài khoản hay dọn phòng luôn bị bỏ bê nếu không phân công cụ thể.",
+      "lollapalooza_pairs": [
+        "Lý thuyết Động lực",
+        "Lý thuyết trò chơi",
+        "Rủi ro đạo đức"
+      ]
+    },
+    {
+      "id": "ECON-10",
+      "name_vi": "Lý thuyết Trò chơi & Cân bằng Nash",
+      "name_en": "Game Theory & Nash Equilibrium",
+      "pillar": "Kinh tế học",
+      "tier": 2,
+      "first_principle": "Trạng thái cân bằng Nash đạt được khi không người chơi nào có động lực đơn phương thay đổi chiến lược nếu các đối thủ vẫn giữ nguyên chiến lược của họ.",
+      "elite_leverage": "Thay vì trách cứ đối phương, hãy nhìn vào luật chơi. Muốn thay đổi kết quả, phải thiết kế lại ma trận động lực để biến hợp tác thành lựa chọn tối ưu của họ.",
+      "trigger_question": "Chiến lược tối ưu của đối phương là gì khi biết tôi sẽ hành động như thế này?",
+      "inversion_trap": "Kẹt trong thế tiến thoái lưỡng nan của tù nhân: Cả hai bên đều chọn phương án phản bội để tự bảo vệ, dẫn đến kết cục thảm hại cho tất cả.",
+      "lollapalooza_pairs": [
+        "Thiên kiến động lực",
+        "Đồng sinh",
+        "Second-order thinking"
+      ]
+    },
+    {
+      "id": "ECON-11",
+      "name_vi": "Bất cân xứng Thông tin & Lựa chọn Nghịch",
+      "name_en": "Information Asymmetry",
+      "pillar": "Kinh tế học",
+      "tier": 2,
+      "first_principle": "Khi người bán biết nhiều thông tin về chất lượng hơn người mua, người mua trả giá thấp để tự vệ, vô tình xua đuổi người bán hàng tốt ra khỏi thị trường.",
+      "elite_leverage": "Xây dựng thương hiệu và sự minh bạch tuyệt đối như một tín hiệu đắt giá; hoặc xây dựng cơ chế bảo hành trọn đời để thu hút khách hàng chất lượng cao.",
+      "trigger_question": "Bên kia đang nắm giữ thông tin sống còn nào về tài sản này mà tôi chưa thể tiếp cận được?",
+      "inversion_trap": "Mua đồ rẻ trên sàn trôi nổi: Tưởng mua được món hời mà không nhận ra mình đang lãnh trọn đồ lỗi do người bán giấu nhẹm.",
+      "lollapalooza_pairs": [
+        "Báo hiệu đắt giá",
+        "Rủi ro đạo đức",
+        "Skin in the game"
+      ]
+    },
+    {
+      "id": "ECON-12",
+      "name_vi": "Rủi ro Đạo đức",
+      "name_en": "Moral Hazard",
+      "pillar": "Kinh tế học",
+      "tier": 3,
+      "first_principle": "Một bên sẽ chấp nhận rủi ro liều lĩnh hơn khi họ biết rằng hậu quả thiệt hại nếu xảy ra sẽ do một bên khác gánh chịu.",
+      "elite_leverage": "Bắt buộc mọi người phải có 'Skin in the game'. Không bao giờ giao phó quỹ cho những người chỉ hưởng phần trăm lãi mà không chịu mất tiền khi lỗ.",
+      "trigger_question": "Người đưa ra quyết định liều lĩnh này có phải trả giá bằng tiền túi hay danh dự nếu kế hoạch sụp đổ không?",
+      "inversion_trap": "Cứu trợ các ngân hàng: Dùng tiền thuế cứu trợ các giám đốc tài chính đánh bạc liều mạng, tạo tiền đề cho khủng hoảng lớn hơn.",
+      "lollapalooza_pairs": [
+        "Vấn đề người đại diện",
+        "Thiên kiến động lực",
+        "Biên độ an toàn"
+      ]
+    },
+    {
+      "id": "ECON-13",
+      "name_vi": "Định luật Gresham",
+      "name_en": "Gresham's Law",
+      "pillar": "Kinh tế học",
+      "tier": 3,
+      "first_principle": "'Tiền xấu đuổi tiền tốt ra khỏi lưu thông'. Khi nhà nước ấn định cùng mệnh giá cho hai loại tiền có giá trị nội tại khác nhau, tiền xấu sẽ tràn ngập thị trường.",
+      "elite_leverage": "Trong quản trị: Nếu trả lương cào bằng cho cả người giỏi lẫn người lười, người giỏi (tiền tốt) sẽ rời đi, chỉ còn lại những kẻ kém cỏi (tiền xấu) ở lại.",
+      "trigger_question": "Chính sách cào bằng này có đang vô tình xua đuổi các nhân tài xuất sắc nhất ra khỏi tổ chức không?",
+      "inversion_trap": "Giữ vàng giả bỏ vàng thật: Dành thời gian cho những kẻ thảo mai nịnh nọt và ghẻ lạnh những người thẳng thắn dám nói sự thật.",
+      "lollapalooza_pairs": [
+        "Lựa chọn nghịch",
+        "Thiên kiến động lực",
+        "Thắt cổ chai"
+      ]
+    },
+    {
+      "id": "ECON-14",
+      "name_vi": "Ngoại tác Tích cực & Tiêu cực",
+      "name_en": "Externalities",
+      "pillar": "Kinh tế học",
+      "tier": 3,
+      "first_principle": "Chi phí hoặc lợi ích phát sinh từ một hoạt động kinh tế tác động lên các bên thứ ba mà không được phản ánh vào giá cả thị trường.",
+      "elite_leverage": "Đầu tư vào các dự án tạo ra ngoại tác tích cực khổng lồ (Giáo dục, Mã nguồn mở) vì xã hội sẽ luôn tìm cách bù đắp và nâng đỡ các thực thể này lâu dài.",
+      "trigger_question": "Hoạt động này đang tạo giá trị gia tăng lan tỏa cho cộng đồng hay đang âm thầm xả chi phí ô nhiễm sang cho xã hội?",
+      "inversion_trap": "Lợi nhuận giả tạo: Doanh nghiệp báo lãi lớn chỉ vì họ đang xả thải trộm ra sông mà chưa bị phạt xử lý ô nhiễm.",
+      "lollapalooza_pairs": [
+        "Bi kịch của chung",
+        "Second-order thinking",
+        "Đa quy mô thời gian"
+      ]
+    },
+    {
+      "id": "ECON-15",
+      "name_vi": "Chênh lệch Giá & Luật Một Giá",
+      "name_en": "Arbitrage & Law of One Price",
+      "pillar": "Kinh tế học",
+      "tier": 3,
+      "first_principle": "Mua ở nơi giá thấp và bán ở nơi giá cao để thu lợi nhuận chênh lệch; hành động này cuối cùng sẽ kéo giá ở hai thị trường về bằng nhau.",
+      "elite_leverage": "Khai thác Arbitrage địa lý và tri thức: Kiếm tiền bằng USD từ thị trường quốc tế và chi tiêu sinh hoạt tối ưu tại Việt Nam để nâng cao chất lượng sống.",
+      "trigger_question": "Đâu là khoảng cách chênh lệch về giá cả hoặc thông tin giữa hai thị trường mà tôi có thể bắc cầu khai thác?",
+      "inversion_trap": "Bẫy chênh lệch giá có rủi ro đuôi: Tưởng là kiếm tiền phi rủi ro nhưng thực chất là 'nhặt bạc lẻ trước mũi xe lu' khi thanh khoản bị ngắt.",
+      "lollapalooza_pairs": [
+        "Bất đối xứng",
+        "Biên độ an toàn",
+        "Lãi kép"
+      ]
+    },
+    {
+      "id": "MATH-01",
+      "name_vi": "Lãi kép",
+      "name_en": "Compounding",
+      "pillar": "Toán học & Xác suất",
+      "tier": 1,
+      "first_principle": "Lợi nhuận tạo ra tiếp tục được gộp vào vốn gốc để sinh lợi nhuận trong chu kỳ sau, tạo tăng trưởng hàm mũ: A = P(1 + r)^t.",
+      "elite_leverage": "'Không bao giờ làm gián đoạn chu kỳ lãi kép một cách không cần thiết' (Munger). Kiên định duy trì thói quen đọc sách và đầu tư liên tục trong 10-20 năm.",
+      "trigger_question": "Hành động hôm nay của tôi có tính chất tích lũy lũy tiến để sau 5 năm nó tự nhân lên theo hàm mũ không?",
+      "inversion_trap": "Lãi kép tiêu cực: Những thói quen xấu nhỏ (thức khuya, nợ thẻ tín dụng lãi 30%) cũng sinh lãi kép và âm thầm tàn phá sau 10 năm.",
+      "lollapalooza_pairs": [
+        "Đa quy mô thời gian",
+        "Đòn bẩy",
+        "Khối lượng tới hạn"
+      ]
+    },
+    {
+      "id": "MATH-02",
+      "name_vi": "Định luật Lũy thừa & Pareto 80/20",
+      "name_en": "Power Law & Pareto Principle",
+      "pillar": "Toán học & Xác suất",
+      "tier": 1,
+      "first_principle": "Trong phần lớn các hệ thống phức tạp, phần lớn kết quả (≈80%) được tạo ra bởi một số lượng rất nhỏ các nguyên nhân đầu vào (≈20%).",
+      "elite_leverage": "Tàn nhẫn cắt bỏ 80% việc râu ria; dồn 100% sự tập trung tinh hoa vào top 1-2 đòn bẩy trọng tử mang lại 80% thành quả sống còn.",
+      "trigger_question": "Đâu là 20% hoạt động hoặc khách hàng đang mang lại 80% hạnh phúc và dòng tiền thực tế cho tôi?",
+      "inversion_trap": "Dàn trải cào bằng: Chia đều thời gian 1 giờ cho mỗi việc như thể mọi việc đều có tầm quan trọng ngang nhau.",
+      "lollapalooza_pairs": [
+        "Chi phí cơ hội",
+        "Đòn bẩy",
+        "Nút cổ chai"
+      ]
+    },
+    {
+      "id": "MATH-03",
+      "name_vi": "Cập nhật Bayes",
+      "name_en": "Bayesian Updating",
+      "pillar": "Toán học & Xác suất",
+      "tier": 1,
+      "first_principle": "Xác suất hậu nghiệm được cập nhật dựa trên xác suất tiên nghiệm kết hợp với độ tin cậy của bằng chứng thực nghiệm mới: P(H|E) = P(E|H)×P(H) / P(E).",
+      "elite_leverage": "Khi sự thật thay đổi, tôi thay đổi suy nghĩ. Xuất phát từ tỷ lệ cơ sở thực tế (Base rate) và điều chỉnh niềm tin theo độ mạnh của bằng chứng mới.",
+      "trigger_question": "Bằng chứng mới này đáng tin cậy đến đâu và nó khiến xác suất xảy ra của kịch bản này tăng hay giảm bao nhiêu %?",
+      "inversion_trap": "Bỏ qua tỷ lệ cơ sở: Nghe một câu chuyện khởi nghiệp thành công rồi lao vào đầu tư mà quên rằng tỷ lệ phá sản cơ sở của ngành là 95%.",
+      "lollapalooza_pairs": [
+        "Tư duy Xác suất",
+        "Thiên kiến xác nhận",
+        "Giá trị kỳ vọng"
+      ]
+    },
+    {
+      "id": "MATH-04",
+      "name_vi": "Giá trị Kỳ vọng & Tiêu chuẩn Kelly",
+      "name_en": "Expected Value & Kelly Criterion",
+      "pillar": "Toán học & Xác suất",
+      "tier": 1,
+      "first_principle": "Giá trị kỳ vọng là trung bình trọng số của tất cả các kết quả: EV = ∑(P_i × V_i). Tiêu chuẩn Kelly chỉ ra tỷ lệ vốn tối ưu cần cược để tối đa hóa tăng trưởng.",
+      "elite_leverage": "Chỉ hành động khi EV dương lớn; và khi gặp cơ hội có xác suất thắng áp đảo với biên an toàn dày, hãy mạnh dạn cược tỷ trọng lớn theo Kelly.",
+      "trigger_question": "Nếu lặp lại ván bài này 1.000 lần, giá trị kỳ vọng bình quân của mỗi lần chơi là dương hay âm?",
+      "inversion_trap": "Đánh cược tất tay (All-in): Cược 100% tài sản vào ván bài có xác suất tử vong dù chỉ 1%; sau đủ số lần chơi, xác suất phá sản chắc chắn là 100%.",
+      "lollapalooza_pairs": [
+        "Tính phi công thái học",
+        "Tùy chọn",
+        "Biên độ an toàn"
+      ]
+    },
+    {
+      "id": "MATH-05",
+      "name_vi": "Tư duy Đảo ngược",
+      "name_en": "Inversion Thinking (Munger)",
+      "pillar": "Toán học & Xác suất",
+      "tier": 1,
+      "first_principle": "'Invert, always invert' - Nhiều bài toán hóc búa được giải quyết dễ dàng hơn rất nhiều khi tiếp cận từ chiều ngược lại.",
+      "elite_leverage": "Thay vì tìm cách làm sao để thành công rực rỡ, lập danh sách tất cả những cách chắc chắn dẫn đến thất bại, rồi kiên quyết loại bỏ từng điều một.",
+      "trigger_question": "Làm thế nào để chắc chắn phá hỏng hoàn toàn dự án này trong 3 tháng tới, và tôi đang làm điều gì trong số đó?",
+      "inversion_trap": "Bi quan thụ động: Chỉ ngồi nghĩ đến kịch bản tồi tệ mà không chuyển hóa thành danh sách hành động phòng ngừa cụ thể (Not-to-do list).",
+      "lollapalooza_pairs": [
+        "Biên độ an toàn",
+        "First Principles",
+        "Second-order thinking"
+      ]
+    },
+    {
+      "id": "MATH-06",
+      "name_vi": "Hồi quy về Giá trị Trung bình",
+      "name_en": "Regression to the Mean",
+      "pillar": "Toán học & Xác suất",
+      "tier": 2,
+      "first_principle": "Khi một biến ngẫu nhiên đạt giá trị cực đoan trong lần đo thứ nhất, lần đo tiếp theo sẽ có xu hướng quay trở về gần mức trung bình hơn.",
+      "elite_leverage": "Không quá hoảng loạn khi rơi vào chuỗi ngày đen đủi; không tự mãn khi vừa có chuỗi xuất thần ăn may. Phong độ là nhất thời, đẳng cấp trung bình mới bền vững.",
+      "trigger_question": "Thành tích đột biến này phản ánh bước nhảy vọt năng lực thật sự hay chỉ là cú vọt ngẫu nhiên sắp hồi quy về mức trung bình?",
+      "inversion_trap": "Khen phạt sai lầm: Mắng mỏ học sinh khi thi điểm thấp rồi thấy lần sau điểm tăng, người thầy nhầm tưởng lời mắng mỏ có tác dụng.",
+      "lollapalooza_pairs": [
+        "Thiên kiến kết quả",
+        "Tư duy Xác suất",
+        "Quy luật số lớn"
+      ]
+    },
+    {
+      "id": "MATH-07",
+      "name_vi": "Phân phối Chuẩn vs Đuôi béo",
+      "name_en": "Normal vs Fat-Tailed Distributions",
+      "pillar": "Toán học & Xác suất",
+      "tier": 2,
+      "first_principle": "Trong thế giới Extremistan (tài chính, công nghệ), các sự kiện cực đoan ở phần đuôi dày (Fat Tails) chi phối toàn bộ kết quả.",
+      "elite_leverage": "Không bao giờ áp dụng mô hình rủi ro phân phối chuẩn vào thị trường tài chính; luôn dự phòng cho những sự kiện Thiên nga đen chưa từng có tiền lệ.",
+      "trigger_question": "Lĩnh vực này thuộc phân phối chuẩn êm đềm hay là vùng đất đuôi béo nơi một sự kiện duy nhất có thể xóa sổ tất cả?",
+      "inversion_trap": "Ngây thơ thống kê: Tin rằng nguy cơ sụp đổ là '1 trên 1 triệu năm' chỉ vì dùng sai mô hình phân phối hình chuông chuẩn.",
+      "lollapalooza_pairs": [
+        "Tính chống mong manh",
+        "Biên độ an toàn",
+        "Tính phi công thái học"
+      ]
+    },
+    {
+      "id": "MATH-08",
+      "name_vi": "Quy luật Số lớn",
+      "name_en": "Law of Large Numbers",
+      "pillar": "Toán học & Xác suất",
+      "tier": 2,
+      "first_principle": "Khi số lượng thử nghiệm độc lập tiến tới vô cùng, tần suất thực nghiệm của một sự kiện sẽ hội tụ về đúng xác suất lý thuyết của nó.",
+      "elite_leverage": "Kinh doanh như nhà cái sòng bạc: Không cần thắng từng ván đơn lẻ; chỉ cần lợi thế toán học nhỏ (Edge 1-2%) và lặp lại đủ nhiều để dòng tiền tự chảy về.",
+      "trigger_question": "Hệ thống của tôi có một lợi thế cạnh tranh đủ chắc chắn để chiến thắng sau 10.000 lần lặp lại không?",
+      "inversion_trap": "Kết luận từ mẫu quá nhỏ: Bán thử cho 3 người và thấy từ chối, vội vã kết luận toàn bộ thị trường không thích sản phẩm.",
+      "lollapalooza_pairs": [
+        "Giá trị kỳ vọng",
+        "Hồi quy về trung bình",
+        "Thực nghiệm nhanh"
+      ]
+    },
+    {
+      "id": "MATH-09",
+      "name_vi": "Hoán vị & Tổ hợp",
+      "name_en": "Permutations & Combinations",
+      "pillar": "Toán học & Xác suất",
+      "tier": 2,
+      "first_principle": "Số lượng cách kết hợp các phần tử cơ bản tăng bùng nổ theo hàm giai thừa khi số lượng phần tử tăng lên.",
+      "elite_leverage": "Đổi mới sáng tạo bằng cách kết hợp 2-3 ý tưởng cũ từ các ngành khác nhau theo một tổ hợp mới chưa ai từng thử (Latticework synthesis).",
+      "trigger_question": "Có tổ hợp mới nào từ những nguồn lực sẵn có mà tôi chưa từng thử ghép lại với nhau?",
+      "inversion_trap": "Bế tắc vì tìm cái hoàn toàn mới: Mất nhiều năm cố phát minh ra bánh xe mới thay vì kết hợp bánh xe với động cơ điện.",
+      "lollapalooza_pairs": [
+        "Latticework",
+        "First Principles",
+        "Đòn bẩy"
+      ]
+    },
+    {
+      "id": "MATH-10",
+      "name_vi": "Tính Phi công thái học",
+      "name_en": "Non-Ergodicity (Taleb)",
+      "pillar": "Toán học & Xác suất",
+      "tier": 2,
+      "first_principle": "Đời người là Non-ergodic: nếu xác suất phá sản ở mỗi bước là 1%, bạn không thể sống sót qua 100 bước liên tiếp dù kỳ vọng trung bình nhóm là dương.",
+      "elite_leverage": "Quy tắc sinh tồn tối thượng: Tuyệt đối tránh xa bất kỳ hoạt động nào có rủi ro diệt vong (Ruin risk), dù phần thưởng tiềm năng có lớn đến đâu.",
+      "trigger_question": "Hành động này có tiềm ẩn nguy cơ khiến tôi bị xóa sổ hoàn toàn khỏi cuộc chơi nếu kịch bản tồi tệ nhất xảy ra không?",
+      "inversion_trap": "Chơi cò quay Nga: Nghĩ rằng 5/6 cơ hội trúng 10 triệu USD là kèo thơm, mà quên mất rằng 1/6 cơ hội còn lại là cái chết.",
+      "lollapalooza_pairs": [
+        "Biên độ an toàn",
+        "Tính chống mong manh",
+        "Giá trị kỳ vọng"
+      ]
+    },
+    {
+      "id": "MATH-11",
+      "name_vi": "Sai lầm của Con bạc",
+      "name_en": "Gambler's Fallacy",
+      "pillar": "Toán học & Xác suất",
+      "tier": 3,
+      "first_principle": "Niềm tin sai lầm rằng nếu một biến cố ngẫu nhiên độc lập xảy ra liên tiếp trong quá khứ, thì khả năng xảy ra biến cố ngược lại lần sau sẽ cao hơn.",
+      "elite_leverage": "Hiểu tính độc lập của các biến ngẫu nhiên; đồng xu không có trí nhớ, sau 10 lần ra Ngửa thì lần thứ 11 xác suất ra Ngửa vẫn chính xác là 50%.",
+      "trigger_question": "Tôi có đang nghĩ rằng 'thị trường đã giảm 5 phiên liên tiếp thì phiên nay nhất định phải tăng' mà quên mất quy luật độc lập không?",
+      "inversion_trap": "Tất tay sau chuỗi thua: Tăng gấp đôi tiền cược sau mỗi lần thua bạc vì tin rằng 'vận may sắp tới', dẫn đến trắng tay.",
+      "lollapalooza_pairs": [
+        "Tư duy Xác suất",
+        "Ảo tưởng kiểm soát",
+        "Ác cảm mất mát"
+      ]
+    },
+    {
+      "id": "MATH-12",
+      "name_vi": "Tương quan không phải Nhân quả",
+      "name_en": "Correlation vs Causation",
+      "pillar": "Toán học & Xác suất",
+      "tier": 3,
+      "first_principle": "Hai biến số biến thiên cùng chiều (tương quan) không chứng minh rằng biến này là nguyên nhân trực tiếp sinh ra biến kia; thường có biến số ẩn thứ ba.",
+      "elite_leverage": "Chỉ tin vào quan hệ nhân quả khi chứng minh được cơ chế tác động rõ ràng thông qua thử nghiệm có đối chứng (A/B testing).",
+      "trigger_question": "Có biến số ẩn nào đang điều khiển cả hai yếu tố này mà tôi chưa nhìn thấy không?",
+      "inversion_trap": "Ngộ nhận nguyên nhân: Thấy doanh số bán kem tăng cùng lúc với số vụ đuối nước, vội kết luận rằng ăn kem làm người ta chết đuối.",
+      "lollapalooza_pairs": [
+        "First Principles",
+        "Thực nghiệm nhanh",
+        "Nghịch lý Simpson"
+      ]
+    },
+    {
+      "id": "MATH-13",
+      "name_vi": "Nghịch lý Simpson",
+      "name_en": "Simpson's Paradox",
+      "pillar": "Toán học & Xác suất",
+      "tier": 3,
+      "first_principle": "Một xu hướng xuất hiện trong các nhóm dữ liệu nhỏ có thể hoàn toàn biến mất hoặc bị đảo ngược khi các nhóm dữ liệu đó được gộp chung lại.",
+      "elite_leverage": "Không tin vào những con số bình quân tổng thể giật gân; luôn bóc tách dữ liệu theo các phân khúc điều kiện để thấy sự thật cốt lõi bên dưới.",
+      "trigger_question": "Nếu phân rã bộ dữ liệu tổng thể này theo từng phân khúc cụ thể, kết luận ban đầu có bị đảo ngược 180 độ không?",
+      "inversion_trap": "Ra quyết định sai lệch từ số trung bình: Sa thải một loại thuốc vì tỷ lệ khỏi chung thấp hơn, mà không biết rằng nó vượt trội ở mọi nhóm bệnh nhân nặng.",
+      "lollapalooza_pairs": [
+        "First Principles",
+        "Cập nhật Bayes",
+        "Tư duy Bậc hai"
+      ]
+    },
+    {
+      "id": "SYS-01",
+      "name_vi": "Vòng Phản hồi Âm & Dương",
+      "name_en": "Feedback Loops (Balancing & Reinforcing)",
+      "pillar": "Kỹ thuật & Hệ thống",
+      "tier": 1,
+      "first_principle": "Vòng dương khuếch đại sự thay đổi (Bùng nổ hoặc Sụp đổ); vòng âm kìm hãm sự thay đổi và kéo hệ thống về trạng thái cân bằng ổn định.",
+      "elite_leverage": "Cài đặt vòng phản hồi dương cho thói quen tốt và tăng trưởng kinh doanh (Flywheel); thiết lập các vòng phản hồi âm tự động ngắt để kiềm chế rủi ro tài chính.",
+      "trigger_question": "Hành động này đang kích hoạt một vòng lặp tự củng cố bùng nổ (dương) hay một cơ chế tự ghìm phanh ổn định (âm)?",
+      "inversion_trap": "Vòng xoáy tử thần: Để một sai lầm nhỏ kích hoạt vòng phản hồi dương tiêu cực (buồn chán -> ăn ngọt -> tăng cân -> tự ti -> buồn chán hơn).",
+      "lollapalooza_pairs": [
+        "Lãi kép",
+        "Cân bằng nội môi",
+        "Điểm bùng phát"
+      ]
+    },
+    {
+      "id": "SYS-02",
+      "name_vi": "Biên độ An toàn & Dự phòng",
+      "name_en": "Margin of Safety & Redundancy",
+      "pillar": "Kỹ thuật & Hệ thống",
+      "tier": 1,
+      "first_principle": "Cây cầu chịu tải 30 tấn chỉ cho xe 10 tấn chạy qua; máy bay thương mại luôn có 2-3 hệ thống thủy lực dự phòng độc lập.",
+      "elite_leverage": "Chỉ mua tài sản khi giá thấp hơn rất nhiều so với giá trị thực; luôn giữ tiền mặt dự phòng khẩn cấp và không bao giờ vận hành ở 100% công suất chịu tải.",
+      "trigger_question": "Nếu mọi dự báo lạc quan nhất của tôi đều sai lệch 40%, tôi có còn sống sót bình yên qua cơn bão này không?",
+      "inversion_trap": "Tối ưu hóa quá mức: Cắt giảm toàn bộ chi phí dự phòng để đạt lợi nhuận tối đa ngắn hạn, khiến cỗ máy vỡ vụn ngay khi có biến cố nhỏ.",
+      "lollapalooza_pairs": [
+        "Tính phi công thái học",
+        "Tính chống mong manh",
+        "Giảm chấn"
+      ]
+    },
+    {
+      "id": "SYS-03",
+      "name_vi": "Nút Cổ chai & Lý thuyết Điểm Hạn chế",
+      "name_en": "Bottlenecks & Theory of Constraints",
+      "pillar": "Kỹ thuật & Hệ thống",
+      "tier": 1,
+      "first_principle": "Lưu lượng của toàn bộ dây chuyền chỉ được quyết định bởi mắt xích yếu nhất; tối ưu hóa bất kỳ bộ phận nào khác ngoài nút cổ chai đều là ảo tưởng.",
+      "elite_leverage": "Tìm ra điểm nghẽn duy nhất đang kiềm hãm sự nghiệp (khâu tìm khách hàng, hay kỹ năng giao tiếp) và dồn toàn lực mở rộng nút cổ chai đó.",
+      "trigger_question": "Đâu là điểm nghẽn độc nhất mà nếu được khai thông, tốc độ chảy của toàn bộ hệ thống sẽ tăng vọt gấp đôi?",
+      "inversion_trap": "Tối ưu hóa nhầm chỗ: Mua máy móc đắt tiền ở khâu đóng gói trong khi khâu sản xuất cốt lõi vẫn đang tắc nghẽn nghiêm trọng.",
+      "lollapalooza_pairs": [
+        "Định luật Pareto",
+        "Đòn bẩy",
+        "Chi phí cơ hội"
+      ]
+    },
+    {
+      "id": "SYS-04",
+      "name_vi": "Tính Chống Mong manh",
+      "name_en": "Antifragility (Taleb)",
+      "pillar": "Kỹ thuật & Hệ thống",
+      "tier": 1,
+      "first_principle": "Thứ mong manh ghét biến động; thứ mạnh mẽ chịu đựng được biến động; thứ Chống mong manh hưởng lợi, học hỏi và mạnh mẽ hơn sau mỗi lần va đập.",
+      "elite_leverage": "Cấu trúc cuộc sống để trở thành Chống mong manh: Tổn thất tối đa bị giới hạn rất nhỏ (Downside được bọc lót), nhưng tiềm năng bùng nổ là vô hạn (Upside không giới hạn).",
+      "trigger_question": "Cấu trúc hiện tại của tôi sẽ mạnh mẽ hơn hay gãy vụn khi thị trường xuất hiện sự hỗn loạn và biến động cực đoan?",
+      "inversion_trap": "Mỏng manh hóa: Tránh xa mọi va chạm khiến cơ thể hoặc tổ chức mất hoàn toàn khả năng thích nghi và đề kháng tự nhiên.",
+      "lollapalooza_pairs": [
+        "Tiến hóa",
+        "Tùy chọn",
+        "Biên độ an toàn"
+      ]
+    },
+    {
+      "id": "SYS-05",
+      "name_vi": "Điểm Bùng phát & Ngưỡng Tới hạn",
+      "name_en": "Tipping Points (Gladwell)",
+      "pillar": "Kỹ thuật & Hệ thống",
+      "tier": 2,
+      "first_principle": "Thời điểm kỳ diệu khi một loạt thay đổi nhỏ tiệm tiến tích lũy đủ để kích hoạt một sự biến đổi định tính to lớn và lan truyền nhanh khắp hệ thống.",
+      "elite_leverage": "Kiên trì xây dựng nền tảng dù kết quả chưa hiện ra ngay; tập trung vào 3 yếu tố: Số ít người có ảnh hưởng, Độ kết dính thông điệp và Sức mạnh bối cảnh.",
+      "trigger_question": "Cần thêm bao nhiêu tác động nhỏ nữa để đẩy ý tưởng này vượt qua ngưỡng bùng phát lan truyền tự nhiên?",
+      "inversion_trap": "Nóng vội đốt cháy giai đoạn: Mong chờ bùng nổ tức thì sau 3 ngày mà không chịu tích lũy đủ động năng ngầm dưới ngưỡng.",
+      "lollapalooza_pairs": [
+        "Khối lượng tới hạn",
+        "Chuyển pha",
+        "Lãi kép"
+      ]
+    },
+    {
+      "id": "SYS-06",
+      "name_vi": "Độ trễ Hệ thống",
+      "name_en": "System Delay & Lag Time",
+      "pillar": "Kỹ thuật & Hệ thống",
+      "tier": 2,
+      "first_principle": "Khoảng thời gian trễ giữa lúc hành động can thiệp được thực hiện và lúc hệ quả thực sự xuất hiện trong hệ thống (như vòi hoa sen có độ trễ 10 giây).",
+      "elite_leverage": "Không điều chỉnh quá tay khi chưa thấy kết quả ngay; kiên nhẫn chờ đợi hết độ trễ phản hồi trước khi quyết định tăng ga hay đạp phanh tiếp theo.",
+      "trigger_question": "Hệ thống này có độ trễ thời gian bao lâu trước khi phản ánh kết quả của hành động hôm nay?",
+      "inversion_trap": "Bẫy vòi sen: Vặn sang cực nóng vì thấy nước chưa ấm, 10 giây sau nước sôi bỏng rát lại vội vàng vặn sang cực lạnh.",
+      "lollapalooza_pairs": [
+        "Vòng phản hồi âm",
+        "Quán tính",
+        "Hệ quả bậc hai"
+      ]
+    },
+    {
+      "id": "SYS-07",
+      "name_vi": "Phản xạ & Tự thực hiện",
+      "name_en": "Reflexivity (George Soros)",
+      "pillar": "Kỹ thuật & Hệ thống",
+      "tier": 2,
+      "first_principle": "Nhận thức chủ quan của các bên định hình thực tế khách quan, và thực tế mới đó lại quay trở lại củng cố nhận thức chủ quan ban đầu theo vòng lặp liên tục.",
+      "elite_leverage": "Nhận biết các chu kỳ bùng nổ/suy thoái (Boom-Bust) trên thị trường; khi niềm tin tạo ra bong bóng, hãy cưỡi trên sóng nhưng luôn sẵn sàng nhảy ra trước khi sụp đổ.",
+      "trigger_question": "Kỳ vọng của thị trường đang phản ánh đúng thực tế hay chính kỳ vọng đó đang biến một điều vô lý thành hiện thực tạm thời?",
+      "inversion_trap": "Ngộ nhận giá tăng là do công ty tốt lên, mà không nhận ra nó chỉ tăng do dòng tiền đầu cơ phản xạ lẫn nhau.",
+      "lollapalooza_pairs": [
+        "Vòng phản hồi dương",
+        "Bằng chứng xã hội",
+        "Hiệu ứng Lollapalooza"
+      ]
+    },
+    {
+      "id": "SYS-08",
+      "name_vi": "Giảm chấn & Hấp thụ Sốc",
+      "name_en": "Shock Absorbers & Dampening",
+      "pillar": "Kỹ thuật & Hệ thống",
+      "tier": 2,
+      "first_principle": "Cơ chế tiêu hao năng lượng dao động thừa để ngăn hệ thống rung lắc dữ dội hoặc gãy đổ khi gặp ngoại lực tác động bất ngờ.",
+      "elite_leverage": "Xây dựng các bộ đệm giảm chấn cá nhân: Quỹ khẩn cấp 6 tháng, thói quen thiền định chánh niệm để làm chậm phản ứng, lịch làm việc luôn để trống 20% thời gian.",
+      "trigger_question": "Đâu là lớp đệm giảm chấn sẽ bảo vệ tâm lý và tài chính của tôi nếu ngày mai có một cú sốc lớn ập đến?",
+      "inversion_trap": "Lịch trình sít sao không khe hở: Xếp kín lịch từ sáng đến khuya; chỉ cần một sự cố trễ 15 phút là toàn bộ ngày làm việc tan hoang.",
+      "lollapalooza_pairs": [
+        "Biên độ an toàn",
+        "Cộng hưởng",
+        "Cân bằng nội môi"
+      ]
+    },
+    {
+      "id": "SYS-09",
+      "name_vi": "Phụ thuộc Đường dẫn Quá khứ",
+      "name_en": "Path Dependency",
+      "pillar": "Kỹ thuật & Hệ thống",
+      "tier": 3,
+      "first_principle": "Những quyết định hoặc sự ngẫu nhiên nhỏ trong quá khứ trói buộc và giới hạn các lựa chọn tương lai, dù hoàn cảnh hiện tại đã hoàn toàn khác biệt.",
+      "elite_leverage": "'Zero-based Thinking': 'Nếu hôm nay tôi bắt đầu lại từ đầu với những hiểu biết hiện có, tôi có xây dựng hệ thống theo cách này không?'. Dũng cảm đập bỏ đường dẫn cũ nếu nó lỗi thời.",
+      "trigger_question": "Tôi đang duy trì cách làm này vì nó tối ưu nhất cho hiện tại hay chỉ vì nó là thói quen từ nhiều năm trước?",
+      "inversion_trap": "Mắc kẹt trong di sản cũ: Chi hàng triệu đô để chắp vá một hệ thống phần mềm cũ rích thay vì dũng cảm viết lại kiến trúc mới.",
+      "lollapalooza_pairs": [
+        "First Principles",
+        "Bẫy chi phí chìm",
+        "Quán tính"
+      ]
+    },
+    {
+      "id": "SYS-10",
+      "name_vi": "Hệ quả Bậc hai & Bậc cao",
+      "name_en": "Second-Order Thinking (Howard Marks)",
+      "pillar": "Kỹ thuật & Hệ thống",
+      "tier": 2,
+      "first_principle": "Mọi hành động đều tạo ra kết quả tức thì (Bậc 1), nhưng kết quả đó kích hoạt các phản ứng dây chuyền tiếp theo tạo ra hệ quả Bậc 2, Bậc 3 phức tạp.",
+      "elite_leverage": "Luôn tự hỏi: 'And then what?' (Và sau đó điều gì xảy ra tiếp theo?). Sẵn sàng chịu thiệt hại ngắn hạn ở bậc 1 để gặt hái thành quả khổng lồ ở bậc 2 và bậc 3.",
+      "trigger_question": "Hành động này mang lại giải pháp êm ái trước mắt, nhưng sau 6 tháng và 2 năm nữa nó sẽ tạo ra những rắc rối dây chuyền nào?",
+      "inversion_trap": "Tư duy bậc 1 nông cạn: Cho thuốc giảm đau liên tục để cắt cơn đau dạ dày tức thì mà không chữa vết loét, dẫn đến thủng dạ dày tử vong.",
+      "lollapalooza_pairs": [
+        "Đa quy mô thời gian",
+        "Vòng phản hồi",
+        "Tùy chọn"
+      ]
+    },
+    {
+      "id": "SYS-11",
+      "name_vi": "Tính Khép kín & Bảo toàn Hệ thống",
+      "name_en": "System Conservation & Leaks",
+      "pillar": "Kỹ thuật & Hệ thống",
+      "tier": 3,
+      "first_principle": "Một hệ thống muốn duy trì áp suất và động năng thì đường ống dẫn phải kín; các lỗ rò rỉ vi mô nếu không được vá sẽ làm tụt áp toàn bộ hệ thống.",
+      "elite_leverage": "Trước khi tìm cách bơm thêm khách hàng hay tăng doanh thu (đổ nước vào xô), hãy kiểm tra và vá kín toàn bộ các lỗ thủng rò rỉ (khách rời bỏ, chi phí ẩn).",
+      "trigger_question": "Đâu là lỗ rò rỉ vi mô đang âm thầm làm thất thoát năng lượng, thời gian hoặc tiền bạc của hệ thống mỗi ngày?",
+      "inversion_trap": "Đổ nước vào xô thủng: Tăng ngân sách chạy quảng cáo gấp 5 lần trong khi sản phẩm kém khiến khách hàng mua một lần rồi biến mất vĩnh viễn.",
+      "lollapalooza_pairs": [
+        "Bảo toàn Năng lượng",
+        "Nút cổ chai",
+        "Entropy"
+      ]
+    },
+    {
+      "id": "SYS-12",
+      "name_vi": "Phối hợp Lỏng lẻo vs Gắn kết Chặt chẽ",
+      "name_en": "Loose vs Tight Coupling",
+      "pillar": "Kỹ thuật & Hệ thống",
+      "tier": 3,
+      "first_principle": "Hệ thống liên kết chặt chẽ (Tightly coupled) khiến sự cố ở một mắt xích lập tức lây lan toàn hệ thống; hệ thống liên kết lỏng lẻo có van ngăn cách sự cố cục bộ.",
+      "elite_leverage": "Thiết kế tổ chức theo Module độc lập (Microservices / Tường ngăn cháy); sự thất bại của một dự án không thể kéo sập toàn bộ công ty.",
+      "trigger_question": "Các bộ phận này có đang gắn kết quá chặt đến mức một sự cố nhỏ ở chi nhánh A sẽ làm sụp đổ toàn bộ tổ chức không?",
+      "inversion_trap": "Hiệu ứng Domino: Chuỗi cung ứng 'Just-in-Time' quá hoàn hảo không có kho đệm, khiến một tàu mắc kẹt làm tê liệt sản xuất toàn cầu.",
+      "lollapalooza_pairs": [
+        "Biên độ an toàn",
+        "Tính chống mong manh",
+        "Tính phi công thái học"
+      ]
+    },
+    {
+      "id": "SYS-13",
+      "name_vi": "Bẫy Tối ưu hóa Cục bộ",
+      "name_en": "Local vs Global Optimum",
+      "pillar": "Kỹ thuật & Hệ thống",
+      "tier": 3,
+      "first_principle": "Trèo lên đỉnh của một ngọn đồi thấp (cực đại cục bộ) có thể khiến bạn bị mắc kẹt và không bao giờ tìm thấy đỉnh núi cao phía xa, trừ khi bạn chấp nhận đi xuống dốc trước.",
+      "elite_leverage": "Sẵn sàng chấp nhận tạm thời giảm thu nhập, giảm vị thế (đi xuống thung lũng) để chuyển hướng sang một đỉnh núi sự nghiệp cao hơn gấp 10 lần.",
+      "trigger_question": "Tôi có đang bận rộn leo lên đỉnh một ngọn đồi thấp và tự chặn đứng cơ hội chinh phục ngọn núi cao thực sự ở phía xa?",
+      "inversion_trap": "Mắc kẹt trong vùng an toàn: Bám chặt lấy một công việc văn phòng lương 20 triệu/tháng chỉ vì sợ cảm giác bấp bênh khi bắt đầu xây dựng sự nghiệp riêng.",
+      "lollapalooza_pairs": [
+        "Chi phí cơ hội",
+        "Tùy chọn",
+        "Tiến hóa"
+      ]
+    }
+  ]
+}
