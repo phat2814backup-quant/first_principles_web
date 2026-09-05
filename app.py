@@ -579,7 +579,7 @@ with tabs[2]:
         # Export CSV Button
         csv_data = export_models_to_csv(filtered_models)
         st.download_button(
-            label="📥 Tải xuống Bảng dữ liệu (CSV)",
+            label="📥 Tải xuống CSV (Mở chuẩn tiếng Việt trên Excel)",
             data=csv_data,
             file_name="munger_88_mental_models.csv",
             mime="text/csv",

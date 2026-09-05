@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """Munger Latticework: 88 Nuclear Mental Models helper functions."""
 
 from __future__ import annotations
@@ -114,10 +114,10 @@ def models_to_dataframe(models: List[Dict[str, Any]]) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def export_models_to_csv(models: List[Dict[str, Any]]) -> str:
-    """Xuất danh sách mô hình ra chuỗi định dạng CSV."""
+def export_models_to_csv(models: List[Dict[str, Any]]) -> bytes:
+    """Xuất danh sách mô hình ra định dạng bytes CSV kèm UTF-8 BOM (b'\\xef\\xbb\\xbf') để Excel tự động nhận diện và hiển thị tiếng Việt chuẩn 100%."""
     df = models_to_dataframe(models)
-    return df.to_csv(index=False, encoding="utf-8-sig")
+    return df.to_csv(index=False).encode("utf-8-sig")
 
 
 LATTIICEWORK_SYNTHESIS_PROMPT = """Bạn là Charlie Munger AI Master.
